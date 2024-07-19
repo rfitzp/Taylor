@@ -99,9 +99,9 @@ Taylor::Taylor ()
 // #########################
 void Taylor::Solve ()
 {
-  // ...............
-  // Allocate memory
-  // ...............
+  // .........................................
+  // Allocate memory for interpolation of Psib
+  // .........................................
   gg_i.resize   (No + 1);
   Psib_r.resize (No + 1);
   Psib_i.resize (No + 1);
@@ -138,15 +138,15 @@ void Taylor::Solve ()
     }
   fclose(file);
 
-  // .................................
-  // Perform example layer calculation
-  // .................................
+  // .........................................................
+  // Perform example layer calculation for diagnostic purposes
+  // .........................................................
   omega = 0.;
   complex<double> Delta, Fs;
   tie (Delta, Fs) = GetLayerParameters ();
   
   // .............................................................................
-  // Set up interpolation for real and imaginary parts of Pbar on Bromwich contour
+  // Set up interpolation for real and imaginary parts of Psib on Bromwich contour
   // .............................................................................
   acc_r = gsl_interp_accel_alloc ();
   acc_i = gsl_interp_accel_alloc ();
@@ -178,7 +178,8 @@ void Taylor::Solve ()
       count = 0;
       y[0]  = 0.;
       
-      double hmin_ = 1.e6, hmax_ = 0., err_max = 0.; int reptmax_ = 0, stepcount = 0;
+      double hmin_ = 1.e6, hmax_ = 0., err_max = 0.;
+      int    reptmax_ = 0, stepcount = 0;
       do
 	{
 	  RK4RK5Adaptive (om, y, h, t_err, acc, 0.95, 2., rept, maxrept, hmin, hmax, flag);
@@ -373,14 +374,9 @@ void Taylor::Rhs (double x, vector<complex<double>>& y, vector<complex<double>>&
   // ...............................
   // Define layer equation variables
   // ...............................
-  complex<double> W = y[0];
-  complex<double> V = y[1];
   complex<double> g (sigma, omega);
-  double          p = x;
 
-  // .......................
-  // Set calculation factors
-  // .......................
+  double p  = x;
   double p2 = p*p;
   double p3 = p*p2;
   double p4 = p2*p2;
@@ -391,6 +387,8 @@ void Taylor::Rhs (double x, vector<complex<double>>& y, vector<complex<double>>&
       // ............................................................
       // Right-hand sides for backward integration of layer equations
       // ............................................................
+      complex<double> W = y[0];
+      complex<double> V = y[1];
       complex<double> gE  = g + Im * QE;
       complex<double> gEe = g + Im * (QE + Qe);
       complex<double> gEi = g + Im * (QE + Qi);
