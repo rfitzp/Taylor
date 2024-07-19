@@ -5,38 +5,23 @@
 // ###########
 Taylor::Taylor ()
 {
-  // ......................
-  // Set physics parameters
-  // ......................
-  QE    = 0.01;
-  Qe    = 1.;
-  Qi    = -1.;
-  D     = 3.02;
-  Pphi  = 874.;
-  Pperp = 287.;
-  le    = 1.;
-  Sigma = 10.;
+  // ........................................
+  // Read calculation data from namelist file
+  // ........................................
+  NameListRead (&QE, &Qe, &Qi, &D, &Pphi, &Pperp, &le, &Sigma,
+  		&tmax, &Nt,
+		&sigma, &omax, &No,
+		&pstart, &pend, &Np);
 
-  // .........................
-  // Set simulation parameters
-  // .........................
-  tmax  = 300.;
-  Nt    = 5000;
-
-  // ...............................
-  // Set Bromwich contour parameters
-  // ...............................
-  sigma = 0.01;
-  omax  = 50.;
-  No    = 5000;
-
-  // .....................
-  // Set p grid parameters
-  // .....................
-  pstart = 6.;
-  pend   = 1.e-8;
-  Np     = 5000;
-
+  printf ("\nQE = %10.3e Qe = %10.3e Qi = %10.3e D = %10.3e Pphi = %10.4e Pperp = %10.3e le = %10.3e Sigma = %10.3e\n",
+	  QE, Qe, Qi, D, Pphi, Pperp, le, Sigma);
+  printf ("\ntmax = %10.3e Nt = %4d\n",
+	  tmax, Nt);
+  printf ("\nsigma = %10.3e omax = %10.3e No = %4d\n",
+	  sigma, omax, No);
+  printf ("\npstart = %10.3e pend = %10.3e Np = %4d\n",
+	  pstart, pend, No);
+   
   // ...................................
   // Set adaptive integration parameters
   // ...................................
