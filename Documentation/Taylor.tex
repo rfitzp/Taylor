@@ -1,0 +1,564 @@
+\documentclass[titlepage=false,12pt]{article}
+\usepackage {amsmath}
+\usepackage{amssymb}
+\pdfoutput = 1 
+\usepackage {graphicx}
+\newcommand {\bxi}{\mbox{\boldmath$\xi$}}
+\allowdisplaybreaks
+
+\begin{document}
+
+\title{Simplified Forced Magnetic Reconnection}
+\date{}
+\maketitle
+
+\section{Simplified Analytic Calculation}
+\subsection{Analysis}
+Let $\hat{t}= t/(S^{1/3}\,\tau_H)$, where $t$ represents time, $S$ is the Lundquist number, and $\tau_H$
+the hydromagnetic timescale. Let ${\mit\Psi}_b(\hat{t})$ be the driving flux, and ${\mit\Psi}_0(\hat{t})$ the
+reconnected flux. Let $E_{sb}$ be a (real) dimensionless coupling constant, and $E_{ss}$ the  (real) dimesionless
+tearing stability index.
+
+Let
+\begin{align}
+\bar{\mit\Psi}_b(g) = \int_0^\infty {\mit\Psi}_b(\hat{t})\,{\rm e}^{-g\,\hat{t}}\,d\hat{t},\\[0.5ex]
+\bar{\mit\Psi}_0(g) = \int_0^\infty {\mit\Psi}_0(\hat{t})\,{\rm e}^{-g\,\hat{t}}\,d\hat{t}.
+\end{align}
+In fact, if we assume that ${\mit\Psi}_b(\hat{t})=0$ for $\hat{t}<0$, and
+\begin{equation}
+{\mit\Psi}_b(\hat{t}) = {\mit\Psi}_{b\,0}
+\end{equation}
+for $\hat{t}\geq 0$, then 
+\begin{equation}
+\bar{\mit\Psi}_b(g) = \frac{{\mit\Psi}_{b\,0}}{g}.
+\end{equation}
+
+The Laplace transformed simplified layer equation is
+\begin{equation}\label{e5}
+\frac{d}{dp}\!\left(\frac{p^2}{Q+p^2}\,\frac{d\bar{\phi}}{dp}\right) - Q\,p^2\,\bar{\phi}=0,
+\end{equation}
+where
+\begin{equation}
+Q = g+ {\rm i}\,Q_E.
+\end{equation}
+Here, $Q_E=S^{1/3}\,\omega_E\,\tau_H$, where $\omega_E$ is the E-cross-B frequency.
+Equation~(\ref{e5}) must be solved subject to the boundary conditions that $\bar{\phi}(p)\rightarrow 0$ 
+as $p\rightarrow \infty$, and
+\begin{equation}
+\bar{\phi}(p) \rightarrow \frac{\hat{\mit\Delta}_s(g)}{\pi\,p }+ 1 + {\cal O}(p)
+\end{equation}
+as $p\rightarrow 0$. 
+Furthermore,
+\begin{equation}
+F_s(g) = - \int_0^\infty \frac{p^2}{Q+p^2}\,\frac{d\bar{\phi}}{dp}\,dp.
+\end{equation}
+Finally,
+\begin{equation}
+\bar{\mit\Psi}_0(g) = \frac{E_{sb}\,F_s(g)\,\bar{\mit\Psi}_b(g)}{g\,[S^{1/3}\,\hat{\mit\Delta}_s(g)-E_{ss}]}.
+\end{equation}
+
+It can be demonstrated that
+\begin{equation}
+\frac{p^2}{Q+p^2}\,\frac{d\bar{\phi}}{dp}= \frac{Q^{1/4}\,\Gamma(a)\,\Gamma(5/2)}{3\pi}\,{\rm e}^{-z/2}\,U(a,-1/2,z),
+\end{equation}
+where $U(a,b,z)$ is a confluent hypergeometric function, and
+\begin{align}
+z &= Q^{1/2}\,p^2,\\[0.5ex]
+a&= \frac{1}{4}\,(Q^{3/2}-1).
+\end{align}
+It follows that
+\begin{equation}
+F_s(g) =-\frac{\Gamma(a)\,\Gamma(5/2)}{6\pi}\int_0^\infty z^{-1/2}\,{\rm e}^{-z/2}\,U(a,-1/2,z)\,dz.
+\end{equation}
+However, according to G\&R 7.621.6,
+\begin{equation}
+\int_0^\infty z^{-1/2}\,{\rm e}^{-z/2}\,U(a,-1/2,z)\,dc = \frac{\Gamma(1/2)\,\Gamma(2)}{\Gamma(a+2)}\,F(1/2, 2;a+2;1/2),
+\end{equation}
+where $F(a,b;c;z)$ is a hypergeometric function. Thus,
+\begin{equation}
+F_s(g) = - \frac{\Gamma(a)\,\Gamma(5/2)}{6\pi} \,\frac{\Gamma(1/2)\,\Gamma(2)}{\Gamma(a+2)}\,F(1/2, 2;a+2;1/2).
+\end{equation}
+Finally,
+\begin{equation}
+\hat{\mit\Delta}_s(g) = -\frac{\pi}{8}\,\frac{\Gamma(a)\,Q^{5/4}}{\Gamma(a+3/2)}.
+\end{equation}
+
+\subsection{Non-Constant-$\psi$ Limit}
+Suppose that $|Q|\gg 1$, which implies that $|a|\gg 1$.  It follows that
+\begin{align}
+F_s(g) &\simeq - \frac{\Gamma(a)\,\Gamma(5/2)}{6\pi}\,\frac{\Gamma(1/2)\,\Gamma(2)}{\Gamma(a+2)}\simeq-\frac{\Gamma(5/2)\,\Gamma(1/2)\,\Gamma(2)}{6\pi\,a^2}\nonumber\\[0.5ex]
+&= -\frac{1}{8\,a^2}\simeq -\frac{2}{Q^{3}}.
+\end{align}
+Furthermore,
+\begin{equation}
+\hat{\mit\Delta}_s\simeq -\frac{\pi\,Q^{5/4}}{8\,a^{3/2}}\simeq-\frac{\pi}{Q}.
+\end{equation}
+Let us assume that $S^{1/3}/|Q|\gg 1\sim{\cal O}( E_{ss})$, because if $S^{1/3}/|Q|\ll 1$ then the layer width is not much smaller
+than the plasma minor radius, which invalidates asymptotic matching. 
+Thus, we find that
+\begin{equation}
+\bar{\mit\Psi}_0(g) = \frac{2}{\pi}\,\frac{E_{sb}\,{\mit\Psi}_{b\,0}}{S^{1/3}}\,\frac{1}{g\,(g+{\rm i}\,Q_E)^2}.
+\end{equation}
+If we assume that $|Q_E|\sim{\cal O}(1)$ then 
+we get
+\begin{equation}
+\bar{\mit\Psi}_0(g) \simeq \frac{2}{\pi}\,\frac{E_{sb}\,{\mit\Psi}_{b\,0}}{S^{1/3}}\,\frac{1}{g^3},
+\end{equation}
+for
+\begin{equation}
+1\ll g\ll S^{1/3}.
+\end{equation}
+It follows that
+\begin{equation}
+{\mit\Psi}_0(\hat{t}) = \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{\pi\,S^{1/3}} \,\hat{t}^{\,2},
+\end{equation}
+which is valid for
+\begin{equation}
+S^{-1/3} \ll \hat{t}\ll 1.
+\end{equation}
+More generally, if $|Q_E|\gg 1$ then (Erd\'{e}lyi 5.2.8)
+\begin{equation}
+{\mit\Psi}_0(\hat{t}) = \frac{2\,E_{sb}\,{\mit\Psi}_{b\,0}}{\pi\,S^{1/3}} \,\frac{(1+{\rm i}\,Q_E\,\hat{t})\,{\rm e}^{-{\rm i}\,Q_E\,\hat{t}}-1}{Q_E^{\,2}}.
+\end{equation}
+
+\subsection{Constant-$\psi$ Limit}
+Suppose that $|Q|\ll 1$, which implies that $a=-1/4$. If we assume that $|Q_E|\ll 1$ then this limit corresponds to $|g|\gg 1$, or 
+\begin{equation}
+1\ll \hat{t}.
+\end{equation}
+It follows that 
+\begin{equation}
+F_s(g) = - \frac{\Gamma(-1/4)\,\Gamma(5/2)}{6\pi} \,\frac{\Gamma(1/2)\,\Gamma(2)}{\Gamma(7/4)}\,F(1/2, 2;7/4;1/2)=1.
+\end{equation}
+Moreover,
+\begin{equation}
+\hat{\mit\Delta}_s = -\frac{\pi}{8}\,\frac{\Gamma(-1/4)}{\Gamma(5/4)}\,Q^{5/4}= \frac{2\pi\,\Gamma(3/4)}{\Gamma(1/4)}\,Q^{5/4}.
+\end{equation}
+It follows that
+\begin{equation}
+\bar{\mit\Psi}_0(g) = \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{g\left[c\,S^{1/3}\,(g+{\rm i}\,Q_E)^{5/4}-E_{ss}\right]},
+\end{equation}
+where
+\begin{equation}
+c =  \frac{2\pi\,\Gamma(3/4)}{\Gamma(1/4)}.
+\end{equation}
+Now,
+\begin{equation}
+{\mit\Psi}_0(\hat{t}) = \frac{1}{2\pi\,{\rm i}}\int_{-{\rm i}\,\infty}^{{\rm i}\,\infty}
+\frac{E_{sb}\,{\mit\Psi}_{b\,0}\,{\rm e}^{\,g\,\hat{t}}}{g\left[c\,S^{1/3}\,(g+{\rm i}\,Q_E)^{5/4}-E_{ss}\right]}\,dg,
+\end{equation}
+which can be written
+\begin{equation}\label{e23}
+{\mit\Psi}_0(\hat{t}) = \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}\,\frac{1}{2\pi\,{\rm i}}\int_{-{\rm i}\,\infty}^{{\rm i}\,\infty}
+\frac{{\rm e}^{\,(p-{\rm i}\,Q_E)\,\hat{t}}}{(p-{\rm i}\,Q_E)\,(\lambda\,p^{5/4}+1)}\,dp,
+\end{equation}
+where
+\begin{equation}
+\lambda = \frac{c\,S^{1/3}}{(-E_{ss})}.
+\end{equation}
+Here, we are assuming that $E_{ss}<0$. 
+The contour integral in Eq.~(23) can be decomposed into elements from the three poles (at $p_E = {\rm i}\,Q_E$, and 
+$p_\pm= {\rm e}^{\pm\,{\rm i}\,4\pi/5}\,\lambda^{-4/5}$), respectively) plus a contribution from a branch cut along the $p=
+{\rm e}^{\,{\rm i}\,\pi}\,u$ axis (where $u$ is real and positive).
+The contribution from the pole at $p=p_E$ is
+\begin{equation}
+\frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}\,\frac{1}{1+{\rm e}^{\,{\rm i}\,5\pi/8}\,\lambda\,Q_E^{5/4}}.
+\end{equation}
+The contribution from the pole at $p=p_+$ is 
+\begin{equation}
+-\frac{4}{5}\,\frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}\,\frac{p_+\,{\rm e}^{\,(p_+-{\rm i\,Q}_E)\,\hat{t}}}{p_+-{\rm i}\,Q_E}.
+\end{equation}
+Likewise, the contribution from the pole at $p=p_-$ is 
+\begin{equation}
+-\frac{4}{5}\,\frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}\,\frac{p_-\,{\rm e}^{\,(p_--{\rm i\,Q}_E)\,\hat{t}}}{p_--{\rm i}\,Q_E}.
+\end{equation}
+Finally, the contribution from the branch cut is 
+\begin{equation}
+\frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}\,\frac{\lambda}{\sqrt{2}\,\pi}\int_0^\infty
+\frac{{\rm e}^{-(u+{\rm i}\,Q_E)\,\hat{t}}\,u^{5/4}\,du}{(u+{\rm i}\,Q_E)\left(1-\sqrt{2}\,\lambda\,u^{5/4}+\lambda^2\,u^{5/2}\right)}.
+\end{equation}
+Thus,
+\begin{align}
+{\mit\Psi}_0(\hat{t}) &=\frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}\left\{\frac{1}{1+{\rm e}^{\,{\rm i}\,5\pi/8}\,\lambda\,Q_E^{5/4}}
+-\frac{4}{5}\left[\frac{p_+\,{\rm e}^{\,(p_+-{\rm i\,Q}_E)\,\hat{t}}}{p_+-{\rm i}\,Q_E}+\frac{p_-\,{\rm e}^{\,(p_--{\rm i\,Q}_E)\,\hat{t}}}{p_--{\rm i}\,Q_E}\right]\right.\nonumber\\[0.5ex]
+&\left.\phantom{=}+\frac{\lambda}{\sqrt{2}\,\pi}\int_0^\infty
+\frac{{\rm e}^{-(u+{\rm i}\,Q_E)\,\hat{t}}\,u^{5/4}\,du}{(u+{\rm i}\,Q_E)\left(1-\sqrt{2}\,\lambda\,u^{5/4}+\lambda^2\,u^{5/2}\right)}\right\}.
+\end{align}
+
+\subsection{Numerical Calculation}
+Let 
+\begin{equation}
+\frac{E_{sb}\,\bar{\mit\Psi}_{b\,0}}{(-E_{ss})} = 1.
+\end{equation}
+Let 
+\begin{equation}
+\frac{S^{1/3}}{(-E_{ss})} ={\mit\Sigma}.
+\end{equation}
+Thus,
+\begin{equation}
+{\mit\Psi}_0(\hat{t}) = \frac{1}{2\pi}\int_{-\infty}^{\infty}
+\bar{\mit\Psi}_0(g)\,{\rm e}^{\,g\,\hat{t}}\,dx,
+\end{equation}
+where $g=\sigma + {\rm i}\,x$,  $\sigma$ is real and positive, and 
+\begin{equation}
+\bar{\mit\Psi}_0(g)= \frac{F_s(g)}{g\left[{\mit\Sigma}\,\hat{\mit\Delta}_s(g)+ 1\right]}.
+\end{equation}
+Here,
+\begin{equation}
+F_s(g) = -\frac{1}{8}\sum_{n=0,\infty}\frac{(1/2)_n\,(n+1)_1}{(a)_{2+n}\,2^n},
+\end{equation}
+where
+\begin{align}
+a&= \frac{1}{4}\,(Q^{3/2}-1),\\[0.5ex]
+Q &= g+ {\rm i}\,Q_E,\\[0.5ex]
+(z)_n &= \frac{\Gamma(z+n)}{\Gamma(z)}.
+\end{align}
+In fact,
+\begin{align}
+(z)_0 &=1,\\[0.5ex]
+(z)_n &= (z+n-1)\,(z)_{n-1}
+\end{align}
+for $n>0$. 
+Furthermore,
+\begin{equation}
+\hat{\mit\Delta}_s(g) = -\frac{\pi}{8}\,\frac{Q^{5/4}}{a+1/2}\,\frac{\Gamma(a)}{\Gamma(a+1/2)}.
+\end{equation}
+
+\section{Solution of Simplified Layer Equations}
+\subsection{Simplified Layer Equation}
+The simplified  layer equation is
+\begin{equation}\label{layer}
+\frac{d}{dp}\!\left(\frac{p^2}{Q+p^2}\,\frac{d\bar{\phi}}{dp}\right)-Q\,p^2\,\bar{\phi}=0,
+\end{equation}
+which can also be written
+\begin{align}\label{layer1}
+\frac{d^2\bar{\phi}}{dp^2} +\frac{2\,Q}{p\,(Q+p^2)}\,\frac{d\bar{\phi}}{dp} - Q\,(Q+p^2)\,\bar{\phi}=0.
+\end{align}
+The boundary conditions are $\bar{\phi}(p)\rightarrow 0$ as $p\rightarrow \infty$, and
+\begin{equation}
+\bar{\phi}(p) = \frac{\hat{\mit\Delta}_s}{\pi\,p} + 1 + {\cal O}(p)
+\end{equation}
+as $p\rightarrow 0$. 
+
+Let
+\begin{equation}
+\chi(p) = \frac{p^2}{Q+p^2}\,\frac{d\bar{\phi}}{dp}.
+\end{equation}
+It follows that
+\begin{equation}\label{chi}
+\frac{d\chi}{dp}=Q\,p^2\,\bar{\phi}.
+\end{equation}
+It is also easily seen that $\chi(p)$ satisfies
+\begin{equation}
+\frac{d}{dp}\left(\frac{1}{p^2}\,\frac{d\chi}{dp}\right)-\frac{Q\,(Q+p^2)}{p^2}\,\chi=0,
+\end{equation}
+which can also be written
+\begin{equation}\label{layera}
+\frac{d^2\chi}{dp^2}-\frac{2}{p}\,\frac{d\chi}{dp} - Q\,(Q+p^2)\,\chi = 0.
+\end{equation}
+
+\subsection{Small-$p$ Limit}
+Let
+\begin{equation}
+\bar{\phi}(p)= \frac{\hat{\mit\Delta}_s}{\pi\,p} + 1 + a\,p+{\cal O}(p^2).
+\end{equation}
+Substituting into the layer equation, (\ref{layer1}), we get
+\begin{equation}\label{e57}
+\bar{\phi}(p) =  \frac{\hat{\mit\Delta}_s}{\pi\,p} + 1 + \frac{\hat{\mit\Delta}_s}{\pi}\left(\frac{Q^2}{2}-\frac{1}{Q}\right)p + {\cal O}(p^2).
+\end{equation}
+
+Substituting into the alternative layer equation, (\ref{layera}), and also making use of Eqs.~(\ref{chi}) and (\ref{e57}), we obtain
+\begin{equation}\label{chis}
+\chi(p) = -\frac{\hat{{\mit\Delta}}_s}{Q\,\pi} + \frac{\hat{{\mit\Delta}}_s\,Q}{2\pi}\,p^2+\frac{Q}{3}\,p^3+{\cal O}(p^4).
+\end{equation}
+
+\subsection{Large-$p$ Limit}
+Let us write
+\begin{equation}
+\bar{\phi}(p) = A\,\exp\left(-\frac{Q^{1/2}\,p^2}{2}\right)f(p).
+\end{equation}
+At large $p$, the layer equation, (\ref{layer1}), yields
+\begin{equation}
+2\,p\,\frac{df}{dp} +(1+Q^{3/2})\,f = 0.
+\end{equation}
+The solution is 
+\begin{equation}
+f(p) = p^{-\alpha},
+\end{equation}
+where
+\begin{equation}
+\alpha = \frac{1}{2}\,(1+Q^{3/2}).
+\end{equation}
+It follows that
+\begin{align}\label{lphi}
+\bar{\phi}(p)= A\,p^{-\alpha}\,\exp\left(-\frac{Q^{1/2}\,p^2}{2}\right).
+\end{align}
+
+Let us write
+\begin{equation}
+\chi(p) = B\,\exp\left(-\frac{Q^{1/2}\,p^2}{2}\right)g(p).
+\end{equation}
+At large $p$, the alternative layer equation, (\ref{layera}), yields
+\begin{equation}
+2\,p\,\frac{dg}{dp} +(-1+Q^{3/2})\,g = 0.
+\end{equation}
+The solution is
+\begin{equation}
+g(p)= p^{\beta},
+\end{equation}
+where
+\begin{equation}
+\beta = \frac{1}{2}\,(1-Q^{3/2}).
+\end{equation}
+It follows that
+\begin{align}\label{e68}
+\chi(p)= B\,p^{\beta}\,\exp\left(-\frac{Q^{1/2}\,p^2}{2}\right).
+\end{align}
+
+In order to be in the large-$p$ limit, we require
+\begin{align}
+p^2\gg |Q|,\\[0.5ex]
+|Q|^{1/2}\,p^2\gg 1,
+\end{align}
+or
+\begin{equation}
+p\gg |Q|^{1/2}, |Q|^{-1/4},
+\end{equation}
+or
+\begin{equation}
+p \gg \frac{(1+|Q|^{3/2})^{1/2}}{|Q|^{1/4}}.
+\end{equation}
+
+\subsection{Riccati Transformation}
+Let
+\begin{equation}
+W(p) = \frac{p}{\bar{\phi}}\,\frac{d\bar{\phi}}{dp}.
+\end{equation}
+It follows from Eq.~(\ref{e57}) that 
+\begin{equation}
+W(p) = -1 + \frac{\pi\,p}{\hat{\mit\Delta}_s}+{\cal O}(p^2)
+\end{equation} 
+at small $p$. Furthermore, Eq.~(\ref{lphi}) implies that 
+\begin{equation}\label{e63}
+W(p) = -Q^{1/2}\,p^2-\alpha
+\end{equation}
+at large $p$. Substituting into the layer equation, (\ref{layer1}), we deduce that the differential equation that governs $W(p)$ is
+\begin{equation}\label{e72}
+\frac{dW}{dp} = -\frac{1}{p}\left(\frac{Q-p^2}{Q+p^2}\right)W - \frac{W^2}{p} + Q\,(Q+p^2)\,p.
+\end{equation}
+The equation is integrated from large $p$, subject to the boundary condition (\ref{e63}), to small $p$. At small $p$, 
+\begin{equation}\label{e73}
+\hat{\mit\Delta}_s = \frac{\pi}{dW/dp}.
+\end{equation}
+
+Let
+\begin{equation}
+V(p) = \frac{p}{\chi}\,\frac{d\chi}{dp}.
+\end{equation}
+Substituting into the alternative layer equation, (\ref{layera}), we deduce that the differential equation that governs $V(p)$ is 
+\begin{equation}\label{e75}
+\frac{dV}{dp} = \frac{3\,V}{p} - \frac{V^2}{p}+Q\,(Q+p^2)\,p.
+\end{equation}
+According to Eq.~(\ref{chis}), 
+\begin{equation}
+V(p)= -Q^2\,p^2 - \frac{Q^2\,\pi}{\hat{\mit\Delta}_s}\,p^3
+\end{equation}
+at small $p$. Moreover, according to Eq.~(\ref{e68}), 
+\begin{equation}\label{e77}
+V(p) = -Q^{1/2}\,p^2+\beta
+\end{equation}
+at large $p$. 
+
+\subsection{Plan of Action}
+\subsubsection{Stage 1}
+Launch solutions of Eqs.~(\ref{e72}) and (\ref{e75}) from large $p$, subject to the respective boundary conditions (\ref{e63}) and (\ref{e77}), and
+integrate to small $p$. Save $V(p)$ onto a grid. Deduce the value of $\hat{\mit\Delta}_s(g)$ from Eq.~(\ref{e73}). 
+
+\subsubsection{Stage 2}
+Launch the following system of equations from small $p$, 
+\begin{align}
+\frac{dU}{dp} &= \frac{V(p)}{p},\\[0.5ex]
+\frac{dF}{dp} &= \exp[U(p)],
+\end{align}
+subject to the boundary conditions
+\begin{align}
+U(0) &=0,\\[0.5ex]
+F(0) &= 0,
+\end{align}
+and integrate to large $p$. Here, $V(p)$ is interpolated from the grid. 
+Then
+\begin{equation}
+F_s(g) = \frac{\hat{\mit\Delta}_s}{Q\,\pi}\,F(\infty).
+\end{equation}
+
+\subsection{Stage 3}
+Inverse Laplace transform:
+\begin{equation}
+{\mit\Psi}_0(\hat{t}) = \frac{1}{2\pi}\int_{-\infty}^{\infty}
+\frac{F_s(\sigma+{\rm i}\,\omega)\,{\rm e}^{\,(\sigma+{\rm i}\,\omega)\,\hat{t}}}{(\sigma+{\rm i}\,\omega)\left[{\mit\Sigma}\,\hat{\mit\Delta}_s(\sigma+{\rm i}\,\omega)+1\right]}\,d\omega.
+\end{equation}
+
+\section{Solution of Full Layer Equation}
+\subsection{Full Layer Equation}
+The full layer equation is 
+\begin{equation}\label{e83}
+\frac{d}{dp}\!\left(A\,\frac{dY_e}{dp}\right) - \frac{B}{C}\,p^2\,Y_e,
+\end{equation}
+where $Y_e(p)$ is the Fourier-Laplace transformed electron stream-function, and
+\begin{align}
+A &= \frac{p^2}{g + {\rm i}\,(Q_E+Q_e) + p^2},\\[0.5ex]
+B&=  (g+{\rm i}\,Q_E)[g+{\rm i}\,(Q_E+Q_i)] + [g+{\rm i}\,(Q_E+Q_i)]\,(P_\varphi+P_\perp)\,p^2+ P_\varphi\,P_\perp\,p^4,\\[0.5ex]
+C&= g + {\rm i}\,(Q_E+Q_e) +\{P_\perp + [g+{\rm i}\,(Q_E+Q_i)\,D^2]\}\,p^2 + \iota_e^{-1}\,P_\varphi\,D^2\,p^4.
+\end{align}
+The boundary conditions are $Y_e\rightarrow 0$ as $p\rightarrow\infty$, and
+\begin{equation}
+Y_e(p) = \frac{\hat{\mit\Delta}_s}{\pi\,p}+ 1+{\cal O}(p)
+\end{equation}
+as $p\rightarrow 0$. We also need
+\begin{equation}
+F_s(g) = -\int_0^\infty A\,\frac{dY_e}{dp}\,dp.
+\end{equation}
+
+Let 
+\begin{equation}\label{e89}
+\chi(p) = A\,\frac{dY_e}{dp}.
+\end{equation}
+It follows from Eqs.~(\ref{e83}) and the previous two equations that
+\begin{equation}\label{e90}
+A\,\frac{d}{dp}\!\left(\frac{C}{B\,p^2}\,\frac{d\chi}{dp}\right) - \chi = 0,
+\end{equation}
+as well as
+\begin{equation}
+F_s= -\int_0^\infty \chi(p)\,dp.
+\end{equation}
+
+\subsection{Small-$p$ Limit}
+Let
+\begin{equation}
+Y_e(p) = \frac{\hat{\mit\Delta}_s}{\pi\,p} + 1+ a\,p+b\,p^2+{\cal O}(p^3).
+\end{equation}
+Substituting into the generalized layer equation, (\ref{e83}), we get
+\begin{align}
+Y_e(p) &= \frac{\hat{\mit\Delta}_s}{\pi\,p} + 1
+\nonumber\\[0.5ex]
+&\phantom{=}+\frac{\hat{\mit\Delta}_s}{\pi}\left\{
+\frac{1}{2}\,(g+{\rm i}\,Q_E)\,[g+{\rm i}\,(Q_E+Q_i)]-\frac{1}{g+{\rm i}\,(Q_E+Q_e)}\right\}p\nonumber\\[0.5ex]
+&\phantom{=} + \frac{1}{6}\,(g+{\rm i}\,Q_E)\,[g+{\rm i}\,(Q_E+Q_i)]\,p^2+{\cal O}(p^{\,3}).
+\end{align}
+Substituting into Eq.~(\ref{e89}), we get
+\begin{align}
+\chi(p) &= -\frac{\hat{\mit\Delta}_s}{[g+{\rm i}\,(Q_E+Q_e)]\,\pi}+\frac{{\mit\Delta}_s}{2\pi}\,\frac{(g+{\rm i}\,Q_E)\,[g+{\rm i}\,(Q_E+Q_i)]}{g+{\rm i}\,(Q_E+Q_e)}\,p^2\nonumber\\[0.5ex]
+&\phantom{=} + \frac{1}{3} \frac{(g+{\rm i}\,Q_E)\,[g+{\rm i}\,(Q_E+Q_i)]}{g+{\rm i}\,(Q_E+Q_e)}\,p^3+{\cal O}(p^4).
+\end{align}
+
+\subsection{Large-$p$ Limit}
+In the large-$p$ limit, if we write
+\begin{align}
+A &=1+\frac{\alpha}{p^2},\\[0.5ex]
+\frac{B}{C} &= \beta+\frac{\gamma}{p^2},
+\end{align}
+and
+look for a solution of Eq.~(\ref{e89}) of the form
+\begin{equation}
+Y_e(p) \propto p^x\,\exp\left(\frac{-\sqrt{\beta}\,p^2}{2}\right)
+\end{equation}
+then we find that
+\begin{equation}
+x = \frac{\gamma -\sqrt{\beta}\,(1-\sqrt{\beta}\,\alpha)}{2\sqrt{\beta}}.
+\end{equation}
+It is easily seen that
+\begin{align}
+\alpha &= -[g+ {\rm i}\,(Q_E+Q_e)],\\[0.5ex]
+\beta&= \frac{\iota_e\,P_\perp}{D^2},\\[0.5ex]
+\gamma&= \frac{\iota_e\,P_\perp}{D^2}\left(1+ [g+{\rm i}\,(Q_E+Q_i)]\,\frac{P_\varphi+P_\perp}{P_\varphi\,P_\perp}\right.\nonumber\\[0.5ex]
+&\phantom{=}\left.-\{P_\perp+[g+{\rm i}\,(Q_E+Q_i)\,D^2]\}\,\frac{\iota_e}{P_\varphi\,D^2}\right).
+\end{align}
+
+Finally, it is easily seen from Eq.~(\ref{e89}) that
+\begin{equation}
+\chi(p) \propto p^{x+1}\,\exp\left(\frac{-\sqrt{\beta}\,p^2}{2}\right)
+\end{equation}
+at large-$p$. 
+
+In order to be in the large-$p$ limit, we require
+\begin{align}
+p&\gg |g+{\rm i}\,(Q_E+Q_e)|^{1/2},\\[0.5ex]
+p&\gg\left|\frac{[g+{\rm i}\,(Q_E+Q_i)]\,(P_\varphi + P_\perp)}{P_\varphi\,P_\perp}\right|^{1/2},\\[0.5ex]
+p&\gg \left|\frac{(g+{\rm i}\,Q_E)\,[g+{\rm i}\,(Q_E+Q_i)]}{P_\varphi\,P_\perp}\right|^{1/4},\\[0.5ex]
+p&\gg \left|\frac{(P_\perp+[g+{\rm i}\,(Q_E+Q_i)\,D^2])}{\iota_e^{-1}\,P_\varphi\,D^2}\right|^{1/2},\\[0.5ex]
+p&\gg \left|\frac{g+{\rm i}\,(Q_E+Q_e)}{\iota_e^{-1}\,P_\varphi\,D^2}\right|^{1/4},\\[0.5ex]
+p&\gg \left(\frac{\iota_e^{-1}\,P_\varphi\,D^2}{P_\varphi\,P_\perp}\right)^{1/4}.
+\end{align} 
+
+\subsection{Ricatti Transformation}
+Let 
+\begin{equation}
+W= \frac{p}{Y_e}\,\frac{dY_e}{dp}.
+\end{equation}
+The generalized layer equation, (\ref{e83}), transforms to give
+\begin{equation}\label{e72a}
+\frac{dW}{dp} =- \frac{A'}{p}\,W -\frac{W^{\,2}}{p} + \frac{B}{A\,C}\,p^3,
+\end{equation}
+where
+\begin{equation}
+A' = \frac{g+{\rm i}\,(Q_E+Q_e)-p^2}{g+{\rm i}\,(Q_E+Q_e)+p^2}.
+\end{equation}
+This equation must be solved subject to the boundary condition that
+\begin{equation}\label{e63a}
+W(p) = x-\sqrt{\beta}\,p^2
+\end{equation}
+at large-$p$, and
+\begin{equation}\label{e73a}
+W (p)=-1+\frac{\pi\,p}{\hat{\mit\Delta}_s}
+\end{equation}
+at small-$p$. 
+
+Let 
+\begin{equation}
+V= \frac{p}{\chi}\,\frac{d\chi}{dp}.
+\end{equation}
+Equation~(\ref{e90}) transforms to give 
+\begin{equation}\label{e75a}
+\frac{dV}{dp} = 2\,p\,(B'-C')\,V + \frac{3\,V}{p} - \frac{V^2}{p} + \frac{B}{A\,C}\,p^3,
+\end{equation}
+where 
+\begin{align}
+B' &= \frac{ [g+{\rm i}\,(Q_E+Q_i)]\,(P_\varphi+P_\perp)+ 2\,P_\varphi\,P_\perp\,p^2}{ (g+{\rm i}\,Q_E)[g+{\rm i}\,(Q_E+Q_i)] + [g+{\rm i}\,(Q_E+Q_i)]\,(P_\varphi+P_\perp)\,p^2+ P_\varphi\,P_\perp\,p^4},\\[0.5ex]
+C'&=\frac{\{P_\perp + [g+{\rm i}\,(Q_E+Q_i)\,D^2\}+ 2\,\iota_e^{-1}\,P_\varphi\,D^2\,p^2}{g + {\rm i}\,(Q_E+Q_e) +\{P_\perp + [g+{\rm i}\,(Q_E+Q_i)\,D^2\}\,p^2 + \iota_e^{-1}\,P_\varphi\,D^2\,p^4}.
+\end{align}
+This equation must be solved subject to the boundary condition that
+\begin{equation}\label{e77a}
+V(p) = 1+x-\sqrt{\beta}\,p^2
+\end{equation}
+at large-$p$. 
+
+\subsection{Revised Plan of Action}
+\subsubsection{Stage 1}
+Launch solutions of Eqs.~(\ref{e72a}) and (\ref{e75a}) from large $p$, subject to the respective boundary conditions (\ref{e63a}) and (\ref{e77a}), and
+integrate to small $p$. Save $V(p)$ onto a grid. Deduce the value of $\hat{\mit\Delta}_s(g)$ from Eq.~(\ref{e73a}). 
+
+\subsubsection{Stage 2}
+Launch the following system of equations from small $p$, 
+\begin{align}
+\frac{dU}{dp} &= \frac{V(p)}{p},\\[0.5ex]
+\frac{dF}{dp} &=\exp[U(p)],
+\end{align}
+subject to the boundary conditions
+\begin{align}
+U(0) &=0,\\[0.5ex]
+F(0) &= 0,
+\end{align}
+and integrate to large $p$. Here, $V(p)$ is interpolated from the grid. 
+Then
+\begin{equation}
+F_s(g) = \frac{\hat{\mit\Delta}_s}{[g+{\rm i}\,(Q_E+Q_e)]\,\pi}\, F(\infty).
+\end{equation}
+
+\subsection{Stage 3}
+Inverse Laplace transform:
+\begin{equation}
+{\mit\Psi}_0(\hat{t}) = \frac{1}{2\pi}\int_{-\infty}^{\infty}
+\frac{F_s(\sigma+{\rm i}\,\omega)\,{\rm e}^{\,(\sigma+{\rm i}\,\omega)\,\hat{t}}}{(\sigma+{\rm i}\,\omega)\left[{\mit\Sigma}\,\hat{\mit\Delta}_s(\sigma+{\rm i}\,\omega)+1\right]}\,d\omega.
+\end{equation}
+
+\end{document}
