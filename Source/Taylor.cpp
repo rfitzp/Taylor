@@ -20,7 +20,7 @@ Taylor::Taylor ()
   printf ("\nsigma = %10.3e omax = %10.3e No = %4d\n",
 	  sigma, omax, No);
   printf ("\npstart = %10.3e pend = %10.3e Np = %4d\n",
-	  pstart, pend, No);
+	  pstart, pend, Np);
    
   // ...................................
   // Set adaptive integration parameters
