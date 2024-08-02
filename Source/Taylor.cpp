@@ -5,16 +5,52 @@
 // ###########
 Taylor::Taylor ()
 {
-  // ........................................
-  // Read calculation data from namelist file
-  // ........................................
-  NameListRead (&QE, &Qe, &Qi, &D, &Pphi, &Pperp, &le, &Sigma,
-  		&tmax, &Nt,
-		&sigma, &omax, &No,
-		&pstart, &pend, &Np);
+  // .................................................
+  // Make sure that directories Inputs and Plots exist
+  // .................................................
+  if (!CreateDirectory ("Inputs"))
+    {
+      exit (1);
+    }
+  if (!CreateDirectory ("Plots"))
+    {
+      exit (1);
+    }
+  
+  // .............................................
+  // Read calculation data from JSON namelist file
+  // .............................................
 
-  printf ("\nQE = %10.3e Qe = %10.3e Qi = %10.3e D = %10.3e Pphi = %10.4e Pperp = %10.3e le = %10.3e Sigma = %10.3e\n",
-	  QE, Qe, Qi, D, Pphi, Pperp, le, Sigma);
+  string JSONFilename = "Inputs/Namelist.json";
+  json   JSONData     = ReadJSONFile (JSONFilename);
+
+  // Set physics parameters
+  QE    = JSONData["QE"]   .get<double> ();
+  Qe    = JSONData["Qe"]   .get<double> ();
+  Qi    = JSONData["Qi"]   .get<double> ();
+  D     = JSONData["D"]    .get<double> ();
+  Pphi  = JSONData["Pphi"] .get<double> ();
+  Pperp = JSONData["Pperp"].get<double> ();
+  Sigma = JSONData["Sigma"].get<double> ();
+  iotae = Qe / (Qe - Qi);
+ 
+  // Set simulation parameters
+  tmax = JSONData["tmax"].get<double> ();
+  Nt   = JSONData["Nt"]  .get<int>    ();
+  
+  // Set Bromwich contour parameters
+  sigma = JSONData["sigma"].get<double>();
+  omax  = JSONData["omax"] .get<double>();
+  No    = JSONData["No"]   .get<int>   ();
+  
+  // Set p grid parameters
+  pstart = JSONData["pstart"].get<double>();
+  pend   = JSONData["pend"]  .get<double>();
+  Np     = JSONData["Np"]    .get<int>   ();
+
+  // Display parameters
+  printf ("\nQE = %10.3e Qe = %10.3e Qi = %10.3e D = %10.3e Pphi = %10.4e Pperp = %10.3e iotae = %10.3e Sigma = %10.3e\n",
+	  QE, Qe, Qi, D, Pphi, Pperp, iotae, Sigma);
   printf ("\ntmax = %10.3e Nt = %4d\n",
 	  tmax, Nt);
   printf ("\nsigma = %10.3e omax = %10.3e No = %4d\n",
@@ -228,7 +264,7 @@ tuple <complex<double>, complex<double>> Taylor::GetLayerParameters ()
   complex<double> gPD = Pperp + (g + Im * (QE + Qi) * D*D);
   double          PS  = Pphi + Pperp;
   double          PP  = Pphi * Pperp;
-  double          PD  = Pphi * D*D /le;
+  double          PD  = Pphi * D*D /iotae;
   
   vector<double> Pmax(6);
   Pmax[0] = pow (abs (gEe),          0.5);
@@ -380,7 +416,7 @@ void Taylor::Rhs (double x, vector<complex<double>>& y, vector<complex<double>>&
       complex<double> gPD = Pperp + (g + Im * (QE + Qi) * D*D);
       double          PS  = Pphi + Pperp;
       double          PP  = Pphi * Pperp;
-      double          PD  = Pphi * D*D /le;
+      double          PD  = Pphi * D*D /iotae;
       
       complex<double> A = p2 /(gEe + p2); 
       complex<double> B = gE * gEi + gEi * PS * p2 + PP * p4;
@@ -599,6 +635,36 @@ void Taylor::RK4RK5Fixed (double& x, vector<complex<double>>& y, vector<complex<
   x += h;
 }
 
+// ###################################
+// Function to read JSON namelist file
+// ###################################
+json Taylor::ReadJSONFile (const string& filename)
+{
+  ifstream JSONFile (filename);
+  json     JSONData;
+
+  if (JSONFile.is_open ())
+    {
+      try
+	{
+	  JSONFile >> JSONData;
+        }
+      catch (json::parse_error& e)
+	{
+	  cerr << "Unable to parse JSON namelist file: " << e.what() << std::endl;
+	  exit (1);
+        }
+      JSONFile.close ();
+    }
+  else
+    {
+      cerr << "Unable to open JSON namelist file: " << filename << std::endl;
+      exit (1);
+    }
+
+  return JSONData;
+}
+
 // #####################################
 // Function to open new file for writing
 // #####################################
@@ -611,4 +677,31 @@ FILE* Taylor::OpenFilew (const char* filename)
       exit (1);
     }
   return file;
+}
+
+// ###############################################################
+// Function to check that directory exists and create it otherwise
+// ###############################################################
+bool Taylor::CreateDirectory (const char* path)
+{
+  struct stat st = {0};
+  
+  if (stat (path, &st) == -1)
+    {
+#ifdef _WIN32
+      if (mkdir (path) != 0)
+	{
+	  printf ("Error creating directory: %s\n", path);
+	  return false;
+	}
+#else
+      if (mkdir (path, 0700) != 0)
+	{
+	  printf ("Error creating directory: %s\n", path);
+	  return false;
+	}
+#endif
+    }
+  
+  return true;
 }

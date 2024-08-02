@@ -16,16 +16,21 @@
 #include <vector>
 #include <tuple>
 #include <iostream>
+#include <fstream>
 
+#ifdef _WIN32
+ #include <direct.h>
+ #define mkdir _mkdir
+#else
+ #include <sys/stat.h>
+ #include <sys/types.h>
+#endif
+
+#include <nlohmann/json.hpp>
 #include <gsl/gsl_spline.h>
 
 using namespace std;
-
-// Namelist reading function
-extern "C" void NameListRead (double* QE, double* Qe, double* Qi, double* D, double* Pphi, double* Pperp, double* le, double* Sigma,
-			      double* tmax, int* Nt,
-			      double* sigma, double* omax, int* No,
-			      double* pstart, double* pend, int* Np);
+using json = nlohmann::json;
 
 // ############
 // Class header
@@ -43,7 +48,7 @@ private:
   double D;     // Normalized ion sound radius (read from namelist)
   double Pphi;  // Normalized momentum diffusivity (read from namelist)
   double Pperp; // Normalized energy diffusivity (read from namelist)
-  double le;    // Ratio of electron diamagnetic frequency to total diamagnetic frequency (read from namelist)
+  double iotae; // Ratio of electron diamagnetic frequency to total diamagnetic frequency 
   double Sigma; // S^1/3 /(-E_ss), where S is Lundquist number, and E_ss is tearing stability index (read from namelist)
 
   // .....................
@@ -123,6 +128,10 @@ private:
   // Fixed step length RK4/RK5 integration routine
   void RK4RK5Fixed (double& x, vector<complex<double>>& y, vector<complex<double>>& err, double h);
 
+  // Read JSON namelist file
+  json ReadJSONFile (const string& filename);
   // Open new file for writing
   FILE* OpenFilew (const char* filename);
+  // Check that directory exists and create it otherwise
+  bool CreateDirectory (const char* path);
 };
