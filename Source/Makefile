@@ -7,10 +7,10 @@ F_INCLUDE  = -I/opt/local/include
 C_COMPILER = clang++ -O3 -std=c++17
 C_FLAGS    = -w 
 C_INCLUDE  = -I/opt/local/include 
-C_LIBS     = -L/opt/local/lib -L/opt/local/lib/libgcc -lgfortran.5 -lgsl -lgslcblas
+C_LIBS     = -L/opt/local/lib -L/opt/local/lib/libgcc -lgsl -lgslcblas
 
-F_OBJECT = NameListRead.o 
-F_SOURCE = NameListRead.f90
+F_OBJECT = 
+F_SOURCE = 
 
 C_HEADER = Taylor.h
 C_OBJECT = main.o Taylor.o
