@@ -21,6 +21,12 @@
 
 using namespace std;
 
+// Namelist reading function
+extern "C" void NameListRead (double* QE, double* Qe, double* Qi, double* D, double* Pphi, double* Pperp, double* le, double* Sigma,
+			      double* tmax, int* Nt,
+			      double* sigma, double* omax, int* No,
+			      double* pstart, double* pend, int* Np);
+
 // ############
 // Class header
 // ############
@@ -31,28 +37,28 @@ private:
   // ..................
   // Physics parameters
   // ..................
-  double QE;    // Normalized ExB frequency
-  double Qe;    // Normalized electron diamagnetic frequency
-  double Qi;    // Normalized ion diamagnetic frequency
-  double D;     // Normalized ion sound radius
-  double Pphi;  // Normalized momentum diffusivity
-  double Pperp; // Normalized energy diffusivity
-  double le;    // Ratio of electron diamagnetic frequency to total diamagnetic frequency
-  double Sigma; // S^1/3 /(-E_ss), where S is Lundquist number, and E_ss is tearing stability index
+  double QE;    // Normalized ExB frequency (read from namelist)
+  double Qe;    // Normalized electron diamagnetic frequency (read from namelist)
+  double Qi;    // Normalized ion diamagnetic frequency (read from namelist)
+  double D;     // Normalized ion sound radius (read from namelist)
+  double Pphi;  // Normalized momentum diffusivity (read from namelist)
+  double Pperp; // Normalized energy diffusivity (read from namelist)
+  double le;    // Ratio of electron diamagnetic frequency to total diamagnetic frequency (read from namelist)
+  double Sigma; // S^1/3 /(-E_ss), where S is Lundquist number, and E_ss is tearing stability index (read from namelist)
 
   // .....................
   // Simulation parameters
   // .....................
-  double tmax;  // Maximum value of normalized time
-  int    Nt;    // Number of equally spaced times between 0 and tmax at which to evaluate reconnected magnetic flux
+  double tmax;  // Maximum value of normalized time (read from namelist)
+  int    Nt;    // Number of equally spaced times between 0 and tmax at which to evaluate reconnected magnetic flux (read from namelist)
   
   // ....................................
   // Inverse Laplace transform parameters
   // ....................................
-  double            sigma;    // Real part of g on Bromwich contour
+  double            sigma;    // Real part of g on Bromwich contour (read from namelist)
+  double            omax;     // Bromwich contour runs from omega = -omax to omega = +omax (read from namelist)
+  int               No;       // Number of grid points on Bromwich contour (read from namelist)
   double            omega;    // Imaginary part of g on Bromwich contour
-  double            omax;     // Bromwich contour runs from omega = -omax to omega = +omax
-  int               No;       // Number of grid points on Bromwich contour
   vector<double>    gg_i;     // Imaginary part of g on Bromwich contour
   vector<double>    Psib_r;   // Real part of Laplace transformed reconnected flux on Bromwich contour
   vector<double>    Psib_i;   // Imaginary part of Laplace transformed reconnected flux on Bromwich contour
@@ -64,9 +70,9 @@ private:
   // .........................
   // Layer equation parameters
   // .........................
-  double            pstart;    // Layer equations integrated from p = pstart to p = pend
-  double            pend;      // Layer equations integrated from p = pstart to p = pend
-  int               Np;        // Number of points on p grid
+  double            pstart;    // Layer equations integrated from p = pstart to p = pend (read from namelist)
+  double            pend;      // Layer equations integrated from p = pstart to p = pend (read from namelist)
+  int               Np;        // Number of points on p grid (read from namelist)
   gsl_spline*       spline_Vr; // Spline interpolator for V_r
   gsl_spline*       spline_Vi; // Spline interpolator for V_i
   gsl_interp_accel* acc_Vr;    // Accelerator for V_r
