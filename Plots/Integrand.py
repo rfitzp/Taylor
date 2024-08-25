@@ -28,7 +28,7 @@ plt.subplot (2, 1, 1)
 plt.xlim (p[0], p[-1])
 
 plt.axhline (0.,    color = 'black', linewidth = 2, linestyle = 'dotted')
-plt.axvline (0.,   color = 'black',  linewidth = 2, linestyle = 'dotted')
+plt.axvline (0.,    color = 'black', linewidth = 2, linestyle = 'dotted')
 plt.plot    (p, Wr, color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"$Re(\overline{\Psi}_0)$")
 plt.plot    (p, Wi, color = 'red',   linewidth = 2, linestyle = 'solid', label = r"$Im(\overline{\Psi}_0)$")
 
@@ -40,7 +40,7 @@ plt.subplot (2, 1, 2)
 plt.xlim (-3., 3.)
 
 plt.axhline (0.,    color = 'black', linewidth = 2, linestyle = 'dotted')
-plt.axvline (0.,   color = 'black',  linewidth = 2, linestyle = 'dotted')
+plt.axvline (0.,    color = 'black', linewidth = 2, linestyle = 'dotted')
 plt.plot    (p, Wr, color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"$Re(\overline{\Psi}_0)$")
 plt.plot    (p, Wi, color = 'red',   linewidth = 2, linestyle = 'solid', label = r"$Im(\overline{\Psi}_0)$")
 

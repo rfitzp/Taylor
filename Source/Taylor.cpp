@@ -46,25 +46,30 @@ Taylor::Taylor ()
   // Set p grid parameters
   pstart = JSONData["pstart"].get<double>();
   pend   = JSONData["pend"]  .get<double>();
+  P3max  = JSONData["P3max"] .get<double>();
   Np     = JSONData["Np"]    .get<int>   ();
+
+  // Set adaptive integration parameters
+  acc  = JSONData["acc"] .get<double>();
+  h0   = JSONData["h0"]  .get<double>();
+  hmax = JSONData["hmax"].get<double>();
 
   // Display parameters
   printf ("\nQE = %10.3e Qe = %10.3e Qi = %10.3e D = %10.3e Pphi = %10.4e Pperp = %10.3e iotae = %10.3e Sigma = %10.3e\n",
 	  QE, Qe, Qi, D, Pphi, Pperp, iotae, Sigma);
-  printf ("\ntmax = %10.3e Nt = %4d\n",
-	  tmax, Nt);
-  printf ("\nsigma = %10.3e omax = %10.3e No = %4d\n",
+  printf ("\npstart = %10.3e pend = %10.3e P3max = %10.3e Np =  %4d\n",
+	  pstart, pend, P3max, Np);
+  printf ("sigma  = %10.3e omax = %10.3e No    =  %4d\n",
 	  sigma, omax, No);
-  printf ("\npstart = %10.3e pend = %10.3e Np = %4d\n",
-	  pstart, pend, Np);
+  printf ("tmax   = %10.3e Nt   =  %4d\n",
+	  tmax, Nt);
+  printf ("acc    = %10.3e h0   = %10.3e hmax  = %10.3e\n",
+	  acc, h0, hmax);
    
   // ...................................
   // Set adaptive integration parameters
   // ...................................
-  acc     = 1.e-12;
-  h0      = 1.e-2;
   hmin    = 1.e-10;
-  hmax    = 1.e-1;
   maxrept = 50;
   flag    = 2;
 
@@ -156,6 +161,7 @@ void Taylor::Solve ()
       
       fprintf (file, "%e %e %e %e %e %e %e %e\n",
 	       sigma, omega, real(Delta), imag(Delta), real(Fs), imag(Fs), real(Pbar), imag(Pbar));
+      fflush (file);
     }
   fclose(file);
 
@@ -217,7 +223,8 @@ void Taylor::Solve ()
 	}
       while (om + h < omax);
       RK4RK5Fixed (om, y, err, omax - om);
-      
+
+      if (i%100 == 0)
       printf ("t = %10.3e  Psi0 = (%10.3e, %10.3e)  h = (%9.2e, %9.2e)  err = %9.2e  rept = %2d  steps = %9.2e\n",
 	      t, real(y[0]), imag(y[0]), hmin_, hmax_, err_max, reptmax_, double(stepcount));
       fprintf (file, "%e %e %e\n",
@@ -273,7 +280,17 @@ tuple <complex<double>, complex<double>> Taylor::GetLayerParameters ()
   Pmax[3] = pow (abs (gPD /PD),      0.5);
   Pmax[4] = pow (abs (gEe /PD),      0.25);
   Pmax[5] = pow (abs (PD /PP),       0.25);
-  
+
+  if (Pmax[3] < P3max)
+    lowD = 0;
+  else
+    {
+      lowD = 1;
+      Pmax[3] = pow (abs (gEe /Pperp), 0.5);
+      Pmax[4] = pow (Pphi, -1./6.);
+      Pmax[5] = 1.;
+    }
+ 
   double PMAX = 1.;
   for (int i = 0; i < 6; i++)
     if (Pmax[i] > PMAX)
@@ -301,14 +318,28 @@ tuple <complex<double>, complex<double>> Taylor::GetLayerParameters ()
   rhs_chooser = 0;
   
   alpha = - gEe;
-  beta  = PP /PD;
-  gamma = beta * (1. + gEi * PS /PP - gPD /PD);
-  X     = (gamma - sqrt (beta) * (1. - sqrt (beta) * alpha)) / (2. * sqrt (beta));
-  
-  p       = pstart * PMAX;
-  h       = - h0;
-  y[0]    = X - sqrt (beta) * p*p;
-  y[1]    = 1. + X - sqrt (beta) * p*p;
+  p     = pstart * PMAX;
+  h     = - h0;
+
+  if (!lowD)
+    {
+      beta  = PP /PD;
+      gamma = beta * (1. + gEi * PS /PP - gPD /PD);
+      X     = (gamma - sqrt (beta) * (1. - sqrt (beta) * alpha)) / (2. * sqrt (beta));
+      
+      y[0] = X - sqrt (beta) * p*p;
+      y[1] = 1. + X - sqrt (beta) * p*p;
+    }
+  else
+    {
+      beta  = Pphi;
+      gamma = - Im * (Qe - Qi) * Pphi /Pperp + gEi;
+      X     = (alpha * beta - gamma) /2./ sqrt(beta);
+
+      y[0] = - 1. + X * p - sqrt(beta) * p*p*p;
+      y[1] =   1. + X * p - sqrt(beta) * p*p*p;
+    }
+
   VVr[Np] = y[1].real();
   VVi[Np] = y[1].imag();
   
@@ -324,6 +355,7 @@ tuple <complex<double>, complex<double>> Taylor::GetLayerParameters ()
 
       fprintf (file1, "%11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e\n",
 	       p, y[0].real(), y[0].imag(), y[1].real(), y[1].imag(), log10(-h), log10(t_err));
+      fflush (file1);
       
       VVr[j] = y[1].real();
       VVi[j] = y[1].imag();
@@ -367,6 +399,7 @@ tuple <complex<double>, complex<double>> Taylor::GetLayerParameters ()
       
       fprintf (file2, "%11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e\n",
 	       p, y[0].real(), y[0].imag(), y[1].real(), y[1].imag(), log10(h), log10(t_err));
+      fflush (file2);
     }
   fclose (file2);
   
@@ -408,8 +441,8 @@ void Taylor::Rhs (double x, vector<complex<double>>& y, vector<complex<double>>&
       // ............................................................
       // Right-hand sides for backward integration of layer equations
       // ............................................................
-      complex<double> W = y[0];
-      complex<double> V = y[1];
+      complex<double> W   = y[0];
+      complex<double> V   = y[1];
       complex<double> gE  = g + Im * QE;
       complex<double> gEe = g + Im * (QE + Qe);
       complex<double> gEi = g + Im * (QE + Qi);
@@ -635,9 +668,9 @@ void Taylor::RK4RK5Fixed (double& x, vector<complex<double>>& y, vector<complex<
   x += h;
 }
 
-// ###################################
-// Function to read JSON namelist file
-// ###################################
+// ################################
+// Function to read JSON input file
+// ################################
 json Taylor::ReadJSONFile (const string& filename)
 {
   ifstream JSONFile (filename);

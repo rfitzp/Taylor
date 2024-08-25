@@ -42,27 +42,33 @@ private:
   // ..................
   // Physics parameters
   // ..................
-  double QE;    // Normalized ExB frequency (read from namelist)
-  double Qe;    // Normalized electron diamagnetic frequency (read from namelist)
-  double Qi;    // Normalized ion diamagnetic frequency (read from namelist)
-  double D;     // Normalized ion sound radius (read from namelist)
-  double Pphi;  // Normalized momentum diffusivity (read from namelist)
-  double Pperp; // Normalized energy diffusivity (read from namelist)
+  double QE;    // Normalized ExB frequency (read from JSON file)
+  double Qe;    // Normalized electron diamagnetic frequency (read from JSON file)
+  double Qi;    // Normalized ion diamagnetic frequency (read from JSON file)
+  double D;     // Normalized ion sound radius (read from JSON file)
+  double Pphi;  // Normalized momentum diffusivity (read from JSON file)
+  double Pperp; // Normalized energy diffusivity (read from JSON file)
   double iotae; // Ratio of electron diamagnetic frequency to total diamagnetic frequency 
-  double Sigma; // S^1/3 /(-E_ss), where S is Lundquist number, and E_ss is tearing stability index (read from namelist)
+  double Sigma; // S^1/3 /(-E_ss), where S is Lundquist number, and E_ss is tearing stability index (read from JSON file)
 
-  // .....................
-  // Simulation parameters
-  // .....................
-  double tmax;  // Maximum value of normalized time (read from namelist)
-  int    Nt;    // Number of equally spaced times between 0 and tmax at which to evaluate reconnected magnetic flux (read from namelist)
+  // .........................
+  // Layer equation parameters
+  // .........................
+  double            pstart;    // Layer equations integrated from p = pstart to p = pend (read from JSON file)
+  double            pend;      // Layer equations integrated from p = pstart to p = pend (read from JSON file)
+  double            P3max;     // Value of Pmax[3] above which switch to low-D layer equations made (read from JSON file)
+  int               Np;        // Number of points on p grid (read from JSON file)
+  gsl_spline*       spline_Vr; // Spline interpolator for V_r
+  gsl_spline*       spline_Vi; // Spline interpolator for V_i
+  gsl_interp_accel* acc_Vr;    // Accelerator for V_r
+  gsl_interp_accel* acc_Vi;    // Accelerator for V_i
   
   // ....................................
   // Inverse Laplace transform parameters
   // ....................................
-  double            sigma;    // Real part of g on Bromwich contour (read from namelist)
-  double            omax;     // Bromwich contour runs from omega = -omax to omega = +omax (read from namelist)
-  int               No;       // Number of grid points on Bromwich contour (read from namelist)
+  double            sigma;    // Real part of g on Bromwich contour (read from JSON file)
+  double            omax;     // Bromwich contour runs from omega = -omax to omega = +omax (read from JSON file)
+  int               No;       // Number of grid points on Bromwich contour (read from JSON file)
   double            omega;    // Imaginary part of g on Bromwich contour
   vector<double>    gg_i;     // Imaginary part of g on Bromwich contour
   vector<double>    Psib_r;   // Real part of Laplace transformed reconnected flux on Bromwich contour
@@ -71,18 +77,13 @@ private:
   gsl_spline*       spline_i; // Spline interpolator for Psib_i
   gsl_interp_accel* acc_r;    // Accelerator for Psib_r
   gsl_interp_accel* acc_i;    // Accelerator for Psib_i
-    
-  // .........................
-  // Layer equation parameters
-  // .........................
-  double            pstart;    // Layer equations integrated from p = pstart to p = pend (read from namelist)
-  double            pend;      // Layer equations integrated from p = pstart to p = pend (read from namelist)
-  int               Np;        // Number of points on p grid (read from namelist)
-  gsl_spline*       spline_Vr; // Spline interpolator for V_r
-  gsl_spline*       spline_Vi; // Spline interpolator for V_i
-  gsl_interp_accel* acc_Vr;    // Accelerator for V_r
-  gsl_interp_accel* acc_Vi;    // Accelerator for V_i
 
+  // .....................
+  // Simulation parameters
+  // .....................
+  double tmax;  // Maximum value of normalized time (read from JSON file)
+  int    Nt;    // Number of equally spaced times between 0 and tmax at which to evaluate reconnected magnetic flux (read from JSON file)
+    
   // ................
   // RK4/5 parameters
   // ................
@@ -93,16 +94,16 @@ private:
   // ...............................
   // Adaptive integration parameters
   // ...............................
-  double acc;         // Integration accuracy
-  double h0;          // Initial step size
+  double acc;         // Integration accuracy (read from JSON file)
+  double h0;          // Initial step size (read from JSON file)
   double hmin;        // Minimum step length
-  double hmax;        // Maximum step length
+  double hmax;        // Maximum step length (read from JSON file)
   int    maxrept;     // Maximum step of recursion
   int    flag;        // Error calculation flag
   int    rhs_chooser; // Right-hand side choice switch
   
   // Misc
-  int    count;
+  int    count, lowD;
   double t;           // Normalized time
   complex<double> Im; // Square-root of -1: Im = complex<double> (0., 1.)
   
@@ -128,7 +129,7 @@ private:
   // Fixed step length RK4/RK5 integration routine
   void RK4RK5Fixed (double& x, vector<complex<double>>& y, vector<complex<double>>& err, double h);
 
-  // Read JSON namelist file
+  // Read JSON input file
   json ReadJSONFile (const string& filename);
   // Open new file for writing
   FILE* OpenFilew (const char* filename);

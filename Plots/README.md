@@ -6,3 +6,4 @@
   - Integrand.py - Plots inverse Laplace transform of reconnected magnetic flux on Bromwich contour
   - Taylor.py    - Plots reconnected magnetic flux versus normalized time
   - Diag.py      - Shows minimum step-length and number of steps taken in inverse Laplace transform
+  
