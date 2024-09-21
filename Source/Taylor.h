@@ -101,11 +101,13 @@ private:
   int    maxrept;     // Maximum step of recursion
   int    flag;        // Error calculation flag
   int    rhs_chooser; // Right-hand side choice switch
-  
+
+  // ....
   // Misc
-  int    count, lowD;
-  double t;           // Normalized time
-  complex<double> Im; // Square-root of -1: Im = complex<double> (0., 1.)
+  // ....
+  int             count, lowD;
+  double          t;           // Normalized time
+  complex<double> Im;          // Square-root of -1: Im = complex<double> (0., 1.)
   
 public:
 
