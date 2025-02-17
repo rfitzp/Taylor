@@ -195,7 +195,7 @@ void Taylor::Solve ()
   vector<complex<double>> y(1);
   vector<complex<double>> err(1);
   rhs_chooser = 2;
-  
+
   for (int i = 0; i <= Nt; i++)
     {
       t = double (i) * tmax /double (Nt);
