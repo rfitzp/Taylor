@@ -1,0 +1,356 @@
+\documentclass[titlepage=false,12pt]{article}
+\usepackage {amsmath}
+\usepackage{amssymb}
+\pdfoutput = 1 
+\usepackage {graphicx}
+\newcommand {\bxi}{\mbox{\boldmath$\xi$}}
+\allowdisplaybreaks
+
+\begin{document}
+
+\title{Laplace Transform Theory}
+\date{}
+\maketitle
+
+\section{Introduction}
+Let
+\begin{equation}
+{\mit\Psi}_b(t) = {\mit\Psi}_{b\,0}\left\{\begin{array}{ccc} 0&~~~~~&t<0\\[0.5ex]
+1&&t>0\end{array}\right..
+\end{equation}
+It follows that
+\begin{equation}
+\bar{\mit\Psi}_b(g) = {\mit\Psi}_{b\,0} \int_0^\infty {\rm e}^{-g\,t}\,dt = \frac{{\mit\Psi}_{b\,0}}{g}.
+\end{equation}
+
+Now, the Laplace transformed reconnected magnetic flux is
+\begin{equation}
+\bar{\mit\Psi}_0(g)=\frac{E_{sb}\,F_s(\hat{g})\,\bar{\mit\Psi}_b(g)}{S^{1/3}\,\hat{\mit\Delta}_s(\hat{g})-E_{ss}}
+= E_{sb}\,{\mit\Psi}_{b\,0}\,\frac{1}{g}\,\frac{F_s(\hat{g})}{S^{1/3}\,\hat{\mit\Delta}_s(\hat{g})-E_{ss}},
+\end{equation}
+where $\hat{g} = S^{\,1/3}\,g\,\tau_H$. The reconnected flux is
+\begin{equation}
+{\mit\Psi}_0(t) = \frac{1}{2\pi\,{\rm i}}\int_c\bar{\mit\Psi}_0(g)\,{\rm e}^{\,g\,t}\,dg,
+\end{equation}
+where $c$ is the Bromwich contour. Thus, we obtain
+\begin{equation}
+{\mit\Psi}_0(\hat{t}) = \frac{1}{2\pi\,{\rm i}}\int_c\bar{\mit\Psi}_0(\hat{g})\,{\rm e}^{\,\hat{g}\,\hat{t}}\,d\hat{g},
+\end{equation}
+where $\hat{t}=t/(S^{\,1/3}\,\tau_H)$ and
+\begin{equation}
+\bar{\mit\Psi}_0(\hat{g})
+= E_{sb}\,{\mit\Psi}_{b\,0}\,\frac{1}{\hat{g}}\,\frac{F_s(\hat{g})}{S^{1/3}\,\hat{\mit\Delta}_s(\hat{g})-E_{ss}}.
+\end{equation}
+
+\section{Non-Constant-$\psi$ Regimes}
+We shall assume that $|S^{\,1/3}\,\hat{\mit\Delta}_s|\gg |E_{ss}|$ in the non-constant-$\psi$ regimes, so
+\begin{equation}
+\bar{\mit\Psi}_0(\hat{g})
+\simeq \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{S^{\,1/3}}\,\frac{1}{\hat{g}}\,\frac{F_s(\hat{g})}{\hat{\mit\Delta}_s(\hat{g})}.
+\end{equation}
+
+\subsection{Inertial Regime}
+In the inertial regime,
+\begin{align}
+\hat{\mit\Delta}_s(\hat{g}) &= -\frac{\pi}{(\hat{g}+{\rm i}\,Q_E)^{1/2}\,[\hat{g} + {\rm i}\,(Q_E+Q_i)]^{1/2}},\\[0.5ex]
+F_s(\hat{g}) &= - \frac{2}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]\,(\hat{g}+{\rm i}\,Q_E)\,[\hat{g} + {\rm i}\,(Q_E+Q_i)]},\\[0.5ex]
+\frac{F_s(\hat{g})}{\hat{\mit\Delta}_s(\hat{g})}&=\frac{2}{\pi}\, \frac{2}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]\,(\hat{g}+{\rm i}\,Q_E)^{1/2}\,[\hat{g} + {\rm i}\,(Q_E+Q_i)]^{1/2}}
+\end{align}
+Thus,
+\begin{align}
+\bar{\mit\Psi}_0(\hat{g}) &= \frac{2}{\pi}\,\frac{E_{sb}\,\bar{\mit\Psi}_{b\,0}}{S^{\,1/3}\,{\rm i}\,(Q_E+Q_e)}\left[
+\frac{1}{\hat{g}}- \frac{1}{\hat{g}+ {\rm i}\,(Q_E+Q_e)}\right]\nonumber\\[0.5ex]
+&\phantom{=}\times
+\frac{1}{(\hat{g}+{\rm i}\,Q_E)^{1/2}\,[\hat{g} + {\rm i}\,(Q_E+Q_i)]^{1/2}}.
+\end{align}
+
+Now, if
+\begin{equation}
+\bar{\mit\Psi}_0(\hat{g}) = \frac{1}{\hat{g} + a}\,\bar{H}(\hat{g})
+\end{equation}
+then (ERD:\footnote{Erd\'{e}lyi, et al.\ {\em Tables of Integral Transforms}, vol.~I.}
+ 4.1.22)\begin{equation}
+{\mit\Psi}_0(\hat{t}) = \int_0^{\hat{t}}{\rm e}^{\,a\,(\hat{t}'-\hat{t})}\,H(\hat{t}')\,d\hat{t}'.
+\end{equation}
+In this case,
+\begin{align}
+\bar{H}(\hat{g}) &= \frac{1}{(\hat{g}+{\rm i}\,Q_E)^{1/2}\,[\hat{g} +{\rm i}\,(Q_E+Q_i)]^{1/2}}\\[0.5ex]
+&=\frac{1}{(\hat{g}^{\,2}  + \alpha\,\hat{g} + \beta)^{1/2}},
+\end{align}
+where
+\begin{align}
+\alpha &= {\rm i}\,(2\,Q_E+Q_i),\\[0.5ex]
+\beta&= - Q_E\,(Q_E+Q_i).
+\end{align}
+Note that
+\begin{equation}
+\beta- \frac{1}{4}\,\alpha^2 = -Q_E\,(Q_E+Q_i) +\frac{1}{4}\,(2\,Q_E+Q_i)^2 = \frac{Q_i^{\,2}}{4}.
+\end{equation}
+However (ERD: 5.3.34), 
+\begin{align}
+H(\hat{t}) &= {\rm e}^{-\alpha\,\hat{t}/2}\,J_0[(\beta-\alpha^2/4)^{1/2}\,\hat{t}]\\[0.5ex]
+&= {\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t}}\,J_0\left(\frac{|Q_i|}{2}\,\hat{t}\right).
+\end{align}
+Thus,
+\begin{align}
+{\mit\Psi}_0(\hat{t}) &= \frac{2}{\pi}\,\frac{E_{sb}\,{\mit\Psi}_{b\,0}}{S^{\,1/3}\,{\rm i}\,(Q_E+Q_e)}
+\int_0^{\hat{t}}\left[1-{\rm e}^{\,{\rm i}\,(Q_E+Q_e)\,(\hat{t}'-\hat{t})}\right]\nonumber\\[0.5ex]&\phantom{=}\times 
+{\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t}'}\,J_0\left(\frac{|Q_i|}{2}\,\hat{t}'\right)d\hat{t}'.
+\end{align}
+
+At small $\hat{t}$,
+\begin{equation}
+{\mit\Psi}_0(\hat{t})\simeq \frac{2}{\pi}\, \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{S^{\,1/3}}\,\frac{\hat{t}^{\,2}}{2}.
+\end{equation}
+
+At large $\hat{t}$,
+\begin{align}
+{\mit\Psi}_0(\hat{t}) &\simeq \frac{2}{\pi}\,\frac{E_{sb}\,{\mit\Psi}_{b\,0}}{S^{\,1/3}\,{\rm i}\,(Q_E+Q_e)}
+\int_0^{\infty}\left[1-{\rm e}^{\,{\rm i}\,(Q_E+Q_e)\,(\hat{t}'-\hat{t})}\right]\nonumber\\[0.5ex]&\phantom{=}\times 
+{\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t}'}\,J_0\left(\frac{|Q_i|}{2}\,\hat{t}'\right)d\hat{t}'.
+\end{align}
+But (GR:\footnote{I.S.~Gradshteyn and I.M.~Ryzhik, {\em Table of Integrals, Series, and Products}, Corrected and Enlarged Edition} 6.621.4)
+\begin{equation}
+\int_0^\infty {\rm e}^{-\alpha\,x}\,J_0(\beta\,x)\,dx =\frac{1}{\sqrt{\alpha^2+\beta^2}},
+\end{equation}
+so
+\begin{equation}
+{\mit\Psi}_{b\,0}(\hat{t})\simeq -\frac{2}{\pi}\,\frac{E_{sb}\,{\mit\Psi}_{b\,0}}{S^{\,1/3}\,(Q_E+Q_i)}\left[
+\frac{1}{\sqrt{Q_E\,(Q_E+Q_i)}}- \frac{{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}}{\sqrt{Q_e\,(Q_e-Q_i)}}\right].
+\end{equation}
+
+\subsection{Viscous-Inertial Regime}
+In the Viscous-Inertial regime, 
+\begin{align}
+\hat{\mit\Delta}_s(\hat{g})& = -\frac{\pi}{2}\,\frac{\Gamma(1/4)}{\Gamma(3/4)}\,\frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{1/4}\,P_\varphi^{\,1/4}},\\[0.5ex]
+F_s(\hat{g})&=-\frac{\pi^{1/2}}{2}\,\frac{\Gamma(1/4)}{\Gamma(3/4)}\,\frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{3/2}\,P_\varphi^{\,1/2}},\\[0.5ex]
+\frac{F_s(\hat{g})}{\hat{\mit\Delta}_s(\hat{g})}&= \frac{1}{\pi^{1/2}}\,\frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{5/4}\,P_\varphi^{\,1/4}}.
+\end{align}
+Thus,
+\begin{align}
+\bar{\mit\Psi}_0(\hat{g}) &= \frac{1}{\pi^{1/2}}\,\frac{E_{sb}\,\bar{\mit\Psi}_{b\,0}}{S^{\,1/3}\,P_\varphi^{\,1/4}}
+\,\frac{1}{\hat{g}}\,\frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{5/4}}.
+\end{align}
+
+In this case,
+\begin{equation}
+\bar{H}(\hat{g}) = \frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{5/4}},
+\end{equation}
+so (ERD: 5.4.1)
+\begin{equation}
+H(\hat{t}) = \frac{1}{\Gamma(5/4)}\,\hat{t}^{\,1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}.
+\end{equation}
+Hence,
+\begin{equation}
+{\mit\Psi}_0(\hat{t}) =\frac{1}{\pi^{1/2}\,\Gamma(5/4)}\, \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{S^{\,1/3}\,P_\varphi^{\,1/4}}\int_0^{\hat{t}}
+\hat{t}'^{\,1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
+\end{equation}
+
+At small $\hat{t}$,
+\begin{equation}
+{\mit\Psi}_0(\hat{t}) \simeq \frac{1}{\pi^{1/2}\,\Gamma(5/4)}\,\frac{E_{sb}\,{\mit\Psi}_{b\,0}}{S^{\,1/3}\,P_\varphi^{\,1/4}}\,\frac{\hat{t}^{\,5/4}}{5/4}.
+\end{equation}
+
+At large $\hat{t}$, 
+\begin{equation}
+{\mit\Psi}_0(\hat{t}) \simeq\frac{1}{\pi^{1/2}\,\Gamma(5/4)}\,  \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{S^{\,1/3}\,P_\varphi^{\,1/4}}\int_0^\infty
+\hat{t}'^{\,1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
+\end{equation}
+But (GR: 3.381.5), 
+\begin{equation}
+\int_0^\infty x^{\nu-1}\,{\rm e}^{-{\rm i}\,q\,x}\,dx = \frac{\Gamma(\nu)}{({\rm i}\,q)^{\nu}},
+\end{equation}
+so 
+\begin{equation}
+{\mit\Psi}_0(\hat{t}) \simeq \frac{1}{\pi^{1/2}}\,  \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{S^{\,1/3}\,P_\varphi^{\,1/4}}\,\frac{1}{[{\rm i}\,(Q_E+Q_e)]^{5/4}}.
+\end{equation}
+
+\subsection{Diffusive-lnertial Regime}
+In the Diffusive-Inertial regime, 
+\begin{align}
+\hat{\mit\Delta}_s(\hat{g})& = -\frac{\pi\,D}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{1/2}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}},\\[0.5ex]
+F_s(\hat{g})&=-\frac{2\,D^{\,2}}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{2}\,\iota_e\,P_\perp},\\[0.5ex]
+\frac{F_s(\hat{g})}{\hat{\mit\Delta}_s(\hat{g})}&=\frac{2}{\pi}\, \frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{3/2}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}\,D^{-1}}.
+\end{align}
+Thus,
+\begin{align}
+\bar{\mit\Psi}_0(\hat{g}) &= \frac{2}{\pi}\,\frac{E_{sb}\,\bar{\mit\Psi}_{b\,0}}{S^{\,1/3}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}\,D^{-1}}
+\,\frac{1}{\hat{g}}\,\frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{3/2}}.
+\end{align}
+
+In this case,
+\begin{equation}
+\bar{H}(\hat{g}) = \frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{3/2}},
+\end{equation}
+so (ERD: 5.4.1)
+\begin{equation}
+H(\hat{t}) = \frac{1}{\Gamma(3/2)}\,\hat{t}^{\,1/2}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}.
+\end{equation}
+Hence,
+\begin{equation}
+{\mit\Psi}_0(\hat{t}) =\frac{2}{\pi\,\Gamma(3/2)}\, \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{S^{\,1/3}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}\,D^{-1}}\int_0^{\hat{t}}
+\hat{t}'^{\,1/2}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
+\end{equation}
+
+At small $\hat{t}$,
+\begin{equation}
+{\mit\Psi}_0(\hat{t}) \simeq \frac{2}{\pi\,\Gamma(3/2)}\, \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{S^{\,1/3}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}\,D^{-1}}\,\frac{\hat{t}^{\,3/2}}{3/2}.
+\end{equation}
+
+At large $\hat{t}$, 
+\begin{equation}
+{\mit\Psi}_0(\hat{t}) =\frac{2}{\pi\,\Gamma(3/2)}\, \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{S^{\,1/3}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}\,D^{-1}}\int_0^{\infty}
+\hat{t}'^{\,1/2}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
+\end{equation}
+But (GR: 3.381.5), 
+\begin{equation}
+\int_0^\infty x^{\nu-1}\,{\rm e}^{-{\rm i}\,q\,x}\,dx = \frac{\Gamma(\nu)}{({\rm i}\,q)^{\nu}},
+\end{equation}
+so 
+\begin{equation}
+{\mit\Psi}_0(\hat{t}) \simeq \frac{2}{\pi}\,  \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{S^{\,1/3}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}\,D^{-1}}\,\frac{1}{[{\rm i}\,(Q_E+Q_e)]^{3/2}}.
+\end{equation}
+
+\section{Constant-$\psi$ Regimes}
+We shall not assume that $|S^{\,1/3}\,\hat{\mit\Delta}_s|\gg |E_{ss}|$ in the constant-$\psi$ regimes,  which are characterized by $F_s(\hat{g})=1$, so
+\begin{equation}
+\bar{\mit\Psi}_0(\hat{g})
+\simeq E_{sb}\,{\mit\Psi}_{b\,0}\,\frac{1}{\hat{g}}\,\frac{1}{S^{1/3}\,\hat{\mit\Delta}_s(\hat{g})-E_{ss}}.
+\end{equation}
+
+\subsection{Viscous-Resistive Regime}
+In the Viscous-Resistive regime, 
+\begin{equation}
+\hat{\mit\Delta}_s(\hat{g}) = \frac{6^{2/3}\,\pi\,\Gamma(5/6)}{\Gamma(1/6)}\,[\hat{g}+ {\rm i}\,(Q_E+Q_e)]\,P_\varphi^{\,1/6},
+\end{equation}
+so
+\begin{equation}
+\bar{\mit\Psi}_0(\hat{g}) =\frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}\,\frac{1}{\hat{g}}\,\frac{\epsilon}
+{[\hat{g}+ {\rm i}\,(Q_E+Q_e)]+\epsilon},
+\end{equation}
+where
+\begin{equation}
+\epsilon = \frac{\Gamma(1/6)}{6^{3/2}\,\pi\,\Gamma(5/6)}\,\frac{(-E_{ss})}{S^{\,1/3}\,P_\varphi^{\,1/6}}.
+\end{equation}
+Note that $\epsilon>0$. 
+Thus,
+\begin{align}
+\bar{\mit\Psi}_0(\hat{g}) &= \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}
+\,\frac{\epsilon}{{\rm i}\,(Q_E+Q_e)+\epsilon}\left[\frac{1}{\hat{g}} - \frac{1}{\hat{g} + {\rm i}\,(Q_E+Q_e)+\epsilon}\right],
+\end{align}
+giving
+\begin{align}
+{\mit\Psi}_0(\hat{t}) &= \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}
+\,\frac{\epsilon}{{\rm i}\,(Q_E+Q_e)+\epsilon}\left[1 - {\rm e}^{- {\rm i}\,(Q_E+Q_e)\,\hat{t}}\,{\rm e}^{-\epsilon\,\hat{t}}\right].
+\end{align}
+
+At small $\hat{t}$,
+\begin{align}
+{\mit\Psi}_0(\hat{t}) &\simeq \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}\,\epsilon\,\hat{t}.
+\end{align}
+
+At large $\hat{t}$, 
+\begin{align}
+{\mit\Psi}_0(\hat{t}) &\simeq \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}
+\,\frac{\epsilon}{{\rm i}\,(Q_E+Q_e)+\epsilon}.
+\end{align}
+
+\subsection{Diffusive-Resistive Regime}
+In the Diffusive-Resistive regime, 
+\begin{equation}
+\hat{\mit\Delta}_s(\hat{g}) = \frac{2\pi\,\Gamma(3/4)}{\Gamma(1/4)}\,[\hat{g}+ {\rm i}\,(Q_E+Q_e)]\,\iota_e^{\,1/4}\,P_\perp^{\,1/4}\,D^{-1/2},
+\end{equation}
+so
+\begin{equation}
+\bar{\mit\Psi}_0(\hat{g}) =\frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}\,\frac{1}{\hat{g}}\,\frac{\epsilon}
+{[\hat{g}+ {\rm i}\,(Q_E+Q_e)]+\epsilon},
+\end{equation}
+where
+\begin{equation}
+\epsilon = \frac{\Gamma(1/4)}{2\pi\,\Gamma(3/4)}\,\frac{(-E_{ss})}{S^{\,1/3}\,\iota_e^{\,1/4}\,P_\perp^{\,1/4}\,D^{-1/2}}.
+\end{equation}
+Thus,
+\begin{align}
+\bar{\mit\Psi}_0(\hat{g}) &= \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}
+\,\frac{\epsilon}{{\rm i}\,(Q_E+Q_e)+\epsilon}\left[\frac{1}{\hat{g}} - \frac{1}{\hat{g} + {\rm i}\,(Q_E+Q_e)+\epsilon}\right],
+\end{align}
+giving
+\begin{align}
+{\mit\Psi}_0(\hat{t}) &= \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}
+\,\frac{\epsilon}{{\rm i}\,(Q_E+Q_e)+\epsilon}\left[1 - {\rm e}^{- {\rm i}\,(Q_E+Q_e)\,\hat{t}}\,{\rm e}^{-\epsilon\,\hat{t}}\right].
+\end{align}
+
+At small $\hat{t}$,
+\begin{align}
+{\mit\Psi}_0(\hat{t}) &\simeq \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}\,\epsilon\,\hat{t}.
+\end{align}
+
+At large $\hat{t}$, 
+\begin{align}
+{\mit\Psi}_0(\hat{t}) &\simeq \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}
+\,\frac{\epsilon}{{\rm i}\,(Q_E+Q_e)+\epsilon}.
+\end{align}
+
+
+\subsection{Semi-Collisional Regime}
+In the Semi-Collisional regime, 
+\begin{equation}
+\hat{\mit\Delta}_s(\hat{g}) = \pi\,[\hat{g}+ {\rm i}\,(Q_E+Q_e)]\,(\hat{g}+{\rm i} \,Q_E)^{1/2}\,D^{-1},
+\end{equation}
+so 
+\begin{equation}
+\hat{\mit\Psi}_{b\,0}(\hat{g}) = \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}\,\frac{1}{\hat{g}}\,\frac{\epsilon}{[\hat{g}+ {\rm i}\,(Q_E+Q_e)]\,(\hat{g}+{\rm i} \,Q_E)^{1/2}
++\epsilon},
+\end{equation}
+where
+\begin{equation}
+\epsilon= \frac{1}{\pi}\,\frac{(-E_{ss})}{S^{\,1/3}\,D^{-1}}.
+\end{equation}
+If we neglect $\epsilon$ in the denominator then
+\begin{equation} 
+\hat{\mit\Psi}_{b\,0}(\hat{g}) \simeq \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}\,\frac{1}{\hat{g}}\,\frac{\epsilon}{[\hat{g}+ {\rm i}\,(Q_E+Q_e)]\,(\hat{g}+{\rm i} \,Q_E)^{1/2}},
+\end{equation}
+giving
+\begin{equation}
+\hat{\mit\Psi}_{b\,0}(\hat{g}) \simeq \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})\,{\rm i}\,(Q_E+Q_e)}
+\left[\frac{1}{\hat{g}}- \frac{1}{\hat{g}+ {\rm i}\,(Q_E+Q_e)}\right]\frac{\epsilon}{(\hat{g}+{\rm i} \,Q_E)^{1/2}}.
+\end{equation}
+In this case, 
+\begin{equation}
+\bar{H}(\hat{g}) = \frac{1}{(\hat{g}+{\rm i}\,Q_E)^{1/2}},
+\end{equation}
+so (ERD: 5.4.1)
+\begin{equation}
+H(\hat{t}) = \frac{1}{\Gamma(1/2)}\,\hat{t}^{-1/2}\,{\rm e}^{-{\rm i}\,Q_E\,\hat{t}}.
+\end{equation}
+Hence,
+\begin{align}
+{\mit\Psi}_{0}(\hat{t}) &= \frac{E_{sb}\,{\mit\Psi}_{b\,0}\,\epsilon}{(-E_{ss})\,\Gamma(1/2)\,{\rm i}\,(Q_E+Q_e)}\nonumber\\[0.5ex]
+&\phantom{=}\times \int
+_0^{\hat{t}}\left[1-{\rm e}^{\,{\rm i}\,(Q_E+Q_e)\,(\hat{t}'-\hat{t})}\right]
+\hat{t}'^{-1/2}\,{\rm e}^{-{\rm i}\,Q_E\,\hat{t'}}\,d\hat{t}'.
+\end{align}
+
+At small $\hat{t}$, 
+\begin{align}
+{\mit\Psi}_{0}(\hat{t}) &= \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})\,\Gamma(1/2)}\,\frac{\epsilon\,\hat{t}^{\,3/2}}{3/4}.
+\end{align}
+
+At large $\hat{t}$, 
+\begin{align}
+{\mit\Psi}_{0}(\hat{t}) &= \frac{E_{sb}\,{\mit\Psi}_{b\,0}\,\epsilon}{(-E_{ss})\,\Gamma(1/2)\,{\rm i}\,(Q_E+Q_e)}\nonumber\\[0.5ex]
+&\phantom{=}\times \int
+_0^{\infty}\left[1-{\rm e}^{\,{\rm i}\,(Q_E+Q_e)\,(\hat{t}'-\hat{t})}\right]
+\hat{t}'^{-1/2}\,{\rm e}^{-{\rm i}\,Q_E\,\hat{t'}}\,d\hat{t}'.
+\end{align}
+But (GR: 3.381.5), 
+\begin{equation}
+\int_0^\infty x^{\nu-1}\,{\rm e}^{-{\rm i}\,q\,x}\,dx = \frac{\Gamma(\nu)}{({\rm i}\,q)^{\nu}},
+\end{equation}
+It follows that
+\begin{equation}
+{\mit\Psi}_{0}(\hat{t}) = \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}\,\frac{\epsilon}{{\rm i}\,(Q_E+Q_e)}
+\left[\frac{1}{({\rm i}\,Q_E)^{1/2}} - \frac{{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}}{(-{\rm i}\,Q_e)^{1/2}}\right].
+\end{equation}
+
+\end{document}
