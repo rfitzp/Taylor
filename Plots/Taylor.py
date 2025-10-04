@@ -46,5 +46,5 @@ plt.legend(fontsize = "15")
 
 plt.tight_layout ();
 
-#plt.show ()
-plt.savefig("Taylor.pdf")
+plt.show ()
+#plt.savefig("Taylor.pdf")
