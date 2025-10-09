@@ -20,16 +20,17 @@ the hydromagnetic timescale. Here, $S$ and $\tau_H$ are both evaluated at the ra
 resulting reconnected magnetic flux at the rational surface. Let $E_{sb}$ be the (real) dimensionless coupling constant, and $E_{ss}<0$ the  (real) dimensionless
 tearing stability index.
 
-Let
+We can write 
 \begin{align}
 \bar{\mit\Psi}_b(g) = \int_0^\infty {\mit\Psi}_b(\hat{t})\,{\rm e}^{-g\,\hat{t}}\,d\hat{t},\\[0.5ex]
 \bar{\mit\Psi}_0(g) = \int_0^\infty {\mit\Psi}_0(\hat{t})\,{\rm e}^{-g\,\hat{t}}\,d\hat{t}.
 \end{align}
-If we assume that ${\mit\Psi}_b(\hat{t})=0$ for $\hat{t}<0$, and
+If we assume that 
 \begin{equation}
-{\mit\Psi}_b(\hat{t}) = {\mit\Psi}_{b\,0}
+{\mit\Psi}_b(\hat{t}) = {\mit\Psi}_{b\,0}\left\{\begin{array}{ccc}0&~~~~&\hat{t}<0\\[0.5ex]
+1&&\hat{t}\geq 0\end{array}\right.,
 \end{equation}
-for $\hat{t}\geq 0$, then 
+then 
 \begin{equation}\label{e4}
 \bar{\mit\Psi}_b(g) = \frac{{\mit\Psi}_{b\,0}}{g}.
 \end{equation}
@@ -54,7 +55,7 @@ respectively, $D$ is the normalized ion sound radius, and $P_\varphi$ and $P_\pe
 perpendicular momentum and energy transport, respectively.  All quantities are evaluated at the rational surface. 
 Moreover, $\iota_e= Q_e/(Q_e-Q_i)$. 
 
-The boundary conditions that must be satisfied by a solution of Eq.~(\ref{e83})  are
+The boundary conditions that must be satisfied by a physical solution of Eq.~(\ref{e83})  are
 \begin{equation}\label{e9}
 Y_e(p) = \frac{\hat{\mit\Delta}_s}{\pi\,p}+ 1+{\cal O}(p)
 \end{equation}
@@ -122,24 +123,25 @@ A &=1+\frac{\alpha}{p^{\,2}},\\[0.5ex]
 and
 look for a solution of Eq.~(\ref{e83}) of the form
 \begin{equation}
-Y_e(p) \propto p^{\,x}\,\exp\left(\frac{-\beta^{1/2}\,p^{\,2}}{2}\right)
+Y_e(p) \propto p^{\,x}\,\exp\left(\frac{-\beta^{\,1/2}\,p^{\,2}}{2}\right)
 \end{equation}
 then we find that
 \begin{equation}
-x = \frac{\gamma -\beta^{1/2}\,(1-\beta^{1/2}\,\alpha)}{2\,\beta^{1/2}}.
+x = \frac{\gamma -\beta^{\,1/2}\,(1-\beta^{\,1/2}\,\alpha)}{2\,\beta^{\,1/2}}.
 \end{equation}
 It is easily shown that
 \begin{align}
 \alpha &= -[g+ {\rm i}\,(Q_E+Q_e)],\\[0.5ex]
 \beta&= \frac{\iota_e\,P_\perp}{D^{\,2}},\\[0.5ex]
-\gamma&= \frac{\iota_e\,P_\perp}{D^{\,2}}\left(1+ [g+{\rm i}\,(Q_E+Q_i)]\,\frac{P_\varphi+P_\perp}{P_\varphi\,P_\perp}\right.\nonumber\\[0.5ex]
-&\phantom{=}\left.-\{P_\perp+[g+{\rm i}\,(Q_E+Q_i)\,D^{\,2}]\}\,\frac{\iota_e}{P_\varphi\,D^{\,2}}\right).
+\gamma&= \frac{\iota_e\,P_\perp}{D^{\,2}}\left(1+ [g+{\rm i}\,(Q_E+Q_i)]\,\frac{P_\varphi+P_\perp}{P_\varphi\,P_\perp}
+%\right.\nonumber\\[0.5ex]&\phantom{=}\left.
+-\{P_\perp+[g+{\rm i}\,(Q_E+Q_i)\,D^{\,2}]\}\,\frac{\iota_e}{P_\varphi\,D^{\,2}} \right).
 \end{align}
 Finally, it follows from Eq.~(\ref{e89}) that
 \begin{equation}
-\chi(p) \propto p^{\,x+1}\,\exp\left(\frac{-\beta^{1/2}\,p^{\,2}}{2}\right)
+\chi(p) \propto p^{\,x+1}\,\exp\left(\frac{-\beta^{\,1/2}\,p^{\,2}}{2}\right)
 \end{equation}
-at large-$p$. 
+at large $p$. 
 
 In order to be in the large-$p$ limit, we require
 \begin{align}
@@ -169,18 +171,17 @@ where
 \end{align}
 The solution of Eq.~(\ref{e83}) becomes
 \begin{equation}
-Y_e(p)\propto p^{-1}\exp\left(\tilde{x}\,p - \frac{\tilde{\beta}^{1/2}\,p^{\,3}}{3}\right)
+Y_e(p)\propto p^{\,-1}\exp\left(\tilde{x}\,p - \frac{\tilde{\beta}^{\,1/2}\,p^{\,3}}{3}\right)
 \end{equation}
 where
 \begin{equation}
-\tilde{x} = \frac{\tilde{\alpha}\,\tilde{\beta}-\tilde{\gamma}}{2\,\tilde{\beta}^{1/2}}.
+\tilde{x} = \frac{\tilde{\alpha}\,\tilde{\beta}-\tilde{\gamma}}{2\,\tilde{\beta}^{\,1/2}}.
 \end{equation}
-
 Finally, it is easily seen from Eq.~(\ref{e89}) that
 \begin{equation}
-\chi(p) \propto  p\exp\left(\tilde{x}\,p - \frac{\tilde{\beta}^{1/2}\,p^{\,3}}{3}\right),
+\chi(p) \propto  p\exp\left(\tilde{x}\,p - \frac{\tilde{\beta}^{\,1/2}\,p^{\,3}}{3}\right),
 \end{equation}
-at large-$p$. 
+at large $p$. 
 
 In order to be in the large-$p$ limit, we require
 \begin{align}
@@ -207,7 +208,7 @@ A'(p) = \frac{g+{\rm i}\,(Q_E+Q_e)-p^{\,2}}{g+{\rm i}\,(Q_E+Q_e)+p^{\,2}}.
 \end{equation}
 This equation must be solved subject to the boundary conditions that
 \begin{equation}\label{e63a}
-W(p) = x-\beta^{1/2}\,p^{\,2}
+W(p) = x-\beta^{\,1/2}\,p^{\,2}
 \end{equation}
 at large $p$, and
 \begin{equation}\label{e73a}
@@ -216,7 +217,7 @@ W (p)=-1+\frac{\pi\,p}{\hat{\mit\Delta}_s}
 at small $p$. 
 However, in the low-$D$ limit,
 \begin{equation}\label{e63aa}
-W(p) = -1 +\tilde{x}\,p-\tilde{\beta}^{1/2}\,p^{\,3}
+W(p) = -1 +\tilde{x}\,p-\tilde{\beta}^{\,1/2}\,p^{\,3}
 \end{equation}
 at large $p$. 
 
@@ -235,12 +236,12 @@ C'(p)&=\frac{\{P_\perp + [g+{\rm i}\,(Q_E+Q_i)\,D^{\,2}\}+ 2\,\iota_e^{-1}\,P_\v
 \end{align}
 Equation~(\ref{e75a}) must be solved subject to the boundary condition that
 \begin{equation}\label{e77a}
-V(p) = 1+x-\beta^{1/2}\,p^{\,2}
+V(p) = 1+x-\beta^{\,1/2}\,p^{\,2}
 \end{equation}
 at large $p$. 
 However, in the low-$D$ limit,
 \begin{equation}\label{e63ab}
-V(p) = 1 +\tilde{x}\,p-\tilde{\beta}^{1/2}\,p^{\,3}
+V(p) = 1 +\tilde{x}\,p-\tilde{\beta}^{\,1/2}\,p^{\,3}
 \end{equation}
 at large $p$. 
 
@@ -269,10 +270,10 @@ F_s(g) = \frac{\hat{\mit\Delta}_s}{[g+{\rm i}\,(Q_E+Q_e)]\,\pi}\, F(\infty).
 \subsubsection{Stage 3}
 Finally, we perform the inverse Laplace transform:
 \begin{equation}
-{\mit\Psi}_0(\hat{t}) = {\mit\Psi}_{\infty}\int_{-\infty}^{\infty}
-\frac{F_s(\sigma+{\rm i}\,\omega)\,{\rm e}^{\,(\sigma+{\rm i}\,\omega)\,\hat{t}}}{(\sigma+{\rm i}\,\omega)\left[{\mit\Sigma}\,\hat{\mit\Delta}_s(\sigma+{\rm i}\,\omega)+1\right]}\,\frac{d\omega}{2\pi},
+\hat{{\mit\Psi}}_0(\hat{t}) =\frac{1}{2\pi}\int_{-\infty}^{\infty}
+\frac{F_s(\sigma+{\rm i}\,\omega)\,{\rm e}^{\,(\sigma+{\rm i}\,\omega)\,\hat{t}}\,d\omega}{(\sigma+{\rm i}\,\omega)\left[{\mit\Sigma}\,\hat{\mit\Delta}_s(\sigma+{\rm i}\,\omega)+1\right]},
 \end{equation}
-where $g=\sigma+{\rm i}\,\omega$. Here, $\omega$ is real, and $\sigma$ is real and positive. 
+where $g=\sigma+{\rm i}\,\omega$. Here, $\hat{\mit\Psi}_0= {\mit\Psi}_0/{\mit\Psi}_{\infty}$, $\omega$ is real, and $\sigma$ is real and positive. 
 
 \section{Linear Response Regimes}
 \subsection{Introduction}
@@ -284,7 +285,7 @@ Suppose that there are two layers in $p$-space. In the small-$p$ layer, suppose 
 \begin{equation}
 \frac{d}{d p}\!\left[\frac{p^{\,2}}{g+{\rm i}\,(Q_E+Q_e)+p^{\,2}}\,\frac{d Y_e}{d p}\right]\simeq 0
 \end{equation}
-when $p \sim R^{\,1/2}$, where $R= \sqrt{g^2+ Q^2}$. 
+when $p \sim R^{\,1/2}$, where $R= \sqrt{g^{\,2}+ Q^{\,2}}$. 
  Integrating directly, making use of Eq.~(\ref{e9}), we find that
 \begin{equation}\label{e107}
 Y_e(p)\simeq \frac{\hat{\mit\Delta}_s}{\pi}\left[\frac{1}{p} - \frac{p}{g+{\rm i}\,(Q_E+Q_e)}\right] + 1 + {\cal O}(p^{\,2})
@@ -349,8 +350,8 @@ Hence, we deduce that
 \hat{\mit\Delta}_s(g) = \frac{6^{2/3}\,\pi\,\Gamma(5/6)}{\Gamma(1/6)}\, [g+{\rm i}\,(Q_E+Q_e)]\,P_\varphi^{\,1/6}.
 \end{equation}
 This response regime is known as the {\em viscous-resistive regime}\/ because the layer response is dominated by
-  ion perpendicular viscosity and plasma resistivity. The characteristic layer width is $p_\ast \sim P^{-1/6}$, which implies that
-the regime is valid when  $P\gg R^{\,3/2}$, $P\gg D^6$, and $P\ll R^{\,-3}$. 
+  ion perpendicular viscosity and plasma resistivity. The characteristic layer width is $p_\ast \sim P^{\,-1/6}$, which implies that
+the regime is valid when  $P\gg R^{\,3/2}$, $P\gg D^{\,6}$, and $P\ll R^{\,-3}$. 
 
 Suppose that $R\gg P\,p^{\,2}$ and $D^{\,2}\,p^{\,2}\gg 1$. It follows that $k=0$, $j=1$, $\nu=1/2$, and
 \begin{equation}
@@ -370,15 +371,15 @@ G(g) = \frac{\iota_e\,P_\perp}{D^{\,2}}.
 \end{equation}
 Hence, we deduce that 
 \begin{equation}\label{dr}
-\hat{\mit\Delta}_s(g)= \frac{2\pi\,\Gamma(3/4)}{\Gamma(1/4)}\,\frac{[g+{\rm i}\,(Q_E+Q_e)]\,\iota_e^{\,1/4}\,P_\perp^{1/4}}{D^{1/2}}.
+\hat{\mit\Delta}_s(g)= \frac{2\pi\,\Gamma(3/4)}{\Gamma(1/4)}\,\frac{[g+{\rm i}\,(Q_E+Q_e)]\,\iota_e^{\,1/4}\,P_\perp^{1/4}}{D^{\,1/2}}.
 \end{equation}
 This response regime is known as the {\em diffusive-resistive regime}\/ because the layer 
 response is dominated by perpendicular energy diffusivity and plasma resistivity. The characteristic
-layer width is $p_\ast \sim P^{-1/4}\,D^{1/2}$, which implies that the regime is valid when $P\gg R^{\,2}/D^{\,2}$,
-$P\ll D^6$, and $P\ll D^{\,2}/R^{\,2}$. 
+layer width is $p_\ast \sim P^{\,-1/4}\,D^{\,1/2}$, which implies that the regime is valid when $P\gg R^{\,2}/D^{\,2}$,
+$P\ll D^{\,6}$, and $P\ll D^{\,2}/R^{\,2}$. 
 
-\subsection{Non-constant-$\psi$ Limit}\label{sncp}
-Suppose that $p\ll R^{\,1/2}$. In this limit, Eq.~(\ref{e91}) reduces to 
+\subsection{Non-Constant-$\psi$ Limit}\label{sncp}
+Suppose that $p\ll R^{\,1/2}$. In this limit, Eq.~(\ref{e83}) reduces to 
 \begin{equation}
 \frac{d}{d p}\!\left(p^{\,2}\,\frac{d Y_e}{d p}\right)-[g+{\rm i}\,(Q_E+Q_e)]\,\frac{B}{C}\,p^{\,2}\,Y_e=0.
 \end{equation}
@@ -391,25 +392,25 @@ yields
 \begin{equation}
 \frac{d^{\,2} V}{d p^{\,2}} - G\,p^{\,k}\,V = 0.
 \end{equation}
-This equation is identical in form to Equation~(\ref{e330a}), which we have already solved. Indeed, the solution that
+This equation is identical in form to Eq.~(\ref{e330a}), which we have already solved. Indeed, the solution that
 is bounded as $p\rightarrow\infty$ has the small-$p$ expansion (\ref{e332}), where $q=\!\sqrt{G}\,p^{\,j}/j$, 
 $j=(k+2)/2$, and $\nu=1/(k+2)$. Matching to Equation~(\ref{e9}) yields
 \begin{equation}
-\hat{\mit\Delta}_s(g)= -\frac{\pi\,\nu^{\,1-2\,\nu}\,\Gamma(\nu)}{\Gamma(1-\nu)}\,\,G^{-\nu}.
+\hat{\mit\Delta}_s(g)= -\frac{\pi\,\nu^{\,1-2\,\nu}\,\Gamma(\nu)}{\Gamma(1-\nu)}\,\,G^{\,-\nu}.
 \end{equation}
-The layer width in $p$-space again scales as $p_\ast\sim |G|^{-\nu}$. This width must be
+The layer width in $p$-space again scales as $p_\ast\sim |G|^{\,-\nu}$. This width must be
 less that $R^{\,1/2}$.  
 Finally, it follows from Eqs.~(\ref{e6}) and (\ref{e10}) that
 \begin{equation}
-F_s(g) = \frac{2}{g+{\rm i}\,(Q_E+Q_e)}\int_0^\infty V(p,g)\,dp
+F_s(g) = \frac{2}{g+{\rm i}\,(Q_E+Q_e)}\int_0^\infty V(p)\,dp
 \end{equation}
 in a non-constant-$\psi$ response regime. 
 
-\subsection{Non-constant-$\psi$ Linear Resonant Response Regimes}\label{snonc}
+\subsection{Non-Constant-$\psi$ Linear Resonant Response Regimes}\label{snonc}
 Suppose that $R\gg P\,p^{\,2}$ and $D^{\,2}\,p^{\,2} \ll 1$. It follows that $k=0$, $j=1$, $\nu=1/2$, 
 \begin{align}
 G(g) &= (g+{\rm i}\,Q_E)\,[g+{\rm i}\,(Q_E+Q_i)],\\[0.5ex]
-V(p)&= -G^{-1/2}\,\exp(-G^{\,1/2}\,p).
+V(p)&= -G^{\,-1/2}\,\exp(-G^{\,1/2}\,p).
 \end{align}
 Hence, we deduce that
 \begin{align}\label{eia}
@@ -418,7 +419,7 @@ F_s(g)&= - \frac{2}{[g+{\rm i}\,(Q_E+Q_e)]\,(g+{\rm i}\,Q_E)\,[g+{\rm i}\,(Q_E+Q
 \end{align}
 This response regime is known as the {\em inertial regime} because the layer response is dominated by
  ion inertia. The characteristic layer width is $p_\ast \sim R^{\,-1}$,
-which implies that the regime is valid when $P\ll R^3$, $R\gg D$, and $R\gg 1$. 
+which implies that the regime is valid when $P\ll R^{\,3}$, $R\gg D$, and $R\gg 1$. 
 
 Suppose that $R\ll P\,p^{\,2}$ and $D^{\,2}\,p^{\,2} \ll 1$. It follows that $k=2$, $j=2$, $\nu=1/4$, and
 \begin{align}
@@ -443,7 +444,7 @@ which implies that the regime is valid when $P\gg R^{\,3}$, $P\gg D^{\,4}/R$, an
 Suppose, finally, that $R\ll P\,p^{\,2}$ and $D^{\,2}\,p^{\,2}\gg 1$. It follows that $k=0$, $j=1$, $\nu=1/2$, and
 \begin{align}
 G(g) &= \frac{[g+{\rm i}\,(Q_E+Q_e)]\,\iota_e\,P_\perp}{D^{\,2}},\\[0.5ex]
-V(p)&= -G^{-1/2}\,\exp(-G^{\,1/2}\,p).
+V(p)&= -G^{\,-1/2}\,\exp(-G^{\,1/2}\,p).
 \end{align}
 Hence, we deduce that
 \begin{align}\label{edia}
@@ -458,6 +459,560 @@ R^{\,-1/2}\,P^{\,-1/2}\,D$, which implies that the regime is valid when $R\ll D$
 Figures~\ref{f1} and \ref{f2} show the extents of the various different linear resonant response regimes in $R$-$P$ space for the
 cases $D<1$ and $D>1$, respectively. 
 
+\section{Inverse Laplace Transforms}
+\subsection{Introduction}
+We can write
+\begin{equation}
+\hat{\mit\Psi}_0(\hat{t}) =\frac{1}{2\pi\,{\rm i}} \int_C\tilde{\mit\Psi}_0(g)\,{\rm e}^{\,g\,\hat{t}}\,dg, 
+\end{equation}
+where $C$ is the Bromwich contour, and
+\begin{equation}
+\tilde{\mit\Psi}_0(g)= 
+\frac{F_s(g)}{g\left[{\mit\Sigma}\,\hat{\mit\Delta}_s(g)+1\right]}.
+\end{equation}
+
+In the various non-constant-$\psi$ regimes, we shall assume that ${\mit\Sigma}\,|{\mit\Delta}_s(g)|\gg 1$, so
+\begin{equation}
+\tilde{\mit\Psi}_0(g) \simeq \frac{F_s(g)}{{\mit\Sigma}\,g\,\hat{\mit\Delta}_s(g)}.
+\end{equation}
+
+In the various constant-$\psi$ regimes, $F_s\simeq 1$, so
+\begin{equation}
+\tilde{\mit\Psi}_0(g)= 
+\frac{1}{g\left[{\mit\Sigma}\,\hat{\mit\Delta}_s(g)+1\right]}.
+\end{equation}
+
+\subsection{Inertial Regime}
+In the inertial regime,
+\begin{align}
+\hat{\mit\Delta}_s(g) &= -\frac{\pi}{(g+{\rm i}\,Q_E)^{1/2}\,[g + {\rm i}\,(Q_E+Q_i)]^{1/2}},\\[0.5ex]
+F_s(g) &= - \frac{2}{[g+{\rm i}\,(Q_E+Q_e)]\,(g+{\rm i}\,Q_E)\,[g + {\rm i}\,(Q_E+Q_i)]},\\[0.5ex]
+\frac{F_s(g)}{\hat{\mit\Delta}_s(g)}&=\frac{2}{\pi}\, \frac{1}{[g+{\rm i}\,(Q_E+Q_e)]\,(g+{\rm i}\,Q_E)^{1/2}\,[g + {\rm i}\,(Q_E+Q_i)]^{1/2}}
+\end{align}
+Thus,
+\begin{align}
+\tilde{\mit\Psi}_{0\,I}(g) &= \frac{\epsilon_I}{{\rm i}\,(Q_E+Q_e)}\left[
+\frac{1}{g}- \frac{1}{g+ {\rm i}\,(Q_E+Q_e)}\right]
+\frac{1}{(g+{\rm i}\,Q_E)^{1/2}\,[g + {\rm i}\,(Q_E+Q_i)]^{1/2}},
+\end{align}
+where 
+\begin{align}
+\epsilon_I = \frac{2}{\pi\,{\mit\Sigma}}.
+\end{align}
+
+Now, if
+\begin{equation}
+\tilde{\mit\Psi}_0(g) = \frac{\bar{H}(g)}{g + a}
+\end{equation}
+then (ERD:\footnote{Erd\'{e}lyi, et al.\ {\em Tables of Integral Transforms}, vol.~I.}
+ 4.1.20)\begin{equation}
+\hat{\mit\Psi}_0(\hat{t}) = \int_0^{\hat{t}}{\rm e}^{\,a\,(\hat{t}'-\hat{t})}\,H(\hat{t}')\,d\hat{t}',
+\end{equation}
+where $\bar{H}(g)$ is the Laplace transform of $H(\hat{t})$. 
+In this case,
+\begin{align}
+\bar{H}(g) &= \frac{1}{(g+{\rm i}\,Q_E)^{1/2}\,[g +{\rm i}\,(Q_E+Q_i)]^{1/2}}=\frac{1}{(g^{\,2}  + \alpha\,g + \beta)^{1/2}},
+\end{align}
+where
+\begin{align}
+\alpha &= {\rm i}\,(2\,Q_E+Q_i),\\[0.5ex]
+\beta&= - Q_E\,(Q_E+Q_i).
+\end{align}
+Note that
+\begin{equation}
+\beta- \frac{1}{4}\,\alpha^2 = -Q_E\,(Q_E+Q_i) +\frac{1}{4}\,(2\,Q_E+Q_i)^2 = \frac{Q_i^{\,2}}{4}.
+\end{equation}
+However (ERD: 5.3.34), 
+\begin{align}
+H(\hat{t}) &= {\rm e}^{-\alpha\,\hat{t}/2}\,J_0[(\beta-\alpha^2/4)^{1/2}\,\hat{t}]= {\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t}}\,J_0\left(\frac{Q_i}{2}\,\hat{t}\right).
+\end{align}
+Thus,
+\begin{align}
+\hat{\mit\Psi}_{0\,I}(\hat{t}) &=\frac{\epsilon_I}{{\rm i}\,(Q_E+Q_e)}
+\int_0^{\hat{t}}\left[1-{\rm e}^{\,{\rm i}\,(Q_E+Q_e)\,(\hat{t}'-\hat{t})}\right]
+{\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t}'}\,J_0\left(\frac{Q_i}{2}\,\hat{t}'\right)d\hat{t}'.
+\end{align}
+
+At small $\hat{t}$,
+\begin{equation}
+\hat{\mit\Psi}_{0\,I}(\hat{t})\simeq \frac{\epsilon_I\,\hat{t}^{\,2}}{\Gamma(3)}.
+\end{equation}
+
+At large $\hat{t}$,
+\begin{align}
+\hat{\mit\Psi}_{0\,I}(\hat{t}) &\simeq \frac{\epsilon_I}{{\rm i}\,(Q_E+Q_e)}
+\int_0^{\infty}\left[1-{\rm e}^{\,{\rm i}\,(Q_E+Q_e)\,(\hat{t}'-\hat{t})}\right]
+{\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t}'}\,J_0\left(\frac{Q_i}{2}\,\hat{t}'\right)d\hat{t}'.
+\end{align}
+But (GR:\footnote{I.S.~Gradshteyn and I.M.~Ryzhik, {\em Table of Integrals, Series, and Products}, Corrected and Enlarged Edition} 6.621.4)
+\begin{equation}
+\int_0^\infty {\rm e}^{-\alpha\,x}\,J_0(\beta\,x)\,dx =\frac{1}{\sqrt{\alpha^2+\beta^2}},
+\end{equation}
+so
+\begin{equation}
+\hat{\mit\Psi}_{0\,I}(\hat{t})\simeq \frac{\epsilon_I}{{\rm i}\,(Q_E+Q_i)}\left\{
+\frac{1}{({\rm i}\,Q_E)^{1/2}\,[{\rm i}\,(Q_E+Q_i)]^{1/2}}- \frac{{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}}{({\rm i}\,Q_e)^{1/2}\,[{\rm i}\,(Q_e-Q_i)]^{1/2}}\right\}.
+\end{equation}
+
+\subsection{Viscous-Inertial Regime}
+In the viscous-inertial regime, 
+\begin{align}
+\hat{\mit\Delta}_s(g)& = -\frac{\pi}{2}\,\frac{\Gamma(1/4)}{\Gamma(3/4)}\,\frac{1}{[g+{\rm i}\,(Q_E+Q_e)]^{1/4}\,P_\varphi^{\,1/4}},\\[0.5ex]
+F_s(g)&=-\frac{\pi^{1/2}}{2}\,\frac{\Gamma(1/4)}{\Gamma(3/4)}\,\frac{1}{[g+{\rm i}\,(Q_E+Q_e)]^{3/2}\,P_\varphi^{\,1/2}},\\[0.5ex]
+\frac{F_s(g)}{\hat{\mit\Delta}_s(g)}&= \frac{1}{\pi^{1/2}}\,\frac{1}{[g+{\rm i}\,(Q_E+Q_e)]^{5/4}\,P_\varphi^{\,1/4}}.
+\end{align}
+Thus,
+\begin{align}
+\tilde{\mit\Psi}_{0\,VI}(g) &=
+\frac{ \epsilon_{VI}}{g}\,\frac{1}{[g+{\rm i}\,(Q_E+Q_e)]^{5/4}},
+\end{align}
+where
+\begin{equation}
+\epsilon_{VI} = \frac{1}{\pi^{\,1/2}\,{\mit\Sigma}\,P_\varphi^{\,1/4}}.
+\end{equation}
+
+In this case,
+\begin{equation}
+\bar{H}(g) = \frac{1}{[g+{\rm i}\,(Q_E+Q_e)]^{5/4}},
+\end{equation}
+so (ERD: 5.4.1)
+\begin{equation}
+H(\hat{t}) = \frac{1}{\Gamma(5/4)}\,\hat{t}^{\,1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}.
+\end{equation}
+Hence,
+\begin{equation}
+\hat{\mit\Psi}_{0\,VI}(\hat{t}) =\frac{\epsilon_{VI}}{\Gamma(5/4)}\int_0^{\hat{t}}
+\hat{t}'^{\,1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
+\end{equation}
+
+At small $\hat{t}$,
+\begin{equation}
+\hat{\mit\Psi}_{0\,VI}(\hat{t}) \simeq \frac{\epsilon_{VI}\,\hat{t}^{\,5/4}}{\Gamma(9/4)}.
+\end{equation}
+
+At large $\hat{t}$, 
+\begin{equation}
+\hat{\mit\Psi}_{0\,VI}(\hat{t}) \simeq\frac{\epsilon_{VI}}{\Gamma(5/4)}\int_0^\infty
+\hat{t}'^{\,1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
+\end{equation}
+But (GR: 3.381.5), 
+\begin{equation}
+\int_0^\infty x^{\nu-1}\,{\rm e}^{-{\rm i}\,q\,x}\,dx = \frac{\Gamma(\nu)}{({\rm i}\,q)^{\nu}},
+\end{equation}
+so 
+\begin{equation}
+\hat{\mit\Psi}_{0\,VI}(\hat{t}) \simeq \frac{\epsilon_{VI}}{[{\rm i}\,(Q_E+Q_e)]^{5/4}}.
+\end{equation}
+
+\subsection{Diffusive-lnertial Regime}
+In the diffusive-inertial regime, 
+\begin{align}
+\hat{\mit\Delta}_s(g)& = -\frac{\pi\,D}{[g+{\rm i}\,(Q_E+Q_e)]^{1/2}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}},\\[0.5ex]
+F_s(g)&=-\frac{2\,D^{\,2}}{[g+{\rm i}\,(Q_E+Q_e)]^{2}\,\iota_e\,P_\perp},\\[0.5ex]
+\frac{F_s(g)}{\hat{\mit\Delta}_s(g)}&=\frac{2}{\pi}\, \frac{1}{[g+{\rm i}\,(Q_E+Q_e)]^{3/2}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}\,D^{\,-1}}.
+\end{align}
+Thus,
+\begin{align}
+\tilde{\mit\Psi}_{0\,DI}(g) &=\frac{\epsilon_{DI}}{g}\,\frac{1}{[g+{\rm i}\,(Q_E+Q_e)]^{3/2}},
+\end{align}
+where
+\begin{equation}
+\epsilon_{DI} = \frac{2}{\pi}\,\frac{1}{{\mit\Sigma}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}\,D^{\,-1}}.
+\end{equation}
+
+In this case,
+\begin{equation}
+\bar{H}(g) = \frac{1}{[g+{\rm i}\,(Q_E+Q_e)]^{3/2}},
+\end{equation}
+so (ERD: 5.4.1)
+\begin{equation}
+H(\hat{t}) = \frac{1}{\Gamma(3/2)}\,\hat{t}^{\,1/2}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}.
+\end{equation}
+Hence,
+\begin{equation}
+\hat{\mit\Psi}_{0\,DI}(\hat{t}) =\frac{\epsilon_{DI}}{\Gamma(3/2)}\int_0^{\hat{t}}
+\hat{t}'^{\,1/2}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
+\end{equation}
+
+At small $\hat{t}$,
+\begin{equation}
+\hat{\mit\Psi}_{0\,DI}(\hat{t}) \simeq \frac{\epsilon_{DI}\,\hat{t}^{\,3/2}}{\Gamma(5/2)}.
+\end{equation}
+
+At large $\hat{t}$, 
+\begin{equation}
+\hat{\mit\Psi}_{0\,DI}(\hat{t}) =\frac{\epsilon_{DI}}{\Gamma(3/2)}\int_0^{\infty}
+\hat{t}'^{\,1/2}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
+\end{equation}
+But (GR: 3.381.5), 
+\begin{equation}
+\int_0^\infty x^{\nu-1}\,{\rm e}^{-{\rm i}\,q\,x}\,dx = \frac{\Gamma(\nu)}{({\rm i}\,q)^{\nu}},
+\end{equation}
+so 
+\begin{equation}
+\hat{\mit\Psi}_{0\,DI}(\hat{t}) \simeq \frac{\epsilon_{DI}}{[{\rm i}\,(Q_E+Q_e)]^{3/2}}.
+\end{equation}
+
+\subsection{Viscous-Resistive Regime}
+In the viscous-resistive regime, 
+\begin{equation}
+\hat{\mit\Delta}_s(g) = \frac{6^{2/3}\,\pi\,\Gamma(5/6)}{\Gamma(1/6)}\,[g+ {\rm i}\,(Q_E+Q_e)]\,P_\varphi^{\,1/6},
+\end{equation}
+so
+\begin{equation}
+\tilde{\mit\Psi}_{0\,VR}(g) =\frac{\epsilon_{VR}}{g}\,\frac{1}{[g+ {\rm i}\,(Q_E+Q_e)]+\epsilon_{VR}},
+\end{equation}
+where
+\begin{equation}
+\epsilon_{VR} = \frac{\Gamma(1/6)}{6^{3/2}\,\pi\,\Gamma(5/6)}\,\frac{1}{{\mit\Sigma}\,P_\varphi^{\,1/6}}.
+\end{equation}
+Thus,
+\begin{align}
+\tilde{\mit\Psi}_{0\,VR}(g) &= 
+\frac{\epsilon_{VR}}{{\rm i}\,(Q_E+Q_e)+\epsilon_{VR}}\left(\frac{1}{g} - \frac{1}{g +[ {\rm i}\,(Q_E+Q_e)+\epsilon_{VR}]}\right),
+\end{align}
+giving
+\begin{align}
+\hat{\mit\Psi}_{0\,VR}(\hat{t}) &= \frac{\epsilon_{VR}}{{\rm i}\,(Q_E+Q_e)+\epsilon_{VR}}\left(1 - {\rm e}^{- [{\rm i}\,(Q_E+Q_e)+\epsilon_{VR}]\,\hat{t}}\right).
+\end{align}
+
+At small $\hat{t}$,
+\begin{align}
+\hat{\mit\Psi}_{0\,VR}(\hat{t}) &\simeq \frac{\epsilon_{VR}\,\hat{t}}{\Gamma(2)}.
+\end{align}
+
+At large $\hat{t}$, 
+\begin{align}
+\hat{\mit\Psi}_{0\,VR}(\hat{t}) &\simeq 
+\frac{\epsilon_{VR}}{{\rm i}\,(Q_E+Q_e)+\epsilon_{VR}}.
+\end{align}
+
+\subsection{Diffusive-Resistive Regime}
+In the diffusive-resistive regime, 
+\begin{equation}
+\hat{\mit\Delta}_s(g) = \frac{2\pi\,\Gamma(3/4)}{\Gamma(1/4)}\,[g+ {\rm i}\,(Q_E+Q_e)]\,\iota_e^{\,1/4}\,P_\perp^{\,1/4}\,D^{\,-1/2},
+\end{equation}
+so
+\begin{equation}
+\tilde{\mit\Psi}_{0\,DR}(g) =\frac{\epsilon_{DR}}{g}\,\frac{1}
+{[g+ {\rm i}\,(Q_E+Q_e)]+\epsilon_{DR}},
+\end{equation}
+where
+\begin{equation}
+\epsilon_{DR} = \frac{\Gamma(1/4)}{2\pi\,\Gamma(3/4)}\,\frac{1}{{\mit\Sigma}\,\iota_e^{\,1/4}\,P_\perp^{\,1/4}\,D^{\,-1/2}}.
+\end{equation}
+Thus,
+\begin{align}
+\tilde{\mit\Psi}_{0\,DR}(g) &=
+\,\frac{\epsilon_{DR}}{{\rm i}\,(Q_E+Q_e)+\epsilon}\left(\frac{1}{g} - \frac{1}{g + [{\rm i}\,(Q_E+Q_e)+\epsilon_{DR}]}\right),
+\end{align}
+giving
+\begin{align}
+\hat{\mit\Psi}_{0\,DR}(\hat{t}) &=
+\frac{\epsilon_{DR}}{{\rm i}\,(Q_E+Q_e)+\epsilon_{DR}}\left(1 - {\rm e}^{- [{\rm i}\,(Q_E+Q_e)+\epsilon_{DR}]\,\hat{t}}\right).
+\end{align}
+
+At small $\hat{t}$,
+\begin{align}
+{\mit\Psi}_{0\,DR}(\hat{t}) &\simeq\frac{\epsilon_{DR}\,\hat{t}}{\Gamma(2)}.
+\end{align}
+
+At large $\hat{t}$, 
+\begin{align}
+\hat{\mit\Psi}_{0\,DR}(\hat{t}) &\simeq 
+\frac{\epsilon_{DR}}{{\rm i}\,(Q_E+Q_e)+\epsilon_{DR}}.
+\end{align}
+
+\subsection{Semi-Collisional Regime}
+In the semi-collisional regime, 
+\begin{equation}
+\hat{\mit\Delta}_s(g) = \pi\,[g+ {\rm i}\,(Q_E+Q_e)]\,(g+{\rm i} \,Q_E)^{1/2}\,D^{\,-1},
+\end{equation}
+so 
+\begin{equation}
+\tilde{\mit\Psi}_{0\,SC}(g) =\frac{\epsilon_{SC}}{g}\,\frac{1}{[g+ {\rm i}\,(Q_E+Q_e)]\,(g+{\rm i} \,Q_E)^{1/2}
++\epsilon_{SC}},
+\end{equation}
+where
+\begin{equation}
+\epsilon_{SC}= \frac{1}{\pi\,{\mit\Sigma}\,D^{\,-1}}.
+\end{equation}
+If we neglect $\epsilon_{SC}$ in the denominator then
+\begin{equation} 
+\tilde{\mit\Psi}_{0\,SC}(g) \simeq \frac{\epsilon_{SC}}{g}\,\frac{1}{[g+ {\rm i}\,(Q_E+Q_e)]\,(g+{\rm i} \,Q_E)^{1/2}},
+\end{equation}
+giving
+\begin{equation}
+\tilde{\mit\Psi}_{0\,SC}(g) \simeq \frac{\epsilon_{SC}}{{\rm i}\,(Q_E+Q_e)}
+\left[\frac{1}{g}- \frac{1}{g+ {\rm i}\,(Q_E+Q_e)}\right]\frac{1}{(g+{\rm i} \,Q_E)^{1/2}}.
+\end{equation}
+In this case, 
+\begin{equation}
+\bar{H}(g) = \frac{1}{(g+{\rm i}\,Q_E)^{1/2}},
+\end{equation}
+so (ERD: 5.4.1)
+\begin{equation}
+H(\hat{t}) = \frac{1}{\Gamma(1/2)}\,\hat{t}^{-1/2}\,{\rm e}^{-{\rm i}\,Q_E\,\hat{t}}.
+\end{equation}
+Hence,
+\begin{align}
+\hat{\mit\Psi}_{0\,SC}(\hat{t}) &= \frac{\epsilon_{SC}}{\Gamma(1/2)\,{\rm i}\,(Q_E+Q_e)} \int
+_0^{\hat{t}}\left[1-{\rm e}^{\,{\rm i}\,(Q_E+Q_e)\,(\hat{t}'-\hat{t})}\right]
+\hat{t}'^{-1/2}\,{\rm e}^{-{\rm i}\,Q_E\,\hat{t'}}\,d\hat{t}'.
+\end{align}
+
+At small $\hat{t}$, 
+\begin{align}
+\hat{\mit\Psi}_{0\,SC}(\hat{t}) &= \frac{\epsilon_{SC}\,\hat{t}^{\,3/2}}{\Gamma(5/2)}.
+\end{align}
+
+At large $\hat{t}$, 
+\begin{align}
+\hat{\mit\Psi}_{0\,SC}(\hat{t}) &= \frac{\epsilon_{SC}}{\Gamma(1/2)\,{\rm i}\,(Q_E+Q_e)} \int
+_0^{\infty}\left[1-{\rm e}^{\,{\rm i}\,(Q_E+Q_e)\,(\hat{t}'-\hat{t})}\right]
+\hat{t}'^{-1/2}\,{\rm e}^{-{\rm i}\,Q_E\,\hat{t'}}\,d\hat{t}'.
+\end{align}
+But (GR: 3.381.5), 
+\begin{equation}
+\int_0^\infty x^{\nu-1}\,{\rm e}^{-{\rm i}\,q\,x}\,dx = \frac{\Gamma(\nu)}{({\rm i}\,q)^{\nu}},
+\end{equation}
+It follows that
+\begin{equation}
+\hat{\mit\Psi}_{0\,SC}(\hat{t}) = \frac{\epsilon_{SC}}{{\rm i}\,(Q_E+Q_e)}
+\left[\frac{1}{({\rm i}\,Q_E)^{1/2}} - \frac{{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}}{(-{\rm i}\,Q_e)^{1/2}}\right].
+\end{equation}
+
+\subsection{Resistive-Inertial Regime}
+In the resistive-inertial regime, 
+\begin{equation}
+\hat{\mit\Delta}_s(g) = \frac{2\pi\,\Gamma(3/4)}{\Gamma(1/4)}\,[g+{\rm i}\,(Q_E+Q_e)]^{3/4}\,(g+{\rm i}\,Q_E)^{1/4}\,[g+ {\rm i}\,(Q_E+Q_i)]^{1/4},
+\end{equation}
+so 
+\begin{equation}
+\tilde{\mit\Psi}_{0\,RI}(g) =\frac{\epsilon_{RI}}{g}\,\frac{1}{[g+{\rm i}\,(Q_E+Q_e)]^{3/4}\,(g+{\rm i}\,Q_E)^{1/4}\,[g+ {\rm i}\,(Q_E+Q_i)]^{1/4}
++\epsilon_{RI}},
+\end{equation}
+where
+\begin{equation}
+\epsilon_{RI}= \frac{\Gamma(1/4)}{2\pi\,\Gamma(3/4)\,{\mit\Sigma}}.
+\end{equation}
+If we neglect $\epsilon_{RI}$ in the denominator then
+\begin{equation}
+\tilde{\mit\Psi}_{0\,RI}(g) \simeq\frac{\epsilon_{RI}}{g}\,\frac{1}{[g+{\rm i}\,(Q_E+Q_e)]^{3/4}\,(g+{\rm i}\,Q_E)^{1/4}\,[g+ {\rm i}\,(Q_E+Q_i)]^{1/4}}.
+\end{equation}
+
+Now, if
+\begin{equation}
+\tilde{\mit\Psi}_{0\,RI}(g) \simeq \epsilon_{RI}\,\frac{H(g)}{g}
+\end{equation}
+then
+\begin{equation}
+\hat{\mit\Psi}_{0\,RI}(\hat{t}) = \epsilon_{RI}\,\int_0^{\hat{t}}H(\hat{t}')\,d\hat{t'}.
+\end{equation}
+Furthermore, if
+\begin{equation}
+\bar{H}(g) = \bar{H}_1(g)\,\bar{H}_2(g)
+\end{equation}
+then
+\begin{equation}
+H(\hat{t})=\int_0^{\hat{t}}H_1(\hat{t}')\,H_2(\hat{t}-\hat{t}')\,d\hat{t}'.
+\end{equation}
+It follows that
+\begin{equation}
+\hat{\mit\Psi}_{0\,RI}(\hat{t}) = \epsilon_{RI}\int_0^{\hat{t}}\left[\int_0^{\hat{t}'}
+H_1(\hat{t}'')\,H_2(\hat{t}'-\hat{t}'')\,d\hat{t}''\right]d\hat{t'}.
+\end{equation}
+
+In the present case
+\begin{align}
+\bar{H}_1(g) &= \frac{1}{(g+{\rm i}\,Q_E)^{1/4}\,[g+ {\rm i}\,(Q_E+Q_i)]^{1/4}},\\[0.5ex]
+\bar{H}_2(g) &= \frac{1}{[g+{\rm i}\,(Q_E+Q_e)]^{3/4}},
+\end{align}
+so (ERD: 5.4.5, AS:\footnote{M.~Abramowitz and I.A.~Stegun, {\em Handbook of Mathematical Functions}\/ (Dover, New York NY, 1964).} 9.6.3, ERD: 5.4.1)
+\begin{align}
+H_1(\hat{t}) &= \frac{\pi^{1/2}}{\Gamma(1/4)}\,Q_i^{\,1/4}\,\hat{t}^{-1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t}}\,J_{-1/4}\left(\frac{Q_i}{2}\,\hat{t}\right),\\[0.5ex]
+H_2(\hat{t})&= \frac{1}{\Gamma(3/4)}\,\hat{t}^{-1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}.
+\end{align}
+Note that
+\begin{equation}
+\Gamma(1/4)\,\Gamma(3/4) = \sqrt{2}\,\pi.
+\end{equation}
+Thus,
+\begin{align}
+\hat{\mit\Psi}_{0\,RI}(\hat{t}) &= \frac{\epsilon_{RI}\,Q_i^{\,1/4}}{\sqrt{2\pi}}\int_0^{\hat{t}}{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\left[
+\int_0^{\hat{t}'}(\hat{t}'-\hat{t}'')^{-1/4}\,\hat{t}''^{-1/4}
+%\right.\nonumber\\[0.5ex]&\phantom{=}\left.\times
+{\rm e}^{\,{\rm i}\,(Q_e-Q_i/2)\,\hat{t}''}\,J_{-1/4}\left(\frac{Q_i}{2}\,\hat{t}''\right)d\hat{t}''\right]d\hat{t}'.
+\end{align}
+
+At small $\hat{t}$ (AS: 9.1.10), 
+\begin{equation}
+J_{-1/4}\left(\frac{Q_i}{2}\,\hat{t}\right)\simeq\frac{\sqrt{2}\,Q_i^{-1/4}\,\hat{t}^{-1/4}}{\Gamma(3/4)},
+\end{equation}
+so
+\begin{equation}
+\hat{\mit\Psi}_{0\,RI}(\hat{t})\simeq \frac{\epsilon_{RI}}{\sqrt{\pi}\,\Gamma(3/4)}
+\int_0^{\hat{t}}\left[\int_0^{\hat{t}'}(\hat{t}'-\hat{t}'')^{-1/4}\,\hat{t}''^{-1/2}\,d\hat{t}''\right]d\hat{t}'.
+\end{equation}
+But,
+\begin{equation}
+\int_0^{\hat{t}'}(\hat{t}'-\hat{t}'')^{-1/4}\,\hat{t}''^{-1/2}\,d\hat{t}''=\hat{t}'^{\,1/4}\int_0^1(1-x)^{-1/4}\,x^{-1/2}\,dx,
+\end{equation}
+and (AS: 6.2.1, 6.2.2)
+\begin{equation}
+\int_0^1(1-x)^{-1/4}\,x^{-1/2}\,dx =\frac{\Gamma(1/2)\,\Gamma(3/4)}{\Gamma(5/4)},
+\end{equation}
+so
+\begin{equation}
+{\mit\Psi}_{0\,RI}(\hat{t})\simeq \frac{\epsilon_{RI}\,\hat{t}^{\,5/4}}{\Gamma(9/4)}.
+\end{equation}
+
+At large $\hat{t}$, 
+\begin{align}
+\hat{\mit\Psi}_{0\,RI}(\hat{t}) &\simeq \frac{\epsilon_{RI}\,Q_i^{\,1/4}}{\sqrt{2\pi}}\int_0^{\infty}{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}
+\left[\int_0^{\hat{t}'}(\hat{t}'-\hat{t}'')^{-1/4}\,\hat{t}''^{-1/4}
+%\right.\nonumber\\[0.5ex]&\phantom{=}\left.\times
+{\rm e}^{\,{\rm i}\,(Q_e-Q_i/2)\,\hat{t}''}\,J_{-1/4}\left(\frac{Q_i}{2}\,\hat{t}''\right)d\hat{t}''\right]d\hat{t}',
+\end{align}
+so
+\begin{align}
+\hat{\mit\Psi}_{0\,RI}(\hat{t}) &\simeq \frac{\epsilon_{RI}\,Q_i^{\,1/4}}{\sqrt{2\pi}}
+\int_0^\infty\left[\int_{\hat{t}''}^\infty(\hat{t'}-\hat{t}'')^{-1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'\right]
+%\nonumber\\[0.5ex]&\phantom{=}\times
+ \hat{t}''^{-1/4}\,{\rm e}^{\,{\rm i}\,(Q_e-Q_i/2)\,\hat{t}''}\,J_{-1/4}\left(\frac{Q_i}{2}\,\hat{t}''\right)\,d\hat{t}''.
+\end{align}
+But,
+\begin{align}
+\int_{\hat{t}''}^\infty(\hat{t'}-\hat{t}'')^{-1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'={\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}''} \int_0^\infty
+x^{-1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,x}\,dx,
+\end{align}
+and (GR: 3.381.5), 
+\begin{equation}
+\int_0^\infty x^{\nu-1}\,{\rm e}^{-{\rm i}\,q\,x}\,dx = \frac{\Gamma(\nu)}{({\rm i}\,q)^{\nu}},
+\end{equation}
+so 
+\begin{equation}
+\int_{\hat{t}''}^\infty (\hat{t'}-\hat{t}'')^{-1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'={\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}''} \, \frac{\Gamma(3/4)}{[{\rm i}\,(Q_E+Q_e)]^{3/4}}.
+\end{equation}
+It follows that
+\begin{align}
+\hat{\mit\Psi}_{0\,RI}(\hat{t})&= \frac{\epsilon_{RI}\,Q_i^{\,1/4}}{\sqrt{2\pi}}\,\frac{\Gamma(3/4)}{[{\rm i}\,(Q_E+Q_e)]^{3/4}}
+%\nonumber\\[0.5ex]&\phantom{=}\times
+\int_0^\infty \hat{t}''^{-1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t''}}\,J_{-1/4}\left(\frac{Q_i}{2}\,\hat{t}''\right)d\hat{t}''.
+\end{align}
+But (GR: 6.623.1), 
+\begin{align}
+&\int_0^\infty \hat{t}''^{-1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t''}}\,J_{-1/4}\left(\frac{Q_i}{2}\,\hat{t}''\right)d\hat{t}'' 
+%\nonumber\\[0.5ex]&
+= \frac{(Q_i)^{-1/4}\,\Gamma(1/4)}{\sqrt{\pi}\,({\rm i}\,Q_E)^{1/4}\,[{\rm i}\,(Q_E+Q_i)]^{1/4}}.
+\end{align}
+Now (AS: 6.1.17),
+\begin{equation}
+\Gamma(3/4)\,\Gamma(1/4)= \sqrt{2}\,\pi,
+\end{equation}
+so
+\begin{equation}
+\hat{\mit\Psi}_{0\,RI}(\hat{t})\simeq 
+\frac{\epsilon_{RI}}{[{\rm i}\,(Q_E+Q_e)]^{3/4}\,({\rm i}\,Q_E)^{1/4}\,[{\rm i}\,(Q_E+Q_i)]^{1/4}}.
+\end{equation}
+
+\section{Reconnection Scenarios}
+\subsection{Layer Widths}\label{layer}
+Let $\delta$ be the radial width of the resonant layer, and let $\hat{\delta}=S^{\,1/3}\,\delta/r_s$. 
+According to the analysis of Sects.~\ref{scpl} and \ref{sncp}, $\hat{\delta} \simeq |G|^\nu$. In estimating the
+layer width, we shall assume that at normalized time $\hat{t}$ the dominant layer response is associated with $g\sim 1/\hat{t}$. 
+
+In the inertial response regime, we find that
+\begin{equation}\label{deltaI}
+\hat{\delta}_I(\hat{t})= \left(\hat{t}^{\,-2}+Q_E^{\,2}\right)^{1/4}\left[\hat{t}^{\,-2}+ (Q_E+Q_i)^2\right]^{1/4}. 
+\end{equation}
+Thus, at small times, the layer width decreases in time as $\hat{t}^{\,-1}$. However, this decrease eventually stalls, and the
+layer width attains a constant value. 
+
+In the viscous-inertial response regime, we find that 
+\begin{equation}\label{deltaVI}
+\hat{\delta}_{VI}(\hat{t}) =P_\varphi^{\,1/4}\left[\hat{t}^{\,-2}+(Q_E+Q_i)^2\right]^{1/8}
+\end{equation}
+Thus, at small times, the layer width decreases in time as $\hat{t}^{\,-1/4}$. However, this decrease eventually stalls, and the
+layer width attains a constant value. 
+
+In the diffusive-inertial response regime, we find that
+\begin{equation}\label{deltaDI}
+\hat{\delta}_{DI}(\hat{t}) =\left(\frac{\iota_e\,P_\perp}{D^{\,2}}\right)^{1/2}\left[\hat{t}^{\,-2}+(Q_E+Q_i)^2\right]^{1/4}.
+\end{equation}
+Thus, at small times, the layer width decreases in time as $\hat{t}^{\,-1/2}$. However, this decrease eventually stalls, and the
+layer width attains a constant value. 
+
+In the semi-collisional response regime, we find that
+\begin{equation}\label{deltaSC}
+\hat{\delta}_{SC}(\hat{t}) = D^{\,-1}\left(\hat{t}^{\,-2}+Q_E^{\,2}\right)^{1/2}.
+\end{equation}
+Thus, at small times, the layer width decreases in time as $\hat{t}^{\,-1/2}$. However, this decrease eventually stalls, and the
+layer width attains a constant value. 
+
+In the resistive-inertial response regime, we find that
+\begin{equation}\label{deltaRI}
+\hat{\delta}_{RI}(\hat{t}) = \frac{\left(\hat{t}^{\,-2}+Q_E^{\,2}\right)^{1/8}\left[\hat{t}^{\,-2}+(Q_E+Q_i)^2\right]^{1/8}}{
+\left[\hat{t}^{\,-2}+(Q_E+Q_e)^2\right]^{1/8}}.
+\end{equation}
+Thus, at small times, the layer width decreases in time as $\hat{t}^{\,-1/4}$. However, this decrease eventually stalls, and the
+layer width attains a constant value. 
+
+In the viscous-resistive response regime, we find that
+\begin{equation}\label{deltaVR}
+\hat{\delta}_{VR}(\hat{t}) =P_\varphi^{\,1/6}.
+\end{equation}
+Thus, the layer width is independent of time. 
+
+Finally, in the diffusive-resistive response regime, we find that
+\begin{equation}\label{deltaDR}
+\hat{\delta}_{DR}(\hat{t}) =\left(\frac{\iota_e\,P_\perp}{D^{\,2}}\right)^{1/4}.
+\end{equation}
+Thus, the layer width is independent of time. 
+
+\subsection{Reconnection Scenarios 1--7}
+The layer widths calculated in Sect.~\ref{layer} allow us to determine how the plasma response in the resonant layer
+navigates through the various linear response regimes. This navigation is illustrated in Figs.~\ref{f3} and \ref{f4}. Here, $\hat{t}= t/(S^{1/3}\,\tau_H)$. 
+
+Consider reconnection scenario 1, which corresponds to the horizontal lines labelled 1 in Figs.~\ref{f3} and \ref{f4}. 
+This scenario holds when $D<1$ and $P>1$, or when  $D>1$ and $P>D^{\,6}$. 
+The plasma in the resonant layer starts off in the inertial regime, passes into the visco-inertial regime if and when  $\hat{\delta}_I(\hat{t})=\hat{\delta}_{VI}(\hat{t})$,
+and passes into the viscous-resistive regime if and when $\hat{\delta}_{VI}(\hat{t})=\hat{\delta}_{VR}(\hat{t})$. 
+Thus, the normalized reconnected magnetic flux is specified by $\hat{\mit\Psi}_{0\,I}(\hat{t})$ in the first time interval,
+by $\hat{\mit\Psi}_{0\,VI}(\hat{t})$ in the second interval, and by $\hat{\mit\Psi}_{0\,VR}(\hat{t})$ in the third. Analogous statements can be
+made for the other reconnection scenarios.  
+
+Consider reconnection scenario 2, which corresponds to the horizontal line labelled 2 in Fig.~\ref{f3}. 
+This scenario holds when $D<1$ and $D^{\,6}<P< 1$. The plasma in the resonant layer starts off in the inertial regime, passes into the resistive-inertial regime if and when $\hat{\delta}_I(\hat{t})=\hat{\delta}_{RI}(\hat{t})$,
+and passes into the viscous-resistive regime if and when $\hat{\delta}_{RI}(\hat{t})=\hat{\delta}_{VR}(\hat{t})$. 
+
+Consider reconnection scenario 3, which corresponds to the horizontal line labelled 3 in Fig.~\ref{f3}. 
+This scenario holds when $D<1$ and $P<D^{\,6}$. 
+The plasma in the resonant layer starts off in the inertial regime, passes into the resistive-inertial regime if and when $\hat{\delta}_I(\hat{t})=\hat{\delta}_{RI}(\hat{t})$, passes into the semi-collisional regime if and when $\hat{\delta}_{RI}(\hat{t})=\hat{\delta}_{SC}(\hat{t})$, and passes into the
+viscous-resistive regime if and when $\hat{\delta}_{SC}(\hat{t})=\hat{\delta}_{RI}(\hat{t})$.
+
+Consider reconnection scenario 4, which corresponds to the horizontal line labelled 4 in Fig.~\ref{f4}. 
+This scenario holds when $D>1$ and $D^{\,3} < P<D^{\,6}$. 
+The plasma in the resonant layer starts off in the inertial regime, passes into the viscous-inertial regime if and when $\hat{\delta}_I(\hat{t})=\hat{\delta}_{VI}(\hat{t})$, passes into the diffusive-inertial regime if and when $\hat{\delta}_{VI}(\hat{t})=\hat{\delta}_{DR}(\hat{t})$, and passes into the
+diffusive-resistive regime if and when $\hat{\delta}_{DI}(\hat{t})=\hat{\delta}_{DR}(\hat{t})$.
+
+Consider reconnection scenario 5, which corresponds to the horizontal line labelled 5 in Fig.~\ref{f4}. 
+This scenario holds when $D>1$ and $D^{\,2} < P<D^{\,5}$. 
+The plasma in the resonant layer starts off in the inertial regime, passes into the diffusive-inertial regime if and when $\hat{\delta}_I(\hat{t})=\hat{\delta}_{DI}(\hat{t})$, and passes into the
+diffusive-resistive regime if and when $\hat{\delta}_{DI}(\hat{t})=\hat{\delta}_{DR}(\hat{t})$.
+
+Consider reconnection scenario 6, which corresponds to the horizontal line labelled 6 in Fig.~\ref{f4}. 
+This scenario holds when $D>1$ and $D^{\,-6} < P<D^{\,2}$. 
+The plasma in the resonant layer starts off in the inertial regime,  and passes into the
+diffusive-resistive regime if and when $\hat{\delta}_{I}(\hat{t})=\hat{\delta}_{DR}(\hat{t})$.
+
+Finally, consider reconnection scenario 7, which corresponds to the horizontal line labelled 7 in Fig.~\ref{f4}. 
+This scenario holds when $D>1$ and $P<D^{\,-6}$. 
+The plasma in the resonant layer starts off in the inertial regime, passes into the semi-collisional regime if and when $\hat{\delta}_I(\hat{t})=\hat{\delta}_{SC}(\hat{t})$, and passes into the
+diffusive-resistive regime if and when $\hat{\delta}_{SC}(\hat{t})=\hat{\delta}_{DR}(\hat{t})$.
+
+\newpage
+
 \begin{figure}
 \centering
 \includegraphics[width=1.\textwidth]{RegimeI.pdf}
@@ -468,6 +1023,18 @@ cases $D<1$ and $D>1$, respectively.
 \centering
 \includegraphics[width=1.\textwidth]{RegimeII.pdf}
 \caption{Linear resonant plasma response regimes in $R$-$P$ space for the case $D = 1.2$. The various regimes are the diffusive-resisitive (DR), the semi-collisional (SC), the diffusive-inertial (DI), the viscous-resistive (VR), the viscous-inertial (VI), and the inertial (I).}\label{f2}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.\textwidth]{RegimeIII.pdf}
+\caption{Trajectory of the Fourier/Laplace transformed response of a resonant layer to a resonant magnetic perturbation in $\hat{t}$-$P$ space for the case $D=0.9$. The various regimes are the diffusive-resistive (DR), the semi-collisional (SC), the resistive-inertial (RI), the viscous-resistive (VR), the viscous-inertial (VI), and the inertial (I). }\label{f3}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.\textwidth]{RegimeIV.pdf}
+\caption{Trajectory of the Fourier/Laplace transformed response of a resonant layer to a resonant magnetic perturbation  in $\hat{t}$-$P$ space for the case $D=1.2$. The various regimes are the diffusive-resistive (DR), the semi-collisional (SC), the diffusive-inertial (DI), the viscous-resistive (VR), the viscous-inertial (VI), and the inertial (I).}\label{f4}
 \end{figure}
 
 
