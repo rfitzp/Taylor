@@ -8,16 +8,18 @@ s  = []
 p  = []
 Wr = []
 Wi = []
+Wx = []
 
 for line in infile: 
 
     numbers = line.split() 
     c1      = float(numbers[1])
-    c2      = float(numbers[6])
-    c3      = float(numbers[7])
-    p.append(c1)
+    c2      = float(numbers[4])
+    c3      = float(numbers[5])
+    p .append(c1)
     Wr.append(c2)
     Wi.append(c3)
+    Wx.append(math.sqrt (c2*c2 + c3*c3))
                        
 fig = plt.figure (figsize = (8.0, 6.0))
 plt.rc ('xtick', labelsize = 17) 
@@ -28,9 +30,10 @@ plt.subplot (2, 1, 1)
 plt.xlim (p[0], p[-1])
 
 plt.axhline (0.,    color = 'black', linewidth = 2, linestyle = 'dotted')
+plt.axhline (1.,    color = 'black', linewidth = 2, linestyle = 'dotted')
 plt.axvline (0.,    color = 'black', linewidth = 2, linestyle = 'dotted')
-plt.plot    (p, Wr, color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"$Re(\overline{\Psi}_0)$")
-plt.plot    (p, Wi, color = 'red',   linewidth = 2, linestyle = 'solid', label = r"$Im(\overline{\Psi}_0)$")
+plt.plot    (p, Wr, color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"$Re(F_s)$")
+plt.plot    (p, Wi, color = 'red',   linewidth = 2, linestyle = 'solid', label = r"$Im(F_s)$")
 
 plt.xlabel (r'$\omega$', fontsize = "20")
 plt.legend (fontsize = "15")
@@ -40,9 +43,11 @@ plt.subplot (2, 1, 2)
 plt.xlim (-3., 3.)
 
 plt.axhline (0.,    color = 'black', linewidth = 2, linestyle = 'dotted')
+plt.axhline (1.,    color = 'black', linewidth = 2, linestyle = 'dotted')
 plt.axvline (0.,    color = 'black', linewidth = 2, linestyle = 'dotted')
-plt.plot    (p, Wr, color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"$Re(\overline{\Psi}_0)$")
-plt.plot    (p, Wi, color = 'red',   linewidth = 2, linestyle = 'solid', label = r"$Im(\overline{\Psi}_0)$")
+plt.plot    (p, Wr, color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"$Re(F_s)$")
+plt.plot    (p, Wi, color = 'red',   linewidth = 2, linestyle = 'solid', label = r"$Im(F_s)$")
+#plt.plot    (p, Wx, color = 'green', linewidth = 2, linestyle = 'solid', label = r"$|F_s|$")
 
 plt.xlabel (r'$\omega$', fontsize = "20")
 plt.legend (fontsize = "15")

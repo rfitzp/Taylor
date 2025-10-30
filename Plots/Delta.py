@@ -13,8 +13,8 @@ for line in infile:
 
     numbers = line.split() 
     c1      = float(numbers[1])
-    c2      = float(numbers[6])
-    c3      = float(numbers[7])
+    c2      = float(numbers[2])
+    c3      = float(numbers[3])
     p.append(c1)
     Wr.append(c2)
     Wi.append(c3)
@@ -29,8 +29,8 @@ plt.xlim (p[0], p[-1])
 
 plt.axhline (0.,    color = 'black', linewidth = 2, linestyle = 'dotted')
 plt.axvline (0.,    color = 'black', linewidth = 2, linestyle = 'dotted')
-plt.plot    (p, Wr, color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"$Re(\overline{\Psi}_0)$")
-plt.plot    (p, Wi, color = 'red',   linewidth = 2, linestyle = 'solid', label = r"$Im(\overline{\Psi}_0)$")
+plt.plot    (p, Wr, color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"$Re(\hat{\Delta}_s)$")
+plt.plot    (p, Wi, color = 'red',   linewidth = 2, linestyle = 'solid', label = r"$Im(\hat{\Delta}_s)$")
 
 plt.xlabel (r'$\omega$', fontsize = "20")
 plt.legend (fontsize = "15")
@@ -41,8 +41,8 @@ plt.xlim (-3., 3.)
 
 plt.axhline (0.,    color = 'black', linewidth = 2, linestyle = 'dotted')
 plt.axvline (0.,    color = 'black', linewidth = 2, linestyle = 'dotted')
-plt.plot    (p, Wr, color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"$Re(\overline{\Psi}_0)$")
-plt.plot    (p, Wi, color = 'red',   linewidth = 2, linestyle = 'solid', label = r"$Im(\overline{\Psi}_0)$")
+plt.plot    (p, Wr, color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"$Re(\hat{\Delta}_s)$")
+plt.plot    (p, Wi, color = 'red',   linewidth = 2, linestyle = 'solid', label = r"$Im(\hat{\Delta}_s)$")
 
 plt.xlabel (r'$\omega$', fontsize = "20")
 plt.legend (fontsize = "15")

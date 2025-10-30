@@ -48,4 +48,6 @@ plt.plot (t, stp, color='red', linewidth = 2, linestyle = 'solid')
 plt.xlabel(r'$\hat{t}$', fontsize="20")
 plt.ylabel(r'$\log_{10}$(steps)', fontsize="20")
 
+plt.tight_layout ()
+
 plt.show ()

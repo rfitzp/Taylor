@@ -66,17 +66,32 @@ private:
   // ....................................
   // Inverse Laplace transform parameters
   // ....................................
-  double            sigma;    // Real part of g on Bromwich contour (read from JSON file)
-  double            omax;     // Bromwich contour runs from omega = -omax to omega = +omax (read from JSON file)
-  int               No;       // Number of grid points on Bromwich contour (read from JSON file)
-  double            omega;    // Imaginary part of g on Bromwich contour
-  vector<double>    gg_i;     // Imaginary part of g on Bromwich contour
-  vector<double>    Psib_r;   // Real part of Laplace transformed reconnected flux on Bromwich contour
-  vector<double>    Psib_i;   // Imaginary part of Laplace transformed reconnected flux on Bromwich contour
-  gsl_spline*       spline_r; // Spline interpolator for Psib_r
-  gsl_spline*       spline_i; // Spline interpolator for Psib_i
-  gsl_interp_accel* acc_r;    // Accelerator for Psib_r
-  gsl_interp_accel* acc_i;    // Accelerator for Psib_i
+  double            sigma;     // Real part of g on Bromwich contour (read from JSON file)
+  double            omax;      // Bromwich contour runs from omega = -omax to omega = +omax (read from JSON file)
+  int               No;        // Number of grid points on Bromwich contour (read from JSON file)
+  double            omega;     // Imaginary part of g on Bromwich contour
+  vector<double>    gg_i;      // Imaginary part of g on Bromwich contour
+  vector<double>    Psib_r;    // Real part of Laplace transformed reconnected flux on Bromwich contour
+  vector<double>    Psib_i;    // Imaginary part of Laplace transformed reconnected flux on Bromwich contour
+  vector<double>    Fs_r;      // Real part of Fs on Bromwich contour
+  vector<double>    Fs_i;      // Imaginary part of Fs on Bromwich contour
+  gsl_spline*       spline_r;  // Spline interpolator for Psib_r
+  gsl_spline*       spline_i;  // Spline interpolator for Psib_i
+  gsl_spline*       spline_Fr; // Spline interpolator for F_r
+  gsl_spline*       spline_Fi; // Spline interpolator for F_i
+  gsl_interp_accel* acc_r;     // Accelerator for Psib_r
+  gsl_interp_accel* acc_i;     // Accelerator for Psib_i
+  gsl_interp_accel* acc_Fr;    // Accelerator for Fs_r
+  gsl_interp_accel* acc_Fi;    // Accelerator for Fs_i
+  
+  // ............................
+  // Analytic solution parameters
+  // ............................
+  double epsI;   // Inertial regime
+  double epsVI;  // Viscous-inertial regime
+  double epsDI;  // Diffusive-inertial regime
+  double epsVR;  // Viscous-resistive regime
+  double epsDR;  // Diffussive-resistive regime
 
   // .....................
   // Simulation parameters

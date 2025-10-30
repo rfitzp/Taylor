@@ -128,9 +128,11 @@ void Taylor::Solve ()
   // .........................................
   // Allocate memory for interpolation of Psib
   // .........................................
-  gg_i.resize   (No + 1);
+  gg_i  .resize (No + 1);
   Psib_r.resize (No + 1);
   Psib_i.resize (No + 1);
+  Fs_r  .resize (No + 1);
+  Fs_i  .resize (No + 1);
   
   // ..................................................................
   // Calculate Laplace transformed reconnected flux on Bromwich contour
@@ -155,6 +157,8 @@ void Taylor::Solve ()
       gg_i  [j] = omega;
       Psib_r[j] = real(Pbar);
       Psib_i[j] = imag(Pbar);
+      Fs_r  [j] = real(Fs);
+      Fs_i  [j] = imag(Fs);
       if (j%100 == 0)
 	printf ("j = %4d omega = %10.3e Delta = (%10.3e, %10.3e) Fs = (%10.3e, %10.3e) Pbar = (%10.3e, %10.3e)\n",
 		j, omega, real(Delta), imag(Delta), real(Fs), imag(Fs), real(Pbar), imag(Pbar));
@@ -175,14 +179,27 @@ void Taylor::Solve ()
   // .............................................................................
   // Set up interpolation for real and imaginary parts of Psib on Bromwich contour
   // .............................................................................
-  acc_r = gsl_interp_accel_alloc ();
-  acc_i = gsl_interp_accel_alloc ();
+  acc_r  = gsl_interp_accel_alloc ();
+  acc_i  = gsl_interp_accel_alloc ();
+  acc_Fr = gsl_interp_accel_alloc ();
+  acc_Fi = gsl_interp_accel_alloc ();
   
-  spline_r = gsl_spline_alloc (gsl_interp_cspline, No + 1);
-  spline_i = gsl_spline_alloc (gsl_interp_cspline, No + 1);
+  spline_r  = gsl_spline_alloc (gsl_interp_cspline, No + 1);
+  spline_i  = gsl_spline_alloc (gsl_interp_cspline, No + 1);
+  spline_Fr = gsl_spline_alloc (gsl_interp_cspline, No + 1);
+  spline_Fi = gsl_spline_alloc (gsl_interp_cspline, No + 1);
   
-  gsl_spline_init (spline_r, gg_i.data(), Psib_r.data(), No + 1);
-  gsl_spline_init (spline_i, gg_i.data(), Psib_i.data(), No + 1);
+  gsl_spline_init (spline_r,  gg_i.data(), Psib_r.data(), No + 1);
+  gsl_spline_init (spline_i,  gg_i.data(), Psib_i.data(), No + 1);
+  gsl_spline_init (spline_Fr, gg_i.data(), Fs_r  .data(), No + 1);
+  gsl_spline_init (spline_Fi, gg_i.data(), Fs_i  .data(), No + 1);
+
+  double Fs0r = gsl_spline_eval (spline_Fr, 0., acc_Fr);
+  double Fs0i = gsl_spline_eval (spline_Fi, 0., acc_Fi);
+
+  file = OpenFilew ("Plots/Fs0.out");
+  fprintf (file, "%11.4e %11.4e\n", Fs0r, Fs0i);
+  fclose (file);
   
   // ..............................................................
   // Inverse Laplace transform Laplace-transformed reconnected flux
@@ -229,9 +246,9 @@ void Taylor::Solve ()
 	      t, real(y[0]), imag(y[0]), hmin_, hmax_, err_max, reptmax_, double(stepcount));
       fprintf (file, "%e %e %e\n",
 	       t, real(y[0]), imag(y[0]));
-      fprintf(file1, "%e %e %e %e %d %e\n",
+      fprintf (file1, "%e %e %e %e %d %e\n",
 	      t, log10(hmin_), log10(hmax_), log10(err_max), reptmax_, log10(double(stepcount)));
-      fflush(file); fflush(file1);
+      fflush (file); fflush(file1);
     }
   fclose(file); fclose(file1);
   
@@ -240,9 +257,13 @@ void Taylor::Solve ()
   // ........
   gsl_spline_free (spline_r);
   gsl_spline_free (spline_i);
+  gsl_spline_free (spline_Fr);
+  gsl_spline_free (spline_Fi);
   
   gsl_interp_accel_free (acc_r);
   gsl_interp_accel_free (acc_i);
+  gsl_interp_accel_free (acc_Fr);
+  gsl_interp_accel_free (acc_Fi);
 }
 
 // #############################################################
@@ -484,7 +505,7 @@ void Taylor::Rhs (double x, vector<complex<double>>& y, vector<complex<double>>&
       double          psib_i = gsl_spline_eval (spline_i, x, acc_i);
       complex<double> Pbar   = complex<double> (psib_r, psib_i);
       
-      complex<double> expf = exp (sigma * t) * complex<double> (cos(x * t), sin(x * t));
+      complex<double> expf = exp (sigma * t) * complex<double> (cos (x * t), sin (x * t));
       
       dydx[0] = expf * Pbar /2./M_PI;
     }
@@ -494,8 +515,8 @@ void Taylor::Rhs (double x, vector<complex<double>>& y, vector<complex<double>>&
 // Adaptive step length RK4/5 function
 // ###################################
 void Taylor::RK4RK5Adaptive (double& x, vector<complex<double>>& y, double& h,
-			    double& t_err, double acc, double S, double T, int& rept,
-			    int maxrept, double h_min, double h_max, int flag)
+			     double& t_err, double acc, double S, double T, int& rept,
+			     int maxrept, double h_min, double h_max, int flag)
 {
   // Allocate memory
   int neqns = y.size();
