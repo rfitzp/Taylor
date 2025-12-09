@@ -19,16 +19,16 @@ Consider an intrinsically tearing-stable  tokamak plasma that is subject to an e
 resonates at various rational surfaces inside the plasma, and  acts to drive magnetic reconnection at these surfaces. This
 process, which is known as {\em forced magnetic reconnection},  generates magnetic island chains within the plasma.\cite{err1,err1a}  Such chains degrade the plasma energy confinement,\cite{chang} and, in extreme cases, can even trigger a major disruption.
 
-This paper  investigates the response of an idealized cylindrical  tokamak plasma to a static resonant magnetic
-perturbation (RMP),  resonant at a single rational surface in the plasma,  that is suddenly switched on. The problem under discussion is an extension of one considered in a well-known paper by
+This paper  investigates the drift-magnetohydrodynamical (MHD) response of an idealized cylindrical  tokamak plasma to a static resonant magnetic
+perturbation (RMP),  resonant at a single rational surface,  that is suddenly switched on. The problem under discussion is an extension of one considered in a well-known paper by
 Hahm \& Kulsrud,\cite{hk} and a host of subsequent papers.\cite{wb,rf1,rfb,rfc,rf2,rfd,com,hz} The present study takes
 plasma flows, including diamagnetic flows, into account. Such flows are often omitted from the analysis, but can profoundly modify forced magnetic reconnection. 
 The ion sound-radius, and realistic levels of perpendicular energy and momentum transport, are also included in the analysis. 
 
-\section{Asymptotic Matching}
+\section{Fundamental Analysis}
 
 \subsection{Plasma Equilibrium}\label{s2a}
-Our tokamak equilibrium is approximated as a periodic cylinder of circular cross-section. 
+Our tokamak equilibrium is approximated as a periodic cylinder of circular cross-section. \cite{ric3}
 Let us employ a conventional set of right-handed cylindrical coordinates, $r$, $\theta$, $z$. The
 equilibrium magnetic flux-surfaces lie on surfaces of constant $r$. The system is
 assumed to be periodic in the $z$ (``toroidal'') direction, with periodicity length $2\pi\,R_0$, 
@@ -54,14 +54,259 @@ vicinity of the rational surface. The so-called {\em outer region}\/ comprises e
 inner region, as well as the vacuum region surrounding the plasma. 
 
 The response of the plasma to the RMP in the outer region is
-governed by the equations of linear, marginally-stable, ideal-magnetohydrodynamics.\cite{err1} The minimal model that can
+governed by the equations of linear, marginally-stable, ideal-MHD.\cite{err1} The minimal model that can
 realistically describe the response of the plasma in the inner region  should contain plasma resistivity, ${\bf E}\times {\bf B}$ flows, electron and ion diamagnetic flows, the ion sound-radius, and anomalous cross-flux-surface transport of energy and momentum. It is important to include diamagnetic flows in the model because they are likely to be similar in magnitude to ${\bf E}\times {\bf B}$ flows in next-generation tokamaks.  It is important to include the ion sound-radius in the model because the
-response of the ion fluid to the magnetic perturbation is radically different to that of the electron fluid on length-scales
+response of the ion fluid to the RMP is radically different to that of the electron fluid on length-scales
 below the ion sound-radius. Finally, it is important to include realistic levels of perpendicular energy and momentum
 transport in the model because these effects significantly  change the response of the inner region to 
-the magnetic perturbation.\cite{err2} The solutions in the inner and outer regions must be asymptotically 
+the RMP.\cite{err2} The solutions in the inner and outer regions must be asymptotically 
 matched to one another.\cite{fkr}
- 
+
+\subsection{Driven Magnetic Reconnection}
+In this paper, all helical magnetic fluxes are normalized with respect to $r_s\,B_\varphi$, where $r_s$ is the minor radius of the rational surface. Let ${\mit\Psi}_b(t)$ be the helical magnetic flux associated with the RMP to which the plasma is
+subject. (See Sect.~\ref{scly},) Likewise, let ${\mit\Psi}_0(t)$ be the driven reconnected helical magnetic flux at the rational surface. (See Sect.~\ref{recon}.)
+Making use of the analysis of Appendices~\ref{outer} and \ref{inner}, the relationship between ${\mit\Psi}_b$ and ${\mit\Psi}_0$ is found to be
+\begin{equation}\label{drive}
+{\mit\Psi}_0(\hat{t}) = \frac{1}{2\pi\,{\rm i}}\int_C \frac{E_{sb}\,F_s(\hat{g})\,\overline{\mit\Psi}_b(\hat{g})\,{\rm e}^{\,\hat{g}\,\hat{t}}}{S^{1/3}\,\hat{\mit\Delta}_s(\hat{g})-E_{ss}}\,d\hat{g},
+\end{equation}
+where
+\begin{equation}\label{psibx}
+\overline{\mit\Psi}_b(\hat{g}) = \int_0^\infty {\mit\Psi}_b(\hat{t})\,{\rm e}^{-\hat{g}\,\hat{t}}\,d\hat{t}.
+\end{equation}
+Here, $C$ is the Bromwich contour, and 
+\begin{equation}
+\hat{t} =\frac{t}{S^{1/3}\,\tau_H},
+\end{equation}
+where $S$ and $\tau_H$ are the Lundquist number and hydromagnetic time, respectively, at the rational surface. The real dimensionless quantities $E_{ss}$ and $E_{sb}$
+are the tearing stability index, and the coupling constant between the RMP and the rational surface, respectively. (See Sects.~\ref{psis} and \ref{psib}.) It is assumed that
+$E_{ss}<0$, which implies that the plasma is intrinsically tearing-stable, and that any reconnected magnetic flux at the rational surface is due to the action of the RMP. 
+The complex dimensionless quantities $F_s(\hat{g})$ and $\hat{\mit\Delta}_s(\hat{g})$ are determined by the layer solution in the inner region. 
+
+\subsection{Linear Resonant Plasma Response Model}
+Our adopted linear resonant plasma response model is the three-field model presented in Ref.~\onlinecite{err3}. (See Appendix~\ref{inner}.) This model is defined by the following six
+dimensionless parameters: $Q_E= -S^{1/3}\,n\,\omega_E\,\tau_H$, $Q_e = -S^{1/3}\,n\,\omega_{\ast\,e}\,\tau_H$, $Q_i = -S^{1/3}\,n\,\omega_{\ast\,i}\,\tau_H$,
+$D=S^{1/3}\,\iota_e^{\,1/2}\,\hat{d}_\beta$, $P_\perp=\tau_R/\tau_\perp$, and $P_\varphi= \tau_R/\tau_\varphi$. Here, $\tau_R$ is the resistive diffusion timescale, $\tau_H$ the hydrodynamic timescale, $\tau_\perp$ the energy confinement timescale,
+$\tau_\varphi$ the momentum confinement timescale, $S=\tau_R/\tau_H$ the Lundquist number, $\omega_E$ the ${\bf E}\times {\bf B}$ frequency, $\omega_{\ast\,e}$ the
+electron diamagnetic frequency, $\omega_{\ast\,i}$ the ion diamagnetic frequency, $d_\beta=c_\beta\,d_i$ the ion sound-radius, $d_i$ the collisionless ion skin-depth, 
+$c_\beta=\sqrt{\beta/(1+\beta)}$, $\sqrt{\beta}=\sqrt{(5/3)\,\mu_0\,p}/B_\varphi$ the ratio of the sound speed
+to the Alfv\'{e}n speed, and $p$ the plasma pressure.   Moreover,
+$P_\perp$ and $P_\varphi$ are magnetic Prandtl numbers, 
+$\iota_e = - \omega_{\ast\,e}/(\omega_{\ast\,i}-\omega_{\ast\,e})$, and $\hat{d}_\beta= d_\beta/r_s$. All quantities are evaluated at the
+rational surface. 
+
+\subsection{Linear Resonant Plasma Response Regimes}
+According to the analysis of Appendix~\ref{response}, there are seven different linear resonant plasma response regimes. 
+
+The {\em resistive-inertial}\/ regime is such that
+\begin{align}
+\hat{\mit\Delta}_s(\hat{g}) &= \frac{2\pi\,\Gamma(3/4)}{\Gamma(1/4)}\,[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{3/4}\,(\hat{g}
++{\rm i}\,Q_E)^{1/4}\,[\hat{g}+{\rm i}\,(Q_E+Q_i)]^{1/4},\\[0.5ex]
+F_s(\hat{g}) &= 1,\\[0.5ex]
+\hat{\delta} &= \frac{|\hat{g}+{\rm i}\,Q_E|^{1/4}\,|\hat{g}+{\rm i}\,(Q_E+Q_i)|^{1/4}}{|\hat{g} +{\rm i}\,(Q_E+Q_e)|^{1/4}}.
+\end{align}
+Here, the resonant layer width is $\delta = r_s\,S^{-1/3}\,\hat{\delta}$. 
+
+The {\em viscous-resistive}\/ regime is such that 
+\begin{align}
+\hat{\mit\Delta}_s(\hat{g}) &= \frac{6^{2/3}\,\pi\,\Gamma(5/6)}{\Gamma(1/6)}\, [\hat{g}+{\rm i}\,(Q_E+Q_e)]\,P_\varphi^{\,1/6},\\[0.5ex]
+F_s(\hat{g})&= 1,\\[0.5ex]
+\hat{\delta} &= P_\varphi^{\,1/6}.
+\end{align}
+
+The {\em semi-collisional}\/ regime is such that
+\begin{align}
+\hat{\mit\Delta}_s(\hat{g})&= \frac{\pi\,[\hat{g}+{\rm i}\,(Q_E+Q_e)]\,(\hat{g}+{\rm i}\,Q_E)^{1/2}}{D},\\[0.5ex]
+F_s(\hat{g}) &= 1,\\[0.5ex]
+\hat{\delta} &= \frac{|{\hat g}+{\rm i}\,Q_E|^{1/2}}{D}.
+\end{align}
+
+The {\em diffusive-resistive}\/ regime is such that
+\begin{align}
+\hat{\mit\Delta}_s(\hat{g})&= \frac{2\pi\,\Gamma(3/4)}{\Gamma(1/4)}\,\frac{[\hat{g}+{\rm i}\,(Q_E+Q_e)]\,\iota_e^{\,1/4}\,P_\perp^{1/4}}{D^{1/2}},\\[0.5ex]
+F_s(\hat{g}) &= 1,\\[0.5ex]
+\hat{\delta} &= \frac{\iota_e^{\,1/4}\,P_\perp^{1/4}}{D^{1/2}}.
+\end{align}
+
+The {\em inertial}\/ regime is such that 
+ \begin{align}\
+\hat{\mit\Delta}_s(\hat{g}) &= -\frac{\pi}{(\hat{g}+{\rm i}\,Q_E)^{1/2}\,[\hat{g}+{\rm i}\,(Q_E+Q_i)]^{1/2}},\label{in1}\\[0.5ex]
+F_s(\hat{g})&= - \frac{2}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]\,(\hat{g}+{\rm i}\,Q_E)\,[\hat{g}+{\rm i}\,(Q_E+Q_i)]},\label{in2}\\[0.5ex]
+\hat{\delta} &= |\hat{g}+{\rm i}\,Q_E|^{1/2}\,|\hat{g}+ {\rm i}\,(Q_E+Q_i)|^{1/2}.
+\end{align}
+
+The {\em viscous-inertial}\/ regime is such that 
+\begin{align}
+\hat{\mit\Delta}_s(\hat{g}) &=- \frac{\pi}{2}\,\frac{\Gamma(1/4)}{\Gamma(3/4)}\,\frac{1}{[\hat{g}-{\rm i}\,(Q_E+Q_e)]^{1/4}\,P_\varphi^{\,1/4}},\label{vi1}\\[0.5ex]
+F_s(\hat{g}) &= - \frac{\pi^{1/2}}{2}\,\frac{\Gamma(1/4)}{\Gamma(3/4)}\,\frac{1}{[\hat{g}-{\rm i}\,(Q_E+Q_e)]^{3/2}\,P_\varphi^{\,1/2}},\label{vi2}\\[0.5ex]
+\hat{\delta} &= |\hat{g}-{\rm i}\,(Q_E+Q_e)|^{1/4}\,P_\varphi^{\,1/4}.
+\end{align}
+
+Finally, the  {\em diffusive-inertial}\/ regime is such that
+\begin{align}
+\hat{\mit\Delta}_s&= -\frac{\pi\,D}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{1/2}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}},\\[0.5ex]
+F_s(\hat{g}) &= - \frac{2\,D^2}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^2\,\iota_e\,P_\perp},\\[0.5ex]
+\hat{\delta} &= |\hat{g}+{\rm i}\,(Q_E+Q_e)|^{1/2}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}.
+\end{align}
+
+Suppose that $|Q_E|\sim |Q_e|\sim |Q_i|\sim Q$ and $P_\varphi\sim P_\perp\sim P$. Let $R=\sqrt{\hat{g}^2+Q^2}$. The extents of the various
+linear resonant response regimes in $R$-$P$ space is illustrated in Figs.~\ref{f1} and \ref{f2}. 
+
+\section{Driven Magnetic Reconnection Regimes}
+
+\subsection{Model RMP}
+Suppose that the RMP takes the form 
+\begin{equation}\label{e145}
+{\mit\Psi}_b(t) = {\mit\Psi}_{b\,0}\left\{\begin{array}{ccc} 0&~~~~&t<0\\[0.5ex]
+1&&t\geq 0\end{array}\right..
+\end{equation}
+In other words, the RMP is switched on suddenly at $t=0$. It follows from Eq.~(\ref{psibx}) that
+\begin{equation}
+\overline{\mit\Psi}_b(\hat{g}) = \frac{{\mit\Psi}_{b\,0}}{\hat{g}}.
+\end{equation}
+Let
+\begin{equation}
+{\mit\Psi}_0(\hat{t}) = {\mit\Psi}_\infty\,\hat{\Psi}_0(\hat{t}),
+\end{equation}
+where
+\begin{equation}
+{\mit\Psi}_\infty = \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}
+\end{equation}
+is the reconnected magnetic flux that would be driven at the rational surface in the absence of a current sheet at the surface. In other words, ${\mit\Psi}_\infty$ is the maximum possible
+time-asymptotic reconnected flux. It follows from Eq.~(\ref{drive}) and the previous three equations that
+\begin{equation}
+\hat{\mit\Psi}_0(\hat{t}) = \frac{1}{2\pi\,{\rm i}}\int_C \frac{F_s(\hat{g})\,{\rm e}^{\,\hat{g}\,\hat{t}}}{\hat{g}\,[{\mit\Sigma}\,\hat{\mit\Delta}_s(\hat{g})+1]}\,d\hat{g},
+\end{equation}
+where ${\mit\Sigma}= S^{1/3}/(-E_{ss})$. 
+
+In the various non-constant-$\psi$ resonant response regimes (i.e., the inertial, viscous-inertial, and diffusive-inertial regimes), we shall assume that ${\mit\Sigma}\,|{\mit\Delta}_s(g)|\gg 1$, so
+\begin{equation}\label{ncp}
+\hat{\mit\Psi}_0(\hat{t}) \simeq \frac{1}{2\pi\,{\rm i}\,{\mit\Sigma}}\int_C \frac{F_s(\hat{g})\,{\rm e}^{\,\hat{g}\,\hat{t}}}{\hat{g}\,\hat{\mit\Delta}_s(\hat{g})}\,d\hat{g}
+\end{equation}
+In the various constant-$\psi$ regimes  (i.e., the resistive-inertial, viscous-resistive, semi-collisional, and diffusive-resistive regimes), $F_s\simeq 1$, so
+\begin{equation}
+\hat{\mit\Psi}_0(\hat{t}) \simeq \frac{1}{2\pi\,{\rm i}}\int_C \frac{{\rm e}^{\,\hat{g}\,\hat{t}}}{\hat{g}\,[{\mit\Sigma}\,\hat{\mit\Delta}_s(\hat{g})+1]}\,d\hat{g},
+\end{equation}
+
+\subsection{Inertial Regime}
+In the inertial resonant response regime, Eqs.~(\ref{in1}), (\ref{in2}), and (\ref{ncp}) yield
+\begin{equation}
+\hat{\mit\Psi}_{0\,I}(\hat{t}) = \frac{1}{2\pi\,{\rm i}}\int_C \overline{\mit\Psi}_{0\,I}(\hat{g})\,{\rm e}^{\,\hat{g}\,\hat{t}}\,d\hat{g},
+\end{equation}
+where
+\begin{align}
+\overline{\mit\Psi}_{0\,I}(\hat{g}) &= \frac{\epsilon_I}{{\rm i}\,(Q_E+Q_e)}\left[
+\frac{1}{\hat{g}}- \frac{1}{\hat{g}+ {\rm i}\,(Q_E+Q_e)}\right]
+\frac{1}{(\hat{g}+{\rm i}\,Q_E)^{1/2}\,[\hat{g} + {\rm i}\,(Q_E+Q_i)]^{1/2}},
+\end{align}
+and
+\begin{align}
+\epsilon_I = \frac{2}{\pi\,{\mit\Sigma}}.
+\end{align}
+
+Now, if
+\begin{equation}
+\overline{\mit\Psi}_{0\,I}(\hat{g}) = \frac{\overline{H}(\hat{g})}{\hat{g} + a}
+\end{equation}
+then Eq.~(4.1.20) of Ref.~\onlinecite{ed} yields
+\begin{equation}
+\hat{\mit\Psi}_{0\,I}(\hat{t}) = \int_0^{\hat{t}}{\rm e}^{\,a\,(\hat{t}'-\hat{t})}\,H(\hat{t}')\,d\hat{t}',
+\end{equation}
+where $\overline{H}(\hat{g})$ is the Laplace transform of $H(\hat{t})$. 
+In the present case,
+\begin{align}
+\overline{H}(\hat{g}) &= \frac{1}{(\hat{g}+{\rm i}\,Q_E)^{1/2}\,[g +{\rm i}\,(Q_E+Q_i)]^{1/2}}=\frac{1}{(\hat{g}^{\,2}  + \alpha\,\hat{g} + \beta)^{1/2}},
+\end{align}
+where
+\begin{align}
+\alpha &= {\rm i}\,(2\,Q_E+Q_i),\\[0.5ex]
+\beta&= - Q_E\,(Q_E+Q_i).
+\end{align}
+Note that
+\begin{equation}
+\beta- \frac{1}{4}\,\alpha^2 = -Q_E\,(Q_E+Q_i) +\frac{1}{4}\,(2\,Q_E+Q_i)^2 = \frac{Q_i^{\,2}}{4}.
+\end{equation}
+However Eq.~(5.3.34) of Ref.~\onlinecite{ed} yields, 
+\begin{align}
+H(\hat{t}) &= {\rm e}^{-\alpha\,\hat{t}/2}\,J_0[(\beta-\alpha^2/4)^{1/2}\,\hat{t}]= {\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t}}\,J_0\!\left(\frac{Q_i}{2}\,\hat{t}\right),
+\end{align}
+where $J_0(z)$ is a Bessel function. 
+Thus,
+\begin{align}
+\hat{\mit\Psi}_{0\,I}(\hat{t}) &=\frac{\epsilon_I}{{\rm i}\,(Q_E+Q_e)}
+\int_0^{\hat{t}}\left[1-{\rm e}^{\,{\rm i}\,(Q_E+Q_e)\,(\hat{t}'-\hat{t})}\right]
+{\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t}'}\,J_0\!\left(\frac{Q_i}{2}\,\hat{t}'\right)d\hat{t}'.
+\end{align}
+
+At small $\hat{t}$,
+\begin{equation}
+\hat{\mit\Psi}_{0\,I}(\hat{t})\simeq \frac{\epsilon_I\,\hat{t}^{\,2}}{\Gamma(3)}.
+\end{equation}
+
+At large $\hat{t}$,
+\begin{align}
+\hat{\mit\Psi}_{0\,I}(\hat{t}) &\simeq \frac{\epsilon_I}{{\rm i}\,(Q_E+Q_e)}
+\int_0^{\infty}\left[1-{\rm e}^{\,{\rm i}\,(Q_E+Q_e)\,(\hat{t}'-\hat{t})}\right]
+{\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t}'}\,J_0\!\left(\frac{Q_i}{2}\,\hat{t}'\right)d\hat{t}'.
+\end{align}
+But, Eq.~(6.621.4) of Ref.~\onlinecite{grad} yields
+\begin{equation}
+\int_0^\infty {\rm e}^{-\alpha\,x}\,J_0(\beta\,x)\,dx =\frac{1}{\sqrt{\alpha^2+\beta^2}},
+\end{equation}
+so
+\begin{equation}
+\hat{\mit\Psi}_{0\,I}(\hat{t})\simeq \frac{\epsilon_I}{{\rm i}\,(Q_E+Q_i)}\left\{
+\frac{1}{({\rm i}\,Q_E)^{1/2}\,[{\rm i}\,(Q_E+Q_i)]^{1/2}}- \frac{{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}}{({\rm i}\,Q_e)^{1/2}\,[{\rm i}\,(Q_e-Q_i)]^{1/2}}\right\}.
+\end{equation}
+
+\subsection{Viscous-Inertial Regime}
+In the viscous-inertial resonant response regime, Eqs.~(\ref{vi1}), (\ref{vi2}), and (\ref{ncp}) yield
+\begin{equation}
+\hat{\mit\Psi}_{0\,VI}(\hat{t}) = \frac{1}{2\pi\,{\rm i}}\int_C \overline{\mit\Psi}_{0\,VI}(\hat{g})\,{\rm e}^{\,\hat{g}\,\hat{t}}\,d\hat{g},
+\end{equation}
+where
+\begin{align}
+\overline{\mit\Psi}_{0\,VI}(\hat{g}) =
+\frac{ \epsilon_{VI}}{\hat{g}}\,\frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{5/4}},
+\end{align}
+and
+\begin{equation}
+\epsilon_{VI} = \frac{1}{\pi^{1/2}\,{\mit\Sigma}\,P_\varphi^{\,1/4}}.
+\end{equation}
+
+In this case,
+\begin{equation}
+\overline{H}(g) = \frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{5/4}},
+\end{equation}
+so Eq.~(5.4.1) of Ref.~\onlinecite{ed} yields 
+\begin{equation}
+H(\hat{t}) = \frac{1}{\Gamma(5/4)}\,\hat{t}^{\,1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}.
+\end{equation}
+Hence,
+\begin{equation}
+\hat{\mit\Psi}_{0\,VI}(\hat{t}) =\frac{\epsilon_{VI}}{\Gamma(5/4)}\int_0^{\hat{t}}
+\hat{t}'^{\,1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
+\end{equation}
+
+At small $\hat{t}$,
+\begin{equation}
+\hat{\mit\Psi}_{0\,VI}(\hat{t}) \simeq \frac{\epsilon_{VI}\,\hat{t}^{\,5/4}}{\Gamma(9/4)}.
+\end{equation}
+
+At large $\hat{t}$, 
+\begin{equation}
+\hat{\mit\Psi}_{0\,VI}(\hat{t}) \simeq\frac{\epsilon_{VI}}{\Gamma(5/4)}\int_0^\infty
+\hat{t}'^{\,1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
+\end{equation}
+But Eq.~(3.381.5) of Ref.~\onlinecite{grad} yields, 
+\begin{equation}
+\int_0^\infty x^{\nu-1}\,{\rm e}^{-{\rm i}\,q\,x}\,dx = \frac{\Gamma(\nu)}{({\rm i}\,q)^{\nu}},
+\end{equation}
+so 
+\begin{equation}
+\hat{\mit\Psi}_{0\,VI}(\hat{t}) \simeq \frac{\epsilon_{VI}}{[{\rm i}\,(Q_E+Q_e)]^{5/4}}.
+\end{equation}
+
+  
 \iffalse 
 \section{Linear Response Theory}
 \subsection{Introduction}
@@ -685,14 +930,14 @@ The data that support the findings of this study are available from the correspo
 
 \appendix
 
-\section{Outer Region}
+\section{Outer Region}\label{outer}
 \subsection{Introduction}
 Consider the cylindrical plasma equilibrium introduced in Sect.~\ref{s2a}. Suppose that the plasma is subject to an RMP with $m$ periods in the
 poloidal direction, and $n$ periods in the toroidal direction. The perturbation is resonant at the rational surface, radius $r_s$, at which $q(r_s)=m/n$. 
 This appendix considers the response of the plasma to the RMP in the outer region: that is, everywhere apart from the immediate vicinity of the rational surface. 
 
 \subsection{Cylindrical Tearing Mode Equation}
-In the outer region, the perturbed magnetic field can be written $\delta {\bf B} = \nabla\delta \psi\times{\bf e}_z$, where
+In the outer region, the perturbed magnetic field can be written $\delta {\bf B} = r_s\,B_\varphi\,\nabla\delta \psi\times{\bf e}_z$, where
 \begin{equation}\label{e2}
 \delta\psi(r,\zeta,t) = \psi_1(r,t)\,{\rm e}^{\,{\rm i}\,\zeta},
 \end{equation}
@@ -707,13 +952,13 @@ where $\hat{r}=r/a$, $J_\varphi'(\hat{r})= dJ_\varphi/d\hat{r}$,
 \begin{align}
 J_\varphi(\hat{r}) &= \frac{R_0\,\mu_0\,j_\varphi}{B_\varphi}.
 \end{align}
-Let us assume that $J_\varphi(\hat{r})$ is a continuous function, and that $J_\varphi(\hat{r}>1)=0$. 
+Let us assume that $J_\varphi(\hat{r})$ is a continuous function, and that $J_\varphi(\hat{r}>1)=0$.  (In other words, the region $\hat{r}>1$ is assumed to be a vacuum.)
 Note that Eq.~(\ref{e111}) is singular at the  rational surface. The singularity is indicative of the breakdown of the equations of linearized, 
 marginally-stable, ideal-MHD in the  inner region.
  
 \subsection{Solution of Cylindrical Tearing Mode Equation}\label{scly}
 Suppose that the plasma is surrounded by a rigid conducting wall located at $r=b$, where $b>a$. 
-Let $\psi_1(b,t) = {\mit\Psi}_b(t)$, where ${\mit\Psi}_b(t)$ is a complex constant that specifies the amplitude and phase of the
+Let $\psi_1(b,t) = {\mit\Psi}_b(t)$, where ${\mit\Psi}_b(t)$ is a complex dimensionless quantity that specifies the amplitude and phase of the
 RMP to which the plasma is subject. The most general solution to the cylindrical tearing mode equation in the outer region is written 
 \begin{equation}\label{e73}
 \psi_1(\hat{r},t) = {\mit\Psi}_s(t)\,\hat\psi_s(\hat{r}) + {\mit\Psi}_b(t)\,\hat{\psi}_b(\hat{r}), 
@@ -730,10 +975,10 @@ Moreover, $\hat{\psi}_b(\hat{r})$ is a real continuous solution of Eq.~(\ref{e11
 \hat{\psi}_b(\hat{r}\leq \hat{r}_s) &= 0,\\[0.5ex]
 \hat{\psi}_b(\hat{b})&= 1.\label{e109}
 \end{align}
-Note that the complex quantity ${\mit\Psi}_s(t)$ parameterizes the amplitude and phase  of the
+Note that the dimensionless complex quantity ${\mit\Psi}_s(t)$ parameterizes the amplitude and phase  of the
 helical magnetic flux driven  by the RMP at the interface between the inner and the outer regions.
 
-\subsection{Calculation of $\hat{\psi}_s(\hat{r})$}
+\subsection{Calculation of $\hat{\psi}_s(\hat{r})$}\label{psis}
 In the limit $0<\hat{r}\ll 1$, the solution of Eq.~(\ref{e111}), subject to the boundary condition (\ref{e11a}), is 
 \begin{equation}\label{e81}
 \hat{\psi}_s(\hat{r})\propto \hat{r}^{\,m} + \kappa_0\,\hat{r}^{\,m+2},
@@ -773,14 +1018,14 @@ Finally, solving Eq.~(\ref{e111}) outside the plasma (where $J_\varphi'=0$), sub
 We can calculate $\hat{\psi}_s(\hat{r})$ by, first, launching a solution of Eq.~(\ref{e111}) from the magnetic
 axis, subject to the boundary condition (\ref{e81}), and integrating to just inside the rational surface.
 Next, we launch a second solution of  Eq.~(\ref{e111}) from  the plasma boundary, subject to the boundary condition (\ref{e87}),   and integrate to just outside the rational surface. The two solutions are then rescaled subject to the
-constraint $\hat{\psi}_s(\hat{r}_s)=1$. The real quantity
+constraint $\hat{\psi}_s(\hat{r}_s)=1$. The real dimensionless quantity
 \begin{align}\label{e88}
 E_{ss} &\equiv \left[\hat{r}\,\frac{d\hat{\psi}_s}{d\hat{r}}\right]^{\hat{r}=\hat{r}_{s+}}_{\hat{r}=\hat{r}_{s-}} ={\mit\Delta}_{s+} -{\mit\Delta}_{s-}
 \end{align}
 is the  conventional tearing stability index.\cite{fkr} It is assumed that $E_{ss}<0$, which implies that the $m/n$ tearing mode is intrinsically stable. Thus, any reconnected magnetic flux that develops at the rational surface is
 due solely to the action of the RMP to which the plasma is subject.
 
-\subsection{Calculation of $\hat{\psi}_b(\hat{r})$}
+\subsection{Calculation of $\hat{\psi}_b(\hat{r})$}\label{psib}
 In order to calculate $\hat{\psi}_b(\hat{r})$, we launch a solution of Eq.~(\ref{e111}) from just outside the
 rational surface, such that 
 \begin{align}
@@ -795,13 +1040,14 @@ Let
 \gamma_b&= \alpha_b+\beta_b.
 \end{align}
 The boundary condition (\ref{e109}) is satisfied by dividing our solution by $\gamma_b$. 
-Let us define the real quantity 
+Let us define the real dimensionless quantity 
 \begin{equation}\label{e93}
-E_{sb} \equiv \left[\hat{r}\,\frac{d\hat{\psi}_b}{d\hat{r}}\right]_{\hat{r}=\hat{r}_{s+}} = \frac{1}{\gamma_b}.
+E_{sb} \equiv \left[\hat{r}\,\frac{d\hat{\psi}_b}{d\hat{r}}\right]_{\hat{r}=\hat{r}_{s+}} = \frac{1}{\gamma_b},
 \end{equation}
+which parameterizes the coupling between the wall and the rational surface. 
 
 \subsection{Asymptotic Matching}
-The complex quantity 
+The complex dimensionless quantity 
 \begin{align}\label{e30}
 {\mit\Delta\Psi}_{s}(t) &= \left[\hat{r}\,\frac{\partial\psi_1}{\partial\hat{r}}\right]_{\hat{r}=\hat{r}_{s-}}^{\hat{r}=\hat{r}_{s+}}
 \end{align}
@@ -812,9 +1058,9 @@ Asymptotic matching between the inner and the outer regions yields
 \end{align}
 where use has been made of Eqs.~(\ref{e73}), (\ref{e88}), (\ref{e93}), and (\ref{e30}). 
 
-\section{Inner Region}
+\section{Inner Region}\label{inner}
 \subsection{Introduction}
-The inner region, which lies in the immediate vicinity of the rational surface, is assumed to be governed by the  four-field model described in Ref.~\onlinecite{err3}. This
+The inner region, which lies in the immediate vicinity of the rational surface, is assumed to be governed by the  four-field drift-MHD model described in Ref.~\onlinecite{err3}. This
 model is an extension of a model introduced in Ref.~\onlinecite{err2}, and is ultimately based on the four-field model of Ref.~\onlinecite{hkm}. 
 
 \subsection{Useful Definitions}
@@ -835,7 +1081,7 @@ For the sake of simplicity, the perturbed electron and ion temperature profiles 
 the perturbed electron number density profile in the immediate vicinity of the rational surface. In other words, $T_e=T_e(n_e)$ and $T_i=T_i(n_e)$. This
 implies that $p=p(n_e)$. 
 The  MHD velocity, which is the velocity of a
-fictional MHD fluid, is defined as ${\bf V}={\bf V}_E + V_{\parallel\,i}\,{\bf b}$, where ${\bf V}_E$ is the
+fictional MHD fluid,\cite{haz1} is defined as ${\bf V}={\bf V}_E + V_{\parallel\,i}\,{\bf b}$, where ${\bf V}_E$ is the
 ${\bf E}\times {\bf B}$ drift velocity, $V_{\parallel\,i}$  the parallel component of the ion fluid
 velocity, ${\bf b}= {\bf B}/|{\bf B}|$, and ${\bf B}$ the magnetic field-strength. 
 
@@ -850,7 +1096,7 @@ V &= \hat{d}_i\left(\frac{{\bf e}_\parallel\cdot {\bf V}}{V_A}\right).\label{e13
 \end{align}
 Here,   ${\bf e}_\parallel = (0,\,\epsilon/q_s,\,1)$, $\epsilon = r/R_0$, $q_s=m/n$, 
 $V_A =(B_\varphi/\sqrt{\mu_0\,n_0\,m_i})_{r_s}$ is the Alfv\'{e}n speed, 
-$d_i = \sqrt{m_i/(n_0\,e^{\,2}\,\mu_0)_{e_s}}$ the collisionless ion skin-depth,
+$d_i = \sqrt{m_i/(n_0\,e^{\,2}\,\mu_0)_{r_s}}$ the collisionless ion skin-depth,
 and $\hat{d}_i=d_i/r_s$. 
  Our
 model also employs the auxiliary dimensionless  field
@@ -860,11 +1106,11 @@ J=-\frac{2\,\epsilon_s}{q_s}+\hat{\nabla}^2\psi,
 where 
 $\epsilon_s=r_s/R_0$, and $\hat{\nabla} = r_s\,\nabla$. Note that 
 \begin{equation}\label{e44}
-\psi(r,\zeta,t) = \frac{\psi_0(r)+ \psi_1(r,t)\,{\rm e}^{\,{\rm i}\,\zeta}}{r_s\,B_\varphi},
+\psi(r,\zeta,t) = \psi_0(r)+ \psi_1(r,t)\,{\rm e}^{\,{\rm i}\,\zeta},
 \end{equation}
 where
 \begin{equation}\label{e45}
-\psi_0(r) = \frac{B_\varphi}{R_0}\int_{r_s}^r r'\left[\frac{n}{m}-\frac{1}{q(r')}\right]dr'.
+\psi_0(r) = \frac{1}{R_0\,r_s}\int_{r_s}^r r'\left[\frac{n}{m}-\frac{1}{q(r')}\right]dr'.
 \end{equation}
 
 \subsection{Four-Field Model}
@@ -941,7 +1187,7 @@ $\omega_E =-(q_s/r_s)\,V_E(r_s)=- (d{\mit\Phi}/{d\psi_p})_{r_s}$
   the 
 ${\bf E}\times {\bf B}$ frequency, 
 $\omega_{\ast\,e} = \iota_e\,(q_s/r_s)\,V_\ast(r_s) = [(dp_e/d\psi_p)/(e\,n_e)]_{r_s}$
-theelectron diamagnetic requency,
+the electron diamagnetic requency,
 $\omega_{\ast\,i} =-\iota_i\,(q_s/r_s)\,V_\ast(r_s)=- [(dp_i/d\psi_p)/(e\,n_e)]_{r_s}$
  the   ion diamagnetic frequency,  ${\mit\Phi}(r)$ the equilibrium electrostatic potential, $\psi_p(r)= B_\varphi\int_0^r dr'\,r'/q(r')$ the equilibrium poloidal magnetic flux, 
 $S=\tau_R/\tau_H$
@@ -981,13 +1227,13 @@ et cetera.
 \subsection{Asymptotic Matching}
 Let
 \begin{align}
-\bar{\mit\Psi}_b(g) &= \int_0^\infty {\mit\Psi}_b(t)\,{\rm e}^{-g\,t}\,dt,\label{e71}\\[0.5ex]
-\bar{\mit\Psi}_s(g) &= \int_0^\infty {\mit\Psi}_s(t)\,{\rm e}^{-g\,t}\,dt,\\[0.5ex]
-\overline{\mit\Delta\Psi}_s(g) &= \int_0^\infty {\mit\Delta\Psi}_s(t)\,{\rm e}^{-g\,t}\,dt \equiv \bar{\mit\Delta}_s(g)\,\bar{\mit\Psi}_s(g).\label{e73a}
+\overline{\mit\Psi}_b(g) &= \int_0^\infty {\mit\Psi}_b(t)\,{\rm e}^{-g\,t}\,dt,\label{e71}\\[0.5ex]
+\overline{\mit\Psi}_s(g) &= \int_0^\infty {\mit\Psi}_s(t)\,{\rm e}^{-g\,t}\,dt,\\[0.5ex]
+\overline{\mit\Delta\Psi}_s(g) &= \int_0^\infty {\mit\Delta\Psi}_s(t)\,{\rm e}^{-g\,t}\,dt \equiv \overline{\mit\Delta}_s(g)\,\overline{\mit\Psi}_s(g).\label{e73a}
 \end{align}
 It follows from Eq.~(\ref{e31a}) that
 \begin{equation}\label{e74}
-\bar{\mit\Psi}_s(g) =\frac{ E_{sb}\,\bar{\mit\Psi}_b(g)}{\bar{\mit\Delta}_s(g)-E_{ss}}.
+\overline{\mit\Psi}_s(g) =\frac{ E_{sb}\,\overline{\mit\Psi}_b(g)}{\overline{\mit\Delta}_s(g)-E_{ss}}.
 \end{equation}
 
 The Laplace transformed layer equations, (\ref{e67})--(\ref{e69}), possess a twisting parity solution,\cite{twist} such that 
@@ -1002,7 +1248,7 @@ trivial. Furthermore, when this solution is asymptotically matched to the outer 
 Here, 
 \begin{align}
 \bar{\xi}_r(g)& = \int_0^\infty \xi_r(t)\,{\rm e}^{-g\,t}\,dt,\\[0.5ex]
-\xi_r(t)&= \frac{({\mit\Delta}_{s+}+{\mit\Delta}_{s-})\,{\mit\Psi}_s(t)+E_{sb}\,{\mit\Psi}_b(t)}{2\,r_s\,B_\varphi/L_s}, 
+\xi_r(t)&= \frac{({\mit\Delta}_{s+}+{\mit\Delta}_{s-})\,{\mit\Psi}_s(t)+E_{sb}\,{\mit\Psi}_b(t)}{2/L_s}, 
 \end{align}
 where $\xi_r(t)\,{\rm e}^{\,{\rm i}\,\zeta}$ is an even (in $\hat{x}$) radial displacement of the plasma in the vicinity of the rational
 surface that turns out to be independent of $\hat{x}$, and is driven by the magnetic perturbation. It follows that\,\cite{ed}
@@ -1011,13 +1257,13 @@ surface that turns out to be independent of $\hat{x}$, and is driven by the magn
 \tilde{\phi}(t) &={\rm i}\,\frac{\tau_H}{L_s}\left(\frac{d}{dt} - {\rm i}\,n\,\omega_E\right)\xi_r(t),\\[0.5ex]
 \tilde{N}(t) &= -n\,\omega_{\ast\,e}\,\tau_H\,\frac{\xi_r(t)}{L_s}.
 \end{align}
-Note that the twisting parity solution gives rise to no magnetic reconnection at the rational surface [i.e., $\psi(\hat{x}=0,\zeta,\hat{t})=0$].
+Note that the twisting parity solution gives rise to no magnetic reconnection at the rational surface [i.e., $\tilde{\psi}(\hat{x}=0,\zeta,\hat{t})=0$].
 
 The Laplace transformed layer equations, (\ref{e67})--(\ref{e69}), also possess a non-trivial tearing parity solution,\cite{twist} such that 
 $\bar{\psi}(-\hat{x},g)=\bar{\psi}(\hat{x},g)$, $\bar{\phi}(-\hat{x},g)=-\bar{\phi}(\hat{x},g)$, and $\bar{N}(-\hat{x},g)=
 -\bar{N}(\hat{x},g)$. When this solution is asymptotically matched to the outer solution, making use of Eqs.~(\ref{e73}), (\ref{e18}), (\ref{e19}),  and (\ref{e10}), we find that
 \begin{equation}\label{e79}
-\bar{\psi}(\hat{x},g)\rightarrow \left[\frac{\bar{\mit\Psi}_s(g)}{r_s\,B_\varphi}\right]\left[1+\bar{\mit\Delta}_s(g)\,\frac{|\hat{x}|}{2}\right]
+\bar{\psi}(\hat{x},g)\rightarrow \overline{\mit\Psi}_s(g)\left[1+\overline{\mit\Delta}_s(g)\,\frac{|\hat{x}|}{2}\right]
 \end{equation}
 at the interface between the inner and the outer regions. 
 
@@ -1043,15 +1289,15 @@ D &= S^{\,1/3}\,\iota_e^{1/2}\,\hat{d}_\beta.
 According to Eq.~(\ref{e79}), the asymptotic behavior of the tearing-parity solutions of Eqs.~(\ref{e80})--(\ref{e82}) is
 such that
 \begin{equation}\label{e47}
-\bar{\psi}(X,\hat{g})\rightarrow  \left[\frac{\bar{\mit\Psi}_s(g)}{r_s\,B_\varphi}\right]\left[1+ \frac{\hat{\mit\Delta}_s(\hat{g})}{2}\,|X| + {\cal O}(X^2)\right]
+\bar{\psi}(X,\hat{g})\rightarrow  \bar{\mit\Psi}_s(g)\left[\frac{\hat{\mit\Delta}_s(\hat{g})}{2}\,|X| +1 + {\cal O}\left(\frac{1}{X^2}\right)\right]
 \end{equation}
 as $|X|\rightarrow\infty$, where
 \begin{equation}\label{e84}
-\bar{\mit\Delta}_s(g) = S^{1/3}\,\hat{\mit\Delta}_s(\hat{g}).
+\overline{\mit\Delta}_s(g) = S^{1/3}\,\hat{\mit\Delta}_s(\hat{g}).
 \end{equation}
 It follows from Eqs.~(\ref{e80})--(\ref{e82}) that
 \begin{equation}\label{e85}
-\bar{\phi}(X,\hat{g})\rightarrow {\rm i}\,(\hat{g}+{\rm i}\,Q_E)\left[\frac{\bar{\mit\Psi}_s(g)}{r_s\,B_\varphi}\right]\left[\frac{1}{X}+ \frac{\hat{\mit\Delta}_s(\hat{g})}{2}\,{\rm sgn}(X) + {\cal O}(X)\right]
+\bar{\phi}(X,\hat{g})\rightarrow {\rm i}\,(\hat{g}+{\rm i}\,Q_E)\,\overline{\mit\Psi}_s(g)\left[ \frac{\hat{\mit\Delta}_s(\hat{g})}{2}\,{\rm sgn}(X)+ \frac{1}{X}+ {\cal O}\left(\frac{1}{X^2}\right)\right]
 \end{equation}
 as $|X|\rightarrow\infty$. 
 
@@ -1070,20 +1316,17 @@ et cetera. The Fourier transformed linear layer equations become
 \end{align}
 where, for a tearing parity solution, Eq.~(\ref{e85}) yields\,\cite{ed}
 \begin{equation}\label{e94}
-\hat{\phi}(p,\hat{g})\rightarrow \pi\,(\hat{g}+{\rm i}\,Q_E)\left[\frac{\bar{\mit\Psi}_s(g)}{r_s\,B_\varphi}\right]\left[\frac{\hat{\mit\Delta}_s(\hat{g})}{\pi\,p} + 1+ {\cal O}(p)\right].
+\hat{\phi}(p,\hat{g})\rightarrow \pi\,(\hat{g}+{\rm i}\,Q_E)\,\overline{\mit\Psi}_s(g)\left[\frac{\hat{\mit\Delta}_s(\hat{g})}{\pi\,p} + 1+ {\cal O}(p)\right].
 \end{equation}
 as $p\rightarrow 0$. 
 
 Let 
 \begin{align}\label{e95}
-Y_e(p,g)\equiv \hat{\phi}(p,\hat{g})-\hat{N}(p,\hat{g})= \pi\,[\hat{g}+{ \rm i}\,(Q_E+Q_e)]\left[\frac{\bar{\mit\Psi}_s(g)}{r_s\,B_\varphi}\right]\,\hat{Y}_e(p,\hat{g}).
+Y_e(p,g)\equiv \hat{\phi}(p,\hat{g})-\hat{N}(p,\hat{g})= \pi\,[\hat{g}+{ \rm i}\,(Q_E+Q_e)]\,\overline{\mit\Psi}_s(g)\,\hat{Y}_e(p,\hat{g}).
 \end{align}
  Equations~(\ref{e314})--(\ref{e316}) can be combined to give 
 \begin{align}\label{e91}
 \frac{\partial}{\partial p}\!\left[A(p,\hat{g})\,\frac{\partial \hat{Y}_e}{\partial p}\right] - \frac{B(p,\hat{g})}{C(p,\hat{g})}\,p^2\,\hat{Y}_e=0,
-%\\[0.5ex]
-%\hat{\phi}(p,g) = \frac{D(p,g)}{C(p,g)}\,Y_e(p,g),\\[0.5ex]
-%\hat{N}(p,g) = - \frac{E(p,g)}{C(p,g)}\,Y_e(p,g),
 \end{align}
 where
 \begin{align}
@@ -1091,9 +1334,6 @@ A(p,\hat{g}) &= \frac{p^2}{\hat{g}+{\rm i}\,(Q_E+Q_e)+p^2},\label{e97a}\\[0.5ex]
 B(p,\hat{g})&= (\hat{g}+{\rm i}\,Q_E)\,[\hat{g}+{\rm i}\,(Q_E+Q_i)] + [\hat{g}+{\rm i}\,(Q_E+Q_i)]\,(P_\varphi+P_\perp)\,p^2 + P_\varphi\,P_\perp\,p^4,\\[0.5ex]
 C(p,\hat{g}) &= \hat{g}+{\rm i}\,(Q_E+Q_e)+ \left\{P_\perp
 +[\hat{g}+{\rm i}\,(Q_E+Q_i)]\,D^2\right\}p^2 + \iota_e^{\,-1}\,P_\varphi\,D^2\,p^4.
-%,\\[0.5ex]
-%D(p,g) &= \hat{g}+{\rm i}\,Q_E+ P_\perp\,p^2 + \frac{1}{\iota}\,P_\varphi\,D^2\,p^4,\\[0.5ex]
-%E(p,g) &= {\rm i}\,Q_e + [\hat{g} + {\rm i}\,(Q_E+Q_i)]\,D^2\,p^2 + P_\varphi\,D^2\,p^4.
 \end{align}
 Furthermore, because
 \begin{equation}
@@ -1110,27 +1350,26 @@ as $p\rightarrow 0$.  Equation~(\ref{e91}) must also satisfy the  physical bound
 \end{equation}
 as $p\rightarrow\infty$. 
 
-\subsection{Reconnected Magnetic Flux}
-The true reconnected magnetic flux at the rational surface is
+\subsection{Reconnected Helical Magnetic Flux}\label{recon}
+The true reconnected helical magnetic flux at the rational surface (divided by $r_s\,B_\varphi$)  is
 \begin{equation}
-{\mit\Psi}_0(t) \equiv \psi_1(0,t) = r_s\,B_\varphi\,\tilde{\psi}(0,t).
+{\mit\Psi}_0(t) \equiv \psi_1(0,t) = \tilde{\psi}(0,t).
 \end{equation}
 Let 
 \begin{equation}
-\bar{\mit\Psi}_0(g) = \int_0^\infty {\mit\Psi}_0(t)\,{\rm e}^{-g\,t}\,dt.
+\overline{\mit\Psi}_0(g) = \int_0^\infty {\mit\Psi}_0(t)\,{\rm e}^{-g\,t}\,dt.
 \end{equation}
 It is easily demonstrated from Eqs.~(\ref{e80}) and (\ref{e314}) that\,\cite{rf1}
 \begin{equation}\label{e103}
-\frac{\bar{\mit\Psi}_0(g)}{\bar{\mit\Psi}_s(g)}\equiv F_s(\hat{g}) = -\int_0^\infty A(p,\hat{g})\,\frac{\partial \hat{Y}_e}{\partial p}\,dp.
+\frac{\overline{\mit\Psi}_0(g)}{\overline{\mit\Psi}_s(g)}\equiv F_s(\hat{g}) = -\int_0^\infty A(p,\hat{g})\,\frac{\partial \hat{Y}_e}{\partial p}\,dp.
 \end{equation}
 Thus, it follows from Eqs.~(\ref{e74}) and (\ref{e84}) 
 that
 \begin{equation}\label{e110}
-\bar{\mit\Psi}_0(g) =\frac{ E_{sb}\,F_s(\hat{g})\,\bar{\mit\Psi}_b(g)}{S^{1/3}\,\hat{\mit\Delta}_s(\hat{g})-E_{ss}}.
+\overline{\mit\Psi}_0(g) =\frac{ E_{sb}\,F_s(\hat{g})\,\overline{\mit\Psi}_b(g)}{S^{1/3}\,\hat{\mit\Delta}_s(\hat{g})-E_{ss}}.
 \end{equation}
 
-
-\section{Linear Resonant Response Regimes}
+\section{Linear Resonant Response Regimes}\label{response}
 \subsection{Introduction}
 The aim of this section is to classify all of the different linear resonant response regimes predicted by Eqs.~(\ref{e91}), (\ref{e101}), (\ref{e102}), and (\ref{e103}). The approach taken is similar to that adopted in Refs.~\onlinecite{err2} and \onlinecite{err3},
 except that we need to incorporate the Laplace transform parameter, $g$, into the analysis. In the following, we shall
@@ -1197,7 +1436,7 @@ Hence, we deduce that
 \hat{\mit\Delta}_s(\hat{g}) = \frac{2\pi\,\Gamma(3/4)}{\Gamma(1/4)}\,[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{3/4}\,(\hat{g}
 +{\rm i}\,Q_E)^{1/4}\,[\hat{g}+{\rm i}\,(Q_E+Q_i)]^{1/4}.
 \end{equation}
-This response regime is known as the {\em resistive-inertial regime}\/ because the layer response is dominated by
+This response regime is known as the {\em resistive-inertial}\/  because the layer response is dominated by
 plasma resistivity and ion inertia.\cite{fkr,err1a,ara}. The characteristic layer width is $p_\ast \sim R^{-1/4}$,
 which implies that the regime is valid when $P\ll R^{3/2}$, $R\gg D^4$, and $R\ll 1$. 
 
@@ -1206,7 +1445,7 @@ Hence, we deduce that
 \begin{equation}\label{vr}
 \hat{\mit\Delta}_s(\hat{g}) = \frac{6^{2/3}\,\pi\,\Gamma(5/6)}{\Gamma(1/6)}\, [\hat{g}+{\rm i}\,(Q_E+Q_e)]\,P_\varphi^{\,1/6}.
 \end{equation}
-This response regime is known as the {\em viscous-resistive regime}\/ because the layer response is dominated by
+This response regime is known as the {\em viscous-resistive}\/ regime because the layer response is dominated by
   ion perpendicular viscosity and plasma resistivity.\cite{err1,bond} The characteristic layer width is $p_\ast \sim P^{-1/6}$, which implies that
 the regime is valid when  $P\gg R^{3/2}$, $P\gg D^6$, and $P\ll R^{-3}$. 
 
@@ -1218,7 +1457,7 @@ Hence, we deduce that
 \begin{equation}\label{sc}
 \hat{\mit\Delta}_s(\hat{g})= \frac{\pi\,[\hat{g}+{\rm i}\,(Q_E+Q_e)]\,(\hat{g}+{\rm i}\,Q_E)^{1/2}}{D}.
 \end{equation}
-This response regime is known as the {\em semi-collisional regime}.\cite{drake,wal} The characteristic
+This response regime is known as the {\em semi-collisional}\/ regime.\cite{drake,wal} The characteristic
 layer width is $p_\ast\sim D\,R^{-1/2}$, which implies that the regime is valid when $R\ll D^4$,
  $P\ll R^2/D^2$, and $R\ll D$. 
  
@@ -1230,7 +1469,7 @@ Hence, we deduce that
 \begin{equation}\label{dr}
 \hat{\mit\Delta}_s(\hat{g})= \frac{2\pi\,\Gamma(3/4)}{\Gamma(1/4)}\,\frac{[\hat{g}+{\rm i}\,(Q_E+Q_e)]\,\iota_e^{\,1/4}\,P_\perp^{1/4}}{D^{1/2}}.
 \end{equation}
-This response regime is known as the {\em diffusive-resistive regime}\/ because the layer 
+This response regime is known as the {\em diffusive-resistive}\/ regime because the layer 
 response is dominated by perpendicular energy diffusivity and plasma resistivity. \cite{err3} The characteristic
 layer width is $p_\ast \sim P^{-1/4}\,D^{1/2}$, which implies that the regime is valid when $P\gg R^2/D^2$,
 $P\ll D^6$, and $P\ll D^2/R^2$. 
@@ -1274,7 +1513,7 @@ Hence, we deduce that
 \hat{\mit\Delta}_s(\hat{g}) &= -\frac{\pi}{(\hat{g}+{\rm i}\,Q_E)^{1/2}\,[\hat{g}+{\rm i}\,(Q_E+Q_i)]^{1/2}},\\[0.5ex]
 F_s(\hat{g})&= - \frac{2}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]\,(\hat{g}+{\rm i}\,Q_E)\,[\hat{g}+{\rm i}\,(Q_E+Q_i)]}.\label{eib}
 \end{align}
-This response regime is known as the {\em inertial regime} because the layer response is dominated by
+This response regime is known as the {\em inertial}\/ regime because the layer response is dominated by
  ion inertia.\cite{ara,err1a} The characteristic layer width is $p_\ast \sim R^{-1}$,
 which implies that the regime is valid when $P\ll R^3$, $R\gg D$, and $R\gg 1$. 
 
@@ -1293,7 +1532,7 @@ where use has been made of the result
 \begin{equation}
 \int_0^\infty U(0,x)\,dx= \frac{\pi}{2^{3/4}\,\Gamma(3/4)}.
 \end{equation}
-This response regime is known as the {\em viscous-inertial regime}\/ because the layer response is dominated by
+This response regime is known as the {\em viscous-inertial}\/ regime because the layer response is dominated by
 ion perpendicular viscosity and ion inertia.\cite{err1a} 
  The characteristic layer width is $p_\ast \sim R^{-1/4}\,P^{-1/4}$,
 which implies that the regime is valid when $P\gg R^3$, $P\gg D^4/R$, and $P\gg R^{-3}$. 
@@ -1308,7 +1547,7 @@ Hence, we deduce that
 \hat{\mit\Delta}_s&= -\frac{\pi\,D}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{1/2}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}},\\[0.5ex]
 F_s(\hat{g}) &= - \frac{2\,D^2}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^2\,\iota_e\,P_\perp}.\label{edib}
 \end{align}
-This response regime is known as the {\em diffusive-inertial regime}\/ because the
+This response regime is known as the {\em diffusive-inertial}\/ regime because the
 layer response is dominated by perpendicular energy diffusivity and ion inertia. \cite{err3} The characteristic layer width is $p_\ast\sim
 R^{-1/2}\,P^{-1/2}\,D$, which implies that the regime is valid when $R\ll D$, $P\ll D^4/Q$, and $P\gg D^2/R^2$. 
 
@@ -1344,13 +1583,13 @@ we are now demanding equal layer thicknesses at the boundaries between the vario
 
 \bibitem{hz} W.~Huang and P.~Zhu, {\em Analytical model of plasma response to external magnetic perturbation in absence of no-slip condition}, Phys.\  Plasmas {\bf 27}, 022514 (2020).
 
+\bibitem{ric3} R.~Fitzpatrick, {\em Tearing mode dynamics in tokamak plasmas}, (IOP Publishing, Bristol UK, 2023). 
+
 \bibitem{fkr} H.P.~Furth,  J.~Killeen and M.N.~Rosenbluth,  {\em Finite‐resistivity instabilities of a sheet pinch}, Phys.\ Fluids {\bf 6}, 459 (1963).
 
 \bibitem{err2} A.~Cole and R.~Fitzpatrick, {\em Drift-magnetohydrodynamical model of error-field penetration in tokamak plasmas}, Phys.\ Plasmas {\bf 13}, 032503 (2006).
 
 \bibitem{err3} R.~Fitzpatrick, {\em Influence of anomalous perpendicular transport on linear tearing mode dynamics in tokamak plasmas}, Phys.\ Plasmas {\bf 29}, 032507 (2022).
-
-\bibitem{ric3} R.~Fitzpatrick, {\em Tearing mode dynamics in tokamak plasmas}, (IOP Publishing, Bristol UK, 2023). 
 
 \bibitem{cyl} H.P.~Furth, P.H.~Rutherford and H.~Selberg, {\em Tearing mode in the cylindrical tokamak}, Phys.\  Fluids {\bf 16}, 1054 (1973). 
 
@@ -1377,6 +1616,8 @@ we are now demanding equal layer thicknesses at the boundaries between the vario
 \bibitem{wal} F.L.~Waelbroeck, {\em Shielding of resonant magnetic perturbations in the long mean-free path regime}, Phys.\ Plasmas {\bf 10}, 4040 (2003).
 
 \bibitem{grad} I.S.~Gradshteyn and I.M.~Ryzhik, {\em Table of Integrals, Series, and Products, Corrected and enlarged edition}, (Academic Press, New York NY,  1980). 
+
+\bibitem{haz1} R.D.~Hazeltine and J.D.~Meiss, {\em Plasma confinement}, (Dover, New York NY, 2003).
 
 \end{thebibliography}
 
