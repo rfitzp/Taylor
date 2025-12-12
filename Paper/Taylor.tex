@@ -8,7 +8,7 @@
 
 \begin{document}
 
-\title{Forced Magnetic Reconnection in Tokamak Plasmas}
+\title{Forced Magnetic Reconnection in Flowing Tokamak Plasmas}
 \author{Y.~Lin and R.~Fitzpatrick\,\footnote{rfitzp@utexas.edu}}
 \affiliation{Institute for Fusion Studies,  Department of Physics,  University of Texas at Austin,  Austin TX 78712, USA}\begin{abstract}
 \end{abstract}
@@ -28,12 +28,12 @@ The ion sound-radius, and realistic levels of perpendicular energy and momentum 
 \section{Fundamental Analysis}
 
 \subsection{Plasma Equilibrium}\label{s2a}
-Our tokamak equilibrium is approximated as a periodic cylinder of circular cross-section. \cite{ric3}
+Our tokamak equilibrium is approximated as a periodic cylinder of circular cross-section.\cite{ric3}
 Let us employ a conventional set of right-handed cylindrical coordinates, $r$, $\theta$, $z$. The
 equilibrium magnetic flux-surfaces lie on surfaces of constant $r$. The system is
 assumed to be periodic in the $z$ (``toroidal'') direction, with periodicity length $2\pi\,R_0$, 
 where $R_0$ is the simulated  major radius of the plasma. It is helpful to define the simulated toroidal angle $\varphi=z/R_0$. Let $a$ be the minor radius of the plasma. It is assumed that $a/R_0\ll 1$. It is also assumed that the
-toroidal plasma beta parameter is ${\cal O}(a^2/R_0^{\,2})$.  The equilibrium magnetic
+toroidal plasma beta parameter is ${\cal O}(a^2/R_0^{\,2})$.\cite{ric3}  The equilibrium magnetic
 field is written 
 ${\bf B} = (0,\,B_\theta(r),\, B_\varphi)$, 
   where $B_\theta(r)$ 
@@ -80,7 +80,7 @@ Here, $C$ is the Bromwich contour, and
 where $S$ and $\tau_H$ are the Lundquist number and hydromagnetic time, respectively, at the rational surface. The real dimensionless quantities $E_{ss}$ and $E_{sb}$
 are the tearing stability index, and the coupling constant between the RMP and the rational surface, respectively. (See Sects.~\ref{psis} and \ref{psib}.) It is assumed that
 $E_{ss}<0$, which implies that the plasma is intrinsically tearing-stable, and that any reconnected magnetic flux at the rational surface is due to the action of the RMP. 
-The complex dimensionless quantities $F_s(\hat{g})$ and $\hat{\mit\Delta}_s(\hat{g})$ are determined by the layer solution in the inner region. 
+The complex dimensionless quantities $F_s(\hat{g})$ and $\hat{\mit\Delta}_s(\hat{g})$ are determined by the layer solution in the inner region. (See Appendix~\ref{inner}.)
 
 \subsection{Linear Resonant Plasma Response Model}
 Our adopted linear resonant plasma response model is the three-field model presented in Ref.~\onlinecite{err3}. (See Appendix~\ref{inner}.) This model is defined by the following six
@@ -94,64 +94,77 @@ $P_\perp$ and $P_\varphi$ are magnetic Prandtl numbers,
 $\iota_e = - \omega_{\ast\,e}/(\omega_{\ast\,i}-\omega_{\ast\,e})$, and $\hat{d}_\beta= d_\beta/r_s$. All quantities are evaluated at the
 rational surface. 
 
+\begin{figure}[t]
+\centering
+\includegraphics[width=1.\textwidth]{Figure1.pdf}
+\caption{Linear resonant plasma response regimes in $R$-$P$ space for the case $D = 0.9$. The various regimes are the diffusive-resisitive (DR), the semi-collisional (SC), the resistive-inertial (RI), the viscous-resistive (VR), the viscous-inertial (VI), and the inertial (I).}\label{f1}
+\end{figure}
+
 \subsection{Linear Resonant Plasma Response Regimes}
 According to the analysis of Appendix~\ref{response}, there are seven different linear resonant plasma response regimes. 
-
-The {\em resistive-inertial}\/ regime is such that
-\begin{align}
-\hat{\mit\Delta}_s(\hat{g}) &= \frac{2\pi\,\Gamma(3/4)}{\Gamma(1/4)}\,[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{3/4}\,(\hat{g}
-+{\rm i}\,Q_E)^{1/4}\,[\hat{g}+{\rm i}\,(Q_E+Q_i)]^{1/4},\\[0.5ex]
-F_s(\hat{g}) &= 1,\\[0.5ex]
-\hat{\delta} &= \frac{|\hat{g}+{\rm i}\,Q_E|^{1/4}\,|\hat{g}+{\rm i}\,(Q_E+Q_i)|^{1/4}}{|\hat{g} +{\rm i}\,(Q_E+Q_e)|^{1/4}}.
-\end{align}
-Here, the resonant layer width is $\delta = r_s\,S^{-1/3}\,\hat{\delta}$. 
-
-The {\em viscous-resistive}\/ regime is such that 
-\begin{align}
-\hat{\mit\Delta}_s(\hat{g}) &= \frac{6^{2/3}\,\pi\,\Gamma(5/6)}{\Gamma(1/6)}\, [\hat{g}+{\rm i}\,(Q_E+Q_e)]\,P_\varphi^{\,1/6},\\[0.5ex]
-F_s(\hat{g})&= 1,\\[0.5ex]
-\hat{\delta} &= P_\varphi^{\,1/6}.
-\end{align}
-
-The {\em semi-collisional}\/ regime is such that
-\begin{align}
-\hat{\mit\Delta}_s(\hat{g})&= \frac{\pi\,[\hat{g}+{\rm i}\,(Q_E+Q_e)]\,(\hat{g}+{\rm i}\,Q_E)^{1/2}}{D},\\[0.5ex]
-F_s(\hat{g}) &= 1,\\[0.5ex]
-\hat{\delta} &= \frac{|{\hat g}+{\rm i}\,Q_E|^{1/2}}{D}.
-\end{align}
-
-The {\em diffusive-resistive}\/ regime is such that
-\begin{align}
-\hat{\mit\Delta}_s(\hat{g})&= \frac{2\pi\,\Gamma(3/4)}{\Gamma(1/4)}\,\frac{[\hat{g}+{\rm i}\,(Q_E+Q_e)]\,\iota_e^{\,1/4}\,P_\perp^{1/4}}{D^{1/2}},\\[0.5ex]
-F_s(\hat{g}) &= 1,\\[0.5ex]
-\hat{\delta} &= \frac{\iota_e^{\,1/4}\,P_\perp^{1/4}}{D^{1/2}}.
-\end{align}
 
 The {\em inertial}\/ regime is such that 
  \begin{align}\
 \hat{\mit\Delta}_s(\hat{g}) &= -\frac{\pi}{(\hat{g}+{\rm i}\,Q_E)^{1/2}\,[\hat{g}+{\rm i}\,(Q_E+Q_i)]^{1/2}},\label{in1}\\[0.5ex]
 F_s(\hat{g})&= - \frac{2}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]\,(\hat{g}+{\rm i}\,Q_E)\,[\hat{g}+{\rm i}\,(Q_E+Q_i)]},\label{in2}\\[0.5ex]
-\hat{\delta} &= |\hat{g}+{\rm i}\,Q_E|^{1/2}\,|\hat{g}+ {\rm i}\,(Q_E+Q_i)|^{1/2}.
+\hat{\delta} &= |\hat{g}+{\rm i}\,Q_E|^{1/2}\,|\hat{g}+ {\rm i}\,(Q_E+Q_i)|^{1/2}.\label{in3}
 \end{align}
+Here, the resonant layer width is $\delta = r_s\,S^{-1/3}\,\hat{\delta}$. 
 
 The {\em viscous-inertial}\/ regime is such that 
 \begin{align}
 \hat{\mit\Delta}_s(\hat{g}) &=- \frac{\pi}{2}\,\frac{\Gamma(1/4)}{\Gamma(3/4)}\,\frac{1}{[\hat{g}-{\rm i}\,(Q_E+Q_e)]^{1/4}\,P_\varphi^{\,1/4}},\label{vi1}\\[0.5ex]
 F_s(\hat{g}) &= - \frac{\pi^{1/2}}{2}\,\frac{\Gamma(1/4)}{\Gamma(3/4)}\,\frac{1}{[\hat{g}-{\rm i}\,(Q_E+Q_e)]^{3/2}\,P_\varphi^{\,1/2}},\label{vi2}\\[0.5ex]
-\hat{\delta} &= |\hat{g}-{\rm i}\,(Q_E+Q_e)|^{1/4}\,P_\varphi^{\,1/4}.
+\hat{\delta} &= |\hat{g}-{\rm i}\,(Q_E+Q_e)|^{1/4}\,P_\varphi^{\,1/4}.\label{vi3}
 \end{align}
 
-Finally, the  {\em diffusive-inertial}\/ regime is such that
+The  {\em diffusive-inertial}\/ regime is such that
 \begin{align}
-\hat{\mit\Delta}_s&= -\frac{\pi\,D}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{1/2}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}},\\[0.5ex]
-F_s(\hat{g}) &= - \frac{2\,D^2}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^2\,\iota_e\,P_\perp},\\[0.5ex]
-\hat{\delta} &= |\hat{g}+{\rm i}\,(Q_E+Q_e)|^{1/2}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}.
+\hat{\mit\Delta}_s&= -\frac{\pi\,D}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{1/2}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}},\label{di1}\\[0.5ex]
+F_s(\hat{g}) &= - \frac{2\,D^2}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^2\,\iota_e\,P_\perp},\label{di2}\\[0.5ex]
+\hat{\delta} &= |\hat{g}+{\rm i}\,(Q_E+Q_e)|^{1/2}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}.\label{di3}
+\end{align}
+
+The {\em resistive-inertial}\/ regime is such that
+\begin{align}
+\hat{\mit\Delta}_s(\hat{g}) &= \frac{2\pi\,\Gamma(3/4)}{\Gamma(1/4)}\,[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{3/4}\,(\hat{g}
++{\rm i}\,Q_E)^{1/4}\,[\hat{g}+{\rm i}\,(Q_E+Q_i)]^{1/4},\label{ri1}\\[0.5ex]
+F_s(\hat{g}) &= 1,\\[0.5ex]
+\hat{\delta} &= \frac{|\hat{g}+{\rm i}\,Q_E|^{1/4}\,|\hat{g}+{\rm i}\,(Q_E+Q_i)|^{1/4}}{|\hat{g} +{\rm i}\,(Q_E+Q_e)|^{1/4}}.\label{ri3}
+\end{align}
+
+The {\em semi-collisional}\/ regime is such that
+\begin{align}
+\hat{\mit\Delta}_s(\hat{g})&= \frac{\pi\,[\hat{g}+{\rm i}\,(Q_E+Q_e)]\,(\hat{g}+{\rm i}\,Q_E)^{1/2}}{D},\label{sc1}\\[0.5ex]
+F_s(\hat{g}) &= 1,\\[0.5ex]
+\hat{\delta} &= \frac{|{\hat g}+{\rm i}\,Q_E|^{1/2}}{D}.\label{sc3}
+\end{align}
+
+The {\em viscous-resistive}\/ regime is such that 
+\begin{align}
+\hat{\mit\Delta}_s(\hat{g}) &= \frac{6^{2/3}\,\pi\,\Gamma(5/6)}{\Gamma(1/6)}\, [\hat{g}+{\rm i}\,(Q_E+Q_e)]\,P_\varphi^{\,1/6},\label{vr1}\\[0.5ex]
+F_s(\hat{g})&= 1,\\[0.5ex]
+\hat{\delta} &= P_\varphi^{\,1/6}.\label{vr3}
+\end{align}
+
+Finally, The {\em diffusive-resistive}\/ regime is such that
+\begin{align}
+\hat{\mit\Delta}_s(\hat{g})&= \frac{2\pi\,\Gamma(3/4)}{\Gamma(1/4)}\,\frac{[\hat{g}+{\rm i}\,(Q_E+Q_e)]\,\iota_e^{\,1/4}\,P_\perp^{1/4}}{D^{1/2}},\label{dr1}\\[0.5ex]
+F_s(\hat{g}) &= 1,\\[0.5ex]
+\hat{\delta} &= \frac{\iota_e^{\,1/4}\,P_\perp^{1/4}}{D^{1/2}}.\label{dr3}
 \end{align}
 
 Suppose that $|Q_E|\sim |Q_e|\sim |Q_i|\sim Q$ and $P_\varphi\sim P_\perp\sim P$. Let $R=\sqrt{\hat{g}^2+Q^2}$. The extents of the various
-linear resonant response regimes in $R$-$P$ space is illustrated in Figs.~\ref{f1} and \ref{f2}. 
+linear resonant response regimes in $R$-$P$ space is illustrated in Figs.~\ref{f1} and \ref{f2}. Note that Fig.~\ref{f2} differs slightly from Fig.~2 in Ref.~\onlinecite{err3} because
+we are now demanding equal layer thicknesses at the boundaries between the various response regimes.
 
-\section{Driven Magnetic Reconnection Regimes}
+\begin{figure}[t]
+\centering
+\includegraphics[width=1.\textwidth]{Figure2.pdf}
+\caption{Linear resonant plasma response regimes in $R$-$P$ space for the case $D = 1.2$. The various regimes are the diffusive-resisitive (DR), the semi-collisional (SC), the diffusive-inertial (DI), the viscous-resistive (VR), the viscous-inertial (VI), and the inertial (I).}\label{f2}
+\end{figure}
+
+\section{Driven Magnetic Reconnection Regimes}\label{regimes}
 
 \subsection{Model RMP}
 Suppose that the RMP takes the form 
@@ -159,57 +172,54 @@ Suppose that the RMP takes the form
 {\mit\Psi}_b(t) = {\mit\Psi}_{b\,0}\left\{\begin{array}{ccc} 0&~~~~&t<0\\[0.5ex]
 1&&t\geq 0\end{array}\right..
 \end{equation}
-In other words, the RMP is switched on suddenly at $t=0$. It follows from Eq.~(\ref{psibx}) that
+In other words, the RMP is switched on suddenly at $t=0$, and thereafter maintains a constant amplitude, ${\mit\Psi}_{b\,0}$. It follows from Eq.~(\ref{psibx}) that
 \begin{equation}
 \overline{\mit\Psi}_b(\hat{g}) = \frac{{\mit\Psi}_{b\,0}}{\hat{g}}.
 \end{equation}
 Let
 \begin{equation}
-{\mit\Psi}_0(\hat{t}) = {\mit\Psi}_\infty\,\hat{\Psi}_0(\hat{t}),
+{\mit\Psi}_0(\hat{t}) = {\mit\Psi}_\infty\,\hat{\mit\Psi}_0(\hat{t}),
 \end{equation}
 where
 \begin{equation}
 {\mit\Psi}_\infty = \frac{E_{sb}\,{\mit\Psi}_{b\,0}}{(-E_{ss})}
 \end{equation}
-is the reconnected magnetic flux that would be driven at the rational surface in the absence of a current sheet at the surface. In other words, ${\mit\Psi}_\infty$ is the maximum possible
-time-asymptotic reconnected flux. It follows from Eq.~(\ref{drive}) and the previous three equations that
+is the reconnected magnetic flux that would be driven at the rational surface in the absence of a helical current sheet at the surface. In other words, ${\mit\Psi}_\infty$ is the maximum possible
+time-asymptotic reconnected flux. It follows from Eq.~(\ref{drive}), and the previous three equations,  that
 \begin{equation}
 \hat{\mit\Psi}_0(\hat{t}) = \frac{1}{2\pi\,{\rm i}}\int_C \frac{F_s(\hat{g})\,{\rm e}^{\,\hat{g}\,\hat{t}}}{\hat{g}\,[{\mit\Sigma}\,\hat{\mit\Delta}_s(\hat{g})+1]}\,d\hat{g},
 \end{equation}
 where ${\mit\Sigma}= S^{1/3}/(-E_{ss})$. 
 
-In the various non-constant-$\psi$ resonant response regimes (i.e., the inertial, viscous-inertial, and diffusive-inertial regimes), we shall assume that ${\mit\Sigma}\,|{\mit\Delta}_s(g)|\gg 1$, so
+In the various non-constant-$\psi$ resonant response regimes (i.e., the inertial, viscous-inertial, and diffusive-inertial regimes), we shall assume that ${\mit\Sigma}\,|\hat{\mit\Delta}_s(g)|\gg 1$, so that 
 \begin{equation}\label{ncp}
 \hat{\mit\Psi}_0(\hat{t}) \simeq \frac{1}{2\pi\,{\rm i}\,{\mit\Sigma}}\int_C \frac{F_s(\hat{g})\,{\rm e}^{\,\hat{g}\,\hat{t}}}{\hat{g}\,\hat{\mit\Delta}_s(\hat{g})}\,d\hat{g}
 \end{equation}
-In the various constant-$\psi$ regimes  (i.e., the resistive-inertial, viscous-resistive, semi-collisional, and diffusive-resistive regimes), $F_s\simeq 1$, so
-\begin{equation}
+In the various constant-$\psi$ regimes  (i.e., the resistive-inertial, semi-collisional, viscous-resistive, and diffusive-resistive regimes), $F_s\simeq 1$, so that 
+\begin{equation}\label{cp}
 \hat{\mit\Psi}_0(\hat{t}) \simeq \frac{1}{2\pi\,{\rm i}}\int_C \frac{{\rm e}^{\,\hat{g}\,\hat{t}}}{\hat{g}\,[{\mit\Sigma}\,\hat{\mit\Delta}_s(\hat{g})+1]}\,d\hat{g},
 \end{equation}
 
-\subsection{Inertial Regime}
-In the inertial resonant response regime, Eqs.~(\ref{in1}), (\ref{in2}), and (\ref{ncp}) yield
-\begin{equation}
-\hat{\mit\Psi}_{0\,I}(\hat{t}) = \frac{1}{2\pi\,{\rm i}}\int_C \overline{\mit\Psi}_{0\,I}(\hat{g})\,{\rm e}^{\,\hat{g}\,\hat{t}}\,d\hat{g},
-\end{equation}
-where
+\subsection{Inertial Reconnection Regime}\label{inertial}
+Let $\hat{\mit\Psi}_{I}(\hat{t})$ be the normalized driven magnetic flux in the inertial reconnection regime, and let $\overline{\mit\Psi}_{I}(\hat{g})$ be its Laplace transform.
+Equations~(\ref{in1}), (\ref{in2}), and (\ref{ncp}) give
 \begin{align}
-\overline{\mit\Psi}_{0\,I}(\hat{g}) &= \frac{\epsilon_I}{{\rm i}\,(Q_E+Q_e)}\left[
+\overline{\mit\Psi}_{I}(\hat{g}) &= \frac{\epsilon_I}{{\rm i}\,(Q_E+Q_e)}\left[
 \frac{1}{\hat{g}}- \frac{1}{\hat{g}+ {\rm i}\,(Q_E+Q_e)}\right]
 \frac{1}{(\hat{g}+{\rm i}\,Q_E)^{1/2}\,[\hat{g} + {\rm i}\,(Q_E+Q_i)]^{1/2}},
 \end{align}
-and
+where
 \begin{align}
 \epsilon_I = \frac{2}{\pi\,{\mit\Sigma}}.
 \end{align}
 
 Now, if
 \begin{equation}
-\overline{\mit\Psi}_{0\,I}(\hat{g}) = \frac{\overline{H}(\hat{g})}{\hat{g} + a}
+\overline{\mit\Psi}_{I}(\hat{g}) = \frac{\overline{H}(\hat{g})}{\hat{g} + a}
 \end{equation}
 then Eq.~(4.1.20) of Ref.~\onlinecite{ed} yields
 \begin{equation}
-\hat{\mit\Psi}_{0\,I}(\hat{t}) = \int_0^{\hat{t}}{\rm e}^{\,a\,(\hat{t}'-\hat{t})}\,H(\hat{t}')\,d\hat{t}',
+\hat{\mit\Psi}_{I}(\hat{t}) = \int_0^{\hat{t}}{\rm e}^{\,a\,(\hat{t}'-\hat{t})}\,H(\hat{t}')\,d\hat{t}',
 \end{equation}
 where $\overline{H}(\hat{g})$ is the Laplace transform of $H(\hat{t})$. 
 In the present case,
@@ -217,34 +227,32 @@ In the present case,
 \overline{H}(\hat{g}) &= \frac{1}{(\hat{g}+{\rm i}\,Q_E)^{1/2}\,[g +{\rm i}\,(Q_E+Q_i)]^{1/2}}=\frac{1}{(\hat{g}^{\,2}  + \alpha\,\hat{g} + \beta)^{1/2}},
 \end{align}
 where
-\begin{align}
-\alpha &= {\rm i}\,(2\,Q_E+Q_i),\\[0.5ex]
-\beta&= - Q_E\,(Q_E+Q_i).
-\end{align}
+$\alpha = {\rm i}\,(2\,Q_E+Q_i)$, and 
+$\beta= - Q_E\,(Q_E+Q_i)$.
 Note that
 \begin{equation}
 \beta- \frac{1}{4}\,\alpha^2 = -Q_E\,(Q_E+Q_i) +\frac{1}{4}\,(2\,Q_E+Q_i)^2 = \frac{Q_i^{\,2}}{4}.
 \end{equation}
-However Eq.~(5.3.34) of Ref.~\onlinecite{ed} yields, 
+However Eq.~(5.3.34) of Ref.~\onlinecite{ed} gives, 
 \begin{align}
 H(\hat{t}) &= {\rm e}^{-\alpha\,\hat{t}/2}\,J_0[(\beta-\alpha^2/4)^{1/2}\,\hat{t}]= {\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t}}\,J_0\!\left(\frac{Q_i}{2}\,\hat{t}\right),
 \end{align}
 where $J_0(z)$ is a Bessel function. 
 Thus,
 \begin{align}
-\hat{\mit\Psi}_{0\,I}(\hat{t}) &=\frac{\epsilon_I}{{\rm i}\,(Q_E+Q_e)}
+\hat{\mit\Psi}_{I}(\hat{t}) &=\frac{\epsilon_I}{{\rm i}\,(Q_E+Q_e)}
 \int_0^{\hat{t}}\left[1-{\rm e}^{\,{\rm i}\,(Q_E+Q_e)\,(\hat{t}'-\hat{t})}\right]
 {\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t}'}\,J_0\!\left(\frac{Q_i}{2}\,\hat{t}'\right)d\hat{t}'.
 \end{align}
 
 At small $\hat{t}$,
 \begin{equation}
-\hat{\mit\Psi}_{0\,I}(\hat{t})\simeq \frac{\epsilon_I\,\hat{t}^{\,2}}{\Gamma(3)}.
+\hat{\mit\Psi}_{I}(\hat{t})\simeq \frac{\epsilon_I\,\hat{t}^{\,2}}{\Gamma(3)},
 \end{equation}
-
-At large $\hat{t}$,
+where $\Gamma(z)$ is a gamma function.
+On the other hand, at large $\hat{t}$,
 \begin{align}
-\hat{\mit\Psi}_{0\,I}(\hat{t}) &\simeq \frac{\epsilon_I}{{\rm i}\,(Q_E+Q_e)}
+\hat{\mit\Psi}_{I}(\hat{t}) &\simeq \frac{\epsilon_I}{{\rm i}\,(Q_E+Q_e)}
 \int_0^{\infty}\left[1-{\rm e}^{\,{\rm i}\,(Q_E+Q_e)\,(\hat{t}'-\hat{t})}\right]
 {\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t}'}\,J_0\!\left(\frac{Q_i}{2}\,\hat{t}'\right)d\hat{t}'.
 \end{align}
@@ -254,21 +262,29 @@ But, Eq.~(6.621.4) of Ref.~\onlinecite{grad} yields
 \end{equation}
 so
 \begin{equation}
-\hat{\mit\Psi}_{0\,I}(\hat{t})\simeq \frac{\epsilon_I}{{\rm i}\,(Q_E+Q_i)}\left\{
+\hat{\mit\Psi}_{I}(\hat{t})\simeq \frac{\epsilon_I}{{\rm i}\,(Q_E+Q_i)}\left\{
 \frac{1}{({\rm i}\,Q_E)^{1/2}\,[{\rm i}\,(Q_E+Q_i)]^{1/2}}- \frac{{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}}{({\rm i}\,Q_e)^{1/2}\,[{\rm i}\,(Q_e-Q_i)]^{1/2}}\right\}.
 \end{equation}
 
-\subsection{Viscous-Inertial Regime}
-In the viscous-inertial resonant response regime, Eqs.~(\ref{vi1}), (\ref{vi2}), and (\ref{ncp}) yield
-\begin{equation}
-\hat{\mit\Psi}_{0\,VI}(\hat{t}) = \frac{1}{2\pi\,{\rm i}}\int_C \overline{\mit\Psi}_{0\,VI}(\hat{g})\,{\rm e}^{\,\hat{g}\,\hat{t}}\,d\hat{g},
+Let $\delta_I =r_s\,S^{-1/3}\,\hat{\delta}_I $ be the radial width of the resonant layer in the inertial reconnection regime. 
+In estimating the
+layer width, we shall assume that at normalized time $\hat{t}$ the dominant layer response is associated with the following value of the normalized Laplace
+transform variable: $\hat{g}=1/\hat{t}$. 
+It follows from Eq.~(\ref{in3}) that 
+\begin{equation}\label{deltaI}
+\hat{\delta}_I(\hat{t})= \frac{1}{\hat{t}}\left(1+Q_E^{\,2}\,\hat{t}^{\,2}\right)^{1/4}\left[1+(Q_E+Q_i)^2\,\hat{t}^{\,2}\right]^{1/4}.
 \end{equation}
-where
+Thus, at small times, the layer width, which is also the width of the current sheet that  opposes driven magnetic reconnection, decreases in time as $\hat{t}^{-1}$.\cite{hk} However, this decrease eventually stalls, and the
+layer width attains a constant value. 
+
+\subsection{Viscous-Inertial Reconnection Regime}
+Let $\hat{\mit\Psi}_{VI}(\hat{t})$ be the normalized driven magnetic flux in the viscous-inertial reconnection regime, and let $\overline{\mit\Psi}_{VI}(\hat{g})$ be its Laplace transform.
+Equations~(\ref{vi1}), (\ref{vi2}), and (\ref{ncp}) yield
 \begin{align}
-\overline{\mit\Psi}_{0\,VI}(\hat{g}) =
+\overline{\mit\Psi}_{VI}(\hat{g}) =
 \frac{ \epsilon_{VI}}{\hat{g}}\,\frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{5/4}},
 \end{align}
-and
+where
 \begin{equation}
 \epsilon_{VI} = \frac{1}{\pi^{1/2}\,{\mit\Sigma}\,P_\varphi^{\,1/4}}.
 \end{equation}
@@ -277,24 +293,23 @@ In this case,
 \begin{equation}
 \overline{H}(g) = \frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{5/4}},
 \end{equation}
-so Eq.~(5.4.1) of Ref.~\onlinecite{ed} yields 
+so Eq.~(5.4.1) of Ref.~\onlinecite{ed} gives 
 \begin{equation}
 H(\hat{t}) = \frac{1}{\Gamma(5/4)}\,\hat{t}^{\,1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}.
 \end{equation}
 Hence,
 \begin{equation}
-\hat{\mit\Psi}_{0\,VI}(\hat{t}) =\frac{\epsilon_{VI}}{\Gamma(5/4)}\int_0^{\hat{t}}
+\hat{\mit\Psi}_{VI}(\hat{t}) =\frac{\epsilon_{VI}}{\Gamma(5/4)}\int_0^{\hat{t}}
 \hat{t}'^{\,1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
 \end{equation}
 
 At small $\hat{t}$,
 \begin{equation}
-\hat{\mit\Psi}_{0\,VI}(\hat{t}) \simeq \frac{\epsilon_{VI}\,\hat{t}^{\,5/4}}{\Gamma(9/4)}.
+\hat{\mit\Psi}_{VI}(\hat{t}) \simeq \frac{\epsilon_{VI}\,\hat{t}^{\,5/4}}{\Gamma(9/4)}.
 \end{equation}
-
-At large $\hat{t}$, 
+On the other hand, at large $\hat{t}$, 
 \begin{equation}
-\hat{\mit\Psi}_{0\,VI}(\hat{t}) \simeq\frac{\epsilon_{VI}}{\Gamma(5/4)}\int_0^\infty
+\hat{\mit\Psi}_{VI}(\hat{t}) \simeq\frac{\epsilon_{VI}}{\Gamma(5/4)}\int_0^\infty
 \hat{t}'^{\,1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
 \end{equation}
 But Eq.~(3.381.5) of Ref.~\onlinecite{grad} yields, 
@@ -303,625 +318,392 @@ But Eq.~(3.381.5) of Ref.~\onlinecite{grad} yields,
 \end{equation}
 so 
 \begin{equation}
-\hat{\mit\Psi}_{0\,VI}(\hat{t}) \simeq \frac{\epsilon_{VI}}{[{\rm i}\,(Q_E+Q_e)]^{5/4}}.
+\hat{\mit\Psi}_{VI}(\hat{t}) \simeq \frac{\epsilon_{VI}}{[{\rm i}\,(Q_E+Q_e)]^{5/4}}.
 \end{equation}
 
-  
-\iffalse 
-\section{Linear Response Theory}
-\subsection{Introduction}
-The aim of this section is to calculate the {\em linear}\/ response of the resonant layer to the resonant magnetic perturbation.
-
-\subsection{Model Resonant Magnetic Perturbation}
-Suppose that the resonant magnetic perturbation takes the form 
-\begin{equation}\label{e145}
-{\mit\Psi}_b(t) = {\mit\Psi}_{b\,0}\left\{\begin{array}{ccc} 0&~~~~&t<0\\[0.5ex]
-1&&t\geq 0\end{array}\right..
-\end{equation}
-
-Equations~(\ref{e71}) and (\ref{e145}) yield\,\cite{ed}
+Let $\delta_{VI} =r_s\,S^{-1/3}\,\hat{\delta}_{VI}$ be the radial width of the resonant layer in the viscous-inertial  reconnection regime. 
+Equation~(\ref{vi3}) gives 
 \begin{equation}
-\bar{\mit\Psi}_b(g) = {\mit\Psi}_{b\,0}\left(\frac{1}{g+\gamma_g}-\frac{1}{g}\right).
-\end{equation} 
-Thus, it follows from Eqs.~(\ref{e73a}), (\ref{e74}), (\ref{e84}), and (\ref{e110}) that 
+\hat{\delta}_{VI}(\hat{t}) = \frac{1}{\hat{t}^{\,1/2}}\left[1+(Q_E+Q_e)^2\,\hat{t}^{\,2}\right]^{1/8}\,P_\varphi^{\,1/4}.
+\end{equation}
+Thus, at small times, the layer width decreases in time as $\hat{t}^{-1/4}$. However, this decrease eventually stalls, and the
+layer width attains a constant value. 
+
+\subsection{Diffusive-Inertial Reconnection Regime}
+Let $\hat{\mit\Psi}_{DI}(\hat{t})$ be the normalized driven magnetic flux in the diffusive-inertial reconnection regime, and let $\overline{\mit\Psi}_{DI}(\hat{g})$ be its Laplace transform.
+Equations~(\ref{di1}), (\ref{di2}), and (\ref{ncp}) yield
 \begin{align}
-\overline{\mit\Delta\Psi}_s(g)&= E_{sb}\,{\mit\Psi}_{b\,0}\left[\frac{S^{1/3}\,\hat{\mit\Delta}_s(\hat{g})}{S^{1/3}\,\hat{\mit\Delta}_s(\hat{g})-E_{ss}}\right]\frac{1}{g},\label{e147}\\[0.5ex]
-\bar{\mit\Psi}_0(g) &= E_{sb}\,{\mit\Psi}_{b\,0}\left[\frac{F_s(\hat{g})}{S^{1/3}\,\hat{\mit\Delta}_s(\hat{g})-E_{ss}}\right]\frac{1}{g}.\label{e148}
+\overline{\mit\Psi}_{DI}(\hat{g}) &=\frac{\epsilon_{DI}}{\hat{g}}\,\frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{3/2}},
 \end{align}
-Recall that ${\mit\Delta\Psi}_s(t)$ [which is the inverse Laplace transform of $\overline{\mit\Delta\Psi}_s(g)$] is a measure
-of the net shielding current that develops in the resonant layer, in response to the magnetic perturbation. On the other
-hand, ${\mit\Psi}_0(t)$  [which is the inverse Laplace transform of $\bar{\mit\Psi}_0(g)$] is the reconnected magnetic
-flux driven at the rational surface by the magnetic perturbation.
+where
+\begin{equation}
+\epsilon_{DI} = \frac{2}{\pi}\,\frac{1}{{\mit\Sigma}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}\,D^{\,-1}}.
+\end{equation}
 
-Under normal circumstances, we expect $S^{1/3}\gg 1$, and $|E_{ss}|$, $|\hat{\mit\Delta}_s|\sim {\cal O}(1)$. 
-Thus, Eqs.~(\ref{e147}) and (\ref{e148}) simplify to give
+In this case,
+\begin{equation}
+\overline{H}(\hat{g}) = \frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{3/2}},
+\end{equation}
+so Eq.~(5.4.1.) of Ref.~\onlinecite{ed}  gives
+\begin{equation}
+H(\hat{t}) = \frac{1}{\Gamma(3/2)}\,\hat{t}^{\,1/2}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}.
+\end{equation}
+Hence,
+\begin{equation}
+\hat{\mit\Psi}_{DI}(\hat{t}) =\frac{\epsilon_{DI}}{\Gamma(3/2)}\int_0^{\hat{t}}
+\hat{t}'^{\,1/2}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
+\end{equation}
+
+At small $\hat{t}$,
+\begin{equation}
+\hat{\mit\Psi}_{DI}(\hat{t}) \simeq \frac{\epsilon_{DI}\,\hat{t}^{\,3/2}}{\Gamma(5/2)}.
+\end{equation}
+On the other hand, at large $\hat{t}$, 
+\begin{equation}
+\hat{\mit\Psi}_{DI}(\hat{t}) =\frac{\epsilon_{DI}}{\Gamma(3/2)}\int_0^{\infty}
+\hat{t}'^{\,1/2}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
+\end{equation}
+But Eq.~(3.381.5) of Ref.~\onlinecite{grad} yields
+\begin{equation}
+\int_0^\infty x^{\nu-1}\,{\rm e}^{-{\rm i}\,q\,x}\,dx = \frac{\Gamma(\nu)}{({\rm i}\,q)^{\nu}},
+\end{equation}
+so 
+\begin{equation}
+\hat{\mit\Psi}_{DI}(\hat{t}) \simeq \frac{\epsilon_{DI}}{[{\rm i}\,(Q_E+Q_e)]^{3/2}}.
+\end{equation}
+
+Let $\delta_{DI} =r_s\,S^{-1/3}\,\hat{\delta}_{DI}$ be the radial width of the resonant layer in the diffusive-inertial reconnection regime. 
+Equation~(\ref{di3}) gives 
+\begin{equation}
+\hat{\delta}_{DI}(\hat{t}) =\frac{1}{\hat{t}^{\,1/2}}\left[1+(Q_E+Q_e)^2\,\hat{t}^{\,2}\right]^{1/4}\iota_e^{\,1/2}\,P_\perp^{\,1/2}.
+\end{equation}
+Thus, at small times, the layer width decreases in time as $\hat{t}^{-1/2}$. However, this decrease eventually stalls, and the
+layer width attains a constant value. 
+
+\subsection{Resistive-Inertial Reconnection Regime}
+Let $\hat{\mit\Psi}_{RI}(\hat{t})$ be the normalized driven magnetic flux in the resistive-inertial reconnection regime, and let $\overline{\mit\Psi}_{RI}(\hat{g})$ be its Laplace transform.
+Equatons~(\ref{ri1}) and (\ref{cp}) yield 
+\begin{equation}
+\overline{\mit\Psi}_{RI}(\hat{g}) =\frac{\epsilon_{RI}}{\hat{g}}\,\frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{3/4}\,(\hat{g}+{\rm i}\,Q_E)^{1/4}\,[\hat{g}+ {\rm i}\,(Q_E+Q_i)]^{1/4}
++\epsilon_{RI}},
+\end{equation}
+where
+\begin{equation}
+\epsilon_{RI}= \frac{\Gamma(1/4)}{2\pi\,\Gamma(3/4)\,{\mit\Sigma}}.
+\end{equation}
+If we neglect the small parameters $\epsilon_{RI}$ in the denominator then
+\begin{equation}
+\overline{\mit\Psi}_{RI}(\hat{g}) \simeq\frac{\epsilon_{RI}}{\hat{g}}\,\frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{3/4}\,(\hat{g}+{\rm i}\,Q_E)^{1/4}\,[\hat{g}+ {\rm i}\,(Q_E+Q_i)]^{1/4}}.
+\end{equation}
+
+Now, if
+\begin{equation}
+\overline{\mit\Psi}_{RI}(\hat{g}) \simeq \epsilon_{RI}\,\frac{H(\hat{g})}{\hat{g}}
+\end{equation}
+then
+\begin{equation}
+\hat{\mit\Psi}_{RI}(\hat{t}) = \epsilon_{RI}\,\int_0^{\hat{t}}H(\hat{t}')\,d\hat{t'}.
+\end{equation}
+Furthermore, if
+\begin{equation}
+\overline{H}(\hat{g}) = \overline{H}_1(\hat{g})\,\overline{H}_2(\hat{g})
+\end{equation}
+then
+\begin{equation}
+H(\hat{t})=\int_0^{\hat{t}}H_1(\hat{t}')\,H_2(\hat{t}-\hat{t}')\,d\hat{t}'.
+\end{equation}
+It follows that
+\begin{equation}
+\hat{\mit\Psi}_{RI}(\hat{t}) = \epsilon_{RI}\int_0^{\hat{t}}\left[\int_0^{\hat{t}'}
+H_1(\hat{t}'')\,H_2(\hat{t}'-\hat{t}'')\,d\hat{t}''\right]d\hat{t'}.
+\end{equation}
+
+In the present case
 \begin{align}
-\overline{\mit\Delta\Psi}_s(g)&\simeq E_{sb}\,{\mit\Psi}_{b\,0}\left(\frac{1}{g+\gamma_g}-\frac{1}{g}\right),\label{e149}\\[0.5ex]
-\bar{\mit\Psi}_0(g) &\simeq E_{sb}\,{\mit\Psi}_{b\,0}\left[\frac{F_s(\hat{g})}{S^{1/3}\,\hat{\mit\Delta}_s(\hat{g})}\right]\left(\frac{1}{g+\gamma_g}-\frac{1}{g}\right).\label{e150}
+\overline{H}_1(\hat{g}) &= \frac{1}{(\hat{g}+{\rm i}\,Q_E)^{1/4}\,[\hat{g}+ {\rm i}\,(Q_E+Q_i)]^{1/4}},\\[0.5ex]
+\overline{H}_2(\hat{g}) &= \frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{3/4}},
 \end{align}
-Equation~(\ref{e149}) can be inverse Laplace transformed to yield 
+so Eqs.~(5.4.5) and (5.4.1) of Ref.~\onlinecite{ed}, and (9.6.3) of Ref.~\onlinecite{abram}, yield 
+\begin{align}
+H_1(\hat{t}) &= \frac{\pi^{1/2}}{\Gamma(1/4)}\,Q_i^{\,1/4}\,\hat{t}^{-1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t}}\,J_{-1/4}\!\left(\frac{Q_i}{2}\,\hat{t}\right),\\[0.5ex]
+H_2(\hat{t})&= \frac{1}{\Gamma(3/4)}\,\hat{t}^{-1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}.
+\end{align}
+Note that
+$\Gamma(1/4)\,\Gamma(3/4) = \sqrt{2}\,\pi$.
+Thus,
+\begin{align}
+\hat{\mit\Psi}_{RI}(\hat{t}) &= \frac{\epsilon_{RI}\,Q_i^{\,1/4}}{\sqrt{2\pi}}\int_0^{\hat{t}}{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\left[
+\int_0^{\hat{t}'}(\hat{t}'-\hat{t}'')^{-1/4}\,\hat{t}''^{-1/4}
+{\rm e}^{\,{\rm i}\,(Q_e-Q_i/2)\,\hat{t}''}\,J_{-1/4}\!\left(\frac{Q_i}{2}\,\hat{t}''\right)d\hat{t}''\right]d\hat{t}'.
+\end{align}
+
+At small $\hat{t}$, Eq.~(9.1.10) of Ref.~\onlinecite{abram} gives
 \begin{equation}
-{\mit\Delta\Psi}_s(t)= E_{sb}\,{\mit\Psi}_{b\,0}\left({\rm e}^{\,\gamma_g\,t}-1\right)= E_{sb}\,{\mit\Psi}_b(t).
+J_{-1/4}\!\left(\frac{Q_i}{2}\,\hat{t}\right)\simeq\frac{\sqrt{2}\,Q_i^{-1/4}\,\hat{t}^{-1/4}}{\Gamma(3/4)},
 \end{equation}
-According to the previous equation, the net shielding current that develops in the resonant layer is
-directly proportional to the amplitude of the magnetic perturbation, and is independent of the layer physics. This implies that the net shielding current
-grows exponentially in time at the same rate as the magnetic perturbation. 
- 
-\subsection{Layer Widths}\label{layer}
-Let $\delta$ be the radial width of the resonant layer, and let $\hat{\delta}=\delta/r_s$. 
-According to the analysis of Sects.~\ref{scpl} and \ref{sncp}, $\hat{\delta} \simeq S^{-1/3}\,|G|^\nu$. In estimating the
-layer width, we shall assume that at time $t$ the dominant layer response is associated with the following value of the Laplace
-transform variable:
+so
 \begin{equation}
-g =\frac{1}{t}\left(1+\gamma_g^{\,2}\,t^2\right)^{1/2}.
+\hat{\mit\Psi}_{RI}(\hat{t})\simeq \frac{\epsilon_{RI}}{\sqrt{\pi}\,\Gamma(3/4)}
+\int_0^{\hat{t}}\left[\int_0^{\hat{t}'}(\hat{t}'-\hat{t}'')^{-1/4}\,\hat{t}''^{-1/2}\,d\hat{t}''\right]d\hat{t}'.
 \end{equation}
-Thus, $g\simeq 1/t$ for $\gamma_g\,t\ll 1$, and $g\simeq \gamma_g$ for $\gamma_g\,t\gg 1$. 
+But,
+\begin{equation}
+\int_0^{\hat{t}'}(\hat{t}'-\hat{t}'')^{-1/4}\,\hat{t}''^{-1/2}\,d\hat{t}''=\hat{t}'^{\,1/4}\int_0^1(1-x)^{-1/4}\,x^{-1/2}\,dx,
+\end{equation}
+and Eqs.~(6.2.1) and (6.2.2) of Ref.~\onlinecite{abram} yield
+\begin{equation}
+\int_0^1(1-x)^{-1/4}\,x^{-1/2}\,dx =\frac{\Gamma(1/2)\,\Gamma(3/4)}{\Gamma(5/4)},
+\end{equation}
+so
+\begin{equation}
+{\mit\Psi}_{RI}(\hat{t})\simeq \frac{\epsilon_{RI}\,\hat{t}^{\,5/4}}{\Gamma(9/4)}.
+\end{equation}
 
-In the inertial response regime, we find that
-\begin{equation}\label{deltaI}
-\hat{\delta}_I(t)= \frac{\tau_H}{t}\left[1+(\gamma_g^{\,2}+\omega_E^{\,2})\,t^2\right]^{1/4}\left(
-1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,i})^2]\,t^2\right)^{1/4}.
+On the other hand, at large $\hat{t}$, 
+\begin{align}
+\hat{\mit\Psi}_{RI}(\hat{t}) &\simeq \frac{\epsilon_{RI}\,Q_i^{\,1/4}}{\sqrt{2\pi}}\int_0^{\infty}{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}
+\left[\int_0^{\hat{t}'}(\hat{t}'-\hat{t}'')^{-1/4}\,\hat{t}''^{-1/4}
+{\rm e}^{\,{\rm i}\,(Q_e-Q_i/2)\,\hat{t}''}\,J_{-1/4}\!\left(\frac{Q_i}{2}\,\hat{t}''\right)d\hat{t}''\right]d\hat{t}',
+\end{align}
+so
+\begin{align}
+\hat{\mit\Psi}_{RI}(\hat{t}) &\simeq \frac{\epsilon_{RI}\,Q_i^{\,1/4}}{\sqrt{2\pi}}
+\int_0^\infty\left[\int_{\hat{t}''}^\infty(\hat{t'}-\hat{t}'')^{-1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'\right]
+ \hat{t}''^{-1/4}\,{\rm e}^{\,{\rm i}\,(Q_e-Q_i/2)\,\hat{t}''}\,J_{-1/4}\!\left(\frac{Q_i}{2}\,\hat{t}''\right)\,d\hat{t}''.
+\end{align}
+But,
+\begin{align}
+\int_{\hat{t}''}^\infty(\hat{t'}-\hat{t}'')^{-1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'={\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}''} \int_0^\infty
+x^{-1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,x}\,dx,
+\end{align}
+and Eq.~(3.381.5) of Ref.~\onlinecite{grad} gives
+\begin{equation}
+\int_0^\infty x^{\nu-1}\,{\rm e}^{-{\rm i}\,q\,x}\,dx = \frac{\Gamma(\nu)}{({\rm i}\,q)^{\nu}},
 \end{equation}
-Thus, at small times, the layer width, which is also the width of the shielding current, decreases in time as $t^{-1}$. However, this decrease eventually stalls, and the
+so 
+\begin{equation}
+\int_{\hat{t}''}^\infty (\hat{t'}-\hat{t}'')^{-1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'={\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}''} \, \frac{\Gamma(3/4)}{[{\rm i}\,(Q_E+Q_e)]^{3/4}}.
+\end{equation}
+It follows that
+\begin{align}
+\hat{\mit\Psi}_{RI}(\hat{t})&= \frac{\epsilon_{RI}\,Q_i^{\,1/4}}{\sqrt{2\pi}}\,\frac{\Gamma(3/4)}{[{\rm i}\,(Q_E+Q_e)]^{3/4}}
+\int_0^\infty \hat{t}''^{-1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t''}}\,J_{-1/4}\left(\frac{Q_i}{2}\,\hat{t}''\right)d\hat{t}''.
+\end{align}
+But, Eq.~(6.623.1) of Ref.~\onlinecite{grad}  yields 
+\begin{align}
+&\int_0^\infty \hat{t}''^{-1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t''}}\,J_{-1/4}\!\left(\frac{Q_i}{2}\,\hat{t}''\right)d\hat{t}'' 
+= \frac{(Q_i)^{-1/4}\,\Gamma(1/4)}{\sqrt{\pi}\,({\rm i}\,Q_E)^{1/4}\,[{\rm i}\,(Q_E+Q_i)]^{1/4}}.
+\end{align}
+Now, Eq.~(6.1.17) of Ref.~\onlinecite{abram} gives
+$\Gamma(3/4)\,\Gamma(1/4)= \sqrt{2}\,\pi$,
+so
+\begin{equation}
+\hat{\mit\Psi}_{RI}(\hat{t})\simeq 
+\frac{\epsilon_{RI}}{[{\rm i}\,(Q_E+Q_e)]^{3/4}\,({\rm i}\,Q_E)^{1/4}\,[{\rm i}\,(Q_E+Q_i)]^{1/4}}.
+\end{equation}
+
+Let $\delta_{RI} =r_s\,S^{-1/3}\,\hat{\delta}_{RI}$ be the radial width of the resonant layer in the resistive-inertial reconnection regime. Equation~(\ref{ri3})
+yields 
+\begin{equation}
+\hat{\delta}_{RI}(\hat{t}) =\frac{1}{\hat{t}^{\,1/4}}\,\frac{\left(1+ Q_E^{\,2}\,\hat{t}^{\,2}\right)^{1/8}\left[1+(Q_E+Q_i)^2\,\hat{t}^{\,2}\right]^{1/8}}
+{\left[1+(Q_E+Q_e)^2\,\hat{t}^{\,2}\right]^{1/8}}.
+\end{equation}
+Thus, at small times, the layer width decreases in time as $\hat{t}^{-1/4}$. However, this decrease eventually stalls, and the
 layer width attains a constant value. 
 
-In the viscous-inertial response regime, we find that 
-\begin{equation}\label{deltaVI}
-\hat{\delta}_{VI}(t) =\left(\frac{\tau_H}{\tau_\varphi}\right)^{1/4} \left(\frac{\tau_H}{t}\right)^{1/4}\left(
-1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,e})^2]\,t^2\right)^{1/8}.
+\subsection{Semi-Collisional Reconnection Regime}
+Let $\hat{\mit\Psi}_{SC}(\hat{t})$ be the normalized driven magnetic flux in the semi-collisional reconnection regime, and let $\overline{\mit\Psi}_{SC}(\hat{g})$ be its Laplace transform.
+Eqautions~(\ref{sc1}) and (\ref{cp}) yield 
+\begin{equation}
+\overline{\mit\Psi}_{SC}(\hat{g}) =\frac{\epsilon_{SC}}{\hat{g}}\,\frac{1}{[\hat{g}+ {\rm i}\,(Q_E+Q_e)]\,(\hat{g}+{\rm i} \,Q_E)^{1/2}
++\epsilon_{SC}},
 \end{equation}
-Thus, at small times, the layer width decreases in time as $t^{-1/4}$. However, this decrease eventually stalls, and the
+where
+\begin{equation}
+\epsilon_{SC}= \frac{1}{\pi\,{\mit\Sigma}\,D^{\,-1}}.
+\end{equation}
+If we neglect the small parameter $\epsilon_{SC}$ in the denominator then
+\begin{equation} 
+\overline{\mit\Psi}_{SC}(\hat{g}) \simeq \frac{\epsilon_{SC}}{\hat{g}}\,\frac{1}{[\hat{g}+ {\rm i}\,(Q_E+Q_e)]\,(g+{\rm i} \,Q_E)^{1/2}},
+\end{equation}
+giving 
+\begin{equation}
+\overline{\mit\Psi}_{SC}(\hat{g}) \simeq \frac{\epsilon_{SC}}{{\rm i}\,(Q_E+Q_e)}
+\left[\frac{1}{\hat{g}}- \frac{1}{\hat{g}+ {\rm i}\,(Q_E+Q_e)}\right]\frac{1}{(\hat{g}+{\rm i} \,Q_E)^{1/2}}.
+\end{equation}
+In this case, 
+\begin{equation}
+\overline{H}(\hat{g}) = \frac{1}{(\hat{g}+{\rm i}\,Q_E)^{1/2}},
+\end{equation}
+so Eq.~(5.4.1) of Ref.~\onlinecite{ed} yields
+\begin{equation}
+H(\hat{t}) = \frac{1}{\Gamma(1/2)}\,\hat{t}^{-1/2}\,{\rm e}^{-{\rm i}\,Q_E\,\hat{t}}.
+\end{equation}
+Hence,
+\begin{align}
+\hat{\mit\Psi}_{SC}(\hat{t}) &= \frac{\epsilon_{SC}}{\Gamma(1/2)\,{\rm i}\,(Q_E+Q_e)} \int
+_0^{\hat{t}}\left[1-{\rm e}^{\,{\rm i}\,(Q_E+Q_e)\,(\hat{t}'-\hat{t})}\right]
+\hat{t}'^{-1/2}\,{\rm e}^{-{\rm i}\,Q_E\,\hat{t'}}\,d\hat{t}'.
+\end{align}
+
+At small $\hat{t}$, 
+\begin{align}
+\hat{\mit\Psi}_{SC}(\hat{t}) &= \frac{\epsilon_{SC}\,\hat{t}^{\,3/2}}{\Gamma(5/2)}.
+\end{align}
+On the other hand, at large $\hat{t}$, 
+\begin{align}
+\hat{\mit\Psi}_{SC}(\hat{t}) &= \frac{\epsilon_{SC}}{\Gamma(1/2)\,{\rm i}\,(Q_E+Q_e)} \int
+_0^{\infty}\left[1-{\rm e}^{\,{\rm i}\,(Q_E+Q_e)\,(\hat{t}'-\hat{t})}\right]
+\hat{t}'^{-1/2}\,{\rm e}^{-{\rm i}\,Q_E\,\hat{t'}}\,d\hat{t}'.
+\end{align}
+But Eq.~(3.381.5) of Ref.~\onlinecite{grad} gives
+\begin{equation}
+\int_0^\infty x^{\nu-1}\,{\rm e}^{-{\rm i}\,q\,x}\,dx = \frac{\Gamma(\nu)}{({\rm i}\,q)^{\nu}},
+\end{equation}
+It follows that
+\begin{equation}
+\hat{\mit\Psi}_{SC}(\hat{t}) = \frac{\epsilon_{SC}}{{\rm i}\,(Q_E+Q_e)}
+\left[\frac{1}{({\rm i}\,Q_E)^{1/2}} - \frac{{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}}{(-{\rm i}\,Q_e)^{1/2}}\right].
+\end{equation}
+
+Let $\delta_{SC} =r_s\,S^{-1/3}\,\hat{\delta}_{SC}$ be the radial width of the resonant layer in the semi-collisional regime. 
+Equation~(\ref{sc3}) yields
+\begin{equation}
+\hat{\delta}_{SC}(\hat{t}) = \frac{1}{\hat{t}^{\,1/2}}\left(1+Q_E^{\,2}\,\hat{t}^{\,2}\right)^{1/4}\,D^{-1}.
+\end{equation}
+Thus, at small times, the layer width decreases in time as $\hat{t}^{-1/2}$. However, this decrease eventually stalls, and the
 layer width attains a constant value. 
 
-In the diffusive-inertial response regime, we find that
-\begin{equation}\label{deltaDI}
-\hat{\delta}_{DI}(t) =\frac{1}{\hat{d}_\beta}\left(\frac{\tau_H}{\tau_\perp}\right)^{1/2} \left(\frac{\tau_H}{t}\right)^{1/2}\left(
-1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,e})^2]\,t^2\right)^{1/4}
+\subsection{Viscous-Resistive Reconnection Regime}
+Let $\hat{\mit\Psi}_{VR}(\hat{t})$ be the normalized driven magnetic flux in the viscous-resistive reconnection regime, and let $\overline{\mit\Psi}_{VR}(\hat{g})$ be its Laplace transform.
+Equations~(\ref{vr1}) and (\ref{cp}) give
+\begin{equation}
+\overline{\mit\Psi}_{VR}(\hat{g}) =\frac{\epsilon_{VR}}{\hat{g}}\,\frac{1}{[\hat{g}+ {\rm i}\,(Q_E+Q_e)]+\epsilon_{VR}},
 \end{equation}
-Thus, at small times, the layer width decreases in time as $t^{-1/2}$. However, this decrease eventually stalls, and the
-layer width attains a constant value. 
-
-In the semi-collisional response regime, we find that
-\begin{equation}\label{deltaSC}
-\hat{\delta}_{SC}(t) = \frac{1}{\hat{d}_\beta}\left(\frac{\tau_H}{\tau_R}\right)^{1/2}\left(\frac{\tau_H}{t}\right)^{1/2}\left[
-1+(\gamma_g^{\,2}+\omega_E^2)\,t^2\right]^{1/4}.
+where
+\begin{equation}
+\epsilon_{VR} = \frac{\Gamma(1/6)}{6^{2/3}\,\pi\,\Gamma(5/6)}\,\frac{1}{{\mit\Sigma}\,P_\varphi^{\,1/6}}.
 \end{equation}
-Thus, at small times, the layer width decreases in time as $t^{-1/2}$. However, this decrease eventually stalls, and the
-layer width attains a constant value. 
+Thus,
+\begin{align}
+\overline{\mit\Psi}_{VR}(\hat{g}) &= 
+\frac{\epsilon_{VR}}{{\rm i}\,(Q_E+Q_e)+\epsilon_{VR}}\left(\frac{1}{\hat{g}} - \frac{1}{\hat{g} +[ {\rm i}\,(Q_E+Q_e)+\epsilon_{VR}]}\right),
+\end{align}
+giving
+\begin{align}
+\hat{\mit\Psi}_{VR}(\hat{t}) &= \frac{\epsilon_{VR}}{{\rm i}\,(Q_E+Q_e)+\epsilon_{VR}}\left(1 - {\rm e}^{- [{\rm i}\,(Q_E+Q_e)+\epsilon_{VR}]\,\hat{t}}\right).
+\end{align}
 
-In the resistive-inertial response regime, we find that
-\begin{equation}\label{deltaRI}
-\hat{\delta}_{RI}(t) = \left(\frac{\tau_H}{\tau_R}\right)^{1/4}\left(\frac{\tau_H}{t}\right)^{1/4}
-\frac{\left[
-1+(\gamma_g^{\,2}+\omega_E^2)\,t^2\right]^{1/8}\,\left(
-1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,i})^2]\,t^2\right)^{1/8}}{\left(
-1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,e})^2]\,t^2\right)^{1/8}}.
-\end{equation}
-Thus, at small times, the layer width decreases in time as $t^{-1/4}$. However, this decrease eventually stalls, and the
-layer width attains a constant value. 
+At small $\hat{t}$,
+\begin{align}
+\hat{\mit\Psi}_{VR}(\hat{t}) &\simeq \frac{\epsilon_{VR}\,\hat{t}}{\Gamma(2)}.
+\end{align}
+On the other hand, at large $\hat{t}$, 
+\begin{align}
+\hat{\mit\Psi}_{VR}(\hat{t}) &\simeq 
+\frac{\epsilon_{VR}}{{\rm i}\,(Q_E+Q_e)+\epsilon_{VR}}.
+\end{align}
 
-In the viscous-resistive response regime, we find that
-\begin{equation}\label{deltaVR}
-\hat{\delta}_{VR} = \frac{\tau_H^{\,1/3}}{\tau_R^{\,1/6}\,\tau_\varphi^{\,1/6}}
+Let $\delta_{VR} =r_s\,S^{-1/3}\,\hat{\delta}_{VR}$ be the radial width of the resonant layer in the viscous-resistive reconnection regime. 
+Equation~(\ref{vr3}) yields
+\begin{equation}
+\hat{\delta}_{VR}(\hat{t}) = P_\varphi^{\,1/6}.
 \end{equation}
 Thus, the layer width is independent of time. 
 
-Finally, in the diffusive-resistive response regime, we find that
-\begin{equation}\label{deltaDR}
-\hat{\delta}_{DR} = \frac{1}{\hat{d}_\beta^{\,1/2}}\,\frac{\tau_H^{\,1/2}}{\tau_R^{\,1/4}\,\tau_\perp^{\,1/4}}.
+\subsection{Diffusive-Resistive Reconnection Regime}\label{diffusive}
+Let $\hat{\mit\Psi}_{DR}(\hat{t})$ be the normalized driven magnetic flux in the diffusive-resistive reconnection regime, and let $\overline{\mit\Psi}_{DR}(\hat{g})$ be its Laplace transform.
+ Equations~(\ref{dr1}) and (\ref{cp}) yield 
+ \begin{equation}
+\overline{\mit\Psi}_{DR}(\hat{g}) =\frac{\epsilon_{DR}}{\hat{g}}\,\frac{1}
+{[\hat{g}+ {\rm i}\,(Q_E+Q_e)]+\epsilon_{DR}},
+\end{equation}
+where
+\begin{equation}
+\epsilon_{DR} = \frac{\Gamma(1/4)}{2\pi\,\Gamma(3/4)}\,\frac{1}{{\mit\Sigma}\,\iota_e^{\,1/4}\,P_\perp^{\,1/4}\,D^{\,-1/2}}.
+\end{equation}
+Thus,
+\begin{align}
+\overline{\mit\Psi}_{DR}(\hat{g}) &=
+\,\frac{\epsilon_{DR}}{{\rm i}\,(Q_E+Q_e)+\epsilon_{DR}}\left(\frac{1}{\hat{g}} - \frac{1}{\hat{g} + [{\rm i}\,(Q_E+Q_e)+\epsilon_{DR}]}\right),
+\end{align}
+yielding 
+\begin{align}
+\hat{\mit\Psi}_{DR}(\hat{t}) &=
+\frac{\epsilon_{DR}}{{\rm i}\,(Q_E+Q_e)+\epsilon_{DR}}\left(1 - {\rm e}^{- [{\rm i}\,(Q_E+Q_e)+\epsilon_{DR}]\,\hat{t}}\right).
+\end{align}
+
+At small $\hat{t}$,
+\begin{align}
+{\mit\Psi}_{DR}(\hat{t}) &\simeq\frac{\epsilon_{DR}\,\hat{t}}{\Gamma(2)}.
+\end{align}
+On the other hand, at large $\hat{t}$, 
+\begin{align}
+\hat{\mit\Psi}_{DR}(\hat{t}) &\simeq 
+\frac{\epsilon_{DR}}{{\rm i}\,(Q_E+Q_e)+\epsilon_{DR}}.
+\end{align}
+
+Let $\delta_{DR} =r_s\,S^{-1/3}\,\hat{\delta}_{DR}$ be the radial width of the resonant layer in the diffusive-resistive reconnection regime. 
+Equation~(\ref{dr3}) gives 
+\begin{equation}
+\hat{\delta}_{DR}(\hat{t}) = \frac{\iota_e^{\,1/4}\,P_\perp^{1/4}}{D^{1/2}}.
 \end{equation}
 Thus, the layer width is independent of time. 
 
-\subsection{Reconnection Scenario 1}\label{scen1}
-The layer widths calculated in Sect.~\ref{layer} allow us to determine how the plasma response in the resonant layer
-navigates through the various linear response regimes. This navigation is illustrated in Figs.~\ref{f3} and \ref{f4}. Here, $\hat{t}= t/(S^{1/3}\,\tau_H)$. 
+\begin{figure}[t]
+\centering
+\includegraphics[width=1.\textwidth]{Figure3.pdf}
+\caption{Trajectory of the Fourier-Laplace transformed response of a resonant layer to a resonant magnetic perturbation in $\hat{t}$-$P$ space for the case $D=0.9$. The various regimes are the diffusive-resistive (DR), the semi-collisional (SC), the resistive-inertial (RI), the viscous-resistive (VR), the viscous-inertial (VI), and the inertial (I). }\label{f3}
+\end{figure}
+
+\subsection{Reconnection Scenarios}
+The layer widths calculated in Sects.~\ref{inertial}--\ref{diffusive} allow us to determine how the plasma response in the resonant layer
+navigates through the various reconnection regimes. This navigation is illustrated in Figs.~\ref{f3} and \ref{f4}.
 
 Consider reconnection scenario 1, which corresponds to the horizontal lines labelled 1 in Figs.~\ref{f3} and \ref{f4}. 
 This scenario holds when $D<1$ and $P>1$, or when  $D>1$ and $P>D^{\,6}$. 
+The plasma in the resonant layer starts off in the inertial regime, passes into the viscous-inertial regime if and when  $\hat{\delta}_I(\hat{t})=\hat{\delta}_{VI}(\hat{t})$,
+and passes into the viscous-resistive regime if and when $\hat{\delta}_{VI}(\hat{t})=\hat{\delta}_{VR}(\hat{t})$. 
+Thus, the normalized reconnected magnetic flux is specified by $\hat{\mit\Psi}_{I}(\hat{t})$ in the first time interval,
+by $\hat{\mit\Psi}_{VI}(\hat{t})$ in the second interval, and by $\hat{\mit\Psi}_{VR}(\hat{t})$ in the third. Analogous statements can be
+made for the other reconnection scenarios.  
 
-The plasma in the resonant layer is initially in the inertial response regime. It follows from Eqs.~(\ref{eia}), (\ref{eib}), and
-(\ref{e150}) that 
-\begin{align}\label{e160}
-\frac{\bar{\mit\Psi}_0(g)}{E_{sb}\,{\mit\Psi}_{b\,0}}&= \frac{2}{\pi}\,\frac{1}{\tau_H\,\tau_R}\,
-\frac{1}{[g+{\rm i}\,(\omega_E+\omega_{\ast\,e})]\,(g+{\rm i}\,\omega_E)^{1/2}\,[g+{\rm i}\,(\omega_E+\omega_{\ast\,i})]^{1/2}}\nonumber\\[0.5ex]&\phantom{=}\times \left(\frac{1}{g+\gamma_g}-\frac{1}{g}\right),
-\end{align}
-which can be inverse Laplace transformed to give\,\cite{ed}
-\begin{equation}\label{e160x}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}} 
-= \frac{2}{\pi}\,\frac{1}{\tau_H\,\tau_R}\,\int_0^t
-F_I(t,t')\,{\rm e}^{-{\rm i}\,(\omega_E+\omega_{\ast\,i}/2)\,t'}\,J_0\!\left(\frac{\omega_{\ast\,i}\,t'}{2}\right)dt',
-\end{equation}
-where
-\begin{equation}
-F_I(t,t') = \frac{{\rm e}^{\,\gamma_g\,(t-t')}}{\gamma_g+{\rm i}\,(\omega_E+\omega_{\ast\,e})}
--\frac{1}{{\rm i}\,(\omega_E+\omega_{\ast\,e})}
-+\frac{\gamma_g\,{\rm e}^{-{\rm i}\,(\omega_E+\omega_{\ast\,e})\,(t-t')}}{{\rm i}\,(\omega_E+\omega_{\ast\,e})\,[\gamma_g+{\rm i}\,(\omega_E+\omega_{\ast\,e})]}.
-\end{equation}
-Here, $J_\nu(x)$ is a Bessel function of general order $\nu$.\cite{abram} 
-In the small-$t$ limit, $\gamma_g\,t$, $|\omega_{\ast\,e}|\,t$, $|\omega_{\ast\,i}|\,t$, $|\omega_{E}|\,t\ll 1$, Eq.~(\ref{e160x}) reduces to 
-\begin{equation}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}} = \frac{1}{3\pi}\,\frac{\gamma_g\,t^3}{\tau_H\,\tau_R}.
-\end{equation}
-In other words, the reconnected magnetic flux initially grows in time as $t^3$. 
-In the large-$t$ limit, $\gamma_g\,t$, $|\omega_{\ast\,e}|\,t$, $|\omega_{\ast\,i}|\,t$, $|\omega_{E}|\,t\gg 1$, Eq.~(\ref{e160x}) reduces to\,\cite{grad}
-\begin{equation}\label{e164}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}} = \frac{{\rm e}^{\,\gamma_g\,t}}{{\mit\Sigma}_I},
-\end{equation}
-where
-\begin{equation}
-{\mit\Sigma}_I = \frac{\pi}{2}\,\tau_H\,\tau_R\,[\gamma_g+{\rm i}\,(\omega_E+\omega_{\ast\,e})]\,(\gamma_g+{\rm i}\,\omega_E)^{1/2}\,[\gamma_g+ {\rm i}\,(\omega_E+\omega_{\ast\,i})]^{1/2}.
-\end{equation}
-Note that expression (\ref{e164}) corresponds to the contribution of the pole at $g=-\gamma_g$ when expression (\ref{e160}) is inverse Laplace transformed. 
-According to Eq.~(\ref{e164}), at large $t$, the reconnected magnetic flux grows exponentially in time at the
-same rate as the magnetic perturbation. The parameter ${\mit\Sigma}_I\sim {\cal O}(S^{1/3})$ is termed the {\em shielding factor}, and
-is, roughly speaking, the factor by which the driven reconnected magnetic flux is reduced by the shielding
-current, relative to that in the absence of shielding. 
-
-In order for the plasma in the resonant layer to lie in the inertial, rather than the viscous-inertial, response regime, we require $\hat{\delta}_I>\hat{\delta}_{VI}$. In other words, the inertial layer width must exceed the viscous-inertial layer width. According to Eqs.~(\ref{deltaI})
-and (\ref{deltaVI}), the plasma lies in the inertial response regime provided that
-\begin{equation}
-t<\tau_{I-VI}\,\frac{\left[1+(\gamma_g^{\,2}+\omega_E^{\,2})\,t^2\right]^{1/3}\left(
-1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,i})^2]\,t^2\right)^{1/3}}{\left(
-1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,e})^2]\,t^2\right)^{1/6}},
-\end{equation}
-where
-\begin{equation}
-\tau_{I-VI} = \tau_H^{\,2/3}\,\tau_{\varphi}^{\,1/3}.
-\end{equation}
-Let us assume that $\omega_{\ast\,e}\sim \omega_{\ast\,i}\sim \omega_E\sim\omega_\ast$, 
-where $\omega_\ast = -(m/r_s)\,V_\ast(r_s)$ is the diamagnetic frequency.  Let ${\mit\Omega}_{g\ast}= \sqrt{\gamma_g^{\,2}+\omega_\ast^{\,2}}$. 
-There are two possibilities. If ${\mit\Omega}_{g\ast}\,\tau_{I-VI}\ll 1$ then the plasma in the resonant layer leaves the
-inertial response regime when $t=\tau_{I-VI}$, and enters the viscous-inertial response regime. Moreover, the
-plasma leaves the inertial regime long before the large-$t$ state (\ref{e164}) is achieved. On the other hand,
-if  ${\mit\Omega}_{g\ast}\,\tau_{I-VI}\gg 1$ then the plasma in the resonant layer never leaves the inertial response
-regime, and the large-$t$ state (\ref{e164}) is eventually achieved. In the latter case, the trajectories
-labelled 1 in Figs.~\ref{f3} and \ref{f4} terminate in the inertial response regime. In the former case, the trajectories
-enter the viscous-inertial response regime. 
-
-In the viscous-inertial response regime, Eqs.~(\ref{evia}), (\ref{evib}), and (\ref{e150}) yield 
-\begin{equation}\label{e169x}
-\frac{\bar{\mit\Psi}_0(g) }{E_{sb}\,{\mit\Psi}_{b\,0}}= \frac{1}{\pi^{1/2}}\,\frac{1}{\tau_H^{1/2}\,\tau_R\,\tau_\varphi^{\,-1/4}}
-\frac{1}{[g+{\rm i}\,(\omega_E+\omega_{\ast\,e})]^{5/4}}\left(\frac{1}{g+\gamma_g}-\frac{1}{g}\right),
-\end{equation}
-which can be inverse Laplace transformed to give\,\cite{ed}
-\begin{equation}\label{e169}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}}=\frac{1}{\pi^{\,1/2}\,\Gamma(5/4)}\,\frac{1}{\tau_H^{1/2}\,\tau_R\,\tau_\varphi^{\,-1/4}}
-\int_0^t\left[{\rm e}^{\,\gamma_g\,(t-t')}-1\right]t'^{\,1/4}\,{\rm e}^{-{\rm i}\,(\omega_E+\omega_{\ast\,e})\,t'}\,dt'.
-\end{equation}
-In the  small-$t$ limit, $\gamma_g\,t$, $|\omega_{\ast\,e}|\,t$, $|\omega_{E}|\,t\ll 1$, Eq.~(\ref{e169}) reduces to 
-\begin{equation}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}} = \frac{16}{45\,\pi^{1/2}\,\Gamma(5/4)}\,\frac{\gamma_g\,t^{9/4}}{\tau_H^{1/2}\,\tau_R\,\tau_\varphi^{\,-1/4}}.
-\end{equation}
-In other words, the reconnected magnetic flux initially grows in time as $t^{9/4}$. In the large-$t$ limit, $\gamma_g\,t$, $|\omega_{\ast\,e}|\,t$, $|\omega_{E}|\,t\gg 1$, Eq.~(\ref{e169}) reduces to\,\cite{grad}
-\begin{equation}\label{e164a}
-\frac{{\mit\Psi}_0(t) }{E_{sb}\,{\mit\Psi}_{b\,0}}= \frac{{\rm e}^{\,\gamma_g\,t}}{{\mit\Sigma}_{VI}},
-\end{equation}
-where
-\begin{equation}
-{\mit\Sigma}_{VI} = \pi^{1/2}\,\tau_H^{1/2}\,\tau_R\,\tau_\varphi^{\,-1/4}\,[\gamma_g+{\rm i}\,(\omega_E+\omega_{\ast\,e})]^{5/4}.
-\end{equation}
-Expression (\ref{e164a}) corresponds to the contribution of the pole at $g=-\gamma_g$  when expression (\ref{e169x}) is inverse Laplace transformed. 
-Moreover, ${\mit\Sigma}_{VI}\sim{\cal O}(S^{1/3})$ is the shielding factor. 
-
-In order for the plasma in the resonant layer to lie in the viscous-inertial, rather than the viscous-resistive, response regime, we require $\hat{\delta}_{VI}>\hat{\delta}_{VR}$.  According to Eqs.~(\ref{deltaVI})
-and (\ref{deltaVR}), the plasma lies in the viscous-inertial response regime provided that
-\begin{equation}
-t<\tau_{VI-VR}\,
-\left(1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,e})^2]\,t^2\right)^{1/2},
-\end{equation}
-where
-\begin{equation}
-\tau_{VI-VR} = \frac{\tau_H^{\,2/3}\,\tau_R^{\,2/3}}{\tau_{\varphi}^{\,1/3}}.
-\end{equation}
-There are two possibilities. If ${\mit\Omega}_{g\ast}\,\tau_{VI-VR}\ll 1$ then the plasma in the resonant layer leaves the
-viscous-inertial response regime when $t=\tau_{VI-VR}$, and enters the viscous-resistive response regime. Moreover, the
-plasma leaves the viscous-inertial regime long before the large-$t$ state (\ref{e164a}) is achieved. On the other hand,
-if  ${\mit\Omega}_{g\ast}\,\tau_{VI-VR}\gg 1$ then the plasma in the resonant layer never leaves the viscous-inertial response
-regime, and the large-$t$ state (\ref{e164a}) is eventually achieved. In the latter case, the trajectories
-labelled 1 in Figs.~\ref{f3} and \ref{f4} terminate in the viscous-inertial response regime. In the former case, the trajectories
-enter the viscous-resistive response regime. 
-
-In the viscous-resistive response regime, Eqs.~(\ref{efeq1}), (\ref{vr}), and (\ref{e150}) yield 
-\begin{equation}\label{e169dd}
-\frac{\bar{\mit\Psi}_0(g)}{E_{sb}\,{\mit\Psi}_{b\,0}} =\frac{\Gamma(1/6)}{6^{2/3}\,\pi\,\Gamma(5/6)}\,\frac{1}{\tau_H^{\,2/3}\,\tau_R^{\,1/2}\,\tau_\varphi^{\,-1/6}}\,
-\frac{1}{g+{\rm i}\,(\omega_E+\omega_{\ast\,e})}\left(\frac{1}{g+\gamma_g}-\frac{1}{g}\right),
-\end{equation}
-which can be inverse Laplace transformed to give\,\cite{ed}
-\begin{equation}\label{e169d}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}}=\frac{\Gamma(1/6)}{6^{2/3}\,\pi\,\Gamma(5/6)}\,\frac{1}{\tau_H^{\,2/3}\,\tau_R^{\,1/2}\,\tau_\varphi^{\,-1/6}}
-\left[
-\frac{{\rm e}^{\,\gamma_g\,t}-{\rm e}^{-{\rm i}\,(\omega_E+\omega_{\ast\,e})\,t}}
-{\gamma_g+ {\rm i}\,(\omega_E+\omega_{\ast\,e})} 
-- \frac{1-{\rm e}^{-{\rm i}\,(\omega_E+\omega_{\ast\,e})\,t}}{{\rm i}\,(\omega_E+\omega_{\ast\,e})}\right].
-\end{equation}
-In the  small-$t$ limit, $\gamma_g\,t$, $|\omega_{\ast\,e}|\,t$,  $|\omega_{E}|\,t\ll 1$, Eq.~(\ref{e169d}) reduces to 
-\begin{equation}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}}= \frac{\Gamma(1/6)}{6^{2/3}\,2\pi\,\Gamma(5/6)}\,\frac{\gamma_g\,t^{2}}{\tau_H^{2/3}\,\tau_R^{\,1/2}\,\tau_\varphi^{\,-1/6}}.
-\end{equation}
-In other words, the reconnected magnetic flux initially grows in time as $t^{2}$. In the large-$t$ limit, $\gamma_g\,t$, $|\omega_{\ast\,e}|\,t$,  $|\omega_{E}|\,t\gg 1$, Eq.~(\ref{e169}) reduces to
-\begin{equation}\label{e164d}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}} = \frac{{\rm e}^{\,\gamma_g\,t}}{{\mit\Sigma}_{VR}},
-\end{equation}
-where
-\begin{equation}
-{\mit\Sigma}_{VR} =\frac{6^{2/3}\,\pi\,\Gamma(5/6)}{\Gamma(1/6)}\,\tau_H^{\,2/3}\,\tau_R^{\,1/2}\,\tau_\varphi^{\,-1/6}\,[\gamma_g+{\rm i}\,(\omega_E+\omega_{\ast\,e})].
-\end{equation}
-Expression (\ref{e164d}) corresponds to the contribution of the pole at $g=-\gamma_g$  when expression (\ref{e169dd}) is inverse Laplace transformed. 
-Moreover, ${\mit\Sigma}_{VR}\sim{\cal O}(S^{1/3})$ is the shielding factor. 
-
-\subsection{Reconnection Scenario 2}\label{scen2}
 Consider reconnection scenario 2, which corresponds to the horizontal line labelled 2 in Fig.~\ref{f3}. 
-This scenario holds when $D<1$ and $D^6<P< 1$. 
+This scenario holds when $D<1$ and $D^{\,6}<P< 1$. The plasma in the resonant layer starts off in the inertial regime, passes into the resistive-inertial regime if and when $\hat{\delta}_I(\hat{t})=\hat{\delta}_{RI}(\hat{t})$,
+and passes into the viscous-resistive regime if and when $\hat{\delta}_{RI}(\hat{t})=\hat{\delta}_{VR}(\hat{t})$. 
 
-The plasma in the resonant layer is initially in the inertial response regime. Driven magnetic reconnection in
-this response regime is described in Sect.~\ref{scen1}. 
-
-In order for the plasma in the resonant layer to lie in the inertial, rather than the resistive-inertial, response regime, we
-require $\hat{\delta}_I>\hat{\delta}_{RI}$. According to Eqs.~(\ref{deltaI})
-and (\ref{deltaRI}), the plasma lies in the inertial response regime provided that
-\begin{align}
-t&<\tau_{I-RI}\left[1+(\gamma_g^{\,2}+\omega_E^{\,2})\,t^2\right]^{1/6}
-\left(1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,i})^2]\,t^2\right)^{1/6}\nonumber\\[0.5ex]
-&\phantom{=}\times
-\left(1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,e})^2]\,t^2\right)^{1/6},
-\end{align}
-where
-\begin{equation}
-\tau_{I-RI} = \tau_H^{\,2/3}\,\tau_{R}^{\,1/3}.
-\end{equation}
-There are two possibilities. If ${\mit\Omega}_{g\ast}\,\tau_{I-RI}\ll 1$ then the plasma in the resonant layer leaves the
-inertial response regime when $t=\tau_{I-RI}$, and enters the resistive-inertial response regime. Moreover, the
-plasma leaves the inertial response regime long before the large-$t$ state (\ref{e164}) is achieved. On the other hand,
-if  ${\mit\Omega}_{g\ast}\,\tau_{I-RI}\gg 1$ then the plasma in the resonant layer never leaves the inertial response
-regime, and the large-$t$ state (\ref{e164}) is eventually achieved. In the latter case, the trajectory
-labelled 2 in Fig.~\ref{f3}  terminates in the inertial response regime. In the former case, the trajectory
-enters the resistive-inertial response regime. 
-
-In the resistive-inertial response regime, Eqs.~(\ref{efeq1}), (\ref{ri}), and (\ref{e150}) yield 
-\begin{align}\label{e182}
-\frac{\bar{\mit\Psi}_0(g)}{E_{sb}\,{\mit\Psi}_{b\,0}}& = \frac{\Gamma(1/4)}{2\pi\,\Gamma(3/4)}\,\frac{1}{\tau_H^{\,1/2}\,\tau_R^{\,3/4}}
-\frac{1}{[g+{\rm i}\,(\omega_E+\omega_{\ast\,e})]^{3/4}\,(g+{\rm i}\,\omega_E)^{1/4}\,[g+{\rm i}\,(\omega_E+\omega_{\ast\,i})]^{1/4}}\nonumber\\[0.5ex]&\phantom{=}\times\left(\frac{1}{g+\gamma_g}-\frac{1}{g}\right),
-\end{align}
-which can be inverse Laplace transformed to give\,\cite{ed}
-\begin{equation}\label{e183}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}} = \frac{\Gamma(1/4)}{(2\pi)^{3/2}\,\Gamma(3/4)}\,\frac{1}{\tau_H^{\,1/2}\,\tau_R^{\,3/4}}\int_0^t \left[{\rm e}^{\,\gamma_g\,(t-t')}-1\right]\,{\rm e}^{-{\rm i}\,(\omega_E+\omega_{\ast\,e})\,t'}\,
-F_{RI}(t')\,dt',
-\end{equation}
-where
-\begin{equation}
-F_{RI}(t')= \int_0^{t'}(t'-t'')^{-1/4}\,t''^{-1/4}\,{\rm e}^{\,{\rm i}\,(\omega_{\ast\,e}+\omega_{\ast\,i}/2)\,t''}\,\omega_{\ast\,i}^{\,1/4}\,J_{-1/4}\!\left(\frac{\omega_{\ast\,i}\,t''}{2}\right)\,dt''.
-\end{equation}
-In the small-$t$ limit, $\gamma_g\,t$, $|\omega_{\ast\,e}|\,t$, $|\omega_{\ast\,i}|\,t$, $|\omega_{E}|\,t\ll 1$, Eq.~(\ref{e183}) reduces to 
-\begin{equation}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}} = \frac{32}{45\pi}\,\frac{\gamma_g\,t^{9/4}}{\tau_H^{\,1/2}\,\tau_R^{\,3/4}}.
-\end{equation}
-In other words, the reconnected magnetic flux initially grows in time as $t^{9/4}$. 
-In the large-$t$ limit, $\gamma_g\,t$, $|\omega_{\ast\,e}|\,t$, $|\omega_{\ast\,i}|\,t$, $|\omega_{E}|\,t\gg 1$, Eq.~(\ref{e183}) reduces to\,\cite{grad}
-\begin{equation}\label{e186}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}} =\frac{{\rm e}^{\,\gamma_g\,t}}{ {\mit\Sigma}_{RI}},
-\end{equation}
-where
-\begin{equation}
-{\mit\Sigma}_{RI} = \frac{2\pi\,\Gamma(3/4)}{\Gamma(1/4)}\,\tau_H^{\,1/2}\,\tau_R^{\,3/4}\, [\gamma_g+{\rm i}\,(\omega_E+\omega_{\ast\,e})]^{3/4}\,(\gamma_g+{\rm i}\,\omega_E)^{1/4}\,[\gamma_g+ {\rm i}\,(\omega_E+\omega_{\ast\,i})]^{1/4}.
-\end{equation}
-Expression (\ref{e186}) corresponds to the contribution of the pole at $g=-\gamma_g$ when expression (\ref{e182}) is inverse Laplace transformed. Moreover, ${\mit\Sigma}_{RI}\sim{\cal O}(S^{1/3})$ is the shielding factor. 
-
-In order for the plasma in the resonant layer to lie in the resistive-inertial, rather than the viscous-resistive, response
-regime, we require $\hat{\delta}_{RI}>\hat{\delta}_{VR}$. 
-According to Eqs.~(\ref{deltaRI})
-and (\ref{deltaVR}), the plasma lies in the resistive-inertial regime provided that
-\begin{equation}
-t<\tau_{RI-VR}\,\frac{\left[1+(\gamma_g^{\,2}+\omega_E^{\,2})\,t^2\right]^{1/2}\left(
-1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,i})^2]\,t^2\right)^{1/2}}{\left(
-1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,e})^2]\,t^2\right)^{1/2}},
-\end{equation}
-where
-\begin{equation}
-\tau_{RI-VR} = \frac{\tau_H^{\,2/3}\,\tau_{\varphi}^{\,2/3}}{\tau_R^{\,1/3}}.
-\end{equation}
-There are two possibilities. If ${\mit\Omega}_{g\ast}\,\tau_{RI-VR}\ll 1$ then the plasma in the resonant layer leaves the
-resistive-inertial response regime when $t=\tau_{RI-VR}$, and enters the viscous-resistive response regime. Moreover, the
-plasma leaves the inertial response regime long before the large-$t$ state (\ref{e186}) is achieved. On the other hand,
-if  ${\mit\Omega}_{g\ast}\,\tau_{RI-VR}\gg 1$ then the plasma in the resonant layer never leaves the resistive-inertial response
-regime, and the large-$t$ state (\ref{e186}) is eventually achieved. In the latter case, the trajectory
-labelled 2 in Fig.~\ref{f3}  terminates in the resistive-inertial response regime. In the former case, the trajectory
-enters the viscous-resistive response regime. 
-
-Driven magnetic reconnection in
-the viscous-resistive response regime is described in Sect.~\ref{scen1}. 
-
-\subsection{Reconnection Scenario 3}\label{scen3}
 Consider reconnection scenario 3, which corresponds to the horizontal line labelled 3 in Fig.~\ref{f3}. 
-This scenario holds when $D<1$ and $P<D^6$. 
+This scenario holds when $D<1$ and $P<D^{\,6}$. 
+The plasma in the resonant layer starts off in the inertial regime, passes into the resistive-inertial regime if and when $\hat{\delta}_I(\hat{t})=\hat{\delta}_{RI}(\hat{t})$, passes into the semi-collisional regime if and when $\hat{\delta}_{RI}(\hat{t})=\hat{\delta}_{SC}(\hat{t})$, and passes into the
+viscous-resistive regime if and when $\hat{\delta}_{SC}(\hat{t})=\hat{\delta}_{RI}(\hat{t})$.
 
-The plasma in the resonant layer is initially in the inertial response regime. Driven magnetic reconnection in
-this response regime is described in Sect.~\ref{scen1}. 
-
-If ${\mit\Omega}_{g\ast}\,\tau_{I-RI}\ll 1$ then the plasma in the resonant layer leaves the
-inertial response regime when $t=\tau_{I-RI}$, and enters the resistive-inertial response regime. On the other hand,
-if  ${\mit\Omega}_{g\ast}\,\tau_{I-RI}\gg 1$ then the plasma in the resonant layer never leaves the inertial response
-regime, and the large-$t$ state (\ref{e164}) is eventually achieved. In the latter case, the trajectory
-labelled 3 in Fig.~\ref{f3}  terminates in the inertial response regime. In the former case, the trajectory
-enters the resistive-inertial response regime. 
-
-Driven magnetic reconnection in
-the resistive-inertial response regime is described in Sect.~\ref{scen2}. 
-
-In order for the plasma in the resonant layer to lie in the resistive-inertial, rather than the semi-collisional, response regime, we
-require $\hat{\delta}_{SC}>\hat{\delta}_{RI}$. According to Eqs.~(\ref{deltaSC})
-and (\ref{deltaRI}), the plasma lies in the resistive-inertial response  regime provided that
-\begin{align}
-t&<\tau_{RI-SC}\,\frac{\left[1+(\gamma_g^{\,2}+\omega_E^{\,2})\,t^2\right]^{1/2}
-\left(1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,i})^2]\,t^2\right)^{1/2}}
-{\left(1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,e})^2]\,t^2\right)^{1/2}},
-\end{align}
-where
-\begin{equation}
-\tau_{RI-SC} = \frac{\tau_H^{\,2}}{\hat{d}_\beta^{\,4}\,\tau_{R}}.
-\end{equation}
-There are two possibilities. If ${\mit\Omega}_{g\ast}\,\tau_{RI-SC}\ll 1$ then the plasma in the resonant layer leaves the
-resistive-inertial response regime when $t=\tau_{RI-SC}$, and enters the semi-collisional response regime. Moreover, the
-plasma leaves the resistive-inertial response  regime long before the large-$t$ state (\ref{e186}) is achieved. On the other hand,
-if  ${\mit\Omega}_{g\ast}\,\tau_{RI-SC}\gg 1$ then the plasma in the resonant layer never leaves the resistive-inertial response
-regime, and the large-$t$ state (\ref{e186}) is eventually achieved. In the latter case, the trajectory
-labelled 3 in Fig.~\ref{f3}  terminates in the resistive-inertial response regime. In the former case, the trajectory
-enters the semi-collisional response regime. 
-
-In the semi-collisional response regime, Eqs.~(\ref{efeq1}), (\ref{sc}), and (\ref{e150}) yield 
-\begin{align}\label{e192}
-\frac{\bar{\mit\Psi}_0(g)}{E_{sb}\,{\mit\Psi}_{b\,0}}& = \frac{1}{\pi}\,\frac{\iota_e^{\,1/2}\,\hat{d}_\beta}{\tau_H\,\tau_R^{\,1/2}}
-\frac{1}{[g+{\rm i}\,(\omega_E+\omega_{\ast\,e})]\,(g+{\rm i}\,\omega_E)^{1/2}}\left(\frac{1}{g+\gamma_g}-\frac{1}{g}\right),
-\end{align}
-which can be inverse Laplace transformed to give\,\cite{ed}
-\begin{equation}\label{e193}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}}= \frac{1}{\pi^{3/2}}\,\frac{\iota_e^{\,1/2}\,\hat{d}_\beta}{\tau_H\,\tau_R^{\,1/2}}\,
-\int_0^t F_{I}(t,t')\,t'^{\,-1/2}\,{\rm e}^{-{\rm i}\,\omega_E\,t'}\,dt'.
-\end{equation}
-In the small-$t$ limit, $\gamma_g\,t$, $|\omega_{\ast\,e}|\,t$,  $|\omega_{E}|\,t\ll 1$, Eq.~(\ref{e193}) reduces to 
-\begin{equation}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}} = \frac{\iota_e^{\,1/2}\,\hat{d}_\beta}{6\,\pi^{3/2}}\,\frac{\gamma_g\,t^{5/2}}{\tau_H\,\tau_R^{\,1/2}}.
-\end{equation}
-In other words, the reconnected magnetic flux initially grows in time as $t^{5/2}$. In the large-$t$ limit, $\gamma_g\,t$, $|\omega_{\ast\,e}|\,t$, $|\omega_{E}|\,t\gg 1$, Eq.~(\ref{e193}) reduces to\,\cite{grad}
-\begin{equation}\label{e195}
-\frac{{\mit\Psi}_0(t) }{E_{sb}\,{\mit\Psi}_{b\,0}}= \frac{{\rm e}^{\,\gamma_g\,t}}{{\mit\Sigma}_{SC}},
-\end{equation}
-where
-\begin{equation}
-{\mit\Sigma}_{SC} = \frac{\pi}{\iota_e^{\,1/2}\,\hat{d}_\beta}\,\tau_H\,\tau_R^{\,1/2}\,[\gamma_g+{\rm i}\,(\omega_E+\omega_{\ast\,e})]\,(\gamma_g+{\rm i}\,\omega_E)^{1/2}.
-\end{equation}
-Expression (\ref{e195}) corresponds to the contribution of the pole at $g=-\gamma_g$ when expression (\ref{e192}) is inverse Laplace transformed. Moreover, ${\mit\Sigma}_{SC}\sim{\cal O}(S^{1/3})$ is the shielding factor. 
-
-In order for the plasma in the resonant layer to lie in the semi-collisional, rather than the diffusive-resistive, response regime, we require $\hat{\delta}_{DR}<\hat{\delta}_{SC}$. 
-According to Eqs.~(\ref{deltaSC})
-and (\ref{deltaDR}), the plasma lies in the semi-collisional response regime provided that
-\begin{align}
-t&<\tau_{SC-DR}\,\left[1+(\gamma_g^{\,2}+\omega_E^{\,2})\,t^2\right]^{1/2},
-\end{align}
-where
-\begin{equation}
-\tau_{SC-DR} = \frac{\tau_H\,\tau_\perp^{\,1/2}}{\hat{d}_\beta\,\tau_{R}^{\,1/2}}.
-\end{equation}
-There are two possibilities. If ${\mit\Omega}_{g\ast}\,\tau_{SC-DR}\ll 1$ then the plasma in the resonant layer leaves the
-semi-collisional response regime when $t=\tau_{SC-DR}$, and enters the diffusive-resistive response regime. Moreover, the
-plasma leaves the semi-collisional response regime long before the large-$t$ state (\ref{e195}) is achieved. On the other hand,
-if  ${\mit\Omega}_{g\ast}\,\tau_{SC-DR}\gg 1$ then the plasma in the resonant layer never leaves the semi-collisional response
-regime, and the large-$t$ state (\ref{e195}) is eventually achieved. In the latter case, the trajectory
-labelled 3 in Fig.~\ref{f3}  terminates in the semi-collisional response regime. In the former case, the trajectory
-enters the diffusive-resistive response regime. 
-
-In the diffusive-resistive response regime, Eqs.~(\ref{efeq1}), (\ref{dr}), and (\ref{e150}) yield 
-\begin{equation}\label{e199}
-\frac{\bar{\mit\Psi}_0(g) }{E_{sb}\,{\mit\Psi}_{b\,0}}=\frac{\Gamma(1/4)}{2\pi\,\Gamma(3/4)}\,\frac{\hat{d}_\beta^{\,1/2}}{\tau_H^{1/2}\,\tau_R^{\,3/4}\,\tau_\perp^{\,-1/4}}\,
-\frac{1}{g+{\rm i}\,(\omega_E+\omega_{\ast\,e})}\left(\frac{1}{g+\gamma_g}-\frac{1}{g}\right),
-\end{equation}
-which can be inverse Laplace transformed to give\,\cite{ed}
-\begin{equation}\label{e200}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}}=\frac{\Gamma(1/4)}{2\pi\,\Gamma(3/4)}\,\frac{\hat{d}_\beta^{\,1/2}}{\tau_H^{1/2}\,\tau_R^{\,3/4}\,\tau_\perp^{\,-1/4}}
-\left[
-\frac{{\rm e}^{\,\gamma_g\,t}-{\rm e}^{-{\rm i}\,(\omega_E+\omega_{\ast\,e})\,t}}
-{\gamma_g+ {\rm i}\,(\omega_E+\omega_{\ast\,e})} 
-- \frac{1-{\rm e}^{-{\rm i}\,(\omega_E+\omega_{\ast\,e})\,t}}{{\rm i}\,(\omega_E+\omega_{\ast\,e})}\right].
-\end{equation}
-In the  small-$t$ limit, $\gamma_g\,t$, $|\omega_{\ast\,e}|\,t$,  $|\omega_{E}|\,t\ll 1$, Eq.~(\ref{e200}) reduces to 
-\begin{equation}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}} = \frac{\Gamma(1/4)\,\hat{d}_\beta^{\,1/2}}{4\pi\,\Gamma(3/4)}\,\frac{\gamma_g\,t^{2}}{\tau_H^{1/2}\,\tau_R^{\,3/4}\,\tau_\perp^{\,-1/4}}.
-\end{equation}
-In other words, the reconnected magnetic flux initially grows in time as $t^{2}$. In the large-$t$ limit, $\gamma_g\,t$, $|\omega_{\ast\,e}|\,t$,  $|\omega_{E}|\,t\gg 1$, Eq.~(\ref{e200}) reduces to
-\begin{equation}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}}=\frac{{\rm e}^{\,\gamma_g\,t} }{{\mit\Sigma}_{DR}},
-\end{equation}
-where
-\begin{equation}\label{e203}
-{\mit\Sigma}_{DR} =\frac{2\pi\,\Gamma(3/4)} {\Gamma(1/4)\,\hat{d}_\beta^{\,1/2}}\,\tau_H^{\,1/2}\,\tau_R^{\,3/4}\,\tau_\perp^{\,-1/4}\,[\gamma_g+{\rm i}\,(\omega_E+\omega_{\ast\,e})].
-\end{equation}
-Expression (\ref{e203}) corresponds to the contribution of the pole at $g=-\gamma_g$  when expression (\ref{e199}) is inverse Laplace transformed. 
-Moreover, ${\mit\Sigma}_{DR}\sim{\cal O}(S^{1/3})$ is the shielding factor. 
-
-\subsection{Reconnection Scenario 4}\label{scen4}
 Consider reconnection scenario 4, which corresponds to the horizontal line labelled 4 in Fig.~\ref{f4}. 
-This scenario holds when $D>1$ and $D^3 < P<D^6$. 
+This scenario holds when $D>1$ and $D^{\,3} < P<D^{\,6}$. 
+The plasma in the resonant layer starts off in the inertial regime, passes into the viscous-inertial regime if and when $\hat{\delta}_I(\hat{t})=\hat{\delta}_{VI}(\hat{t})$, passes into the diffusive-inertial regime if and when $\hat{\delta}_{VI}(\hat{t})=\hat{\delta}_{DR}(\hat{t})$, and passes into the
+diffusive-resistive regime if and when $\hat{\delta}_{DI}(\hat{t})=\hat{\delta}_{DR}(\hat{t})$.
 
-The plasma in the resonant layer is initially in the inertial response regime. Driven magnetic reconnection in
-this regime is described in Sect.~\ref{scen1}. 
-
-If ${\mit\Omega}_{g\ast}\,\tau_{I-VI}\ll 1$ then the plasma in the resonant layer leaves the
-inertial response regime when $t=\tau_{I-VI}$, and enters the viscous-inertial response regime. On the other hand,
-if  ${\mit\Omega}_{g\ast}\,\tau_{I-VI}\gg 1$ then the plasma in the resonant layer never leaves the inertial response
-regime, and the large-$t$ state (\ref{e164}) is eventually achieved. In the latter case, the trajectory
-labelled 4 in Fig.~\ref{f4}  terminates in the inertial response regime. In the former case, the trajectory
-enters the viscous-inertial response regime. 
-
-Driven magnetic reconnection in
-the viscous-inertial regime is described in Sect.~\ref{scen1}. 
-
-In order for the plasma in the resonant layer to lie in the viscous-inertial, rather than the diffusive-inertial, response regime, we
-require $\hat{\delta}_{VI}<\hat{\delta}_{DI}$. According to Eqs.~(\ref{deltaVI})
-and (\ref{deltaDI}), the plasma lies in the viscous-inertial response regime provided that
-\begin{align}
-t<\tau_{VI-DI}\,\left(1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,e})^{2}]\,t^2\right)^{1/2},
-\end{align}
-where
-\begin{equation}
-\tau_{VI-DI} = \frac{\tau_H^{\,2}\,\tau_{\varphi}}{\hat{d}_\beta^{\,4}\,\tau_\perp^{\,2}}.
-\end{equation}
-There are two possibilities. If ${\mit\Omega}_{g\ast}\,\tau_{VI-DI}\ll 1$ then the plasma in the resonant layer leaves the
-viscous-inertial response regime when $t=\tau_{VI-DI}$, and enters the diffusive-inertial response regime. Moreover, the
-plasma leaves the viscous-inertial response regime long before the large-$t$ state (\ref{e164a}) is achieved. On the other hand,
-if  ${\mit\Omega}_{g\ast}\,\tau_{VI-DI}\gg 1$ then the plasma in the resonant layer never leaves the viscous-inertial response
-regime, and the large-$t$ state (\ref{e164a}) is eventually achieved. In the latter case, the trajectory
-labelled 4 in Fig.~\ref{f4}  terminates in the viscous-inertial response regime. In the former case, the trajectory
-enters the diffusive-inertial response regime. 
-
-In the diffusive-inertial response regime, Eqs.~(\ref{edia}), (\ref{edib}), and (\ref{e150}) yield 
-\begin{equation}\label{e169xt}
-\frac{\bar{\mit\Psi}_0(g) }{E_{sb}\,{\mit\Psi}_{b\,0}}= \frac{2}{\pi}\,\frac{\hat{d}_\beta}{\tau_H\,\tau_R\,\tau_\perp^{\,-1/2}}
-\,\frac{1}{[g+{\rm i}\,(\omega_E+\omega_{\ast\,e})]^{3/2}}\left(\frac{1}{g+\gamma_g}-\frac{1}{g}\right),
-\end{equation}
-which can be inverse Laplace transformed to give\,\cite{ed}
-\begin{equation}\label{e169t}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}}=\frac{2}{\pi\,\Gamma(3/2)}\,\frac{\hat{d}_\beta}{\tau_H\,\tau_R\,\tau_\perp^{\,-1/2}}
-\int_0^t\left[{\rm e}^{\,\gamma_g\,(t-t')}-1\right]t'^{\,1/2}\,{\rm e}^{-{\rm i}\,(\omega_E+\omega_{\ast\,e})\,t'}\,dt'.
-\end{equation}
-In the  small-$t$ limit, $\gamma_g\,t$, $|\omega_{\ast\,e}|\,t$, $|\omega_{E}|\,t\ll 1$, Eq.~(\ref{e169t}) reduces to 
-\begin{equation}
-\frac{{\mit\Psi}_0(t)}{E_{sb}\,{\mit\Psi}_{b\,0}} = \frac{8\,\hat{d}_\beta}{15\pi\,\Gamma(3/2)}\,\frac{\gamma_g\,t^{5/2}}{\tau_H\,\tau_R\,\tau_\perp^{\,-1/2}}.
-\end{equation}
-In other words, the reconnected magnetic flux initially grows in time as $t^{5/2}$. In the large-$t$ limit, $\gamma_g\,t$, $|\omega_{\ast\,e}|\,t$, $|\omega_{E}|\,t\gg 1$, Eq.~(\ref{e169t}) reduces to\,\cite{grad}
-\begin{equation}\label{e164at}
-\frac{{\mit\Psi}_0(t) }{E_{sb}\,{\mit\Psi}_{b\,0}}= \frac{{\rm e}^{\,\gamma_g\,t}}{{\mit\Sigma}_{DI}},
-\end{equation}
-where
-\begin{equation}
-{\mit\Sigma}_{DI} = \frac{\pi}{2\,\hat{d}_\beta}\,\tau_H\,\tau_R\,\tau_\perp^{\,-1/2}\, [\gamma_g+{\rm i}\,(\omega_E+\omega_{\ast\,e})]^{3/2}.
-\end{equation}
-Expression (\ref{e164at}) corresponds to the contribution of the pole at $g=-\gamma_g$  when expression (\ref{e169xt}) is inverse Laplace transformed. 
-Moreover, ${\mit\Sigma}_{DI}\sim{\cal O}(S^{1/3})$ is the shielding factor. 
-
-In order for the plasma in the resonant layer to lie in the diffusive-inertial, rather than the diffusive-resistive, response regime, we
-require $\hat{\delta}_{DI}>\hat{\delta}_{DR}$. According to Eqs.~(\ref{deltaDI})
-and (\ref{deltaDR}), the plasma lies in the diffusive-inertial response regime provided that
-\begin{align}
-t<\tau_{DI-DR}\,\left(1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,e})^{2}]\,t^2\right)^{1/2},
-\end{align}
-where
-\begin{equation}
-\tau_{DI-DR} = \frac{\tau_H\,\tau_{R}^{\,1/2}}{\hat{d}_\beta\,\tau_\perp^{\,1/2}}.
-\end{equation}
-There are two possibilities. If ${\mit\Omega}_{g\ast}\,\tau_{DI-DR}\ll 1$ then the plasma in the resonant layer leaves the
-diffusive-inertial response regime when $t=\tau_{DI-DR}$, and enters the diffusive-resistive response regime. Moreover, the
-plasma leaves the diffusive-inertial response regime long before the large-$t$ state (\ref{e164at}) is achieved. On the other hand,
-if  ${\mit\Omega}_{g\ast}\,\tau_{DI-DR}\gg 1$ then the plasma in the resonant layer never leaves the diffusive-inertial response
-regime, and the large-$t$ state (\ref{e164at}) is eventually achieved. In the latter case, the trajectory
-labelled 4 in Fig.~\ref{f4}  terminates in the diffusive-inertial response regime. In the former case, the trajectory
-enters the diffusive-resistive response regime. 
-
-Driven magnetic reconnection in
-the diffusive-resistive regime is described in Sect.~\ref{scen3}. 
-
-\subsection{Reconnection Scenario 5}
 Consider reconnection scenario 5, which corresponds to the horizontal line labelled 5 in Fig.~\ref{f4}. 
-This scenario holds when $D>1$ and $D^2 < P<D^3$. 
+This scenario holds when $D>1$ and $D^{\,2} < P<D^{\,5}$. 
+The plasma in the resonant layer starts off in the inertial regime, passes into the diffusive-inertial regime if and when $\hat{\delta}_I(\hat{t})=\hat{\delta}_{DI}(\hat{t})$, and passes into the
+diffusive-resistive regime if and when $\hat{\delta}_{DI}(\hat{t})=\hat{\delta}_{DR}(\hat{t})$.
 
-The plasma in the resonant layer is initially in the inertial response regime. Driven magnetic reconnection in
-this regime is described in Sect.~\ref{scen1}. 
-
-In order for the plasma in the resonant layer to lie in the inertial, rather than the diffusive-inertial, response regime, we require $\hat{\delta}_I>\hat{\delta}_{DI}$. I According to Eqs.~(\ref{deltaI})
-and (\ref{deltaDI}), the plasma lies in the inertial response regime provided that
-\begin{equation}
-t<\tau_{I-DI}\,\frac{\left[1+(\gamma_g^{\,2}+\omega_E^{\,2})\,t^2\right]^{1/2}\left(
-1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,i})^2]\,t^2\right)^{1/2}}{\left(
-1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,e})^2]\,t^2\right)^{1/2}},
-\end{equation}
-where
-\begin{equation}
-\tau_{I-DI} = \hat{d}_\beta^{\,2}\,\tau_\perp.
-\end{equation}
-There are two possibilities. If ${\mit\Omega}_{g\ast}\,\tau_{I-DI}\ll 1$ then the plasma in the resonant layer leaves the
-inertial response regime when $t=\tau_{I-DI}$, and enters the diffusive-inertial response regime. Moreover, the
-plasma leaves the inertial response regime long before the large-$t$ state (\ref{e164}) is achieved. On the other hand,
-if  ${\mit\Omega}\,\tau_{I-DI}\gg 1$ then the plasma in the resonant layer never leaves the inertial response
-regime, and the large-$t$ state (\ref{e164}) is eventually achieved. In the latter case, the trajectory
-labelled 5 in Fig.~\ref{f4}  terminates in the inertial response regime. In the former case, the trajectory
-enter the diffusive-inertial response regime. 
-
-Driven magnetic reconnection in
-the diffusive-inertial regime is described in Sect.~\ref{scen4}. 
-
-If ${\mit\Omega}_{g\ast}\,\tau_{DI-DR}\ll 1$ then the plasma in the resonant layer leaves the
-diffusive-inertial response regime when $t=\tau_{DI-DR}$, and enters the diffusive-resistive response regime. On the other hand,
-if  ${\mit\Omega}_{g\ast}\,\tau_{DI-DR}\gg 1$ then the plasma in the resonant layer never leaves the diffusive-inertial response
-regime, and the large-$t$ state (\ref{e164at}) is eventually achieved. In the latter case, the trajectory
-labelled 5 in Fig.~\ref{f4}  terminates in the diffusive-inertial response regime. In the former case, the trajectory
-enters the diffusive-resistive response regime. 
-
-Driven magnetic reconnection in
-the diffusive-resistive regime is described in Sect.~\ref{scen3}. 
-
-\subsection{Reconnection Scenario 6}
 Consider reconnection scenario 6, which corresponds to the horizontal line labelled 6 in Fig.~\ref{f4}. 
-This scenario holds when $D>1$ and $D^{-6} < P<D^2$. 
+This scenario holds when $D>1$ and $D^{\,-6} < P<D^{\,2}$. 
+The plasma in the resonant layer starts off in the inertial regime,  and passes into the
+diffusive-resistive regime if and when $\hat{\delta}_{I}(\hat{t})=\hat{\delta}_{DR}(\hat{t})$.
 
-The plasma in the resonant layer is initially in the inertial response regime. Driven magnetic reconnection in
-this response regime is described in Sect.~\ref{scen1}. 
+Finally, consider reconnection scenario 7, which corresponds to the horizontal line labelled 7 in Fig.~\ref{f4}. 
+This scenario holds when $D>1$ and $P<D^{\,-6}$. 
+The plasma in the resonant layer starts off in the inertial regime, passes into the semi-collisional regime if and when $\hat{\delta}_I(\hat{t})=\hat{\delta}_{SC}(\hat{t})$, and passes into the
+diffusive-resistive regime if and when $\hat{\delta}_{SC}(\hat{t})=\hat{\delta}_{DR}(\hat{t})$.
 
-In order for the plasma in the resonant layer to lie in the inertial, rather than the diffusive-resistive, response regime, we require $\hat{\delta}_I>\hat{\delta}_{DR}$. I According to Eqs.~(\ref{deltaI})
-and (\ref{deltaDR}), the plasma lies in the inertial response regime provided that
-\begin{equation}
-t<\tau_{I-DR}\,\left[1+(\gamma_g^{\,2}+\omega_E^{\,2})\,t^2\right]^{1/4}
-\left(1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,i})^2]\,t^2\right)^{1/4}
-\end{equation}
-where
-\begin{equation}
-\tau_{I-DR} = \hat{d}_\beta^{\,1/2}\,\tau_H^{\,1/2}\,\tau_R^{\,1/4}\,\tau_\perp^{\,1/4}.
-\end{equation}
-There are two possibilities. If ${\mit\Omega}_{g\ast}\,\tau_{I-DR}\ll 1$ then the plasma in the resonant layer leaves the
-inertial response regime when $t=\tau_{I-DR}$, and enters the diffusive-resistive response regime. Moreover, the
-plasma leaves the inertial regime long before the large-$t$ state (\ref{e164}) is achieved. On the other hand,
-if  ${\mit\Omega}_{g\ast}\,\tau_{I-DR}\gg 1$ then the plasma in the resonant layer never leaves the inertial response
-regime, and the large-$t$ state (\ref{e164}) is eventually achieved. In the latter case, the trajectory
-labelled 6 in Fig.~\ref{f4}  terminates in the inertial response regime. In the former case, the trajectory
-enter the diffusive-resistive response regime. 
+\begin{figure}
+\centering
+\includegraphics[width=1.\textwidth]{Figure4.pdf}
+\caption{Trajectory of the Fourier-Laplace transformed response of a resonant layer to a resonant magnetic perturbation  in $\hat{t}$-$P$ space for the case $D=1.2$. The various regimes are the diffusive-resistive (DR), the semi-collisional (SC), the diffusive-inertial (DI), the viscous-resistive (VR), the viscous-inertial (VI), and the inertial (I).}\label{f4}
+\end{figure}
 
-Driven magnetic reconnection in
-the diffusive-resistive response regime is described in Sect.~\ref{scen3}. 
-
-\subsection{Reconnection Scenario 7}
-Consider reconnection scenario 7, which corresponds to the horizontal line labelled 7 in Fig.~\ref{f4}. 
-This scenario holds when $D>1$ and $P<D^{-6}$. 
-
-The plasma in the resonant layer is initially in the inertial response regime. Driven magnetic reconnection in
-this response regime is described in Sect.~\ref{scen1}. 
-
-In order for the plasma in the resonant layer to lie in the inertial, rather than the semi-collisional, response regime, we require $\hat{\delta}_I>\hat{\delta}_{SC}$.  According to Eqs.~(\ref{deltaI})
-and (\ref{deltaSC}), the plasma lies in the inertial response regime provided that
-\begin{equation}
-t<\tau_{I-SC}\,\left(1+[\gamma_g^{\,2}+(\omega_E+\omega_{\ast\,i})^{2}]\,t^2\right)^{1/2},
-\end{equation}
-where
-\begin{equation}
-\tau_{I-SC} = \hat{d}_\beta^{\,2}\,\tau_R.
-\end{equation}
-There are two possibilities. If ${\mit\Omega}_{g\ast}\,\tau_{I-SC}\ll 1$ then the plasma in the resonant layer leaves the
-inertial response regime when $t=\tau_{I-SC}$, and enters the semi-collsional response regime. On the other hand,
-if  ${\mit\Omega}_{g\ast}\,\tau_{I-SC}\gg 1$ then the plasma in the resonant layer never leaves the inertial response
-regime, and the large-$t$ state (\ref{e164}) is eventually achieved. In the latter case, the trajectory
-labelled 7 in Fig.~\ref{f4}  terminates in the inertial response regime. In the former case, the trajectory
-enter the semi-collisional response regime. 
-
-Driven magnetic reconnection in
-the semi-collisional response regime is described in Sect.~\ref{scen3}. 
-
- If ${\mit\Omega}_{g\ast}\,\tau_{SC-DR}\ll 1$ then the plasma in the resonant layer leaves the
-semi-collisional response regime when $t=\tau_{SC-DR}$, and enters the diffusive-resistive response regime. On the other hand,
-if  ${\mit\Omega}_{g\ast}\,\tau_{SC-DR}\gg 1$ then the plasma in the resonant layer never leaves the semi-collisional response
-regime, and the large-$t$ state (\ref{e195}) is eventually achieved. In the latter case, the trajectory
-labelled 7 in Fig.~\ref{f4}  terminates in the semi-collisional response regime. In the former case, the trajectory
-enters the diffusive-resistive response regime. 
-
-Driven magnetic reconnection in
-the diffusive-resistive response regime is described in Sect.~\ref{scen3}. 
-\fi
-
+ 
 \section*{Funding}
 This research was supported by the U.S.\ Department of Energy, Office of Science, Office of Fusion Energy Sciences, under  contract DE-FG02-04ER54742. 
 
@@ -1129,7 +911,7 @@ resistivity at the rational surface, $E_\parallel$ the parallel inductive electr
 plasma current in the vicinity of the rational surface,  $\chi_\varphi$  the anomalous perpendicular ion momentum
 diffusivity at the rational surface, and $\chi_\perp$ the anomalous perpendicular energy diffusivity at the rational surface.
 Moreover, $d_\beta=c_\beta\,d_i$, and $\hat{d}_\beta=d_\beta/r_s$, where $c_\beta = \sqrt{\beta/(1+\beta)}$, and
-$\beta=(5/3)\,\mu_0\,p_0/B_\varphi^{\,2}$. Here, $d_\beta$ is usually referred to as the {\em ion sound-radius}. 
+$\beta=(5/3)\,\mu_0\,p_0/B_\varphi^{\,2}$. Here, $d_\beta$ is usually referred to as the ion sound-radius. 
 Note that we have neglected parallel energy transport in Eq.~(\ref{e48}) because we expect the radial width of the inner region to be less than the critical width above which parallel transport forces the temperature and density profiles to be magnetic flux-surface functions.\cite{hel}
 
 \subsection{Matching to Plasma Equilibrium}
@@ -1182,7 +964,7 @@ are first order in perturbed quantities, we obtain the following set of lineariz
 \end{align}
 Here, 
 $\tau_H = L_s/(m\,V_A)$ 
-is the  {\em hydromagnetic}\/ time, 
+is the  hydromagnetic time, 
 $\omega_E =-(q_s/r_s)\,V_E(r_s)=- (d{\mit\Phi}/{d\psi_p})_{r_s}$
   the 
 ${\bf E}\times {\bf B}$ frequency, 
@@ -1551,11 +1333,6 @@ This response regime is known as the {\em diffusive-inertial}\/ regime because t
 layer response is dominated by perpendicular energy diffusivity and ion inertia. \cite{err3} The characteristic layer width is $p_\ast\sim
 R^{-1/2}\,P^{-1/2}\,D$, which implies that the regime is valid when $R\ll D$, $P\ll D^4/Q$, and $P\gg D^2/R^2$. 
 
-\subsection{Linear Resonant Response Regimes}
-Figures~\ref{f1} and \ref{f2} show the extents of the various different linear resonant response regimes in $R$-$P$ space for the
-cases $D<1$ and $D>1$, respectively. Note that Fig.~\ref{f2} differs slightly from Fig.~2 in Ref.~\onlinecite{err3} because
-we are now demanding equal layer thicknesses at the boundaries between the various response regimes. 
-
 \section*{References}
 \begin{thebibliography}{99}\baselineskip 5ex
 
@@ -1603,9 +1380,9 @@ we are now demanding equal layer thicknesses at the boundaries between the vario
 
 \bibitem{twist} R.~Fitzpatrick, {\em Stability of coupled tearing and twisting modes in tokamaks}, Phys.\ Plasmas {\bf 1}, 3308 (1994).
 
-\bibitem{ed} A.~Erd\'{e}lyi, W.~Magnus, F.~Oberhettinger and F.G.~Tricomi, {\em Tables of Integral Transforms, Vol.~1}, (McGraw-Hill, New York NY, 1954).
+\bibitem{ed} A.~Erd\'{e}lyi, W.~Magnus, F.~Oberhettinger and F.G.~Tricomi, {\em Tables of integral transforms, Vol.~1}, (McGraw-Hill, New York NY, 1954).
 
-\bibitem{abram} M.~Abramowitz and I.A.~Stegun, eds., {\em Handbook of Mathematical Functions, with Formulas, Graphs, and Mathematical Tables},  (Dover, New York NY, 1965).
+\bibitem{abram} M.~Abramowitz and I.A.~Stegun, eds., {\em Handbook of mathematical functions, with formulas, graphs, and mathematical tables},  (Dover, New York NY, 1965).
 
 \bibitem{ara} G.~Ara, B.~Basu, B.~Coppi, G.~Laval, M.N.~Rosenbluth and B.V.~Waddell, {\em Magnetic reconnection and $m = 1$ oscillations in current carrying plasmas}, Ann.\ Phys.\ (NY) {\bf 112}, 443 (1978).
 
@@ -1615,38 +1392,9 @@ we are now demanding equal layer thicknesses at the boundaries between the vario
 
 \bibitem{wal} F.L.~Waelbroeck, {\em Shielding of resonant magnetic perturbations in the long mean-free path regime}, Phys.\ Plasmas {\bf 10}, 4040 (2003).
 
-\bibitem{grad} I.S.~Gradshteyn and I.M.~Ryzhik, {\em Table of Integrals, Series, and Products, Corrected and enlarged edition}, (Academic Press, New York NY,  1980). 
+\bibitem{grad} I.S.~Gradshteyn and I.M.~Ryzhik, {\em Table of integrals, series, and products, corrected and enlarged edition}, (Academic Press, New York NY,  1980). 
 
 \bibitem{haz1} R.D.~Hazeltine and J.D.~Meiss, {\em Plasma confinement}, (Dover, New York NY, 2003).
 
 \end{thebibliography}
-
-\newpage
-
-\begin{figure}
-\centering
-\includegraphics[width=1.\textwidth]{RegimeI.pdf}
-\caption{Linear resonant plasma response regimes in $R$-$P$ space for the case $D = 0.9$. The various regimes are the diffusive-resisitive (DR), the semi-collisional (SC), the resistive-inertial (RI), the viscous-resistive (VR), the viscous-inertial (VI), and the inertial (I).}\label{f1}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=1.\textwidth]{RegimeII.pdf}
-\caption{Linear resonant plasma response regimes in $R$-$P$ space for the case $D = 1.2$. The various regimes are the diffusive-resisitive (DR), the semi-collisional (SC), the diffusive-inertial (DI), the viscous-resistive (VR), the viscous-inertial (VI), and the inertial (I).}\label{f2}
-\end{figure}
-
-\iffalse
-\begin{figure}
-\centering
-\includegraphics[width=1.\textwidth]{RegimeIII.pdf}
-\caption{Trajectory of the Fourier/Laplace transformed response of a resonant layer to a resonant magnetic perturbation in $\hat{t}$-$P$ space for the case $D=0.9$. The various regimes are the diffusive-resistive (DR), the semi-collisional (SC), the resistive-inertial (RI), the viscous-resistive (VR), the viscous-inertial (VI), and the inertial (I). }\label{f3}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=1.\textwidth]{RegimeIV.pdf}
-\caption{Trajectory of the Fourier/Laplace transformed response of a resonant layer to a resonant magnetic perturbation  in $\hat{t}$-$P$ space for the case $D=1.2$. The various regimes are the diffusive-resistive (DR), the semi-collisional (SC), the diffusive-inertial (DI), the viscous-resistive (VR), the viscous-inertial (VI), and the inertial (I).}\label{f4}
-\end{figure}
-\fi
-
 \end{document}
