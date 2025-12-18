@@ -2,9 +2,7 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 
-x = input("gmax: ")
-
-gmax = float(x)
+gmax = 20.
 
 infile = open ("Integrand.out", "r")
 
@@ -61,5 +59,5 @@ plt.legend (fontsize = fontsize)
 
 plt.tight_layout();
 
-plt.show ()
-#plt.savefig ("Figure5.pdf")
+#plt.show ()
+plt.savefig ("Figure5.pdf")

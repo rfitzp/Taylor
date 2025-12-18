@@ -13,7 +13,7 @@ pisq = math.sqrt (pi)
 # Read calculation data from JSON file
 # ####################################
 
-with open ("../Inputs/Namelist.json", "r") as f:
+with open ("Namelist.json", "r") as f:
     data = json.load (f)
 
 QE    = data["QE"]
@@ -212,7 +212,7 @@ with open ("Analytic.out", "w") as f:
                % (t, PsiIr, PsiIi, PsiVIr, PsiVIi, PsiDIr, PsiDIi, PsiRIr, PsiRIi, PsiSCr, PsiSCi, PsiDRr (t), PsiDRi (t), PsiVRr (t), PsiVRi (t)))
 
         f.write ("%11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e\n"
-                 % (t, PsiIr, PsiIi, PsiVIr, PsiVIi, PsiDIr, PsiDIi, PsiRIr, PsiRIi, PsiSCr, PsiSCi, PsiDRr (t), PsiDRi (t), PsiVRr (t), PsiVRi (t))))
+                 % (t, PsiIr, PsiIi, PsiVIr, PsiVIi, PsiDIr, PsiDIi, PsiRIr, PsiRIi, PsiSCr, PsiSCi, PsiDRr (t), PsiDRi (t), PsiVRr (t), PsiVRi (t)))
 
 f.close ()    
 

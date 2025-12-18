@@ -1,4 +1,4 @@
-\documentclass[12pt,prb,aps,notitlepage]{revtex4-1}
+\documentclass[12pt,prb,aps]{revtex4-1}
 \usepackage {amsmath}
 \usepackage{amssymb}
 \pdfoutput = 1 
@@ -10,12 +10,27 @@
 
 \title{Forced Magnetic Reconnection in Flowing Tokamak Plasmas}
 \author{Y.~Lin and R.~Fitzpatrick\,\footnote{rfitzp@utexas.edu}}
-\affiliation{Institute for Fusion Studies,  Department of Physics,  University of Texas at Austin,  Austin TX 78712, USA}\begin{abstract}
+\affiliation{Institute for Fusion Studies,  Department of Physics,  University of Texas at Austin,  Austin TX 78712, USA}
+
+\begin{abstract}
+Asymptotic matching techniques are used to investigate the drift-magnetohydrodynamical response of a flowing tokamak plasma to a static, resonant magnetic perturbation  that is switched on suddenly in time.
+Seven different resonant plasma response regimes are identified. 
+ Expressions for critical layer quantities in each regime are derived. 
+The driven reconnected magnetic
+flux at the rational surface is expressed as a contour integral in the space of the complex Laplace transform variable conjugate to time. 
+In each resonant response regime, the integral is evaluated to give a closed-form analytic expression for the driven magnetic flux as a function of time. 
+Depending on the values of the normalized parameters that govern the resonant layer, seven different reconnection scenarios are identified that describe how the
+driven reconnected magnetic flux at the rational surface evolves though the various different resonant response regimes as a function of time. 
+The driven reconnected magnetic flux at the rational surface is  calculated as a function of time  by two alternative  methods.  The first solution  method, which is exact,  involves numerically 
+evaluating the aforementioned contour integral. The second solution method, which is only approximate,  but much less time consuming,  involves evaluating the closed-form analytic expressions. 
+The results of the two
+solution methods are compared. 
 \end{abstract}
+
 \maketitle
 
 \section{Introduction}
-Consider an intrinsically tearing-stable  tokamak plasma that is subject to an externally generated, static (in the laboratory frame), non-axisymmetric, magnetic perturbation. The perturbation  inevitably 
+Consider a  tokamak plasma that is intrinsically stable to tearing modes, but is subject to an externally generated, static (in the laboratory frame), non-axisymmetric, magnetic perturbation. The perturbation  inevitably 
 resonates at various rational surfaces inside the plasma, and  acts to drive magnetic reconnection at these surfaces. This
 process, which is known as {\em forced magnetic reconnection},  generates magnetic island chains within the plasma.\cite{err1,err1a}  Such chains degrade the plasma energy confinement,\cite{chang} and, in extreme cases, can even trigger a major disruption.
 
@@ -94,12 +109,6 @@ $P_\perp$ and $P_\varphi$ are magnetic Prandtl numbers,
 $\iota_e = - \omega_{\ast\,e}/(\omega_{\ast\,i}-\omega_{\ast\,e})$, and $\hat{d}_\beta= d_\beta/r_s$. All quantities are evaluated at the
 rational surface. 
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=1.\textwidth]{Figure1.pdf}
-\caption{Linear resonant plasma response regimes in $R$-$P$ space for the case $D = 0.9$. The various regimes are the diffusive-resisitive (DR), the semi-collisional (SC), the resistive-inertial (RI), the viscous-resistive (VR), the viscous-inertial (VI), and the inertial (I).}\label{f1}
-\end{figure}
-
 \subsection{Linear Resonant Plasma Response Regimes}
 According to the analysis of Appendix~\ref{response}, there are seven different linear resonant plasma response regimes. 
 
@@ -133,6 +142,12 @@ F_s(\hat{g}) &= 1,\\[0.5ex]
 \hat{\delta} &= \frac{|\hat{g}+{\rm i}\,Q_E|^{1/4}\,|\hat{g}+{\rm i}\,(Q_E+Q_i)|^{1/4}}{|\hat{g} +{\rm i}\,(Q_E+Q_e)|^{1/4}}.\label{ri3}
 \end{align}
 
+\begin{figure}[t]
+\centering
+\includegraphics[width=1.\textwidth]{Figure1.pdf}
+\caption{Linear resonant plasma response regimes in $R$-$P$ space for the case $D = 0.9$. The various regimes are the diffusive-resisitive (DR), the semi-collisional (SC), the resistive-inertial (RI), the viscous-resistive (VR), the viscous-inertial (VI), and the inertial (I).}\label{f1}
+\end{figure}
+
 The {\em semi-collisional}\/ regime is such that
 \begin{align}
 \hat{\mit\Delta}_s(\hat{g})&= \frac{\pi\,[\hat{g}+{\rm i}\,(Q_E+Q_e)]\,(\hat{g}+{\rm i}\,Q_E)^{1/2}}{D},\label{sc1}\\[0.5ex]
@@ -147,18 +162,17 @@ F_s(\hat{g})&= 1,\\[0.5ex]
 \hat{\delta} &= P_\varphi^{\,1/6}.\label{vr3}
 \end{align}
 
-Finally, The {\em diffusive-resistive}\/ regime is such that
+Finally, the {\em diffusive-resistive}\/ regime is such that
 \begin{align}
 \hat{\mit\Delta}_s(\hat{g})&= \frac{2\pi\,\Gamma(3/4)}{\Gamma(1/4)}\,\frac{[\hat{g}+{\rm i}\,(Q_E+Q_e)]\,\iota_e^{\,1/4}\,P_\perp^{1/4}}{D^{1/2}},\label{dr1}\\[0.5ex]
 F_s(\hat{g}) &= 1,\\[0.5ex]
 \hat{\delta} &= \frac{\iota_e^{\,1/4}\,P_\perp^{1/4}}{D^{1/2}}.\label{dr3}
 \end{align}
-
 Suppose that $|Q_E|\sim |Q_e|\sim |Q_i|\sim Q$ and $P_\varphi\sim P_\perp\sim P$. Let $R=\sqrt{\hat{g}^2+Q^2}$. The extents of the various
 linear resonant response regimes in $R$-$P$ space is illustrated in Figs.~\ref{f1} and \ref{f2}. Note that Fig.~\ref{f2} differs slightly from Fig.~2 in Ref.~\onlinecite{err3} because
 we are now demanding equal layer thicknesses at the boundaries between the various response regimes.
 
-\begin{figure}[t]
+\begin{figure}
 \centering
 \includegraphics[width=1.\textwidth]{Figure2.pdf}
 \caption{Linear resonant plasma response regimes in $R$-$P$ space for the case $D = 1.2$. The various regimes are the diffusive-resisitive (DR), the semi-collisional (SC), the diffusive-inertial (DI), the viscous-resistive (VR), the viscous-inertial (VI), and the inertial (I).}\label{f2}
@@ -186,7 +200,7 @@ where
 \end{equation}
 is the reconnected magnetic flux that would be driven at the rational surface in the absence of a helical current sheet at the surface. In other words, ${\mit\Psi}_\infty$ is the maximum possible
 time-asymptotic reconnected flux. It follows from Eq.~(\ref{drive}), and the previous three equations,  that
-\begin{equation}
+\begin{equation}\label{e29}
 \hat{\mit\Psi}_0(\hat{t}) = \frac{1}{2\pi\,{\rm i}}\int_C \frac{F_s(\hat{g})\,{\rm e}^{\,\hat{g}\,\hat{t}}}{\hat{g}\,[{\mit\Sigma}\,\hat{\mit\Delta}_s(\hat{g})+1]}\,d\hat{g},
 \end{equation}
 where ${\mit\Sigma}= S^{1/3}/(-E_{ss})$. 
@@ -239,14 +253,14 @@ H(\hat{t}) &= {\rm e}^{-\alpha\,\hat{t}/2}\,J_0[(\beta-\alpha^2/4)^{1/2}\,\hat{t
 \end{align}
 where $J_0(z)$ is a Bessel function. 
 Thus,
-\begin{align}
+\begin{align}\label{inertialp}
 \hat{\mit\Psi}_{I}(\hat{t}) &=\frac{\epsilon_I}{{\rm i}\,(Q_E+Q_e)}
 \int_0^{\hat{t}}\left[1-{\rm e}^{\,{\rm i}\,(Q_E+Q_e)\,(\hat{t}'-\hat{t})}\right]
 {\rm e}^{-{\rm i}\,(Q_E+Q_i/2)\,\hat{t}'}\,J_0\!\left(\frac{Q_i}{2}\,\hat{t}'\right)d\hat{t}'.
 \end{align}
 
 At small $\hat{t}$,
-\begin{equation}
+\begin{equation}\label{inertials}
 \hat{\mit\Psi}_{I}(\hat{t})\simeq \frac{\epsilon_I\,\hat{t}^{\,2}}{\Gamma(3)},
 \end{equation}
 where $\Gamma(z)$ is a gamma function.
@@ -261,7 +275,7 @@ But, Eq.~(6.621.4) of Ref.~\onlinecite{grad} yields
 \int_0^\infty {\rm e}^{-\alpha\,x}\,J_0(\beta\,x)\,dx =\frac{1}{\sqrt{\alpha^2+\beta^2}},
 \end{equation}
 so
-\begin{equation}
+\begin{equation}\label{inertiall}
 \hat{\mit\Psi}_{I}(\hat{t})\simeq \frac{\epsilon_I}{{\rm i}\,(Q_E+Q_i)}\left\{
 \frac{1}{({\rm i}\,Q_E)^{1/2}\,[{\rm i}\,(Q_E+Q_i)]^{1/2}}- \frac{{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}}{({\rm i}\,Q_e)^{1/2}\,[{\rm i}\,(Q_e-Q_i)]^{1/2}}\right\}.
 \end{equation}
@@ -286,7 +300,7 @@ Equations~(\ref{vi1}), (\ref{vi2}), and (\ref{ncp}) yield
 \end{align}
 where
 \begin{equation}
-\epsilon_{VI} = \frac{1}{\pi^{1/2}\,{\mit\Sigma}\,P_\varphi^{\,1/4}}.
+\epsilon_{VI} = \frac{1}{\pi^{1/2}\,P_\varphi^{\,1/4}\,{\mit\Sigma}}.
 \end{equation}
 
 In this case,
@@ -298,33 +312,33 @@ so Eq.~(5.4.1) of Ref.~\onlinecite{ed} gives
 H(\hat{t}) = \frac{1}{\Gamma(5/4)}\,\hat{t}^{\,1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}.
 \end{equation}
 Hence,
-\begin{equation}
+\begin{equation}\label{vip}
 \hat{\mit\Psi}_{VI}(\hat{t}) =\frac{\epsilon_{VI}}{\Gamma(5/4)}\int_0^{\hat{t}}
 \hat{t}'^{\,1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
 \end{equation}
 
 At small $\hat{t}$,
-\begin{equation}
+\begin{equation}\label{vis}
 \hat{\mit\Psi}_{VI}(\hat{t}) \simeq \frac{\epsilon_{VI}\,\hat{t}^{\,5/4}}{\Gamma(9/4)}.
 \end{equation}
 On the other hand, at large $\hat{t}$, 
 \begin{equation}
 \hat{\mit\Psi}_{VI}(\hat{t}) \simeq\frac{\epsilon_{VI}}{\Gamma(5/4)}\int_0^\infty
-\hat{t}'^{\,1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
+\hat{t}'^{\,1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'.
 \end{equation}
 But Eq.~(3.381.5) of Ref.~\onlinecite{grad} yields, 
 \begin{equation}
 \int_0^\infty x^{\nu-1}\,{\rm e}^{-{\rm i}\,q\,x}\,dx = \frac{\Gamma(\nu)}{({\rm i}\,q)^{\nu}},
 \end{equation}
 so 
-\begin{equation}
+\begin{equation}\label{vil}
 \hat{\mit\Psi}_{VI}(\hat{t}) \simeq \frac{\epsilon_{VI}}{[{\rm i}\,(Q_E+Q_e)]^{5/4}}.
 \end{equation}
 
 Let $\delta_{VI} =r_s\,S^{-1/3}\,\hat{\delta}_{VI}$ be the radial width of the resonant layer in the viscous-inertial  reconnection regime. 
 Equation~(\ref{vi3}) gives 
 \begin{equation}
-\hat{\delta}_{VI}(\hat{t}) = \frac{1}{\hat{t}^{\,1/2}}\left[1+(Q_E+Q_e)^2\,\hat{t}^{\,2}\right]^{1/8}\,P_\varphi^{\,1/4}.
+\hat{\delta}_{VI}(\hat{t}) = \frac{1}{\hat{t}^{\,1/4}}\left[1+(Q_E+Q_e)^2\,\hat{t}^{\,2}\right]^{1/8}\,P_\varphi^{\,1/4}.
 \end{equation}
 Thus, at small times, the layer width decreases in time as $\hat{t}^{-1/4}$. However, this decrease eventually stalls, and the
 layer width attains a constant value. 
@@ -337,7 +351,7 @@ Equations~(\ref{di1}), (\ref{di2}), and (\ref{ncp}) yield
 \end{align}
 where
 \begin{equation}
-\epsilon_{DI} = \frac{2}{\pi}\,\frac{1}{{\mit\Sigma}\,\iota_e^{\,1/2}\,P_\perp^{\,1/2}\,D^{\,-1}}.
+\epsilon_{DI} = \frac{2}{\pi}\,\frac{D}{\iota_e^{\,1/2}\,P_\perp^{\,1/2}\,{\mit\Sigma}}.
 \end{equation}
 
 In this case,
@@ -349,26 +363,26 @@ so Eq.~(5.4.1.) of Ref.~\onlinecite{ed}  gives
 H(\hat{t}) = \frac{1}{\Gamma(3/2)}\,\hat{t}^{\,1/2}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}.
 \end{equation}
 Hence,
-\begin{equation}
+\begin{equation}\label{dip}
 \hat{\mit\Psi}_{DI}(\hat{t}) =\frac{\epsilon_{DI}}{\Gamma(3/2)}\int_0^{\hat{t}}
 \hat{t}'^{\,1/2}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
 \end{equation}
 
 At small $\hat{t}$,
-\begin{equation}
+\begin{equation}\label{dis}
 \hat{\mit\Psi}_{DI}(\hat{t}) \simeq \frac{\epsilon_{DI}\,\hat{t}^{\,3/2}}{\Gamma(5/2)}.
 \end{equation}
 On the other hand, at large $\hat{t}$, 
 \begin{equation}
 \hat{\mit\Psi}_{DI}(\hat{t}) =\frac{\epsilon_{DI}}{\Gamma(3/2)}\int_0^{\infty}
-\hat{t}'^{\,1/2}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'
+\hat{t}'^{\,1/2}\,{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\,d\hat{t}'.
 \end{equation}
 But Eq.~(3.381.5) of Ref.~\onlinecite{grad} yields
 \begin{equation}
 \int_0^\infty x^{\nu-1}\,{\rm e}^{-{\rm i}\,q\,x}\,dx = \frac{\Gamma(\nu)}{({\rm i}\,q)^{\nu}},
 \end{equation}
 so 
-\begin{equation}
+\begin{equation}\label{dil}
 \hat{\mit\Psi}_{DI}(\hat{t}) \simeq \frac{\epsilon_{DI}}{[{\rm i}\,(Q_E+Q_e)]^{3/2}}.
 \end{equation}
 
@@ -382,7 +396,7 @@ layer width attains a constant value.
 
 \subsection{Resistive-Inertial Reconnection Regime}
 Let $\hat{\mit\Psi}_{RI}(\hat{t})$ be the normalized driven magnetic flux in the resistive-inertial reconnection regime, and let $\overline{\mit\Psi}_{RI}(\hat{g})$ be its Laplace transform.
-Equatons~(\ref{ri1}) and (\ref{cp}) yield 
+Equations~(\ref{ri1}) and (\ref{cp}) yield 
 \begin{equation}
 \overline{\mit\Psi}_{RI}(\hat{g}) =\frac{\epsilon_{RI}}{\hat{g}}\,\frac{1}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]^{3/4}\,(\hat{g}+{\rm i}\,Q_E)^{1/4}\,[\hat{g}+ {\rm i}\,(Q_E+Q_i)]^{1/4}
 +\epsilon_{RI}},
@@ -431,7 +445,7 @@ H_2(\hat{t})&= \frac{1}{\Gamma(3/4)}\,\hat{t}^{-1/4}\,{\rm e}^{-{\rm i}\,(Q_E+Q_
 Note that
 $\Gamma(1/4)\,\Gamma(3/4) = \sqrt{2}\,\pi$.
 Thus,
-\begin{align}
+\begin{align}\label{rip}
 \hat{\mit\Psi}_{RI}(\hat{t}) &= \frac{\epsilon_{RI}\,Q_i^{\,1/4}}{\sqrt{2\pi}}\int_0^{\hat{t}}{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}'}\left[
 \int_0^{\hat{t}'}(\hat{t}'-\hat{t}'')^{-1/4}\,\hat{t}''^{-1/4}
 {\rm e}^{\,{\rm i}\,(Q_e-Q_i/2)\,\hat{t}''}\,J_{-1/4}\!\left(\frac{Q_i}{2}\,\hat{t}''\right)d\hat{t}''\right]d\hat{t}'.
@@ -455,7 +469,7 @@ and Eqs.~(6.2.1) and (6.2.2) of Ref.~\onlinecite{abram} yield
 \int_0^1(1-x)^{-1/4}\,x^{-1/2}\,dx =\frac{\Gamma(1/2)\,\Gamma(3/4)}{\Gamma(5/4)},
 \end{equation}
 so
-\begin{equation}
+\begin{equation}\label{ris}
 {\mit\Psi}_{RI}(\hat{t})\simeq \frac{\epsilon_{RI}\,\hat{t}^{\,5/4}}{\Gamma(9/4)}.
 \end{equation}
 
@@ -497,7 +511,7 @@ But, Eq.~(6.623.1) of Ref.~\onlinecite{grad}  yields
 Now, Eq.~(6.1.17) of Ref.~\onlinecite{abram} gives
 $\Gamma(3/4)\,\Gamma(1/4)= \sqrt{2}\,\pi$,
 so
-\begin{equation}
+\begin{equation}\label{ril}
 \hat{\mit\Psi}_{RI}(\hat{t})\simeq 
 \frac{\epsilon_{RI}}{[{\rm i}\,(Q_E+Q_e)]^{3/4}\,({\rm i}\,Q_E)^{1/4}\,[{\rm i}\,(Q_E+Q_i)]^{1/4}}.
 \end{equation}
@@ -513,14 +527,14 @@ layer width attains a constant value.
 
 \subsection{Semi-Collisional Reconnection Regime}
 Let $\hat{\mit\Psi}_{SC}(\hat{t})$ be the normalized driven magnetic flux in the semi-collisional reconnection regime, and let $\overline{\mit\Psi}_{SC}(\hat{g})$ be its Laplace transform.
-Eqautions~(\ref{sc1}) and (\ref{cp}) yield 
+Equations~(\ref{sc1}) and (\ref{cp}) yield 
 \begin{equation}
 \overline{\mit\Psi}_{SC}(\hat{g}) =\frac{\epsilon_{SC}}{\hat{g}}\,\frac{1}{[\hat{g}+ {\rm i}\,(Q_E+Q_e)]\,(\hat{g}+{\rm i} \,Q_E)^{1/2}
 +\epsilon_{SC}},
 \end{equation}
 where
 \begin{equation}
-\epsilon_{SC}= \frac{1}{\pi\,{\mit\Sigma}\,D^{\,-1}}.
+\epsilon_{SC}= \frac{D}{\pi\,{\mit\Sigma}}.
 \end{equation}
 If we neglect the small parameter $\epsilon_{SC}$ in the denominator then
 \begin{equation} 
@@ -540,14 +554,14 @@ so Eq.~(5.4.1) of Ref.~\onlinecite{ed} yields
 H(\hat{t}) = \frac{1}{\Gamma(1/2)}\,\hat{t}^{-1/2}\,{\rm e}^{-{\rm i}\,Q_E\,\hat{t}}.
 \end{equation}
 Hence,
-\begin{align}
+\begin{align}\label{scpx}
 \hat{\mit\Psi}_{SC}(\hat{t}) &= \frac{\epsilon_{SC}}{\Gamma(1/2)\,{\rm i}\,(Q_E+Q_e)} \int
 _0^{\hat{t}}\left[1-{\rm e}^{\,{\rm i}\,(Q_E+Q_e)\,(\hat{t}'-\hat{t})}\right]
 \hat{t}'^{-1/2}\,{\rm e}^{-{\rm i}\,Q_E\,\hat{t'}}\,d\hat{t}'.
 \end{align}
 
 At small $\hat{t}$, 
-\begin{align}
+\begin{align}\label{scs}
 \hat{\mit\Psi}_{SC}(\hat{t}) &= \frac{\epsilon_{SC}\,\hat{t}^{\,3/2}}{\Gamma(5/2)}.
 \end{align}
 On the other hand, at large $\hat{t}$, 
@@ -561,7 +575,7 @@ But Eq.~(3.381.5) of Ref.~\onlinecite{grad} gives
 \int_0^\infty x^{\nu-1}\,{\rm e}^{-{\rm i}\,q\,x}\,dx = \frac{\Gamma(\nu)}{({\rm i}\,q)^{\nu}},
 \end{equation}
 It follows that
-\begin{equation}
+\begin{equation}\label{scl}
 \hat{\mit\Psi}_{SC}(\hat{t}) = \frac{\epsilon_{SC}}{{\rm i}\,(Q_E+Q_e)}
 \left[\frac{1}{({\rm i}\,Q_E)^{1/2}} - \frac{{\rm e}^{-{\rm i}\,(Q_E+Q_e)\,\hat{t}}}{(-{\rm i}\,Q_e)^{1/2}}\right].
 \end{equation}
@@ -582,7 +596,7 @@ Equations~(\ref{vr1}) and (\ref{cp}) give
 \end{equation}
 where
 \begin{equation}
-\epsilon_{VR} = \frac{\Gamma(1/6)}{6^{2/3}\,\pi\,\Gamma(5/6)}\,\frac{1}{{\mit\Sigma}\,P_\varphi^{\,1/6}}.
+\epsilon_{VR} = \frac{\Gamma(1/6)}{6^{2/3}\,\pi\,\Gamma(5/6)}\,\frac{1}{P_\varphi^{\,1/6}\,{\mit\Sigma}}.
 \end{equation}
 Thus,
 \begin{align}
@@ -590,16 +604,16 @@ Thus,
 \frac{\epsilon_{VR}}{{\rm i}\,(Q_E+Q_e)+\epsilon_{VR}}\left(\frac{1}{\hat{g}} - \frac{1}{\hat{g} +[ {\rm i}\,(Q_E+Q_e)+\epsilon_{VR}]}\right),
 \end{align}
 giving
-\begin{align}
+\begin{align}\label{vrp}
 \hat{\mit\Psi}_{VR}(\hat{t}) &= \frac{\epsilon_{VR}}{{\rm i}\,(Q_E+Q_e)+\epsilon_{VR}}\left(1 - {\rm e}^{- [{\rm i}\,(Q_E+Q_e)+\epsilon_{VR}]\,\hat{t}}\right).
 \end{align}
 
 At small $\hat{t}$,
-\begin{align}
+\begin{align}\label{vrs}
 \hat{\mit\Psi}_{VR}(\hat{t}) &\simeq \frac{\epsilon_{VR}\,\hat{t}}{\Gamma(2)}.
 \end{align}
 On the other hand, at large $\hat{t}$, 
-\begin{align}
+\begin{align}\label{vrl}
 \hat{\mit\Psi}_{VR}(\hat{t}) &\simeq 
 \frac{\epsilon_{VR}}{{\rm i}\,(Q_E+Q_e)+\epsilon_{VR}}.
 \end{align}
@@ -620,7 +634,7 @@ Let $\hat{\mit\Psi}_{DR}(\hat{t})$ be the normalized driven magnetic flux in the
 \end{equation}
 where
 \begin{equation}
-\epsilon_{DR} = \frac{\Gamma(1/4)}{2\pi\,\Gamma(3/4)}\,\frac{1}{{\mit\Sigma}\,\iota_e^{\,1/4}\,P_\perp^{\,1/4}\,D^{\,-1/2}}.
+\epsilon_{DR} = \frac{\Gamma(1/4)}{2\pi\,\Gamma(3/4)}\,\frac{D^{1/2}}{\iota_e^{\,1/4}\,P_\perp^{\,1/4}\,{\mit\Sigma}}.
 \end{equation}
 Thus,
 \begin{align}
@@ -628,17 +642,17 @@ Thus,
 \,\frac{\epsilon_{DR}}{{\rm i}\,(Q_E+Q_e)+\epsilon_{DR}}\left(\frac{1}{\hat{g}} - \frac{1}{\hat{g} + [{\rm i}\,(Q_E+Q_e)+\epsilon_{DR}]}\right),
 \end{align}
 yielding 
-\begin{align}
+\begin{align}\label{drp}
 \hat{\mit\Psi}_{DR}(\hat{t}) &=
 \frac{\epsilon_{DR}}{{\rm i}\,(Q_E+Q_e)+\epsilon_{DR}}\left(1 - {\rm e}^{- [{\rm i}\,(Q_E+Q_e)+\epsilon_{DR}]\,\hat{t}}\right).
 \end{align}
 
 At small $\hat{t}$,
-\begin{align}
+\begin{align}\label{drs}
 {\mit\Psi}_{DR}(\hat{t}) &\simeq\frac{\epsilon_{DR}\,\hat{t}}{\Gamma(2)}.
 \end{align}
 On the other hand, at large $\hat{t}$, 
-\begin{align}
+\begin{align}\label{drl}
 \hat{\mit\Psi}_{DR}(\hat{t}) &\simeq 
 \frac{\epsilon_{DR}}{{\rm i}\,(Q_E+Q_e)+\epsilon_{DR}}.
 \end{align}
@@ -656,9 +670,9 @@ Thus, the layer width is independent of time.
 \caption{Trajectory of the Fourier-Laplace transformed response of a resonant layer to a resonant magnetic perturbation in $\hat{t}$-$P$ space for the case $D=0.9$. The various regimes are the diffusive-resistive (DR), the semi-collisional (SC), the resistive-inertial (RI), the viscous-resistive (VR), the viscous-inertial (VI), and the inertial (I). }\label{f3}
 \end{figure}
 
-\subsection{Reconnection Scenarios}
-The layer widths calculated in Sects.~\ref{inertial}--\ref{diffusive} allow us to determine how the plasma response in the resonant layer
-navigates through the various reconnection regimes. This navigation is illustrated in Figs.~\ref{f3} and \ref{f4}.
+\section{Reconnection Scenarios}\label{scenarios}
+The layer widths calculated in Sects.~\ref{inertial}--\ref{diffusive} allow us to determine how the driven magnetic flux at the rational surface
+evolves through the various reconnection regimes as a function of time. This evolution is illustrated in Figs.~\ref{f3} and \ref{f4}.
 
 Consider reconnection scenario 1, which corresponds to the horizontal lines labelled 1 in Figs.~\ref{f3} and \ref{f4}. 
 This scenario holds when $D<1$ and $P>1$, or when  $D>1$ and $P>D^{\,6}$. 
@@ -703,7 +717,161 @@ diffusive-resistive regime if and when $\hat{\delta}_{SC}(\hat{t})=\hat{\delta}_
 \caption{Trajectory of the Fourier-Laplace transformed response of a resonant layer to a resonant magnetic perturbation  in $\hat{t}$-$P$ space for the case $D=1.2$. The various regimes are the diffusive-resistive (DR), the semi-collisional (SC), the diffusive-inertial (DI), the viscous-resistive (VR), the viscous-inertial (VI), and the inertial (I).}\label{f4}
 \end{figure}
 
+\begin{table}[t]
+\begin{tabular}{cccccccc}\hline
+Scenario & ~${\mit\Sigma}$~ & ~$Q_E$~ & ~$Q_e$~ & ~$Q_i$~ & ~~$D$~ & ~$P_\perp$~ & ~$P_\varphi$\\[0.5ex]\hline
+1 & 10 & 0.1 & 1.0 & $-1.0$ & 1.2 &  5.0 & 5.0\\[0.5ex]
+3 & 10 & 0.1 & 1.0 &$-1.0$ & 0.9 & 0.25 & 0.25\\[0.5ex]
+5 & 10 & 0.1 & 1.0  &$-1.0$ & 1.2 & 1.728 & 1.728
+\end{tabular}
+\caption{Normalized layer parameters used in simulations of various reconnection scenarios.}\label{t1}
+\end{table}
+
+\section{Simulations}
+\subsection{Introduction}
+We can calculate the normalized driven reconnected magnetic flux at the rational surface, $\hat{\mit\Psi}_0$, as a function of normalized time, $\hat{t}$, by one of two alternative  methods.  The first solution  method,
+which is exact,  involves numerically 
+evaluating the contour integral (\ref{e29}): i.e., 
+\begin{equation}
+\hat{\mit\Psi}_0(\hat{t}) = \frac{1}{2\pi\,{\rm i}}\int_{\sigma-{\rm i}\,\infty}^{\sigma+{\rm i}\,\infty}\frac{F_s(\hat{g})\,{\rm e}^{\,\hat{g}\,\hat{t}}}{\hat{g}\,[{\mit\Sigma}\,\hat{\mit\Delta}_s(\hat{g})+1]}\,d\hat{g}.
+\end{equation}
+Here, the layer quantities $\hat{\mit\Delta}_s(\hat{g})$ and $F_s(\hat{g})$ must be calculated numerically by means of the two-step method described in Appendix~\ref{appd}. In all of the calculations described in this paper, 
+ $\sigma = 0.1$. (We have confirmed that the results of the calculation  are independent of the value of $\sigma$, provided that it is positive.) The second solution method,
+ which is only approximate,  but much less time consuming, involves evaluating the closed-form analytic expressions (\ref{inertialp}),
+(\ref{vip}), (\ref{dip}), (\ref{rip}), (\ref{scpx}), (\ref{vrp}), and (\ref{drp}) for $\hat{\mit\Psi}_0(\hat{t})$ in each of the seven reconnection regimes. 
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\textwidth]{Figure5.pdf}
+\caption{The layer quantities $\hat{\mit\Delta}_s(\hat{g})$ and $F_s(\hat{g})$ calculated numerically along the Bromwich contour in Reconnection Scenario 1.}\label{f5}
+\end{figure}
+
+\subsection{Reconnection Scenario 1}
+Consider Reconnection Scenario 1, which is illustrated in Figs.~\ref{f3} and \ref{f4}.  The normalized layer parameters used to access this regime are listed  in Table~\ref{t1}. 
+
+Figure~\ref{f5} shows
+the layer quantities $\hat{\mit{\Delta}}_s(\hat{g})$ and $F_s(\hat{g})$ plotted along the Bromwich contour in Scenario 1. Now,  we have established that $F_s(\hat{g})=1$
+in all of the constant-$\psi$ resonant response regimes.  Moreover, we would expect such regimes to correspond to large $\hat{t}$, and, hence, to small $\hat{g}$.  (See Figs.~\ref{f3} and \ref{f4}.) 
+In other words, we might expect $F_s(\hat{g})\simeq 1$ at small $\hat{g}$. However, it can be seen from Fig.~\ref{f5} that the situation is actually more nuanced than this. 
+In fact, $F_s(\hat{g})$ is similar to unity at small-$\hat{g}$, but is not exactly equal to unity. 
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\textwidth]{Figure6.pdf}
+\caption{Driven reconnected magnetic flux  at relatively early times in Reconnection Scenario 1. Here, the solid curves show the numerical solution, the dotted curves show the analytic solution in the inertial
+response regime, and the dashed curves show the analytic solution in the viscous-inertial response regime. The two dotted vertical lines show the approximate
+times at which the transitions from the inertial to the viscous-inertial, and from the viscous-inertial to the viscous-resistive, response regimes occur, in order from the left to the right. }\label{f6}
+\end{figure}
+
+Figure~\ref{f6} shows the driven reconnected magnetic flux at relatively early times (after the RMP is switched on) in Reconnection Scenario 1. It can be seen that, in accordance with the curve labelled 1 in Fig.~\ref{f3}, the numerical solution exactly matches
+ the analytic solution in the inertial response regime at extremely early times. At intermediate times, the numerical solution deviates from the analytic solution in the inertial regime, and approximately matches
+that in the viscous-inertial response regime. 
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\textwidth]{Figure7.pdf}
+\caption{Driven reconnected magnetic flux at relatively late times in Reconnection Scenario 1. Here, the solid curves show the numerical solution, whereas the dashed curves show the analytic solution in the 
+viscous-resistive response regime. The vertical dotted line shows the approximate time at  which the transition from the viscous-inertial to the viscous-resistive response regime occurs.  }\label{f7}
+\end{figure}
+
+Figure~\ref{f7} shows the driven reconnected magnetic flux at relatively  late times in Reconnection Scenario 1. It can be seen that,  in accordance with the curve labelled 1 in Fig.~\ref{f3}, the numerical
+solution matches   the analytic solution in the viscous-resistive regime fairly well at later times.  
+
+Figures~\ref{f6} and \ref{f7} exhibit the limitations of the closed-form analytic solutions. The match with the analytic viscous-inertial solution is  approximate because the
+system is only in the viscous-inertial response regime for a fairly limited period of time. Moreover, the match with the viscous-resistive solution is not perfect because the
+system is not actually in the viscous-resistive response regime at $\hat{t}=0$, whereas the analytic solution assumes that this is the case. 
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\textwidth]{Figure8.pdf}
+\caption{Driven reconnected magnetic flux at relatively early times  in Reconnection Scenario 3. Here, the solid curves show the numerical solution, the dotted curves show the analytic solution in the inertial
+response regime,  the dashed curves show the analytic solution in the resistive-inertial  response regime, and the dot-dashed curves show the analytic solution in the semi-collisional
+regime. The three dotted vertical lines show the approximate
+times at which the transitions from the inertial to the resistive-inertial, from the resistive-inertial to the semi-collisional, and from the semi-collisional to the diffusive-resistive, response regimes occur, in order from the left to the right. }\label{f8}
+\end{figure}
+
+\subsection{Reconnection Scenario 3}
+Consider Reconnection Scenario 3, which is illustrated in Fig.~\ref{f3}.  The normalized layer parameters used to access this regime are listed  in Table~\ref{t1}. 
+
+Figure~\ref{f8} shows the driven reconnected magnetic flux  at relatively early times in Reconnection Scenario 3. It can be seen that, in accordance with the curve labelled 3 in Fig.~\ref{f3}, the numerical solution 
+exactly matches
+ the analytic solution in the inertial response regime at extremely early times. At early intermediate times, the numerical solution deviates from the analytic solution in the inertial regime, and approximately matches
+that in the resistive-inertial response regime. At late intermediate times, the numerical solution deviates from the analytic solution in the resistive-inertial regime, and approximately matches
+that in the semi-collisional response regime. 
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\textwidth]{Figure9.pdf}
+\caption{Driven reconnected magnetic flux at relatively late times in Reconnection Scenario 3. Here, the solid curves show the numerical solution, whereas the dashed curves show the analytic solution in the 
+diffusive-resistive response regime. The vertical dotted line shows the approximate time at  which the transition from the semi-collisional to the diffusive-resistive response regime occurs.  }\label{f9}
+\end{figure}
+
+Figure~\ref{f9} shows the driven reconnected magnetic flux at relatively  late times in Reconnection Scenario 3. It can be seen that,  in accordance with the curve labelled 3 in Fig.~\ref{f3}, the numerical
+solution roughly matches   the analytic solution in the diffusive-resistive regime  at later times.  
+
+Figures~\ref{f8} and \ref{f9} again illustrate the limitations of the closed-form analytic solutions. The system is not in the resistive-inertial or the semi-collisional response regimes long enough for
+a good match to the respective analytic solutions to be achieved. The analytic response in the diffusive-resistive regime has the correct oscillation frequency, but the oscillations damp
+away faster that those in the numerical solution. Again, one possible explanation for the mismatch  is that the numerical solution does not enter the diffusive-resistive regime until a finite time has passed since the
+RMP was switched on, whereas the analytic solution assumes that the system is always in the diffusive-resistive regime. 
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\textwidth]{Figure10.pdf}
+\caption{Driven reconnected magnetic flux at relatively early times  in Reconnection Scenario 5. Here, the solid curves show the numerical solution, the dotted curves show the analytic solution in the inertial
+response regime,  and the dashed curves show the analytic solution in the diffusive-inertial  response regime. The two dotted vertical lines show the approximate
+times at which the transitions from the inertial to the diffusive-inertial, and from the diffusive-inertial to the diffusive-resistive,  response regimes occur, in order from the left to the right. }\label{f10}
+\end{figure}
+
+\subsection{Reconnection Scenario 5}
+Consider Reconnection Scenario 5, which is illustrated in Fig.~\ref{f4}.  The normalized layer parameters used to access this regime are listed  in Table~\ref{t1}. 
+
+Figure~\ref{f10} shows the driven reconnected magnetic flux  at relatively early times in Reconnection Scenario 5. It can be seen that, in accordance with the curve labelled 5 in Fig.~\ref{f4}, the numerical solution 
+exactly matches
+ the analytic solution in the inertial response regime at extremely early times. At   intermediate times, the numerical solution deviates from the analytic solution in the inertial regime toward that in the
+ diffusive-inertial regime. 
  
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\textwidth]{Figure11.pdf}
+\caption{Driven reconnected magnetic flux at relatively late times in Reconnection Scenario 5. Here, the solid curves show the numerical solution, whereas the dashed curves show the analytic solution in the 
+diffusive-resistive response regime. The vertical dotted line shows the approximate time at  which the transition from the diffusive-inertial to the diffusive-resistive response regime occurs.  }\label{f11}
+\end{figure}
+
+Figure~\ref{f11} shows the driven reconnected magnetic flux at relatively  late times in Reconnection Scenario 5. It can be seen that,  in accordance with the curve labelled 5 in Fig.~\ref{f4}, the numerical
+solution matches   the analytic solution in the diffusive-resistive regime fairly well at later times.  
+
+Figures~\ref{f10} and \ref{f11} also illustrate the limitations of the closed-form analytic solutions. The system is not in the diffusive-inertial  response regimes long enough for
+a good match to the analytic solution to be achieved. On the other hand, the numerical solution matches the analytic solution in the diffusive-resistive response regime
+fairly well at later times. It can be seen, from a comparison between Figs.~\ref{f9} and \ref{f11}, that a better match to the analytic diffusive-resistive solution is achieved in this case because the numerical
+solution is a better match to the analytic solution on entry into the diffusive-resistive regime. 
+
+\section{Summary and Discussion}
+This paper employs asymptotic matching techniques to investigate the drift-MHD response of a flowing tokamak plasma to a static RMP that is switched on suddenly in time.
+
+The resonant layer in the immediate vicinity of the rational surface is analyzed by means of a Fourier-Laplace transform. The layer is characterized by three quantities:
+the conventional layer response index, $\hat{\mit\Delta}_s$, the ratio of the magnetic flux at the edge of the layer to that at the center, $F_s$, and the normalized layer thickness, $\hat{\delta}$. 
+Seven different resonant plasma response regimes are identified. 
+These are the inertial, the viscous-inertial, the diffusive-inertial, the resistive-inertial, the semi-collisional, the
+viscous-resistive, and the diffusive-resistive regimes. See Figs.~\ref{f1} and \ref{f2}. Expressions for $\hat{\mit\Delta}_s$, $F_s$, and $\hat{\delta}$ in each regime are derived. See Sects.~\ref{inertial}--\ref{diffusive}. 
+
+The driven reconnected magnetic
+flux at the rational surface can be expressed as a contour integral in the space of the complex Laplace transform variable conjugate to time. See Eq.~(\ref{e29}). 
+In each resonant response regime, it is possible to perform the integral to obtain a closed-form analytic expression for the driven magnetic flux as a function of time. See~Eqs.~(\ref{inertialp}),
+(\ref{vip}), (\ref{dip}), (\ref{rip}), (\ref{scpx}), (\ref{vrp}), and (\ref{drp}). The small and large time limits of each expression are obtained. See Eqs.~(\ref{inertials}), (\ref{vis}), (\ref{dis}), (\ref{ris}), (\ref{scs}), 
+(\ref{vrs}), and (\ref{drs}), 
+as well as (\ref{inertiall}), (\ref{vil}), (\ref{dil}), (\ref{ril}), (\ref{scl}), (\ref{vrl}), and (\ref{drl}). 
+
+Depending on the values of the normalized parameters that govern the resonant layer, seven different reconnection scenarios are identified that describe how the
+driven reconnected magnetic flux at the rational surface evolves though the various different resonant response regimes as a function of time. See Sect.~\ref{scenarios}, and Figs.~\ref{f3} and \ref{f4}. 
+
+The driven reconnected magnetic flux at the rational surface is be calculated as a function of time  by two alternative  methods.  The first solution  method, which is exact,  involves numerically 
+evaluating the aforementioned contour integral. The second solution method, which is only approximate,  but much less time consuming,  involves evaluating the closed-form analytic expressions. The results of the two
+solution methods are compared in three different reconnection scenarios that involve all seven resonant response regimes. In all cases, at very early times, the driven magnetic flux exactly matches that
+predicted by the inertial regime analytic solution. The agreement between the numerical solution and the intermediate-time analytic response regimes  is only approximate because the
+system does not spend a sufficient amount of time in these regimes for an exact match to be achieved. The agreement between the numerical solution and the late-time, constant-$\psi$,
+analytic response regimes is better, but is not exact because the analytic solutions assume that the system is always in the late-time regime, whereas, in reality, the
+system is in other regimes at early and intermediate times. 
+
 \section*{Funding}
 This research was supported by the U.S.\ Department of Energy, Office of Science, Office of Fusion Energy Sciences, under  contract DE-FG02-04ER54742. 
 
@@ -1115,7 +1283,7 @@ where
 A(p,\hat{g}) &= \frac{p^2}{\hat{g}+{\rm i}\,(Q_E+Q_e)+p^2},\label{e97a}\\[0.5ex]
 B(p,\hat{g})&= (\hat{g}+{\rm i}\,Q_E)\,[\hat{g}+{\rm i}\,(Q_E+Q_i)] + [\hat{g}+{\rm i}\,(Q_E+Q_i)]\,(P_\varphi+P_\perp)\,p^2 + P_\varphi\,P_\perp\,p^4,\\[0.5ex]
 C(p,\hat{g}) &= \hat{g}+{\rm i}\,(Q_E+Q_e)+ \left\{P_\perp
-+[\hat{g}+{\rm i}\,(Q_E+Q_i)]\,D^2\right\}p^2 + \iota_e^{\,-1}\,P_\varphi\,D^2\,p^4.
++[\hat{g}+{\rm i}\,(Q_E+Q_i)]\,D^2\right\}p^2 + \iota_e^{\,-1}\,P_\varphi\,D^2\,p^4.\label{e97c}
 \end{align}
 Furthermore, because
 \begin{equation}
@@ -1135,26 +1303,26 @@ as $p\rightarrow\infty$.
 \subsection{Reconnected Helical Magnetic Flux}\label{recon}
 The true reconnected helical magnetic flux at the rational surface (divided by $r_s\,B_\varphi$)  is
 \begin{equation}
-{\mit\Psi}_0(t) \equiv \psi_1(0,t) = \tilde{\psi}(0,t).
+{\mit\Psi}_0(\hat{t}) \equiv \psi_1(0,\hat{t}) = \tilde{\psi}(0,\hat{t}).
 \end{equation}
 Let 
 \begin{equation}
-\overline{\mit\Psi}_0(g) = \int_0^\infty {\mit\Psi}_0(t)\,{\rm e}^{-g\,t}\,dt.
+\overline{\mit\Psi}_0(\hat{g}) = \int_0^\infty {\mit\Psi}_0(\hat{t})\,{\rm e}^{-\hat{g}\,\hat{t}}\,dt.
 \end{equation}
 It is easily demonstrated from Eqs.~(\ref{e80}) and (\ref{e314}) that\,\cite{rf1}
 \begin{equation}\label{e103}
-\frac{\overline{\mit\Psi}_0(g)}{\overline{\mit\Psi}_s(g)}\equiv F_s(\hat{g}) = -\int_0^\infty A(p,\hat{g})\,\frac{\partial \hat{Y}_e}{\partial p}\,dp.
+\frac{\overline{\mit\Psi}_0(\hat{g})}{\overline{\mit\Psi}_s(\hat{g})}\equiv F_s(\hat{g}) = -\int_0^\infty A(p,\hat{g})\,\frac{\partial \hat{Y}_e}{\partial p}\,dp.
 \end{equation}
 Thus, it follows from Eqs.~(\ref{e74}) and (\ref{e84}) 
 that
 \begin{equation}\label{e110}
-\overline{\mit\Psi}_0(g) =\frac{ E_{sb}\,F_s(\hat{g})\,\overline{\mit\Psi}_b(g)}{S^{1/3}\,\hat{\mit\Delta}_s(\hat{g})-E_{ss}}.
+\overline{\mit\Psi}_0(\hat{g}) =\frac{ E_{sb}\,F_s(\hat{g})\,\overline{\mit\Psi}_b(g)}{S^{1/3}\,\hat{\mit\Delta}_s(\hat{g})-E_{ss}}.
 \end{equation}
 
 \section{Linear Resonant Response Regimes}\label{response}
 \subsection{Introduction}
 The aim of this section is to classify all of the different linear resonant response regimes predicted by Eqs.~(\ref{e91}), (\ref{e101}), (\ref{e102}), and (\ref{e103}). The approach taken is similar to that adopted in Refs.~\onlinecite{err2} and \onlinecite{err3},
-except that we need to incorporate the Laplace transform parameter, $g$, into the analysis. In the following, we shall
+except that we need to incorporate the normalized Laplace transform parameter, $\hat{g}$, into the analysis. In the following, we shall
 assume that $|Q_E|\sim |Q_e|\sim |Q_i| \sim Q$ and $P_\varphi\sim P_\perp\sim P$. 
 
 \subsection{Constant-$\psi$ Limit}\label{scpl}
@@ -1333,6 +1501,143 @@ This response regime is known as the {\em diffusive-inertial}\/ regime because t
 layer response is dominated by perpendicular energy diffusivity and ion inertia. \cite{err3} The characteristic layer width is $p_\ast\sim
 R^{-1/2}\,P^{-1/2}\,D$, which implies that the regime is valid when $R\ll D$, $P\ll D^4/Q$, and $P\gg D^2/R^2$. 
 
+\section{Numerical Solution of Layer Equation}\label{appd}
+
+\subsection{Layer Equation}
+We need to solve
+\begin{equation}\label{e83}
+\frac{\partial}{\partial p}\!\left(A\,\frac{\partial\hat{Y}_e}{\partial p}\right) - \frac{B}{C}\,p^2\,\hat{Y}_e,
+\end{equation}
+where $\hat{Y}_e(p,\hat{g})$ is the Fourier-Laplace transformed electron stream-function, and $A(p,\hat{g})$, $B(p,\hat{g})$,
+and $C(p,\hat{g})$ are specified in Eqs.~(\ref{e97a})--(\ref{e97c}). 
+The boundary conditions are $\hat{Y}_e(p,\hat{g})\rightarrow 0$ as $p\rightarrow\infty$, and
+\begin{equation}\label{esmall}
+\hat{Y}_e(p,\hat{g})\rightarrow  \frac{\hat{\mit\Delta}_s(\hat{g})}{\pi\,p}+ 1+{\cal O}(p)
+\end{equation}
+as $p\rightarrow 0$. We also need to calculate
+\begin{equation}
+F_s(\hat{g}) = -\int_0^\infty A(p,\hat{g})\,\frac{\partial Y_e}{\partial p}\,dp.
+\end{equation}
+
+Let 
+\begin{equation}\label{e89}
+\chi(p,\hat{g}) = A\,\frac{\partial \hat{Y}_e}{\partial p}.
+\end{equation}
+It follows from Eqs.~(\ref{e83}) and the previous two equations that
+\begin{equation}\label{e90}
+A\,\frac{\partial}{\partial p}\!\left(\frac{C}{B\,p^2}\,\frac{\partial\chi}{\partial p}\right) - \chi = 0,
+\end{equation}
+as well as
+\begin{equation}\label{fdef}
+F_s(\hat{g})= -\int_0^\infty \chi(p,\hat{g})\,dp.
+\end{equation}
+
+\subsection{Small-$p$ Limit}
+The Frobenius expansion of Eq.~(\ref{e83}) about $p=0$ yields 
+\begin{align}
+Y_e(p,\hat{g}) &= \frac{\hat{\mit\Delta}_s}{\pi\,p} + 1
+\nonumber\\[0.5ex]
+&\phantom{=}+\frac{\hat{\mit\Delta}_s}{\pi}\left\{
+\frac{1}{2}\,(\hat{g}+{\rm i}\,Q_E)\,[\hat{g}+{\rm i}\,(Q_E+Q_i)]-\frac{1}{\hat{g}+{\rm i}\,(Q_E+Q_e)}\right\}p\nonumber\\[0.5ex]
+&\phantom{=} + \frac{1}{6}\,(\hat{g}+{\rm i}\,Q_E)\,[\hat{g}+{\rm i}\,(Q_E+Q_i)]\,p^2+{\cal O}(p^{\,3}).
+\end{align}
+Substituting into Eq.~(\ref{e89}), we get
+\begin{align}\label{csmall}
+\chi(p,\hat{g}) &= -\frac{\hat{\mit\Delta}_s}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]\,\pi}+\frac{\hat{\mit\Delta}_s}{2\pi}\,\frac{(\hat{g}+{\rm i}\,Q_E)\,[g+{\rm i}\,(Q_E+Q_i)]}{\hat{g}+{\rm i}\,(Q_E+Q_e)}\,p^2\nonumber\\[0.5ex]
+&\phantom{=} + \frac{1}{3} \frac{(\hat{g}+{\rm i}\,Q_E)\,[g+{\rm i}\,(Q_E+Q_i)]}{\hat{g}+{\rm i}\,(Q_E+Q_e)}\,p^3+{\cal O}(p^4).
+\end{align}
+
+\subsection{Large-$p$ Limit}
+In the large-$p$ limit, if we write
+\begin{align}
+A &=1+\frac{\alpha}{p^2},\\[0.5ex]
+\frac{B}{C} &= \beta+\frac{\gamma}{p^2},
+\end{align}
+and
+look for a solution of Eq.~(\ref{e89}) of the form
+\begin{equation}\label{elarge}
+\hat{Y}_e(p,\hat{g}) \propto p^x\,\exp\left(\frac{-\beta^{1/2}\,p^2}{2}\right)
+\end{equation}
+then we find that
+\begin{equation}
+x = \frac{\gamma -\beta^{1/2}\,(1-\beta^{1/2}\,\alpha)}{2\,\beta^{1/2}}.
+\end{equation}
+It is easily seen that
+\begin{align}
+\alpha &= -[\hat{g}+ {\rm i}\,(Q_E+Q_e)],\\[0.5ex]
+\beta&= \frac{\iota_e\,P_\perp}{D^2},\\[0.5ex]
+\gamma&= \frac{\iota_e\,P_\perp}{D^2}\left(1+ [\hat{g}+{\rm i}\,(Q_E+Q_i)]\,\frac{P_\varphi+P_\perp}{P_\varphi\,P_\perp}
+-\{P_\perp+[\hat{g}+{\rm i}\,(Q_E+Q_i)\,D^2]\}\,\frac{\iota_e}{P_\varphi\,D^2}\right).
+\end{align}
+
+Finally, it can be demonstrated from Eq.~(\ref{e89}) that
+\begin{equation}\label{elargea}
+\chi(p,\hat{g}) \propto p^{x+1}\,\exp\left(\frac{-\beta^{1/2}\,p^2}{2}\right)
+\end{equation}
+at large-$p$. 
+
+\subsection{Ricatti Transformation}
+Let 
+\begin{equation}
+W(p)= \frac{p}{\hat{Y}_e}\,\frac{\partial\hat{Y}_e}{\partial p}.
+\end{equation}
+The layer equation, (\ref{e83}), transforms to give
+\begin{equation}\label{e72a}
+\frac{dW}{dp} =- \frac{A'}{p}\,W -\frac{W^{\,2}}{p} + \frac{B}{A\,C}\,p^3,
+\end{equation}
+where
+\begin{equation}
+A' = \frac{\hat{g}+{\rm i}\,(Q_E+Q_e)-p^2}{\hat{g}+{\rm i}\,(Q_E+Q_e)+p^2}.
+\end{equation}
+This equation must be solved subject to the boundary condition that
+\begin{equation}\label{e63a}
+W(p) = x-\beta^{1/2}\,p^2
+\end{equation}
+at large-$p$ [see Eq.~(\ref{elarge})], and
+\begin{equation}\label{e73ax}
+W(p) =-1+\frac{\pi\,p}{\hat{\mit\Delta}_s}
+\end{equation}
+at small-$p$. [See Eq.~(\ref{esmall}).]
+
+Let 
+\begin{equation}\label{vdef}
+V(p)= \frac{p}{\chi}\,\frac{\partial\chi}{\partial p}.
+\end{equation}
+Equation~(\ref{e90}) transforms to give 
+\begin{equation}\label{e75a}
+\frac{dV}{dp} = 2\,p\,(B'-C')\,V + \frac{3\,V}{p} - \frac{V^2}{p} + \frac{B}{A\,C}\,p^3,
+\end{equation}
+where 
+\begin{align}
+B' &= \frac{ [\hat{g}+{\rm i}\,(Q_E+Q_i)]\,(P_\varphi+P_\perp)+ 2\,P_\varphi\,P_\perp\,p^2}{ (\hat{g}+{\rm i}\,Q_E)[g+{\rm i}\,(Q_E+Q_i)] + [\hat{g}+{\rm i}\,(Q_E+Q_i)]\,(P_\varphi+P_\perp)\,p^2+ P_\varphi\,P_\perp\,p^4},\\[0.5ex]
+C'&=\frac{\{P_\perp + [\hat{g}+{\rm i}\,(Q_E+Q_i)\,D^2\}+ 2\,\iota_e^{-1}\,P_\varphi\,D^2\,p^2}{\hat{g} + {\rm i}\,(Q_E+Q_e) +\{P_\perp + [\hat{g}+{\rm i}\,(Q_E+Q_i)\,D^2\}\,p^2 + \iota_e^{-1}\,P_\varphi\,D^2\,p^4}.
+\end{align}
+This equation must be solved subject to the boundary condition that
+\begin{equation}\label{e77a}
+V(p) = 1+x-\beta^{1/2}\,p^2
+\end{equation}
+at large-$p$. [See Eq.~(\ref{elargea}).] 
+
+\subsection{Method of Solution}
+First, we launch solutions of Eqs.~(\ref{e72a}) and (\ref{e75a}) from large $p$, subject to the respective boundary conditions (\ref{e63a}) and (\ref{e77a}), and
+numerically integrate them to small $p$,  saving $V(p)$ onto a grid. We then deduce the value of $\hat{\mit\Delta}_s(\hat{g})$ from Eq.~(\ref{e73ax}). 
+Second, we launch the following system of equations from small $p$, 
+\begin{align}
+\frac{dU}{dp} &= \frac{V(p)}{p},\\[0.5ex]
+\frac{dF}{dp} &=\exp[U(p)],
+\end{align}
+subject to the boundary conditions
+\begin{align}
+U(0) &=0,\\[0.5ex]
+F(0) &= 0,
+\end{align}
+and numerically  integrate to large $p$. Here, $V(p)$ is interpolated from the grid. 
+Finally,  it follows from Eqs.~(\ref{fdef}), (\ref{csmall}), and (\ref{vdef}) that 
+\begin{equation}
+F_s(\hat{g}) = \frac{\hat{\mit\Delta}_s(\hat{g})\,F(\infty)}{[\hat{g}+{\rm i}\,(Q_E+Q_e)]\,\pi}.
+\end{equation}
+
+
 \section*{References}
 \begin{thebibliography}{99}\baselineskip 5ex
 
@@ -1368,21 +1673,25 @@ R^{-1/2}\,P^{-1/2}\,D$, which implies that the regime is valid when $R\ll D$, $P
 
 \bibitem{err3} R.~Fitzpatrick, {\em Influence of anomalous perpendicular transport on linear tearing mode dynamics in tokamak plasmas}, Phys.\ Plasmas {\bf 29}, 032507 (2022).
 
+\bibitem{ed} A.~Erd\'{e}lyi, W.~Magnus, F.~Oberhettinger and F.G.~Tricomi, {\em Tables of integral transforms, Vol.~1}, (McGraw-Hill, New York NY, 1954).
+
+\bibitem{grad} I.S.~Gradshteyn and I.M.~Ryzhik, {\em Table of integrals, series, and products, corrected and enlarged edition}, (Academic Press, New York NY,  1980). 
+
+\bibitem{abram} M.~Abramowitz and I.A.~Stegun, eds., {\em Handbook of mathematical functions, with formulas, graphs, and mathematical tables},  (Dover, New York NY, 1965).
+
 \bibitem{cyl} H.P.~Furth, P.H.~Rutherford and H.~Selberg, {\em Tearing mode in the cylindrical tokamak}, Phys.\  Fluids {\bf 16}, 1054 (1973). 
 
 \bibitem{wes} J.A.~Wesson, {\em Hydromagnetic stability of tokamaks}, Nucl.\ Fusion {\bf 18}, 87 (1978).
 
 \bibitem{hkm} R.D.~Hazeltine, M.~Kotschenreuther and P.G.~Morrison, {\em A four-field model for tokamak plasma dynamics}, Phys.\ Fluids {\bf 28}, 2466 (1985).
 
+\bibitem{haz1} R.D.~Hazeltine and J.D.~Meiss, {\em Plasma confinement}, (Dover, New York NY, 2003).
+
 \bibitem{fw} R.~Fitzpatrick and F.L.~Waelbroeck, {\em Two-fluid magnetic island dynamics in slab geometry. I. Isolated islands}, Phys. Plasmas {\bf 12}, 022307 (2005).
 
 \bibitem{hel} R.~Fitzpatrick, {\em Helical temperature perturbations associated with tearing modes in tokamak plasmas}, Phys.\ Plasmas {\bf 2}, 825 (1995).
 
 \bibitem{twist} R.~Fitzpatrick, {\em Stability of coupled tearing and twisting modes in tokamaks}, Phys.\ Plasmas {\bf 1}, 3308 (1994).
-
-\bibitem{ed} A.~Erd\'{e}lyi, W.~Magnus, F.~Oberhettinger and F.G.~Tricomi, {\em Tables of integral transforms, Vol.~1}, (McGraw-Hill, New York NY, 1954).
-
-\bibitem{abram} M.~Abramowitz and I.A.~Stegun, eds., {\em Handbook of mathematical functions, with formulas, graphs, and mathematical tables},  (Dover, New York NY, 1965).
 
 \bibitem{ara} G.~Ara, B.~Basu, B.~Coppi, G.~Laval, M.N.~Rosenbluth and B.V.~Waddell, {\em Magnetic reconnection and $m = 1$ oscillations in current carrying plasmas}, Ann.\ Phys.\ (NY) {\bf 112}, 443 (1978).
 
@@ -1391,10 +1700,5 @@ R^{-1/2}\,P^{-1/2}\,D$, which implies that the regime is valid when $R\ll D$, $P
 \bibitem{drake} J.F.~Drake and Y.C.~Lee,  {\em Kinetic theory of tearing instabilities}, Phys.\ Fluids {\bf 20}, 1341 (1977).
 
 \bibitem{wal} F.L.~Waelbroeck, {\em Shielding of resonant magnetic perturbations in the long mean-free path regime}, Phys.\ Plasmas {\bf 10}, 4040 (2003).
-
-\bibitem{grad} I.S.~Gradshteyn and I.M.~Ryzhik, {\em Table of integrals, series, and products, corrected and enlarged edition}, (Academic Press, New York NY,  1980). 
-
-\bibitem{haz1} R.D.~Hazeltine and J.D.~Meiss, {\em Plasma confinement}, (Dover, New York NY, 2003).
-
 \end{thebibliography}
 \end{document}

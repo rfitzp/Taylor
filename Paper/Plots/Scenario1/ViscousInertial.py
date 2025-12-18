@@ -3,7 +3,7 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 
-with open ("../Inputs/Namelist.json", "r") as f:
+with open ("Namelist.json", "r") as f:
     data = json.load (f)
 
 QE    = data["QE"]
@@ -17,10 +17,11 @@ iotae = Qe / (Qe - Qi)
 
 infile = open ("Taylor.out", "r")
 
-x, y = input("tmax, fac: ").split()
+tmax = 5.
+fac  = 2.
 
-tmax = float(x)
-fac  = float(y)
+t1 = fac * 1./Pphi**(1./3.)
+t2 = fac *    Pphi**(1./3.) 
 
 t  = []
 fr = []
@@ -51,17 +52,14 @@ for line in infile:
     c1      = float(numbers[0])
     c2      = float(numbers[1])
     c3      = float(numbers[2])
-    c4      = float(numbers[7])
-    c5      = float(numbers[8])
+    c4      = float(numbers[3])
+    c5      = float(numbers[4])
     if c1 < tmax:
         ti  .append(c1)
         fir .append(c2)
         fii .append(c3)
         fvir.append(c4)
         fvii.append(c5)
-
-t1 = fac * 1./Pphi**(1./3.)
-t2 = fac *    Pphi**(1./3.) 
 
 fontsize = 15
 
@@ -89,5 +87,5 @@ plt.legend(fontsize = fontsize)
 
 plt.tight_layout ();
 
-plt.show ()
-#plt.savefig("Figure6.pdf")
+#plt.show ()
+plt.savefig("Figure6.pdf")

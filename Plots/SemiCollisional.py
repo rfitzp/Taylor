@@ -28,8 +28,8 @@ for line in infile:
 
     numbers = line.split() 
     c1      = float(numbers[0])
-    c2      = float(numbers[5])
-    c3      = float(numbers[6])
+    c2      = float(numbers[9])
+    c3      = float(numbers[10])
     ti .append(c1)
     fir.append(c2)
     fii.append(c3)

@@ -3,7 +3,7 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 
-with open ("../Inputs/Namelist.json", "r") as f:
+with open ("Namelist.json", "r") as f:
     data = json.load (f)
 
 QE    = data["QE"]
@@ -17,10 +17,11 @@ iotae = Qe / (Qe - Qi)
 
 infile = open ("Taylor.out", "r")
 
-x, y = input("tmax, fac: ").split()
+tmax = 3.
+fac  = 1.5
 
-tmax = float(x)
-fac  = float(y)
+t1 = fac * 1./D
+t2 = fac * D 
 
 t  = []
 fr = []
@@ -42,8 +43,8 @@ infile = open ("Analytic.out", "r")
 ti   = []
 fir  = []
 fii  = []
-fvir = []
-fvii = []
+fdir = []
+fdii = []
 
 for line in infile: 
 
@@ -51,17 +52,14 @@ for line in infile:
     c1      = float(numbers[0])
     c2      = float(numbers[1])
     c3      = float(numbers[2])
-    c4      = float(numbers[7])
-    c5      = float(numbers[8])
+    c4      = float(numbers[5])
+    c5      = float(numbers[6])
     if c1 < tmax:
         ti  .append(c1)
         fir .append(c2)
         fii .append(c3)
-        fvir.append(c4)
-        fvii.append(c5)
-
-t1 = fac * 1./Pphi**(1./3.)
-t2 = fac *    Pphi**(1./3.) 
+        fdir.append(c4)
+        fdii.append(c5)
 
 fontsize = 15
 
@@ -77,8 +75,8 @@ plt.plot    (t,  fr,   color = 'blue',  linewidth = 2, linestyle = 'solid', labe
 plt.plot    (t,  fi,   color = 'red',   linewidth = 2, linestyle = 'solid', label = r"Im($\hat{\Psi}_0$)")
 plt.plot    (ti, fir,  color = 'blue',  linewidth = 2, linestyle = 'dotted')
 plt.plot    (ti, fii,  color = 'red',   linewidth = 2, linestyle = 'dotted')
-plt.plot    (ti, fvir, color = 'blue',  linewidth = 2, linestyle = 'dashed')
-plt.plot    (ti, fvii, color = 'red',   linewidth = 2, linestyle = 'dashed')
+plt.plot    (ti, fdir, color = 'blue',  linewidth = 2, linestyle = 'dashed')
+plt.plot    (ti, fdii, color = 'red',   linewidth = 2, linestyle = 'dashed')
 
 plt.axhline (0.,       color = 'black', linewidth = 2, linestyle = 'dotted')
 plt.axvline (t1,       color = 'black', linewidth = 2, linestyle = 'dotted')
@@ -89,5 +87,5 @@ plt.legend(fontsize = fontsize)
 
 plt.tight_layout ();
 
-plt.show ()
-#plt.savefig("Figure6.pdf")
+#plt.show ()
+plt.savefig("Figure10.pdf")

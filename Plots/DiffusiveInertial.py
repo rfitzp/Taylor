@@ -51,8 +51,8 @@ for line in infile:
     c1      = float(numbers[0])
     c2      = float(numbers[1])
     c3      = float(numbers[2])
-    c4      = float(numbers[7])
-    c5      = float(numbers[8])
+    c4      = float(numbers[11])
+    c5      = float(numbers[12])
     if c1 < tmax:
         ti  .append(c1)
         fir .append(c2)
@@ -60,8 +60,8 @@ for line in infile:
         fvir.append(c4)
         fvii.append(c5)
 
-t1 = fac * 1./Pphi**(1./3.)
-t2 = fac *    Pphi**(1./3.) 
+t1 = fac * 1./D
+t2 = fac * D**0.5
 
 fontsize = 15
 

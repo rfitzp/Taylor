@@ -2,13 +2,11 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 
-#with open("Analytic.py") as f:
-#    code = f.read ()
-#exec (code)
-
 infile = open ("Taylor.out", "r")
 
-tmax = 2.
+x = input("tmax: ")
+
+tmax = float(x)
 
 t  = []
 fr = []

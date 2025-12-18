@@ -35,7 +35,7 @@ plt.legend(fontsize = "15")
 
 plt.subplot (2, 1, 2)
 
-plt.xlim (0., 10.)
+plt.xlim (0., 3.)
 
 plt.plot    (t, f,  color = 'blue',  linewidth = 2, linestyle = 'solid', label=r"Re($\Psi_0$)")
 plt.plot    (t, fe, color = 'red',   linewidth = 2, linestyle = 'solid', label=r"Im($\Psi_0$)")

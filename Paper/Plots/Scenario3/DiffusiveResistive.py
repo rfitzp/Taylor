@@ -1,6 +1,23 @@
+import json
 import math
 import numpy as np
 import matplotlib.pyplot as plt
+
+with open ("Namelist.json", "r") as f:
+    data = json.load (f)
+
+QE    = data["QE"]
+Qe    = data["Qe"]
+Qi    = data["Qi"]
+D     = data["D"]
+Pphi  = data["Pphi"]
+Pperp = data["Pperp"]
+Sigma = data["Sigma"]
+iotae = Qe / (Qe - Qi)
+
+fac = 1.5
+
+t1 = fac/Pphi**0.5/D
 
 infile = open ("Taylor.out", "r")
 
@@ -28,8 +45,8 @@ for line in infile:
 
     numbers = line.split() 
     c1      = float(numbers[0])
-    c2      = float(numbers[5])
-    c3      = float(numbers[6])
+    c2      = float(numbers[11])
+    c3      = float(numbers[12])
     ti .append(c1)
     fir.append(c2)
     fii.append(c3)
@@ -49,6 +66,7 @@ plt.plot    (t,  fi,  color = 'red',   linewidth = 2, linestyle = 'solid', label
 plt.plot    (ti, fir, color = 'blue',  linewidth = 2, linestyle = 'dashed')
 plt.plot    (ti, fii, color = 'red',   linewidth = 2, linestyle = 'dashed')
 plt.axhline (0.,      color = 'black', linewidth = 2, linestyle = 'dotted')
+plt.axvline (t1,      color = 'black', linewidth = 2, linestyle = 'dotted')
 
 plt.xlabel(r'$\hat{t}$', fontsize = fontsize)
 plt.legend(fontsize = fontsize)
@@ -62,11 +80,12 @@ plt.plot    (t,  fi,  color = 'red',   linewidth = 2, linestyle = 'solid', label
 plt.plot    (ti, fir, color = 'blue',  linewidth = 2, linestyle = 'dashed')
 plt.plot    (ti, fii, color = 'red',   linewidth = 2, linestyle = 'dashed')
 plt.axhline (0.,      color = 'black', linewidth = 2, linestyle = 'dotted')
+plt.axvline (t1,      color = 'black', linewidth = 2, linestyle = 'dotted')
 
 plt.xlabel(r'$\hat{t}$', fontsize = fontsize)
 plt.legend(fontsize = fontsize)
 
 plt.tight_layout ();
 
-plt.show ()
-#plt.savefig("Figure7.pdf")
+#plt.show ()
+plt.savefig("Figure9.pdf")
