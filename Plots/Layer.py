@@ -41,8 +41,8 @@ plt.xlim (-gmax, gmax)
 
 plt.axhline (0.,    color = 'black', linewidth = 2, linestyle = 'dotted')
 plt.axvline (0.,    color = 'black', linewidth = 2, linestyle = 'dotted')
-plt.plot    (p, Wr, color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"$Re(\hat{\Delta})$")
-plt.plot    (p, Wi, color = 'red',   linewidth = 2, linestyle = 'solid', label = r"$Im(\hat{\Delta})$")
+plt.plot    (p, Wr, color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"$Re(\hat{\Delta}_s)$")
+plt.plot    (p, Wi, color = 'red',   linewidth = 2, linestyle = 'solid', label = r"$Im(\hat{\Delta}_s)$")
 
 plt.xlabel (r'$Im(\hat{g})$', fontsize = fontsize)
 plt.legend (fontsize = fontsize)
@@ -50,6 +50,7 @@ plt.legend (fontsize = fontsize)
 plt.subplot (2, 1, 2)
 
 plt.xlim (-gmax, gmax)
+#plt.ylim (-1, 1)
 
 plt.axhline (0.,    color = 'black', linewidth = 2, linestyle = 'dotted')
 plt.axvline (0.,    color = 'black', linewidth = 2, linestyle = 'dotted')
@@ -61,5 +62,5 @@ plt.legend (fontsize = fontsize)
 
 plt.tight_layout();
 
-plt.show ()
-#plt.savefig ("Figure5.pdf")
+#plt.show ()
+plt.savefig ("Figure1.pdf")
