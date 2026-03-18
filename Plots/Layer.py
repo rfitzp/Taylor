@@ -62,5 +62,5 @@ plt.legend (fontsize = fontsize)
 
 plt.tight_layout();
 
-#plt.show ()
-plt.savefig ("Figure1.pdf")
+plt.show ()
+#plt.savefig ("Figure1.pdf")

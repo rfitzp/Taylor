@@ -71,8 +71,8 @@ plt.subplot (1, 1, 1)
 
 plt.xlim (0., tmax)
 
-plt.plot    (t,  fr,   color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"Re($\hat{\Psi}_0$)")
-plt.plot    (t,  fi,   color = 'red',   linewidth = 2, linestyle = 'solid', label = r"Im($\hat{\Psi}_0$)")
+plt.plot    (t,  fr,   color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"$Re(F_{taylor})$")
+plt.plot    (t,  fi,   color = 'red',   linewidth = 2, linestyle = 'solid', label = r"$Im(F_{taylor})$")
 plt.plot    (ti, fir,  color = 'blue',  linewidth = 2, linestyle = 'dotted')
 plt.plot    (ti, fii,  color = 'red',   linewidth = 2, linestyle = 'dotted')
 plt.plot    (ti, fvir, color = 'blue',  linewidth = 2, linestyle = 'dashed')
@@ -88,4 +88,4 @@ plt.legend(fontsize = fontsize)
 plt.tight_layout ();
 
 #plt.show ()
-plt.savefig("Figure6.pdf")
+plt.savefig("Figure9.pdf")

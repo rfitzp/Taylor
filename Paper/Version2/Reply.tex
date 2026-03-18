@@ -4,18 +4,18 @@
 
 \begin{document}
 \begin{center}
-{\em  Forced Magnetic Reconnection due to Time-Varying Resonant Magnetic Perturbations in Flowing Tokamak Plasmas}\\[1ex]
+{\em  Forced Magnetic Reconnection due to Transient Resonant Magnetic Perturbations in Flowing Tokamak Plasmas}\\[1ex]
 by Y.~Lin and R.~Fitzpatrick\\[1ex]
 {\bf Reply to Referees' Comments}\\[1ex]
 ~
 \end{center}
-The main criticisms of this paper is that it lacks focus on a clear physical problem, that it relies excessively on previously published research, and that
-it lack novelty. We have extensively rewritten the paper to address these concerns. Our reply to these criticisms are as follows:
+The main criticisms of this paper are that it lacks focus on a clear physical problem, that it relies excessively on previously published research, and that
+it lacks novelty. We have extensively rewritten the paper to address these concerns. Our reply to these criticisms are as follows:
 \begin{enumerate}
 
-\item We have now made it very clear that the physical problem that we are addressing is the response of a flowing tokamak plasma to a resonant
-magnetic perturbation that {\em varies in time}. We have changed the title of the paper to elucidate this point. We argue that, although the solution of
-the Taylor problem (i.e., the response of the plasma to a static RMP that is switched-on suddenly) may seem like an academic problem, once you understand
+\item We have now made it very clear that the physical problem that we are addressing is the response of a flowing tokamak plasma to a transient resonant
+magnetic perturbation. We have changed the title of the paper to elucidate this point. We argue that, although the solution of
+the Taylor problem (i.e., the response of the plasma to a static RMP that is switched on suddenly) may seem like an academic problem, once you understand
 the solution to this problem then you can immediately calculate the response of the plasma to a transient RMP of arbitrary time dependence. Of course,
 real tokamak plasmas are subject to many transient RMPs emanating from sawtooth crashes, ELMs, TAE modes, et cetera. Moreover, it is thought that
 some of these transient RMPs are responsible for triggering NTMs. However, no one has ever demonstrated this is detail. Our study is a first step
@@ -24,7 +24,7 @@ allows us to determine the response of the plasma to fairly realistic transient 
 
 \item Our Laplace transform analysis repurposes much of the Fourier transform analysis of Refs.~22 and 23 (in the new paper). Although we have attempted
 to cut down repetition of material from these papers (e.g., by starting from the linearized form of the three-field model), some repetition is necessary because
-we need to add new elements to the model (for example, the new layer parameter $F_s$), and we also have to recalculate all of the layer widths in terms
+we need to add new elements to the analysis (for example, the calculation of the additional layer parameter $F_s$), and we also have to recalculate all of the layer widths in terms
 of the Laplace transform variable (because that is how we know which response regime we are in). In order to be less repetitive, we have only
 described Reconnection Scenario 1 in any detail, assuming that the reader can glean the salient features of Scenarios 2--6 from Figs.~7 and 8 in the
 (new) paper. We have also now only performed a detailed comparison between our numerical solution and our analytic solutions for Reconnection Scenario 1,
@@ -35,7 +35,7 @@ transform problem. The analysis of App.~C has been generalized to explain how to
 the old one, $\hat{\mit\Delta}_s(\hat{g})$.  The analysis of App.~D has been generalized to obtain analytic expressions for $F_s(\hat{g})$ in the various response regimes, as well as the layer widths as functions of $\hat{g}$.
 The closed-form expressions for the Taylor functions in the various different response regimes are all new, and obviously quite useful (especially as they are sufficiently
 simple that they can be calculated by means of a python script). The trajectories
-that the system takes though the various response regimes as time progresses, which are shown in Figs.~7 and 8 have also never been described before. 
+that the system takes though the various response regimes as time progresses, which are shown in Figs.~7 and 8, have also never been described before. 
 
 \end{enumerate}
 
@@ -43,11 +43,13 @@ Our detailed comments to the referees' comments follow:
 
 \begin{description}
 \item[Referee 1]
+
 \begin{enumerate}
-\item We have recalculated Figs.~1-4 in the new paper using $D=2$, which is a more realistic value. The results are very similar to what we got with $D=1.2$. 
+
+\item We have recalculated Figs.~1-4 in the new paper using $D=2$, which is a more realistic value than $D=1.2$. The results are very similar to what we got with $D=1.2$. 
 
 \item Figs.~7 and 8 (in the new paper) are calculated on the basis of the layer widths as function of time, $\hat{\delta}(\hat{t})$, expressions that appear in Sect.~IV.B.
-As is now described in the paper, the resonant layer width starts off with a comparatively large value than diminishes as time progresses. In
+As is now described in the paper, the resonant layer width starts off with a comparatively large value that diminishes as time progresses. In
 Reconnection Secenario 1, the system is in the inertial regime as long as this regime has the largest layer width, the system transitions to the
 viscous-inertial regime when the inertial layer width falls below the viscous-inertial width, and the system transitions to the viscous-resistive regime
 when the viscous-inertial layer width falls below the viscous-resistive layer width. 
@@ -57,7 +59,7 @@ when the viscous-inertial layer width falls below the viscous-resistive layer wi
 \item The names of the various regimes are largely historical in nature. However, we have added more explanation as to what they denote in
 App.~D. 
 
-\item A constant-$\psi$ layer is a double layer, with an inner and an outer component in $p$. A non-constant-$\psi$ layer lacks the
+\item A constant-$\psi$ layer is a double layer, with an inner and an outer component in the spatial Fourier transform variable $p$. A non-constant-$\psi$ layer lacks the
 inner component of a constant-$\psi$ layer. Practically speaking, constant-$\psi$ layers are characterized by $F_s=1$, whereas
 non-constant-$\psi$ layers are characterized by $|F_s|\ll 1$. Comments to this effect have been added to the paper. 
 
@@ -76,24 +78,25 @@ We have had to generalize the analysis of Ref.~22 to express all quantities in t
 the new layer function, $F_s(\hat{g})$.
 
 \item The expressions for the Taylor functions given in the seven response regimes are obtained after the performance of highly non-trivial integrations. 
-These expressions are valuable because they are expresses in closed form and are sufficiently simple that they can be evaluated by a python
-script. In contrast, performing the contour integral numerically requires a sophisticated and complicated C++ program. Our expressions are all
+These expressions are valuable because they are expressed in closed form, and are sufficiently simple that they can be evaluated by means of a python
+script. In contrast, performing the contour integral numerically requires a sophisticated, and complicated, C++ program. Our expressions are all
 significantly modified by diamagnetic flows, which were completely ignored in all previous treatments of the Taylor problem, and are obviously important
 in real tokamaks.
 
 \item The purpose of having the analytic method of calculating the Taylor function is that the numerical method is probably too slow to be
-used to analyze a lot of data.
+used to analyze a lot of data. As is shown in Fig.~11 of the paper, the analytic Taylor function does a surprisingly good job at predicting response 
+of the plasma to a transient RMP.
 
-\item The key issue addresses by the paper is how to determine the response of a realistic tokamak plasma to a time-varying RMP.
+\item The key issue addressee by the paper is how to determine the response of a realistic tokamak plasma to a transient RMP.
 
 \item As has already been mentioned, analysis of the various analytic response regimes is not equivalent to that in Ref.~22 because
 we have been forced to add new elements: e.g., the calculation of $F_s(\hat{g})$. 
 
-\item The conclusions of the results is that the analytic approach gives rise to broadly similar results as the numerical approach, which is
+\item The conclusions of the comparison between the two solution methods  is that the analytic approach gives rise to broadly similar results to the numerical approach, which is
 good, because it is a lot easier to deploy the analytic method to solving the problem. 
 
-\item The novelty of the results is that we have described a practical method for determining the response of a realistic tokamak plasma
-to a time-varying RMP of arbitrary form. The practical uses of this method are fairly obvious.
+\item The novelty of the results of the paper is that we have described a practical method for determining the response of a realistic tokamak plasma
+to a transient RMP of arbitrary form. The practical uses of this method are fairly obvious.
 
 \end{enumerate}
 

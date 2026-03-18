@@ -65,8 +65,8 @@ plt.subplot (2, 1, 1)
 
 plt.xlim (0., t[-1])
 
-plt.plot    (t,  fr,  color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"Re($\hat{\Psi}_0$)")
-plt.plot    (t,  fi,  color = 'red',   linewidth = 2, linestyle = 'solid', label = r"Im($\hat{\Psi}_0$)")
+plt.plot    (t,  fr,  color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"$Re(F_{taylor})$")
+plt.plot    (t,  fi,  color = 'red',   linewidth = 2, linestyle = 'solid', label = r"$Im(F_{taylor})$")
 plt.plot    (ti, fir, color = 'blue',  linewidth = 2, linestyle = 'dashed')
 plt.plot    (ti, fii, color = 'red',   linewidth = 2, linestyle = 'dashed')
 plt.axhline (0.,      color = 'black', linewidth = 2, linestyle = 'dotted')
@@ -79,8 +79,8 @@ plt.subplot (2, 1, 2)
 
 plt.xlim (0., 10.)
 
-plt.plot    (t,  fr,  color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"Re($\hat{\Psi}_0$)")
-plt.plot    (t,  fi,  color = 'red',   linewidth = 2, linestyle = 'solid', label = r"Im($\hat{\Psi}_0$)")
+plt.plot    (t,  fr,  color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"$Re(F_{taylor})$")
+plt.plot    (t,  fi,  color = 'red',   linewidth = 2, linestyle = 'solid', label = r"$Im(F_{taylor})$")
 plt.plot    (ti, fir, color = 'blue',  linewidth = 2, linestyle = 'dashed')
 plt.plot    (ti, fii, color = 'red',   linewidth = 2, linestyle = 'dashed')
 plt.axhline (0.,      color = 'black', linewidth = 2, linestyle = 'dotted')
@@ -92,4 +92,4 @@ plt.legend(fontsize = fontsize)
 plt.tight_layout ();
 
 #plt.show ()
-plt.savefig("Figure7.pdf")
+plt.savefig("Figure10.pdf")

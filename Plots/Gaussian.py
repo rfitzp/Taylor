@@ -124,12 +124,12 @@ y  = mx*np.asarray(f1)
 plt.plot    (t, Fr, color = 'blue',  linewidth = 2, linestyle = 'solid', label = r"$Re(\hat{\Psi}_0)$")
 plt.plot    (t, Fi, color = 'red',   linewidth = 2, linestyle = 'solid', label = r"$Im(\hat{\Psi}_0)$")
 plt.axhline (0.,    color = 'black', linewidth = 2, linestyle = 'dotted')
-plt.plot    (tt, y,  color = 'black', linewidth = 3, linestyle = 'solid')
+plt.plot    (tt, y, color = 'black', linewidth = 3, linestyle = 'solid')
 
 plt.xlabel(r'$\hat{t}$', fontsize = "20")
 plt.legend(fontsize = "15")
 
 plt.tight_layout ();
 
-#plt.show ()
-plt.savefig("Figure4.pdf")
+plt.show ()
+#plt.savefig("Figure4.pdf")
